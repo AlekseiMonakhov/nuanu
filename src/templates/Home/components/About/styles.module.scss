@@ -1,0 +1,26 @@
+@import '@/styles/base';
+
+.home_about {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 0 var(--wrap);
+
+  > * + * {
+    margin-top: px-to-rem(32);
+  }
+
+  .description {
+    max-width: 30em;
+  }
+}
+
+.description {
+  font-size: px-to-rem(16);
+  line-height: 120%;
+}

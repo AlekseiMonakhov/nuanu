@@ -1,0 +1,101 @@
+@import '@/styles/base';
+
+.header {
+  position: fixed;
+  z-index: 9;
+
+  --theme-duration: 0.5s;
+
+  @include transition(color var(--theme-duration));
+
+  &.dark {
+    --color-bg: rgba(83, 83, 83, 0.2);
+    color: var(--color-white);
+  }
+
+  &.light {
+    --color-bg: rgba(226, 226, 226, 0.2);
+    color: var(--color-primary-dark-base);
+  }
+
+  @include viewport-tablet-min {
+    top: calc(var(--vh) * 3.581);
+    left: 0;
+    width: 100%;
+    height: px-to-rem(60);
+    padding: 0 var(--wrap);
+  }
+
+  @include viewport-phone {
+    top: px-to-rem(15);
+    left: px-to-rem(15);
+    width: calc(100% - #{px-to-rem(30)});
+    height: px-to-rem(56);
+    padding: 0 var(--wrap);
+    
+    border-radius: 12px;
+    background: var(--color-bg);
+    backdrop-filter: blur(15px);
+  }
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrap {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .menu {
+    height: 100%;
+
+    @include viewport-tablet-max {
+      display: none;
+    }
+  }
+
+  .logo_desktop {
+    width: px-to-rem(169);
+
+    @include viewport-phone {
+      display: none;
+    }
+  }
+
+  .logo_phone {
+    width: px-to-rem(96);
+
+    @include viewport-tablet-min {
+      display: none;
+    }
+  }
+
+  .logo_desktop,
+  .logo_phone {
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }    
+  }
+}
+
+.menu {
+  border-radius: 12px;
+  background-color: var(--color-bg);
+  backdrop-filter: blur(7px);
+  
+  @include transition(background-color var(--theme-duration));
+}
+
+.logo_desktop,
+.logo_phone {
+  color: currentColor;
+}

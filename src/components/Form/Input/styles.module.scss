@@ -1,0 +1,16 @@
+@import '@/styles/base';
+
+.input {
+  @include reset-input;
+
+  display: block;
+  width: 100%;
+  height: px-to-rem(60);
+  padding: 0 px-to-rem(18);
+
+  font-size: px-to-rem(16);
+  line-height: 100%;
+  color: currentColor;
+
+  transition: color 86400s, background-color 86400s;
+}

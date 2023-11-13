@@ -1,0 +1,23 @@
+:root {
+  --wrap: #{px-to-rem(50)};
+  @include viewport-tablet {
+    --wrap: #{px-to-rem(32)};
+  }
+  @include viewport-phone {
+    --wrap: #{px-to-rem(15)};
+  }
+
+  @include viewport-desktop {
+    --wrap-1: 12.5vw;
+
+    @media (min-width: 1440px) {
+      --wrap-1: calc((100vw - 1080px) / 2);
+    }
+  }
+  @include viewport-tablet {
+    --wrap-1: #{px-to-rem(80)};
+  }
+  @include viewport-phone {
+    --wrap-1: #{px-to-rem(20)};
+  }
+}

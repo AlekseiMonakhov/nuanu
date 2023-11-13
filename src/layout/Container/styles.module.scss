@@ -1,0 +1,17 @@
+@import '@/styles/base';
+
+.layout_container {
+  min-height: calc(100 * var(--vh) - var(--footer-height));
+  padding-bottom: px-to-rem(40);
+
+  &.top_spacing {
+    padding-top: px-to-rem(80);
+  }
+
+}
+
+.content {
+  &.top_spacing {
+    padding-top: px-to-rem(20);
+  }
+}

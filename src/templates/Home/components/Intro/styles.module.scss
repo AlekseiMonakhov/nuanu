@@ -1,0 +1,27 @@
+@import '@/styles/base';
+
+.home_intro {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  min-height: calc(100 * var(--vh));
+  padding: px-to-rem(120) var(--wrap) px-to-rem(40);
+
+  > * + * {
+    margin-top: px-to-rem(32);
+  }
+
+  .description {
+    max-width: 30em;
+  }
+}
+
+.description {
+  font-size: px-to-rem(16);
+  line-height: 120%;
+}

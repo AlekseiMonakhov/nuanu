@@ -1,0 +1,24 @@
+@import '@/styles/base';
+
+.list {
+  @include reset-ul;
+}
+
+.li {
+  display: flex;
+
+  + .li {
+    margin-top: px-to-rem(16);
+  }
+}
+
+.anchor {
+  font-size: px-to-rem(30);
+  line-height: 100%;
+  text-decoration: none;
+  color: currentColor;
+
+  &.active {
+    text-decoration: underline;
+  }
+}

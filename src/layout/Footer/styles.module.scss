@@ -1,0 +1,13 @@
+@import '@/styles/base';
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: px-to-rem(30) 0;
+
+  border-top: 1px solid rgba(var(--color-white--rgb), 0.5);
+  background-color: var(--color-black);
+  color: var(--color-white);
+}

@@ -1,0 +1,11 @@
+@import '@/styles/base';
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: px-to-rem(30);
+}
+
+.home_intro {
+  background-color: rgba(var(--color-white--rgb), 0.1);
+}

@@ -1,0 +1,23 @@
+@mixin hover() {
+  &:hover {
+    @content;
+  }
+}
+
+@mixin non-mobile-hover ($useGlobal: true) {
+  @include non-mobile-device ($useGlobal) {
+    @include hover {
+      @content;
+    }
+  }
+}
+
+@mixin hover-focus-visible {
+  &:hover {
+    @content;
+  }
+
+  &:focus-visible {
+    @content;
+  }
+}

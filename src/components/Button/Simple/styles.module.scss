@@ -1,0 +1,21 @@
+@import '@/styles/base';
+
+.button {
+  @include reset-button;
+  
+  padding: px-to-rem(14) px-to-rem(20);
+  border: 1px solid rgba(var(--color-white--rgb), 0.5);
+  background-color: var(--color-black);
+
+  text-decoration: none;
+  font-size: px-to-rem(16);
+  line-height: 100%;
+  color: var(--color-white);
+
+  @include transition(opacity 0.25s);
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+}

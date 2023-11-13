@@ -1,0 +1,42 @@
+@import '@/styles/base';
+
+.form_input_box {
+  .label {
+    display: block;
+    width: 100%;
+  }
+  
+  .error {
+    margin: px-to-rem(8) 0 0;
+  }
+}
+
+.label {
+  .label_text {
+    margin-bottom: px-to-rem(8);
+  }
+}
+
+.label_text {
+  display: block;
+  font-size: px-to-rem(13);
+  line-height: 140%;
+  text-transform: uppercase;
+}
+
+.input {
+  display: block;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+
+  @include transition(border-color 0.35s);
+
+  &.is_error {
+    border-color: var(--color-squara-red);
+  }
+}
+
+.error {
+  font-size: px-to-rem(14);
+  color: var(--color-squara-red);
+}
