@@ -1,0 +1,146 @@
+@import '@/styles/base';
+
+.button {
+  @include reset-button;
+  text-decoration: none;
+
+  position: relative;
+
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(7px);
+  overflow: hidden;
+  
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+
+  @include viewport-desktop {
+    height: px-to-rem(60);
+    border-radius: 12px;
+    padding: 0 px-to-rem(25);
+
+    font-size: px-to-rem(20);
+  }
+
+  @include viewport-tablet {
+    height: px-to-rem(56);
+    border-radius: 11px;
+    padding: 0 px-to-rem(22);
+    
+    font-size: px-to-rem(18);
+  }
+
+  @include viewport-phone {
+    height: px-to-rem(50);
+    border-radius: 10px;
+    padding: 0 px-to-rem(20);
+    
+    font-size: px-to-rem(18);
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    @include absolute-fullsize;
+
+    opacity: 0;
+    @include transition(opacity 0.25s);
+  }
+
+  @include non-mobile-hover {
+    &:not(:disabled) {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.theme_light {
+    background-color: rgba(var(--color-primary-base--rgb), 0.5);
+    color: var(--color-primary-dark-base);
+
+    &::before {
+      background-color: rgba(var(--color-primary-base--rgb), 0.3);
+    }
+  }
+
+  &.theme_dark {
+    background-color: rgba(var(--color-58--rgb), 0.5);
+    color: var(--color-white);
+
+    &::before {
+      background-color: rgba(var(--color-58--rgb), 0.3);
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  .content {
+    position: relative;
+  }
+
+  svg {
+    display: block;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  @include viewport-desktop {
+    > * + * {
+      margin-left: px-to-rem(15);
+    }
+  }
+
+  @include viewport-tablet {
+    > * + * {
+      margin-left: px-to-rem(12);
+    }
+  }
+
+  @include viewport-phone {
+    > * + * {
+      margin-left: px-to-rem(10);
+    }
+  }
+}
+
+.sup {
+  opacity: 0.5;
+}
+
+.icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon_play {
+  height: px-to-rem(20);
+  width: auto;
+  
+  &.desktop {
+    @include viewport-phone {
+      display: none;
+    }
+  }
+  
+  &.phone {
+    @include viewport-tablet-min {
+      display: none;
+    }
+  }
+}
