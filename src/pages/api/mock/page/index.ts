@@ -12,38 +12,143 @@ const handler = async (
     templateName: 'Home',
 
     template: {
-      components: [
-        {
-          key: 0,
-          componentName: 'HomeIntro',
-          props: {
-            title: 'Home Page',
-            description:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          },
-          children: null,
-        },
-        {
-          key: 1,
-          componentName: 'HomeAbout',
-          props: {
-            description:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          },
-          children: [
-            {
-              key: 0,
-              componentName: 'HomeLink',
-              props: {
-                name: 'Read more',
-                href: 'https://google.com',
-                isExternal: true,
+      stories: {
+        items: [
+          {
+            key: 0,
+            image: {
+              original: '',
+              thumb: '/lorem/home/stories/0.jpg',
+              thumbWebp: '',
+              sizes: {
+                640: '',
+                750: '',
+                1024: '',
+                1440: '',
+                1920: '',
+                2560: '',
               },
-              children: null,
+              sizesWebp: {
+                640: '',
+                750: '',
+                1024: '',
+                1440: '',
+                1920: '',
+                2560: '',
+              },
             },
-          ],
-        },
-      ],
+            video: null,
+            contentTheme: 'dark',
+            label: 'City of the future',
+            action: {
+              kind: 'video_modal',
+              player: {
+                source: 'mp4',
+                src: '/lorem/video.mp4',
+                id: '',
+              },
+              duration: '2:09',
+            },
+          },
+          {
+            key: 1,
+            image: {
+              original: '',
+              thumb: '/lorem/home/stories/1.jpg',
+              thumbWebp: '',
+              sizes: {
+                640: '',
+                750: '',
+                1024: '',
+                1440: '',
+                1920: '',
+                2560: '',
+              },
+              sizesWebp: {
+                640: '',
+                750: '',
+                1024: '',
+                1440: '',
+                1920: '',
+                2560: '',
+              },
+            },
+            video: null,
+            contentTheme: 'dark',
+            label: 'Some label',
+            action: {
+              kind: 'link',
+              href: 'https://google.com/',
+              target: '_blank',
+              text: 'Apply now',
+            },
+          },
+          {
+            key: 2,
+            image: {
+              original: '',
+              thumb: '/lorem/home/stories/2.jpg',
+              thumbWebp: '',
+              sizes: {
+                640: '',
+                750: '',
+                1024: '',
+                1440: '',
+                1920: '',
+                2560: '',
+              },
+              sizesWebp: {
+                640: '',
+                750: '',
+                1024: '',
+                1440: '',
+                1920: '',
+                2560: '',
+              },
+            },
+            video: null,
+            contentTheme: 'dark',
+            label: 'Suara festival 2024 OPEN CALL',
+            action: null,
+          },
+          {
+            key: 3,
+            image: {
+              original: '',
+              thumb: '/lorem/home/stories/3.jpg',
+              thumbWebp: '',
+              sizes: {
+                640: '',
+                750: '',
+                1024: '',
+                1440: '',
+                1920: '',
+                2560: '',
+              },
+              sizesWebp: {
+                640: '',
+                750: '',
+                1024: '',
+                1440: '',
+                1920: '',
+                2560: '',
+              },
+            },
+            video: null,
+            contentTheme: 'light',
+            label: 'City of the future',
+            action: {
+              kind: 'video_modal',
+              player: {
+                source: 'mp4',
+                src: '/lorem/video.mp4',
+                id: '',
+              },
+              duration: '2:02',
+            },
+          },
+        ],
+      },
     },
   });
 };

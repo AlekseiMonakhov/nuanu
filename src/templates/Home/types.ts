@@ -1,6 +1,5 @@
-import { TRegistryComponentsAPI } from 'rc-api-registry';
-import { registry } from './registry';
+import { IStoriesFrame } from '@/components/Stories/Frame/types';
 
 export interface IHome {
-  components: TRegistryComponentsAPI<typeof registry>;
+  stories?: IStoriesFrame;
 }
