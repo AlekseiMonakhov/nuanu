@@ -20,7 +20,7 @@ export function useTapNavigation({
 
   useEventListener({
     ref,
-    target: 'pointerdown',
+    target: 'pointerup',
     listener: (event) => {
       if (!ref.current || event.which !== 1) {
         return;

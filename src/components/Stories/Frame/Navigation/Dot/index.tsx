@@ -71,7 +71,7 @@ export const Dot: FC<IProps> = ({
       style={style}
       type="button"
       onClick={onClick}
-      onPointerDownCapture={(event) => event.stopPropagation()}
+      onPointerUpCapture={(event) => event.stopPropagation()}
       aria-label={label ?? `Slide #${index + 1}`}
       aria-current={isActive}
     >

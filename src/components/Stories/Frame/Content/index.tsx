@@ -26,7 +26,7 @@ export const StoriesContent: FC<IProps> = ({
     <div
       className={cn(className, styles.content, isActive && styles.active)}
       style={style}
-      onPointerDownCapture={(event) => event.stopPropagation()}
+      onPointerUpCapture={(event) => event.stopPropagation()}
       aria-hidden={!isActive}
     >
       {label && (
