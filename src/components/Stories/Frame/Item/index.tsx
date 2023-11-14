@@ -11,7 +11,8 @@ export const StoriesItem: FC<IProps> = ({
   duration,
   isActive,
   onHidden,
-  ...props
+  image,
+  video,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -46,7 +47,8 @@ export const StoriesItem: FC<IProps> = ({
       className={cn(className, styles.item)}
       style={style}
       aria-hidden={!isActive}
-      {...props}
+      image={image}
+      video={video}
     />
   );
 };

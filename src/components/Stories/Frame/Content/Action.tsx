@@ -1,10 +1,10 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { CtaButton } from '@/components/Button/Cta';
 import { useStoreLexicon } from '@/store/reducers/page';
 import { VideoModalAnchor } from '@/components/Video/Modal/Anchor';
 import { IActionProps } from './types';
 
-export const Action: FC<IActionProps> = ({ action, theme }) => {
+const Component: FC<IActionProps> = ({ action, theme }) => {
   const { navigation: lexicon } = useStoreLexicon();
 
   if (action.kind === 'link') {
@@ -40,3 +40,5 @@ export const Action: FC<IActionProps> = ({ action, theme }) => {
 
   return null;
 };
+
+export const Action = memo(Component);

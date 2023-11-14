@@ -1,4 +1,4 @@
-import { FC, useRef, useState } from 'react';
+import { FC, memo, useRef, useState } from 'react';
 import cn from 'classnames';
 import { useEvent, useOnInViewport } from '@anton.bobrov/react-hooks';
 import { TKey } from '@anton.bobrov/react-components';
@@ -10,7 +10,7 @@ import { useTapNavigation } from './utils/useTapNavigation';
 import { StoriesNavigation } from './Navigation';
 import { StoriesContent } from './Content';
 
-export const StoriesFrame: FC<IProps> = ({
+const Component: FC<IProps> = ({
   className,
   style,
   items,
@@ -98,3 +98,5 @@ export const StoriesFrame: FC<IProps> = ({
     </div>
   );
 };
+
+export const StoriesFrame = memo(Component);
