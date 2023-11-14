@@ -1,0 +1,41 @@
+@import '@/styles/base';
+
+.navigation {
+  --count: 1;
+  --gap: 6px;
+  --height: 27px;
+  --bottom: 0;
+  --left: #{px-to-rem(12)};
+  --width: calc(100% - var(--left) * 2);
+  --dot-width: calc((100% - (var(--count) - 1) * var(--gap)) / var(--count));
+
+  position: absolute;
+  z-index: 1;
+  left: var(--left);
+  bottom: var(--bottom);
+  width: var(--width);
+  
+  .children {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.dots_list {
+  @include reset-ul;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .dots_item {
+    width: var(--dot-width);
+  }
+
+  .dot {
+    height: var(--height);
+  }
+}

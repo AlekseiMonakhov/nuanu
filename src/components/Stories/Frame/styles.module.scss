@@ -1,0 +1,46 @@
+@import '@/styles/base';
+
+.stories_frame {
+  @include absolute-fullsize;
+  overflow: hidden;
+
+  user-select: none;
+
+  background-color: var(--color-black);
+  color: var(--color-white);
+  
+  .content {
+    @include viewport-tablet-min {
+      left: calc((var(--dot-width) + var(--gap)) * var(--index));
+      width: var(--dot-width);
+    }
+
+    @include viewport-desktop {
+      bottom: calc(100% + #{px-to-rem(16)});
+    }
+  }
+}
+
+.stories {
+  @include absolute-fullsize;
+  z-index: 0;
+
+  &.has_overlay {
+    &::after {
+      content: '';
+      display: block;
+      @include absolute-fullsize;
+      z-index: 1;
+      background-color: var(--color-black);
+      opacity: 0.3;
+    }
+  }
+}
+
+.item {
+  z-index: 0;
+
+  &.active {
+    z-index: 1;
+  }
+}

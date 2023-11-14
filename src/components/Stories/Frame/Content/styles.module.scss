@@ -1,0 +1,58 @@
+@import '@/styles/base';
+
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  &:not(.active) {
+    pointer-events: none;
+  }
+}
+
+.label {
+  margin: 0;
+
+  line-height: px-to-rem(34);
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(22);
+  }
+  @include viewport-tablet {
+    font-size: px-to-rem(18);
+  }
+  @include viewport-phone {
+    font-size: px-to-rem(15);
+  }
+
+  opacity: 0;
+  @include transition(opacity 0.25s);
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.action {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  > * + * {
+    margin-left: px-to-rem(10);
+  }
+
+  @include viewport-desktop {
+    padding-top: px-to-rem(24);    
+  }
+  @include viewport-tablet {
+    padding-top: px-to-rem(15);    
+  }
+  @include viewport-phone {
+    padding-top: px-to-rem(6);    
+  }
+}

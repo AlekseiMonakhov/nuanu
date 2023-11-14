@@ -1,0 +1,51 @@
+@import '@/styles/base';
+
+.dot {
+  @include reset-button;
+
+  outline: none;
+
+  &:focus-visible {
+    .progress_container {
+      box-shadow: 0 0 0 5px rgba(var(--color-white--rgb), 0.5);
+    }
+  }
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  .progress_container {
+    width: 100%;
+    height: 3px;
+  }
+}
+
+.progress_container {
+  position: relative;
+
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: rgba(var(--color-white--rgb), 0.3);
+
+  &:not(.has_animation) {
+    @include transition(background-color 0.25s);
+
+    &.active {
+      background-color: var(--color-white);
+    }
+
+    .progress {
+      display: none;
+    }
+  }
+}
+
+.progress {
+  @include absolute-fullsize;
+  border-radius: inherit;
+  background-color: var(--color-white);
+}
