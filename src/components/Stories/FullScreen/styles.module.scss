@@ -1,0 +1,17 @@
+@import '@/styles/base';
+
+.stories_fullscreen {
+  .navigation {
+    --height: 39px;
+
+    @include viewport-tablet-min {
+      --bottom: calc(4.83437 * var(--vh) - 18px);
+      --left: var(--wrap);
+      --gap: 20px;
+    }
+
+    @include viewport-phone {
+      --left: #{px-to-rem(15)};
+    }
+  }
+}
