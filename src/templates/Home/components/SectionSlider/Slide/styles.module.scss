@@ -1,0 +1,34 @@
+@import '@/styles/base';
+
+.slide {
+  position: absolute;
+  top: calc(var(--gap) * -1);
+  left: 0;
+  width: 100%;
+  height: calc(100% + var(--gap) * 2);
+  
+  transform: translate3d(0, 150%, 0);
+  will-change: transform;
+
+  border-radius: inherit;
+
+  &.default_active {
+    transform: none;
+  }
+}
+
+.wrapper {
+  position: absolute;
+  top: var(--gap);
+  left: 0;
+  width: 100%;
+  height: calc(100% - var(--gap) * 2);
+
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.parallax_wrapper {
+  @include absolute-fullsize;
+  will-change: transform;
+}

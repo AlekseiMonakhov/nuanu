@@ -1,0 +1,24 @@
+@import '@/styles/base';
+
+.section_slider {
+  --height: calc(100 * var(--vh));
+  --slide-height: calc(var(--height) - 2 * var(--gap));
+  --gap: 4px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--height);
+}
+
+.scene {
+  position: absolute;
+  top: var(--gap);
+  left: var(--gap);
+  width: calc(100% - var(--gap) * 2);
+  height: calc(100% - var(--gap) * 2);
+  
+  border-radius: 10px;
+  overflow: hidden;
+}
