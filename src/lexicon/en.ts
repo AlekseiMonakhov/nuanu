@@ -12,6 +12,8 @@ const lexicon: DeepRequired<ILexicon> = {
   navigation: {
     close: 'Close',
     breadcrumbs: 'Breadcrumbs',
+    play: 'Play',
+    watch: 'Watch',
   },
 
   menu: {

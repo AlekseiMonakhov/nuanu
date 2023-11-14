@@ -9,6 +9,8 @@ export interface ILexicon {
   navigation: {
     close: string;
     breadcrumbs: string;
+    play: string;
+    watch: string;
   };
 
   menu: {
