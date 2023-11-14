@@ -7,10 +7,14 @@ import { TButtonSimpleProps } from './types';
 const Component = forwardRef<
   HTMLButtonElement | HTMLAnchorElement,
   TButtonSimpleProps
->(({ className, style, text, ...props }, ref) => (
+>(({ className, style, text, hasBackground, ...props }, ref) => (
   <ButtonAnchor
     ref={ref}
-    className={cn(styles.button, className)}
+    className={cn(
+      styles.button,
+      className,
+      hasBackground && styles.has_background,
+    )}
     style={style}
     title={text}
     {...props}
