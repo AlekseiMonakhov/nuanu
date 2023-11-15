@@ -14,6 +14,10 @@ const lexicon: DeepRequired<ILexicon> = {
     breadcrumbs: 'Breadcrumbs',
     play: 'Play',
     watch: 'Watch',
+    next: 'Next',
+    previous: 'Previous',
+    changeSlide: 'Change Slide',
+    slideNumber: 'Slide #',
   },
 
   menu: {

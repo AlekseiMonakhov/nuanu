@@ -11,6 +11,10 @@ export interface ILexicon {
     breadcrumbs: string;
     play: string;
     watch: string;
+    next: string;
+    previous: string;
+    changeSlide: string;
+    slideNumber: string;
   };
 
   menu: {
