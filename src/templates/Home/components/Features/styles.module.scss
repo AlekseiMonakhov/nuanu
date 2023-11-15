@@ -1,0 +1,10 @@
+@import '@/styles/base';
+
+.overlay {
+  @include absolute-fullsize;
+  background: linear-gradient(67deg, rgba(0, 0, 0, 0.2) 0.32%, rgba(0, 0, 0, 0) 48.71%);
+  
+  svg {
+    @include absolute-fullsize;
+  }
+}

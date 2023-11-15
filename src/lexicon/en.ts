@@ -21,6 +21,12 @@ const lexicon: DeepRequired<ILexicon> = {
     open: 'Menu',
     close: 'Close',
   },
+
+  home: {
+    features: {
+      title: 'Features',
+    },
+  },
 };
 
 export default lexicon;

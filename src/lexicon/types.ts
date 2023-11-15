@@ -18,4 +18,10 @@ export interface ILexicon {
     open: string;
     close: string;
   };
+
+  home: {
+    features: {
+      title: 'Features';
+    };
+  };
 }
