@@ -5,12 +5,12 @@ import { useStoreLexicon } from '@/store/reducers/page';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 
-export const HeaderMenu: FC<IProps> = ({ className, style, links }) => {
+export const HeaderInlineMenu: FC<IProps> = ({ className, style, links }) => {
   const { menu: lexicon } = useStoreLexicon();
 
   return (
     <ul
-      className={cn(styles.list, className)}
+      className={cn(styles.header_inline_menu, className)}
       style={style}
       aria-label={lexicon.label}
     >
