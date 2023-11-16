@@ -8,15 +8,30 @@
   align-items: center;
   justify-content: center;
 
-  height: px-to-rem(60);
-  padding: 0 px-to-rem(30);
   border: 1px solid currentColor;
   border-radius: px-to-rem(100);
 
-  font-size: px-to-rem(20);
   font-style: normal;
   font-weight: 400;
   color: var(--color-total-white);
+
+  @include viewport-desktop {
+    height: px-to-rem(60);
+    padding: 0 px-to-rem(30);
+    font-size: px-to-rem(20);
+  }
+
+  @include viewport-tablet {
+    height: px-to-rem(56);
+    padding: 0 px-to-rem(24);
+    font-size: px-to-rem(17);
+  }
+
+  @include viewport-phone {
+    height: px-to-rem(50);
+    padding: 0 px-to-rem(20);
+    font-size: px-to-rem(15);
+  }
 
   &.has_background {
     background-color: var(--color-total-black);
