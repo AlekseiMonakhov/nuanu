@@ -1,9 +1,9 @@
 import { isBrowser, useEventListener } from '@anton.bobrov/react-hooks';
-import { RefObject } from 'react';
+import { useEffect } from 'react';
 
 export function usePageScrollLock(
-  containerRef: RefObject<HTMLElement>,
   isEnabled: boolean,
+  lockScrollClassName: string,
 ) {
   useEventListener({
     ref: isBrowser ? window : null,
@@ -25,4 +25,8 @@ export function usePageScrollLock(
     },
     isDisabled: !isEnabled,
   });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle(lockScrollClassName, isEnabled);
+  }, [isEnabled, lockScrollClassName]);
 }

@@ -1,5 +1,18 @@
 @import '@/styles/base';
 
+.lock_scroll {
+  overflow: hidden;
+
+  body {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .section_slider {
   --height: calc(100 * var(--vh));
   --slide-height: calc(var(--height) - 2 * var(--gap));
@@ -42,6 +55,16 @@
   .scroll_down {
     margin-top: var(--gap);
     flex-shrink: 0;
+
+    @include viewport-tablet-min {
+      display: none;
+    }
+
+    @include viewport-phone {
+      @media (orientation:landscape) {
+        display: none;
+      }
+    }
   }
 }
 
@@ -52,27 +75,4 @@
   
   border-radius: 10px;
   overflow: hidden;
-}
-
-.scroll_down {
-  @include reset-button;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  width: 100%;
-  height: px-to-rem(70);
-  padding: 0 px-to-rem(32);
-  
-  border-radius: px-to-rem(100);
-  
-  background-color: var(--color-primary-dark-base);
-  color: var(--color-total-white);
-
-  font-size: px-to-rem(20);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130%;
 }

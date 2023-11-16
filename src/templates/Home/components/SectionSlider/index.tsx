@@ -1,14 +1,17 @@
 import { FC, ReactElement, memo, useMemo, useRef, useState } from 'react';
 import cn from 'classnames';
 import { useDatGUISettings } from '@anton.bobrov/react-dat-gui';
+import { clamp } from '@anton.bobrov/vevet-init';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 import { SectionSliderSlide } from './Slide';
 import { useAnimation } from './utils/useAnimation';
+import { NavigationButton } from './NavigationButton';
 
 const Component: FC<IProps> = ({
   className,
   style,
+  names,
   onEndProgress,
   children: childrenProp,
 }) => {
@@ -16,6 +19,7 @@ const Component: FC<IProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
 
   const [isHidden, setIsHidden] = useState(false);
+  const [step, setStep] = useState(0);
 
   const children = useMemo(
     () =>
@@ -48,6 +52,8 @@ const Component: FC<IProps> = ({
     name,
     onEndProgress,
     onHide: () => setIsHidden(true),
+    onStep: setStep,
+    lockScrollClassName: styles.lock_scroll,
   });
 
   return (
@@ -75,20 +81,19 @@ const Component: FC<IProps> = ({
           ))}
         </div>
 
-        <button
-          type="button"
+        <NavigationButton
           className={styles.scroll_down}
-          onClick={() => {
-            handler?.to({ value: 1, duration: 750 });
-          }}
-        >
-          Navigation
-        </button>
+          text={names[clamp(step + 1, [0, length])]}
+          onClick={() =>
+            handler?.to({
+              value: clamp(step + 1, [0, length]),
+              duration: 750,
+            })
+          }
+        />
       </div>
     </div>
   );
 };
-
-Component.displayName = 'HomeSectionSlider';
 
 export const HomeSectionSlider = memo(Component);

@@ -11,6 +11,8 @@ interface IProps {
   name: string;
   onEndProgress: (progress: number) => void;
   onHide: () => void;
+  onStep: (step: number) => void;
+  lockScrollClassName: string;
 }
 
 const SETTINGS = {
@@ -23,14 +25,20 @@ export function useAnimation({
   containerRef,
   length,
   name,
-  onEndProgress,
-  onHide,
+  onEndProgress: onEndProgressProp,
+  onHide: onHideProp,
+  onStep: onStepProp,
+  lockScrollClassName,
 }: IProps) {
   const [handler, setHandler] = useState<SlideProgress | null>(null);
 
   const [isPageScrollLocked, setIsPageScrollLocked] = useState(true);
 
-  usePageScrollLock(containerRef, isPageScrollLocked);
+  const onEndProgress = useEvent(onEndProgressProp);
+  const onHide = useEvent(onHideProp);
+  const onStep = useEvent(onStepProp);
+
+  usePageScrollLock(isPageScrollLocked, lockScrollClassName);
 
   useDatGUISettings({
     name: `${name} Progress Handler`,
@@ -100,9 +108,10 @@ export function useAnimation({
     setHandler(instance);
 
     instance.addCallback('render', () => render());
+    instance.addCallback('step', () => onStep(instance.steppedProgress));
 
     return () => instance.destroy();
-  }, [length, ref, render]);
+  }, [length, onStep, ref, render]);
 
   return { handler };
 }
