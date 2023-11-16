@@ -1,7 +1,17 @@
-import { FC, ReactElement, memo, useMemo, useRef, useState } from 'react';
+import {
+  FC,
+  ReactElement,
+  memo,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import cn from 'classnames';
 import { useDatGUISettings } from '@anton.bobrov/react-dat-gui';
 import { clamp } from '@anton.bobrov/vevet-init';
+import { headerSlice } from '@/store/reducers/header';
+import store from '@/store/store';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 import { SectionSliderSlide } from './Slide';
@@ -55,6 +65,12 @@ const Component: FC<IProps> = ({
     onStep: setStep,
     lockScrollClassName: styles.lock_scroll,
   });
+
+  useEffect(() => {
+    store.dispatch(
+      headerSlice.actions.setTheme(step === length ? 'light' : 'dark'),
+    );
+  }, [length, step]);
 
   return (
     <div
