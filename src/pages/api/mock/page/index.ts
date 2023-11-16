@@ -147,9 +147,9 @@ const handler = async (
             action: {
               kind: 'video_modal',
               player: {
-                source: 'mp4',
-                src: '/lorem/video.mp4',
-                id: '',
+                source: 'yt',
+                src: '',
+                id: 'BFS9n4B_2xA',
               },
               duration: '2:02',
             },
