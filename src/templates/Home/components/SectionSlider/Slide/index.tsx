@@ -1,20 +1,21 @@
 import { FC, memo, useEffect, useRef } from 'react';
 import cn from 'classnames';
 import { useEvent } from '@anton.bobrov/react-hooks';
-import { ProgressHandler } from '@/utils/utils/ProgressHandler';
+import { SlideProgress, clamp } from '@anton.bobrov/vevet-init';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 
 const Component: FC<IProps> = ({
   children,
   index,
+  length,
   handler: handlerProp,
   yParallax,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const parallaxWrapperRef = useRef<HTMLDivElement>(null);
 
-  const render = useEvent((handler: ProgressHandler) => {
+  const render = useEvent((handler: SlideProgress) => {
     const container = ref.current;
     const parallaxWrapper = parallaxWrapperRef.current;
 
@@ -23,9 +24,12 @@ const Component: FC<IProps> = ({
     }
 
     const { progress } = handler;
-    const y = 100 * index + progress * -100;
+    const clampProgress = clamp(progress, [0, length - 1]);
 
-    container.style.transform = `translate3d(0, ${y}%, 0)`;
+    const y = 100 * index + progress * -100;
+    const clampY = 100 * index + clampProgress * -100;
+
+    container.style.transform = `translate3d(0, ${clampY}%, 0)`;
     parallaxWrapper.style.transform = `translate3d(0, ${y * -yParallax}%, 0)`;
   });
 
@@ -34,9 +38,7 @@ const Component: FC<IProps> = ({
       return undefined;
     }
 
-    const event = handlerProp.callbacks.add('render', () =>
-      render(handlerProp),
-    );
+    const event = handlerProp.addCallback('render', () => render(handlerProp));
 
     return () => event.remove();
   }, [handlerProp, render]);

@@ -1,9 +1,10 @@
-import { ProgressHandler } from '@/utils/utils/ProgressHandler';
+import { SlideProgress } from '@anton.bobrov/vevet-init';
 import { ReactElement } from 'react';
 
 export interface IProps {
   children: ReactElement;
   index: number;
-  handler: ProgressHandler | null;
+  length: number;
+  handler: SlideProgress | null;
   yParallax: number;
 }

@@ -1,84 +1,94 @@
-import {
-  FC,
-  ReactElement,
-  memo,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import { FC, ReactElement, memo, useMemo, useRef, useState } from 'react';
 import cn from 'classnames';
-import { ProgressHandler } from '@/utils/utils/ProgressHandler';
 import { useDatGUISettings } from '@anton.bobrov/react-dat-gui';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 import { SectionSliderSlide } from './Slide';
+import { useAnimation } from './utils/useAnimation';
 
 const Component: FC<IProps> = ({
   className,
   style,
+  onEndProgress,
   children: childrenProp,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const name = 'section-slider';
-  const { length } = childrenProp;
-
-  const [handler, setHandler] = useState<ProgressHandler | null>(null);
-
-  const { settings } = useDatGUISettings({
-    name: `${name} parallax`,
-    settings: {
-      yParallax: { value: 0.5, type: 'number', min: 0, max: 0.8, step: 0.001 },
-    },
-  });
+  const [isHidden, setIsHidden] = useState(false);
 
   const children = useMemo(
-    () => childrenProp.filter((child) => !!child) as ReactElement[],
+    () =>
+      (childrenProp.filter((child) => !!child) as ReactElement[]).map(
+        (child, index) => ({ ...child, key: index }),
+      ),
     [childrenProp],
   );
 
-  useEffect(() => {
-    if (!ref.current) {
-      return undefined;
-    }
+  const name = 'Section Slider';
+  const { length } = childrenProp;
 
-    const instance = new ProgressHandler({
-      container: ref.current,
-      min: 0,
-      max: length,
-      step: 1,
-      ease: 0.2,
-      friction: 0.2,
-      name,
-      hasDrag: false,
-    });
+  const { settings } = useDatGUISettings({
+    name: `${name} Parallax`,
+    settings: {
+      yParallax: {
+        value: 0.5,
+        type: 'number',
+        min: 0,
+        max: 0.8,
+        step: 0.001,
+      },
+    },
+  });
 
-    setHandler(instance);
-
-    return () => instance.destroy();
-  }, [length]);
+  const { handler } = useAnimation({
+    ref,
+    containerRef,
+    length,
+    name,
+    onEndProgress,
+    onHide: () => setIsHidden(true),
+  });
 
   return (
     <div
       ref={ref}
-      className={cn(className, styles.section_slider)}
+      className={cn(
+        className,
+        styles.section_slider,
+        isHidden && styles.hidden,
+      )}
       style={style}
     >
-      <div className={styles.scene}>
-        {children.map((child, index) => (
-          <SectionSliderSlide
-            key={child.key}
-            index={index}
-            handler={handler}
-            yParallax={settings.yParallax}
-          >
-            {child}
-          </SectionSliderSlide>
-        ))}
+      <div ref={containerRef} className={styles.container}>
+        <div className={styles.scene}>
+          {children.map((child, index) => (
+            <SectionSliderSlide
+              key={child.key}
+              index={index}
+              length={length}
+              handler={handler}
+              yParallax={settings.yParallax}
+            >
+              {child}
+            </SectionSliderSlide>
+          ))}
+        </div>
+
+        <button
+          type="button"
+          className={styles.scroll_down}
+          onClick={() => {
+            handler?.to({ value: 1, duration: 750 });
+          }}
+        >
+          Navigation
+        </button>
       </div>
     </div>
   );
 };
+
+Component.displayName = 'HomeSectionSlider';
 
 export const HomeSectionSlider = memo(Component);
