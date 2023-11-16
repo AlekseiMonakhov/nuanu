@@ -31,7 +31,7 @@
   overflow: hidden;
   background-color: rgba(var(--color-white--rgb), 0.3);
 
-  &:not(.has_animation) {
+  &:not(.has_auto_change_animation) {
     @include transition(background-color 0.25s);
 
     &.active {

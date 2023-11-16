@@ -1,7 +1,7 @@
 @import '@/styles/base';
 
 .stories_fullscreen {
-  .navigation {
+  .dots_navigation {
     --height: 39px;
 
     @include viewport-tablet-min {

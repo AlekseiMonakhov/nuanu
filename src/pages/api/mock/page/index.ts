@@ -49,6 +49,8 @@ const handler = async (
               },
               duration: '2:09',
             },
+            title: 'Changing the way we live, work & play',
+            description: `Nuanu isn't just a city in Bali's heart; it's a blend of modernity and tradition, embodying urban living in harmony with nature${''}`,
           },
           {
             key: 1,
@@ -82,6 +84,8 @@ const handler = async (
               target: '_blank',
               text: 'Apply now',
             },
+            title: 'Some Title',
+            description: '',
           },
           {
             key: 2,
@@ -108,8 +112,11 @@ const handler = async (
             },
             video: null,
             contentTheme: 'dark',
-            label: 'Suara festival 2024 OPEN CALL',
+            label: 'Suara festival 2024 Open Call',
             action: null,
+            title: 'Suara festival 2024 Open Call',
+            description:
+              'Open to artists, architects and cultural workers, we provide grants to help you realize your vision',
           },
           {
             key: 3,
@@ -146,6 +153,8 @@ const handler = async (
               },
               duration: '2:02',
             },
+            title: 'Changing the way we live, work & play',
+            description: `Nuanu isn't just a city in Bali's heart; it's a blend of modernity and tradition, embodying urban living in harmony with nature${''}`,
           },
         ],
       },

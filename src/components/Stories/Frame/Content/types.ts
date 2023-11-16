@@ -6,19 +6,20 @@ type TCTA =
 
 type TTheme = 'dark' | 'light';
 
-export interface IActionProps {
+export interface IStoriesFrameContentActionProps {
   action: TCTA;
   theme: TTheme;
 }
 
-export interface IStoriesContentProps {
+export interface IStoriesFrameContentProps {
   contentTheme?: TTheme;
   /** nl2br */
   label?: string | null;
   action?: TCTA | null;
 }
 
-export interface IProps extends IStoriesContentProps, IBaseComponent {
+export interface IProps extends IStoriesFrameContentProps, IBaseComponent {
   isActive: boolean;
   isHovered: boolean;
+  index: number;
 }

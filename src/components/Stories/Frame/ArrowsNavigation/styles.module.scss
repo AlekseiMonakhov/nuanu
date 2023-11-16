@@ -1,0 +1,42 @@
+@import '@/styles/base';
+
+.next,
+.prev {
+  @include reset-button;
+  outline: none;
+  cursor: default;
+
+  position: absolute;
+  top: 0;
+  width: 15%;
+  height: 100%;
+
+  &::before {
+    content: '';
+    display: block;
+    @include absolute-fullsize;
+
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25));
+
+    opacity: 0;
+    @include transition(opacity 0.25s);
+  }
+
+  @include non-mobile-hover {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.next {
+  right: 0;
+
+  &::before {
+    transform: rotate(180deg);
+  }
+}
+
+.prev {
+  left: 0;
+}

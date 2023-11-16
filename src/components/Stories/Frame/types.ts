@@ -1,43 +1,28 @@
-import { IMediaVideoOrImageProps } from '@/components/Media/VideoOrImage/types';
 import { IBaseComponent, TKey } from '@anton.bobrov/react-components';
-import { CSSProperties, ReactElement, ReactNode, RefObject } from 'react';
-import { IStoriesContentProps } from './Content/types';
+import { ReactNode } from 'react';
+import { IStories, IStoriesItem } from '../global';
+import { TStoriesFrameDotsNavigationRenderer } from './DotsNavigation/types';
 
-export interface IStoriesFrameItem
-  extends IMediaVideoOrImageProps,
-    IStoriesContentProps {
-  key: TKey;
-}
-
-export interface IStoriesFrame {
-  items: IStoriesFrameItem[];
-}
-
-export interface IStoriesFrameProps extends IStoriesFrame {
+export interface IStoriesFrameProps<Item extends IStoriesItem>
+  extends IStories<Item> {
   activeKey?: TKey;
   onActiveKey?: (key: TKey) => void;
+  onPrev?: () => void;
+  onNext?: () => void;
+  renderDotsNavigation?: TStoriesFrameDotsNavigationRenderer;
+  /** @default 250 */
   changeDuration?: number;
-  eventsEmitterRef?: RefObject<HTMLElement>;
+  /** @default false */
   hasAutoChange?: boolean;
+  /** @default 5000 */
   autoChangeDuration?: number;
-  renderNavigation?: TStoriesFrameNavigationRenderer;
+  /** @default false */
   hasOverlay?: boolean;
-}
-
-export interface IStoriesFrameNavigationRendererProps {
-  items: IStoriesFrameItem[];
-  activeKey: TKey;
-  onActiveKey: (key: TKey) => void;
-  hasAutoChange: boolean;
-  autoChangeDuration: number;
-  onDotHover: (key: TKey | null) => void;
-  className?: string;
-  style?: CSSProperties;
+  /** @default false */
+  isDisabled?: boolean;
   children?: ReactNode;
 }
 
-export type TStoriesFrameNavigationRenderer = (
-  props: IStoriesFrameNavigationRendererProps,
-) => ReactElement;
-
-export interface IProps extends IStoriesFrameProps, IBaseComponent {}
+export interface IProps
+  extends IStoriesFrameProps<IStoriesItem>,
+    IBaseComponent {}

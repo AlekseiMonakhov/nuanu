@@ -1,20 +1,21 @@
-import { FC, useEffect, useRef } from 'react';
+import { FC, memo, useEffect, useRef } from 'react';
 import { MediaVideoOrImage } from '@/components/Media/VideoOrImage';
 import { useTimeline } from '@anton.bobrov/react-vevet-hooks';
-import cn from 'classnames';
+import { useStoreLexicon } from '@/store/reducers/page';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 
-export const StoriesItem: FC<IProps> = ({
-  className,
-  style,
+const Component: FC<IProps> = ({
   duration,
   isActive,
+  index,
   onHidden,
   image,
   video,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
+
+  const { navigation: lexicon } = useStoreLexicon();
 
   const { play, reverse } = useTimeline({
     duration,
@@ -44,11 +45,15 @@ export const StoriesItem: FC<IProps> = ({
   return (
     <MediaVideoOrImage
       ref={ref}
-      className={cn(className, styles.item)}
-      style={style}
-      aria-hidden={!isActive}
+      className={styles.stories_frame_media}
       image={image}
       video={video}
+      role="group"
+      aria-roledescription="slide"
+      aria-label={`${lexicon.slideNumber + (index + 1)}`}
+      aria-hidden={!isActive}
     />
   );
 };
+
+export const StoriesFrameMedia = memo(Component);

@@ -2,9 +2,9 @@ import { FC, memo } from 'react';
 import { CtaButton } from '@/components/Button/Cta';
 import { useStoreLexicon } from '@/store/reducers/page';
 import { VideoModalAnchor } from '@/components/Video/Modal/Anchor';
-import { IActionProps } from './types';
+import { IStoriesFrameContentActionProps } from './types';
 
-const Component: FC<IActionProps> = ({ action, theme }) => {
+const Component: FC<IStoriesFrameContentActionProps> = ({ action, theme }) => {
   const { navigation: lexicon } = useStoreLexicon();
 
   if (action.kind === 'link') {

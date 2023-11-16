@@ -1,6 +1,6 @@
 @import '@/styles/base';
 
-.navigation {
+.stories_frame_dots_navigation {
   --count: 1;
   --gap: 6px;
   --height: 27px;
@@ -10,7 +10,6 @@
   --dot-width: calc((100% - (var(--count) - 1) * var(--gap)) / var(--count));
 
   position: absolute;
-  z-index: 1;
   left: var(--left);
   bottom: var(--bottom);
   width: var(--width);

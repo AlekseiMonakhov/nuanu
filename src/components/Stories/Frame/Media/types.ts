@@ -1,8 +1,8 @@
 import { IMediaVideoOrImageProps } from '@/components/Media/VideoOrImage/types';
-import { IBaseComponent } from '@anton.bobrov/react-components';
 
-export interface IProps extends IMediaVideoOrImageProps, IBaseComponent {
+export interface IProps extends IMediaVideoOrImageProps {
   duration: number;
   isActive: boolean;
+  index: number;
   onHidden: () => void;
 }

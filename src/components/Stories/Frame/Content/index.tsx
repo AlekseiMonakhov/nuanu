@@ -1,32 +1,43 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import cn from 'classnames';
 import { ExpandContent } from '@anton.bobrov/react-components';
 import { useDebouncedProp } from '@anton.bobrov/react-hooks';
+import { useStoreLexicon } from '@/store/reducers/page';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 import { Action } from './Action';
 
-const accordionDuration = 350;
+const ACCORDION_DURATION = 350;
 
-export const StoriesContent: FC<IProps> = ({
+const Component: FC<IProps> = ({
   className,
   style,
   isActive,
   isHovered,
+  index,
   contentTheme = 'dark',
   label,
   action,
 }) => {
   const isAccordionActive = useDebouncedProp(
     isActive,
-    isActive ? accordionDuration : 0,
+    isActive ? ACCORDION_DURATION : 0,
   );
+
+  const { navigation: lexicon } = useStoreLexicon();
 
   return (
     <div
-      className={cn(className, styles.content, isActive && styles.active)}
+      className={cn(
+        className,
+        styles.stories_frame_content,
+        isActive && styles.active,
+      )}
       style={style}
       onPointerUpCapture={(event) => event.stopPropagation()}
+      role="group"
+      aria-roledescription="slide"
+      aria-label={`${lexicon.slideNumber + (index + 1)}`}
       aria-hidden={!isActive}
     >
       {label && (
@@ -39,7 +50,7 @@ export const StoriesContent: FC<IProps> = ({
       {action && (
         <ExpandContent
           isActive={isAccordionActive}
-          duration={accordionDuration}
+          duration={ACCORDION_DURATION}
           hasAlpha={false}
         >
           <div className={styles.action}>
@@ -50,3 +61,5 @@ export const StoriesContent: FC<IProps> = ({
     </div>
   );
 };
+
+export const StoriesFrameContent = memo(Component);

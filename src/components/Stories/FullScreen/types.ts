@@ -1,6 +1,11 @@
 import { IBaseComponent } from '@anton.bobrov/react-components';
-import { IStoriesFrameProps } from '../Frame/types';
+import { IContentItemProps } from './ContentItem/types';
+import { IStories, IStoriesItem } from '../global';
 
-export interface IProps
-  extends Omit<IStoriesFrameProps, 'renderNavigation'>,
-    IBaseComponent {}
+export interface IStoriesFullScreenItem
+  extends IStoriesItem,
+    IContentItemProps {}
+
+export interface IStoriesFullScreen extends IStories<IStoriesFullScreenItem> {}
+
+export interface IProps extends IStoriesFullScreen, IBaseComponent {}

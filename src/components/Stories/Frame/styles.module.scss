@@ -18,29 +18,34 @@
     @include viewport-desktop {
       bottom: calc(100% + #{px-to-rem(16)});
     }
+
+    @include viewport-phone {
+      @media (orientation: landscape) {
+        display: none;
+      }
+    }
   }
 }
 
-.stories {
+.media {
   @include absolute-fullsize;
-  z-index: 0;
 
   &.has_overlay {
     &::after {
       content: '';
       display: block;
       @include absolute-fullsize;
-      z-index: 1;
       background-color: var(--color-black);
       opacity: 0.3;
     }
   }
 }
 
-.item {
-  z-index: 0;
-
-  &.active {
-    z-index: 1;
-  }
+.children {
+  @include absolute-fullsize;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }

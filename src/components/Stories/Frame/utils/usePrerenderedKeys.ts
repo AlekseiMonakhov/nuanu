@@ -2,7 +2,7 @@ import { TKey } from '@anton.bobrov/react-components';
 import { useEvent } from '@anton.bobrov/react-hooks';
 import { useEffect, useState } from 'react';
 
-export function usePrerenderedKeys(length: number, activeKey: TKey) {
+export function usePrerenderedKeys(activeKey: TKey) {
   const [keys, setKeys] = useState<TKey[]>([activeKey]);
 
   const add = useEvent((key: TKey) => {
