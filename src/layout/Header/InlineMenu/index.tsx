@@ -1,16 +1,21 @@
 import { FC } from 'react';
 import cn from 'classnames';
 import Link from 'next/link';
-import { useStoreLexicon } from '@/store/reducers/page';
+import { useStoreLexicon, useStorePage } from '@/store/reducers/page';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 
 export const HeaderInlineMenu: FC<IProps> = ({ className, style, links }) => {
   const { menu: lexicon } = useStoreLexicon();
+  const { templateName } = useStorePage();
 
   return (
     <ul
-      className={cn(styles.header_inline_menu, className)}
+      className={cn(
+        className,
+        styles.header_inline_menu,
+        templateName !== 'Home' && styles.has_active_styles,
+      )}
       style={style}
       aria-label={lexicon.label}
     >

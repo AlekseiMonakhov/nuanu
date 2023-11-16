@@ -10,15 +10,12 @@
   
   padding: 0 px-to-rem(30);
 
-  .link {
-    @include transition(opacity 0.35s);
-  }
-
-  @include non-mobile-hover {
+  &.has_active_styles {
     .link {
-      opacity: 0.75;
+      @include transition(opacity 0.35s);
+      opacity: 0.5;
 
-      &:hover {
+      &.active {
         opacity: 1;
       }
     }
