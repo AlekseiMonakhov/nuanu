@@ -1,7 +1,7 @@
 import { useEvent } from '@anton.bobrov/react-hooks';
 import { RefObject, useEffect, useRef } from 'react';
 import { useAnimationFrame } from '@anton.bobrov/react-vevet-hooks';
-import { DraggerMove, lerp } from '@anton.bobrov/vevet-init';
+import { DraggerMove, lerp, vevet } from '@anton.bobrov/vevet-init';
 import { useDatGUISettings } from '@anton.bobrov/react-dat-gui';
 import { useMapDimensions } from './useMapDimensions';
 
@@ -47,11 +47,14 @@ export function useDrag({
     const x = xRef.current;
     const y = yRef.current;
 
+    const { friction } = settings;
+    const ease = vevet.isMobile ? 1 : settings.ease;
+
     if (Math.abs(x.target) > Math.abs(dimensions.xLine / 2)) {
       x.target = lerp(
         x.target,
         (x.target < 0 ? -dimensions.xLine : dimensions.xLine) / 2,
-        settings.friction,
+        friction,
       );
     }
 
@@ -59,12 +62,12 @@ export function useDrag({
       y.target = lerp(
         y.target,
         (y.target < 0 ? -dimensions.yLine : dimensions.yLine) / 2,
-        settings.friction,
+        friction,
       );
     }
 
-    x.current = lerp(x.current, x.target, settings.ease);
-    y.current = lerp(y.current, y.target, settings.ease);
+    x.current = lerp(x.current, x.target, ease);
+    y.current = lerp(y.current, y.target, ease);
 
     if (x.current === x.target && y.current === y.target) {
       // eslint-disable-next-line @typescript-eslint/no-use-before-define
