@@ -19,13 +19,6 @@ export const PAGE_GLOBAL: DeepRequired<IPageGlobal> = {
 
   languages: [
     { key: 'en', name: 'En', fullName: 'English', href: '/en', isActive: true },
-    {
-      key: 'de',
-      name: 'De',
-      fullName: 'Deutsch',
-      href: '/de',
-      isActive: false,
-    },
   ],
 
   menu: [
