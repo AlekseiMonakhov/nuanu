@@ -5,6 +5,14 @@
   bottom: 0;
   left: 0;
 
+  opacity: 0;
+  @include transition(opacity 0.5s);
+
+  &.hovered,
+  &.active {
+    opacity: 1;
+  }
+
   &:not(.active) {
     pointer-events: none;
   }
@@ -27,12 +35,17 @@
   @include viewport-phone {
     font-size: px-to-rem(15);
   }
+}
 
-  opacity: 0;
-  @include transition(opacity 0.25s);
+.v_desktop_tablet {
+  @include viewport-phone {
+    display: none !important;
+  }
+}
 
-  &.active {
-    opacity: 1;
+.v_phone {
+  @include viewport-tablet-min {
+    display: none !important;
   }
 }
 
@@ -41,10 +54,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-
-  > * + * {
-    margin-left: px-to-rem(10);
-  }
 
   @include viewport-desktop {
     padding-top: px-to-rem(24);    

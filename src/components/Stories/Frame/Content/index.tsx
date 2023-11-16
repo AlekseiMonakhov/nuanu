@@ -1,7 +1,6 @@
 import { FC, memo } from 'react';
 import cn from 'classnames';
 import { ExpandContent } from '@anton.bobrov/react-components';
-import { useDebouncedProp } from '@anton.bobrov/react-hooks';
 import { useStoreLexicon } from '@/store/reducers/page';
 import { IProps } from './types';
 import styles from './styles.module.scss';
@@ -19,11 +18,6 @@ const Component: FC<IProps> = ({
   label,
   action,
 }) => {
-  const isAccordionActive = useDebouncedProp(
-    isActive,
-    isActive ? ACCORDION_DURATION : 0,
-  );
-
   const { navigation: lexicon } = useStoreLexicon();
 
   return (
@@ -32,6 +26,7 @@ const Component: FC<IProps> = ({
         className,
         styles.stories_frame_content,
         isActive && styles.active,
+        isHovered && styles.hovered,
       )}
       style={style}
       onPointerUpCapture={(event) => event.stopPropagation()}
@@ -42,14 +37,21 @@ const Component: FC<IProps> = ({
     >
       {label && (
         <p
-          className={cn(styles.label, (isActive || isHovered) && styles.active)}
+          className={styles.label}
           dangerouslySetInnerHTML={{ __html: label }}
         />
       )}
 
       {action && (
+        <div className={cn(styles.action, styles.v_phone)}>
+          <Action action={action} theme={contentTheme} />
+        </div>
+      )}
+
+      {action && (
         <ExpandContent
-          isActive={isAccordionActive}
+          className={styles.v_desktop_tablet}
+          isActive={isActive}
           duration={ACCORDION_DURATION}
           hasAlpha={false}
         >
