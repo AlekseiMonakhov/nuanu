@@ -3,5 +3,5 @@
 .menu_background {
   @include absolute-fullsize;
   transform-origin: top left;
-  background-color: var(--color-black);
+  background-color: var(--color-total-black);
 }

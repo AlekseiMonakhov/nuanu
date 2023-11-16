@@ -1,6 +1,6 @@
 $colors: (
-  'black': #000,
-  'white': #fff,
+  'total-black': #000,
+  'total-white': #fff,
   'primary-base': #f2f2f2,
   'primary-dark-base': #212121,
   '58': #585858,
@@ -22,6 +22,6 @@ $colors: (
 }
 
 html {
-  background-color: var(--color-white);
+  background-color: var(--color-total-white);
   color: var(--color-primary-dark-base);
 }

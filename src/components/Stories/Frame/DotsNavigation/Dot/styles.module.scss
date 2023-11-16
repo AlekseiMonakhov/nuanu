@@ -7,7 +7,7 @@
 
   &:focus-visible {
     .progress_container {
-      box-shadow: 0 0 0 5px rgba(var(--color-white--rgb), 0.5);
+      box-shadow: 0 0 0 5px rgba(var(--color-total-white--rgb), 0.5);
     }
   }
 
@@ -29,13 +29,13 @@
 
   border-radius: 6px;
   overflow: hidden;
-  background-color: rgba(var(--color-white--rgb), 0.3);
+  background-color: rgba(var(--color-total-white--rgb), 0.3);
 
   &:not(.has_auto_change_animation) {
     @include transition(background-color 0.25s);
 
     &.active {
-      background-color: var(--color-white);
+      background-color: var(--color-total-white);
     }
 
     .progress {
@@ -47,5 +47,5 @@
 .progress {
   @include absolute-fullsize;
   border-radius: inherit;
-  background-color: var(--color-white);
+  background-color: var(--color-total-white);
 }

@@ -16,10 +16,10 @@
   font-size: px-to-rem(20);
   font-style: normal;
   font-weight: 400;
-  color: var(--color-white);
+  color: var(--color-total-white);
 
   &.has_background {
-    background-color: var(--color-black);
+    background-color: var(--color-total-black);
   }
 
   &:disabled {

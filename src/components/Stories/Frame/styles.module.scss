@@ -6,8 +6,8 @@
 
   user-select: none;
 
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--color-total-black);
+  color: var(--color-total-white);
   
   .content {
     @include viewport-tablet-min {
@@ -35,7 +35,7 @@
       content: '';
       display: block;
       @include absolute-fullsize;
-      background-color: var(--color-black);
+      background-color: var(--color-total-black);
       opacity: 0.3;
     }
   }
