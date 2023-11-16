@@ -27,5 +27,9 @@ export interface ILexicon {
     features: {
       title: 'Features';
     };
+
+    inside: {
+      title: 'Inside';
+    };
   };
 }

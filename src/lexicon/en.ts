@@ -30,6 +30,10 @@ const lexicon: DeepRequired<ILexicon> = {
     features: {
       title: 'Features',
     },
+
+    inside: {
+      title: 'Inside',
+    },
   },
 };
 
