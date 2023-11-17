@@ -1,4 +1,4 @@
-import { forwardRef, memo } from 'react';
+import { forwardRef, memo, useEffect, useRef, useState } from 'react';
 import { LazyImage, LazyVideo } from '@anton.bobrov/react-components';
 import cn from 'classnames';
 import { useForwardedRef } from '@anton.bobrov/react-hooks';
@@ -6,8 +6,26 @@ import { IProps } from './types';
 import styles from './styles.module.scss';
 
 const Component = forwardRef<HTMLDivElement, IProps>(
-  ({ className, style, image, video, onLoad, ...props }, forwardedRef) => {
+  (
+    { className, style, image, video, onLoad, isPlaying = true, ...props },
+    forwardedRef,
+  ) => {
     const ref = useForwardedRef(forwardedRef);
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    const [isAutoPlay] = useState(isPlaying);
+
+    useEffect(() => {
+      if (!videoRef.current) {
+        return;
+      }
+
+      if (isPlaying) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    }, [isPlaying]);
 
     return (
       <div
@@ -18,13 +36,14 @@ const Component = forwardRef<HTMLDivElement, IProps>(
       >
         {video && (
           <LazyVideo
+            ref={videoRef}
             src={video}
-            autoPlay
             muted
             loop
             playsInline
             onLoadedMetadata={onLoad}
             position="cover"
+            autoPlay={isAutoPlay}
           />
         )}
 

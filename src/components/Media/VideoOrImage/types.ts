@@ -1,5 +1,7 @@
-import { IImagePaths } from '@anton.bobrov/react-components';
-import { IImageAdaptivePaths } from '@anton.bobrov/vevet-init';
+import {
+  IImagePaths,
+  IImageAdaptivePaths,
+} from '@anton.bobrov/react-components';
 import { HTMLAttributes } from 'react';
 
 export interface IMediaVideoOrImageProps {
@@ -11,4 +13,5 @@ export interface IProps
   extends IMediaVideoOrImageProps,
     HTMLAttributes<HTMLDivElement> {
   onLoad?: () => void;
+  isPlaying?: boolean;
 }
