@@ -71,13 +71,23 @@ export const PAGE_GLOBAL: DeepRequired<IPageGlobal> = {
   social: [
     {
       key: 0,
-      name: 'Facebook',
-      href: 'https://fb.com/',
+      name: 'Instagram',
+      href: 'https://www.instagram.com/nuanu_city/',
     },
     {
       key: 1,
-      name: 'Instagram',
-      href: 'https://instagram.com/',
+      name: 'YouTube',
+      href: 'https://www.youtube.com/channel/UCJlbN85VyTM13qupIP_9hdw',
+    },
+    {
+      key: 2,
+      name: 'Facebook',
+      href: 'https://www.facebook.com/nuanu.city',
+    },
+    {
+      key: 3,
+      name: 'LinkedIn',
+      href: 'https://www.linkedin.com/company/nuanu/',
     },
   ],
 };
