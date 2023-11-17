@@ -1,0 +1,59 @@
+@import '@/styles/base';
+
+.labels {
+  position: relative;
+  width: 100%;
+  height: var(--size);
+
+  @include viewport-desktop {
+    --size: #{px-to-rem(100)};
+  }
+  @include viewport-tablet {
+    --size: #{px-to-rem(80)};
+  }
+  @include viewport-phone {
+    --size: #{px-to-rem(60)};
+  }
+
+  .scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(var(--size) * 1.5);
+    padding: 0 calc(var(--size) * 0.5);
+    overflow: hidden;
+
+    @include viewport-phone {
+      @media (orientation: landscape) {
+        height: calc(var(--size) * 1);
+      }
+    }
+  }
+}
+
+.track {
+  --active-index: 0;
+  @include transition(transform var(--duration));
+
+  transform: translate3d(0, calc(var(--active-index) * var(--size) * -1), 0);
+}
+
+.label {
+  margin: 0;
+
+  font-size: var(--size);
+  font-style: normal;
+  line-height: 100%;
+  font-weight: 400;
+  letter-spacing: -1px;
+  white-space: nowrap;
+  text-align: center;
+
+  @include transition(opacity var(--duration));
+  opacity: 0.2;
+
+  &.active {
+    opacity: 1;
+  }
+}

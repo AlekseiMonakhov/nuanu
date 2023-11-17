@@ -5,6 +5,7 @@
 }
 
 .page {
-  opacity: 0;
-  transform: none;
+  &.is_default_hidden {
+    opacity: 0;
+  }
 }
