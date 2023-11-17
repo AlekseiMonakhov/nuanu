@@ -19,7 +19,7 @@ export const LayoutScripts: FC = () => {
   return (
     <>
       {/* logo microdata */}
-      {templateName === 'home' && (
+      {templateName === 'Home' && (
         <Script
           strategy="beforeInteractive"
           id="js_application_microdata"
