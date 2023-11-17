@@ -33,7 +33,7 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <LinkClickInterceptor onInternalClick={onInternalLinkClick}>
-      <PageScroll.Provider smoothProps={{ isEnabled: isPageVisible }}>
+      <PageScroll.Provider canBeSmooth={false}>
         <PageScroll.ScrollBar resizeKey={isPageReady ? key : undefined}>
           <ScrollView.Provider
             instanceKey={key}

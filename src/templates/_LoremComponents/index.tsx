@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { PageScroll } from '@anton.bobrov/react-components';
 import { BreadcrumbsList } from '@/layout/Breadcrumbs/List';
 import { LayoutContainer } from '@/layout/Container';
 import { LayoutWrap } from '@/layout/Wrap';
@@ -14,25 +13,23 @@ const LoremComponents: FC<ILoremComponents> = () => {
   useTemplate();
 
   return (
-    <PageScroll.SmoothContainer>
-      <LayoutContainer>
-        <LayoutWrap variant={1}>
-          <BreadcrumbsList />
+    <LayoutContainer>
+      <LayoutWrap variant={1}>
+        <BreadcrumbsList />
 
-          <Block title="Typography">
-            <Typography />
-          </Block>
+        <Block title="Typography">
+          <Typography />
+        </Block>
 
-          <Block title="Buttons">
-            <Buttons />
-          </Block>
+        <Block title="Buttons">
+          <Buttons />
+        </Block>
 
-          <Block title="Form">
-            <Form />
-          </Block>
-        </LayoutWrap>
-      </LayoutContainer>
-    </PageScroll.SmoothContainer>
+        <Block title="Form">
+          <Form />
+        </Block>
+      </LayoutWrap>
+    </LayoutContainer>
   );
 };
 
