@@ -3,7 +3,6 @@ import { ILexicon } from './types';
 
 const lexicon: DeepRequired<ILexicon> = {
   siteName: 'Nuanu Inc.',
-  copyright: '© Copyright',
 
   preloader: {
     label: 'Loading',
@@ -22,6 +21,9 @@ const lexicon: DeepRequired<ILexicon> = {
 
   menu: {
     label: 'Menu',
+    site: 'Nuanu',
+    social: 'Social',
+    privacyPolicy: 'Privacy Policy',
   },
 
   home: {

@@ -3,6 +3,8 @@ import { StoriesFullScreen } from '@/components/Stories/FullScreen';
 import { times } from '@anton.bobrov/vevet-init';
 import { useEvent } from '@anton.bobrov/react-hooks';
 import { useStoreLexicon } from '@/store/reducers/page';
+import { Footer } from '@/layout/Footer';
+import { LayoutWrap } from '@/layout/Wrap';
 import { IHome } from './types';
 import { useTemplate } from '../_hooks/useTemplate';
 import { HomeSectionSlider } from './components/SectionSlider';
@@ -45,17 +47,42 @@ const Home: FC<IHome> = ({ stories }) => {
       </HomeSectionSlider>
 
       <div ref={pageRef} className={styles.page}>
-        {times(
-          (index) => (
-            <div key={index}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-              nihil facere, dolor placeat eaque minus, exercitationem at
-              praesentium vero enim ducimus ad aliquam, sed perferendis sunt
-              consequatur amet maxime? Esse.
-            </div>
-          ),
-          100,
-        )}
+        <LayoutWrap>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+
+          {times(
+            (index) => (
+              <div
+                key={index}
+                style={{
+                  width: '100%',
+                  height: 100,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: '#ccc',
+                  margin: '10px 0',
+                }}
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+                consequuntur totam corporis placeat obcaecati praesentium itaque
+                deleniti eaque, sed, autem omnis dolor adipisci ad? Culpa quod
+                facilis ipsam non dolor.
+              </div>
+            ),
+            10,
+          )}
+        </LayoutWrap>
+
+        <Footer />
       </div>
     </>
   );

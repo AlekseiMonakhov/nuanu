@@ -1,6 +1,5 @@
 export interface ILexicon {
   siteName: string;
-  copyright: string;
 
   preloader: {
     label: string;
@@ -19,6 +18,9 @@ export interface ILexicon {
 
   menu: {
     label: string;
+    site: string;
+    social: string;
+    privacyPolicy: string;
   };
 
   home: {
