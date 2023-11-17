@@ -12,7 +12,6 @@ import { useStorePage } from '@/store/reducers/page';
 import { BreadcrumbsJSON } from './Breadcrumbs/JSON';
 import { Preloader } from './Preloader';
 import { Header } from './Header';
-import { MenuModal } from './MenuModal';
 import { RouterCurtain } from './RouterCurtain';
 
 export const Layout: FC<PropsWithChildren> = ({ children }) => {
@@ -46,8 +45,6 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
             <Header />
 
             {children}
-
-            <MenuModal />
 
             <RouterCurtain />
           </ScrollView.Provider>

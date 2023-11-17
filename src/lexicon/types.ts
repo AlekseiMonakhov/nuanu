@@ -19,8 +19,6 @@ export interface ILexicon {
 
   menu: {
     label: string;
-    open: string;
-    close: string;
   };
 
   home: {

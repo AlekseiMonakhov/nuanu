@@ -1,0 +1,53 @@
+@import '@/styles/base';
+
+.header_menu_props {
+  position: relative;
+
+  display: none;
+  height: 0;
+  overflow: visible;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid var(--color-line);
+    opacity: 0.2;
+  }
+}
+
+.container {
+  position: relative;
+  
+  overflow: auto;
+  @include hide-scroll-bars;
+
+  max-height: calc((100 * var(--vh) - var(--header-top) * 2 - var(--header-height)));
+}
+
+.links {
+  @include reset-ul;
+
+  padding: px-to-rem(12) px-to-rem(24) px-to-rem(26);
+
+  .li {
+    padding: px-to-rem(9) 0;
+  }
+
+  .link {
+    color: currentColor;
+    text-decoration: none;
+
+    font-size: px-to-rem(20);
+    font-weight: 400;
+    line-height: 130%;
+  }
+}
+
+.action {
+  padding: px-to-rem(19) px-to-rem(24);
+  border-top: 1px solid rgba(var(--color-line--rgb), 0.2);
+}

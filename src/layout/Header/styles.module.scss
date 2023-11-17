@@ -1,19 +1,24 @@
 @import '@/styles/base';
 
 .header {
-  --radius: 12px;
+  --theme-duration: 0.5s;
 
   position: fixed;
   z-index: 9;
   top: var(--header-top);
   left: var(--wrap);
   width: calc(100% - var(--wrap) * 2);
-  height: var(--header-height);
+  min-height: var(--header-height);
+  border-radius: 12px;
 
-  --theme-duration: 0.5s;
   @include transition(color var(--theme-duration));
 
   color: var(--color-text);
+
+  @include viewport-phone {
+    background: var(--color-bg);
+    backdrop-filter: blur(15px);
+  }
 
   &.dark {
     --color-bg: rgba(83, 83, 83, 0.2);
@@ -26,7 +31,13 @@
   }
 
   .header_container {
-    height: 100%;
+    height: var(--header-height);
+  }
+
+  .expand_menu {
+    @include viewport-tablet-min {
+      display: none !important;
+    }
   }
 }
 
@@ -36,13 +47,10 @@
   align-items: center;
   justify-content: space-between;
   
-  border-radius: var(--radius);
+  border-radius: var(--radius) var(--radius) calc(var(--radius) * var(--radius-progress)) calc(var(--radius) * var(--radius-progress));
 
   @include viewport-phone {
-    padding: 0 var(--wrap);
-    
-    background: var(--color-bg);
-    backdrop-filter: blur(15px);
+    padding: 0 px-to-rem(24);
   }
 
   .inline_menu {

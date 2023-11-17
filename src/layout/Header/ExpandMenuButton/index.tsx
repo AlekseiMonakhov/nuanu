@@ -27,7 +27,7 @@ export const HeaderExpandMenuButton: FC<IProps> = ({
       type="button"
       title={lexicon.label}
       aria-expanded={isOpened}
-      onClick={() => store.dispatch(menuSlice.actions.open())}
+      onClick={() => store.dispatch(menuSlice.actions.toggle())}
     >
       <svg
         width="20"
