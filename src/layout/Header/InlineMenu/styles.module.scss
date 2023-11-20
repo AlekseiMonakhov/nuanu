@@ -9,17 +9,6 @@
   justify-content: space-between;
   
   padding: 0 px-to-rem(30);
-
-  &.has_active_styles {
-    .link {
-      @include transition(opacity 0.35s);
-      opacity: 0.5;
-
-      &.active {
-        opacity: 1;
-      }
-    }
-  }
 }
 
 .li {
@@ -50,6 +39,40 @@
       margin-top: -0.4em;
       border-radius: 50%;
       background-color: var(--color-highlight);
+    }
+  }
+
+  span {
+    @include transition(opacity 0.35s);
+  }
+  
+  &.has_active_styles {
+    span {
+      opacity: 0.5;
+    }
+    
+    &.active {
+      span {
+        opacity: 1;
+      }
+    }
+
+    @include non-mobile-hover {
+      span {
+        opacity: 1;
+      }
+    }
+  }
+  
+  &.no_active_styles {
+    span {
+      opacity: 1;
+    }
+
+    @include non-mobile-hover {
+      span {
+        opacity: 0.5;
+      }
     }
   }
 }

@@ -11,11 +11,7 @@ export const HeaderInlineMenu: FC<IProps> = ({ className, style, links }) => {
 
   return (
     <ul
-      className={cn(
-        className,
-        styles.header_inline_menu,
-        templateName !== 'Home' && styles.has_active_styles,
-      )}
+      className={cn(className, styles.header_inline_menu)}
       style={style}
       aria-label={lexicon.label}
     >
@@ -27,10 +23,13 @@ export const HeaderInlineMenu: FC<IProps> = ({ className, style, links }) => {
               styles.link,
               isActive && styles.active,
               isHighlighted && styles.highlighted,
+              templateName === 'Home'
+                ? styles.no_active_styles
+                : styles.has_active_styles,
             )}
             aria-current={isActive ? 'page' : undefined}
           >
-            {name}
+            <span>{name}</span>
           </Link>
         </li>
       ))}
