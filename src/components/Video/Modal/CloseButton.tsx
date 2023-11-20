@@ -12,9 +12,10 @@ const Component: TModalCloseButtonRenderer = ({ onClick }) => {
       tag="button"
       type="button"
       className={styles.close_button}
+      kind="fill"
+      theme="light"
       onClick={onClick}
       text={lexicon.navigation.close}
-      hasBackground
     />
   );
 };

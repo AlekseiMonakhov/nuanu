@@ -8,33 +8,68 @@
   align-items: center;
   justify-content: center;
 
-  border: 1px solid currentColor;
   border-radius: px-to-rem(100);
 
   font-style: normal;
   font-weight: 400;
-  color: var(--color-total-white);
 
   @include viewport-desktop {
     height: px-to-rem(60);
-    padding: 0 px-to-rem(30);
     font-size: px-to-rem(20);
   }
 
   @include viewport-tablet {
     height: px-to-rem(56);
-    padding: 0 px-to-rem(24);
     font-size: px-to-rem(17);
   }
 
   @include viewport-phone {
     height: px-to-rem(50);
-    padding: 0 px-to-rem(20);
     font-size: px-to-rem(15);
   }
+  
+  &.kind_outline {
+    border: 1px solid currentColor;
 
-  &.has_background {
-    background-color: var(--color-total-black);
+    &.theme_light {
+      color: var(--color-total-white);
+    }
+    
+    &.theme_dark {
+      color: var(--color-primary-dark-base);
+    }
+
+    @include viewport-desktop {
+      padding: 0 px-to-rem(30);
+    }
+    @include viewport-tablet {
+      padding: 0 px-to-rem(24);
+    }
+    @include viewport-phone {
+      padding: 0 px-to-rem(20);
+    }
+  }
+  
+  &.kind_fill {
+    &.theme_light {
+      background-color: var(--color-total-white);
+      color: var(--color-primary-dark-base);
+    }
+    
+    &.theme_dark {
+      background-color: var(--color-primary-dark-base);
+      color: var(--color-total-white);
+    }
+  
+    @include viewport-desktop {
+      padding: 0 px-to-rem(40);
+    }
+    @include viewport-tablet {
+      padding: 0 px-to-rem(36);
+    }
+    @include viewport-phone {
+      padding: 0 px-to-rem(32);
+    }
   }
 
   &:disabled {
