@@ -14,7 +14,7 @@
   "dependencies": {
     "@anton.bobrov/nextjs-sp-helpers": "1.1.2",
     "@anton.bobrov/react-components": "^2.2.6",
-    "@anton.bobrov/react-dat-gui": "^2.0.1",
+    "@anton.bobrov/react-dat-gui": "^2.1.0",
     "@anton.bobrov/react-hooks": "^2.2.3",
     "@anton.bobrov/react-vevet-hooks": "^2.2.3",
     "@anton.bobrov/vevet-init": "^3.5.0",
