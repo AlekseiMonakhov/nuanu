@@ -6,9 +6,6 @@ export const Buttons: FC = () => (
     <FillButton tag="button" type="button" theme="dark" text="Fill Button" />
     <br />
 
-    <FillButton tag="button" type="button" theme="light" text="Fill Button" />
-    <br />
-
     <FillButton
       tag="button"
       type="button"
@@ -16,6 +13,9 @@ export const Buttons: FC = () => (
       text="Fill Button"
       isSuccess
     />
+    <br />
+
+    <FillButton tag="button" type="button" theme="light" text="Fill Button" />
     <br />
 
     <FillButton

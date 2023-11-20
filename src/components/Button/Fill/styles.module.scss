@@ -47,6 +47,7 @@
 
   &.success {
     background-color: var(--color-green-success);
+    color: var(--color-total-white);
   }
 
   &:disabled {
