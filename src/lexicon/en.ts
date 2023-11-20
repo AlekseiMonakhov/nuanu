@@ -23,7 +23,6 @@ const lexicon: DeepRequired<ILexicon> = {
     label: 'Menu',
     site: 'Nuanu',
     social: 'Social',
-    privacyPolicy: 'Privacy Policy',
   },
 
   home: {
@@ -41,8 +40,7 @@ const lexicon: DeepRequired<ILexicon> = {
       label: 'Newsletter Subscription',
       enterEmail: 'Enter your email',
       submit: 'Sign up',
-      description:
-        'Sign up for our newsletter and join the growing Nuanu community',
+      description: 'Sign up for our newsletter and join Nuanu community',
       successText: 'We successfully subscribed you to the Nuanu newsletter ',
     },
   },

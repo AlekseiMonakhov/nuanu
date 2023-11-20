@@ -3,7 +3,6 @@ import cn from 'classnames';
 import { useClientSize, useForwardedRef } from '@anton.bobrov/react-hooks';
 import { vevet } from '@anton.bobrov/vevet-init';
 import { useStoreGlobal, useStoreLexicon } from '@/store/reducers/page';
-import Link from 'next/link';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 import { FooterLinks } from './Links';
@@ -17,7 +16,7 @@ const Component = forwardRef<HTMLDivElement, IProps>(
     const { clientHeight } = useClientSize(ref);
 
     const { siteName, menu: menuLexicon } = useStoreLexicon();
-    const { menu, social, links } = useStoreGlobal();
+    const { menu, social } = useStoreGlobal();
 
     const copyright = `© ${+new Date().getFullYear()} ${siteName}`;
 
@@ -37,36 +36,20 @@ const Component = forwardRef<HTMLDivElement, IProps>(
           <FooterSubscribeForm className={styles.form} />
 
           <div className={styles.columns}>
-            <FooterLinks title={menuLexicon.site} links={menu}>
-              <p className={styles.additional}>{copyright}</p>
-            </FooterLinks>
+            <FooterLinks title={menuLexicon.site} links={menu} />
 
             <FooterLinks
               title={menuLexicon.social}
               links={social}
               target="_blank"
-            >
-              <p className={styles.additional}>
-                <Link href={links.privacyPolicy}>
-                  {menuLexicon.privacyPolicy}
-                </Link>
-              </p>
-            </FooterLinks>
+            />
           </div>
         </div>
 
         <div className={styles.bottom}>
           <FooterLogo className={styles.bottom__logo} />
 
-          <div className={styles.bottom__info}>
-            <p>
-              <Link href={links.privacyPolicy}>
-                {menuLexicon.privacyPolicy}
-              </Link>
-            </p>
-
-            <p>{copyright}</p>
-          </div>
+          <p>{copyright}</p>
         </div>
       </footer>
     );

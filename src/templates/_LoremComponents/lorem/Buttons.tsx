@@ -1,41 +1,29 @@
+import { FillButton } from '@/components/Button/Fill';
 import { FC } from 'react';
-import { ButtonSimple } from '@/components/Button/Simple';
 
 export const Buttons: FC = () => (
   <>
-    <ButtonSimple
+    <FillButton tag="button" type="button" theme="dark" text="Fill Button" />
+    <br />
+
+    <FillButton tag="button" type="button" theme="light" text="Fill Button" />
+    <br />
+
+    <FillButton
       tag="button"
       type="button"
-      kind="outline"
       theme="dark"
-      text="Simple Button"
+      text="Fill Button"
+      isSuccess
     />
     <br />
 
-    <ButtonSimple
+    <FillButton
       tag="button"
       type="button"
-      kind="outline"
       theme="light"
-      text="Simple Button"
-    />
-    <br />
-
-    <ButtonSimple
-      tag="button"
-      type="button"
-      kind="fill"
-      theme="dark"
-      text="Simple Button"
-    />
-    <br />
-
-    <ButtonSimple
-      tag="button"
-      type="button"
-      kind="fill"
-      theme="light"
-      text="Simple Button"
+      text="Fill Button"
+      isSuccess
     />
     <br />
   </>

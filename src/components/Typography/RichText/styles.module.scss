@@ -87,20 +87,4 @@
       margin: px-to-rem(30) 0;
     }
   }
-
-  &.has_styles {
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%;
-
-    @include viewport-desktop {
-      font-size: px-to-rem(16);
-    }
-    @include viewport-tablet {
-      font-size: px-to-rem(15);
-    }
-    @include viewport-phone {
-      font-size: px-to-rem(14);
-    }
-  }
 }

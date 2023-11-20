@@ -21,20 +21,7 @@
 .label {
   margin: 0;
 
-  line-height: px-to-rem(34);
-  font-style: normal;
-  font-weight: 400;
-  text-transform: uppercase;
-
-  @include viewport-desktop {
-    font-size: px-to-rem(22);
-  }
-  @include viewport-tablet {
-    font-size: px-to-rem(18);
-  }
-  @include viewport-phone {
-    font-size: px-to-rem(15);
-  }
+  @include text-small-caps;
 }
 
 .v_desktop_tablet {
@@ -56,12 +43,12 @@
   justify-content: flex-start;
 
   @include viewport-desktop {
-    padding-top: px-to-rem(24);    
+    padding-top: px-to-rem(26);    
   }
   @include viewport-tablet {
     padding-top: px-to-rem(15);    
   }
   @include viewport-phone {
-    padding-top: px-to-rem(6);    
+    padding-top: px-to-rem(4);    
   }
 }

@@ -16,7 +16,7 @@
     }
 
     @include viewport-desktop {
-      bottom: calc(100% + #{px-to-rem(16)});
+      bottom: px-to-rem(18);
     }
 
     @include viewport-phone {

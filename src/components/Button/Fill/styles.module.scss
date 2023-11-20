@@ -1,0 +1,94 @@
+@import '@/styles/base';
+
+.button {
+  @include reset-button;
+
+  position: relative;
+  
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: px-to-rem(100);
+
+  @include transition((background-color 0.35s, color 0.35s));
+
+  @include viewport-desktop {
+    height: px-to-rem(60);
+    padding: 0 px-to-rem(40);
+    
+    @include text-smaller;
+  }
+  
+  @include viewport-tablet {
+    height: px-to-rem(56);
+    padding: 0 px-to-rem(34);
+
+    @include text-small;
+  }
+  
+  @include viewport-phone {
+    height: px-to-rem(50);
+    padding: 0 px-to-rem(30);
+
+    @include text-small;
+  }
+
+  &.theme_light {
+    background-color: var(--color-total-white);
+    color: var(--color-primary-dark-base);
+  }
+    
+  &.theme_dark {
+    background-color: var(--color-primary-dark-base);
+    color: var(--color-total-white);
+  }
+
+  &.success {
+    background-color: var(--color-green-success);
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+}
+
+.text,
+.success_icon {
+  @include transition((visibility 0.35s, opacity 0.35s));
+}
+
+.text {
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.success_icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+
+  opacity: 0;
+  visibility: hidden;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include viewport-desktop {
+    width: px-to-rem(30);
+  }
+  @include viewport-tablet {
+    width: px-to-rem(24);
+  }
+  @include viewport-phone {
+    width: px-to-rem(20);
+  }
+}

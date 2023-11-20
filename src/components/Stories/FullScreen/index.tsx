@@ -29,7 +29,7 @@ const Component: FC<IProps> = ({ className, style, items, ...props }) => {
       hasOverlay
       onPrev={() => setDirection('prev')}
       onNext={() => setDirection('next')}
-      hasAutoChange
+      // hasAutoChange
       isDisabled={isDisabled}
     >
       {items.map(({ key, ...item }, index) => (

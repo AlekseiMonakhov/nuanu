@@ -28,24 +28,22 @@
 }
 
 .title {
-  font-style: normal;
-  font-weight: 400;
-  line-height: 100%;
-  letter-spacing: -1px;
-
   @include viewport-desktop {
-    margin: 0 0 px-to-rem(20);
-    font-size: px-to-rem(60);
+    @include text-heading-2;
+    line-height: 100% !important;
+    margin: 0 0 px-to-rem(20) !important;
   }
 
   @include viewport-tablet {
-    margin: 0 0 px-to-rem(19);
-    font-size: px-to-rem(48);
+    @include text-heading-2;
+    line-height: 100% !important;
+    margin: 0 0 px-to-rem(14) !important;
   }
 
   @include viewport-phone {
-    margin: 0 0 px-to-rem(18);
-    font-size: px-to-rem(35);
+    @include text-heading-2;
+    line-height: 100% !important;
+    margin: 0 0 px-to-rem(8) !important;
 
     @media (orientation: landscape) {
       display: none;

@@ -44,11 +44,7 @@ const Component: FC<IProps> = ({
       )}
 
       {description && (
-        <RichText
-          className={styles.description}
-          html={description}
-          hasStyles={false}
-        />
+        <RichText className={styles.description} html={description} />
       )}
     </section>
   );

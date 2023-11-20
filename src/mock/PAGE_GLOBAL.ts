@@ -15,7 +15,6 @@ export const PAGE_GLOBAL: DeepRequired<IPageGlobal> = {
 
   links: {
     home: '/',
-    privacyPolicy: '/privacy-policy',
   },
 
   languages: [

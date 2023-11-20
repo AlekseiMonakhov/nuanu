@@ -4,10 +4,17 @@
   .dots_navigation {
     --height: 39px;
 
-    @include viewport-tablet-min {
-      --bottom: calc(4.83437 * var(--vh) - 18px);
-      --left: var(--wrap);
+    @include viewport-desktop {
       --gap: 20px;
+    }
+
+    @include viewport-tablet {
+      --gap: 16px;
+    }
+
+    @include viewport-tablet-min {
+      --bottom: calc(4.47 * var(--vh) - 18px);
+      --left: var(--wrap);
     }
 
     @include viewport-phone {

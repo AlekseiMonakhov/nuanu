@@ -5,14 +5,14 @@
   width: 100%;
   height: var(--size);
 
+  @include text-display;
+  line-height: 100% !important;
+
   @include viewport-desktop {
-    --size: #{px-to-rem(100)};
+    --size: 0.97em;
   }
-  @include viewport-tablet {
-    --size: #{px-to-rem(80)};
-  }
-  @include viewport-phone {
-    --size: #{px-to-rem(60)};
+  @include viewport-tablet-max {
+    --size: 1em;
   }
 
   .scene {
@@ -42,11 +42,6 @@
 .label {
   margin: 0;
 
-  font-size: var(--size);
-  font-style: normal;
-  line-height: 100%;
-  font-weight: 400;
-  letter-spacing: -1px;
   white-space: nowrap;
   text-align: center;
 

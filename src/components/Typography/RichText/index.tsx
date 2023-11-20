@@ -6,17 +6,13 @@ import styles from './styles.module.scss';
 import { TProps } from './types';
 
 const Component = forwardRef<HTMLDivElement, TProps>(
-  (
-    { hasSpacings = true, hasStyles = true, className, ...props },
-    forwardedRef,
-  ) => {
+  ({ hasSpacings = true, className, ...props }, forwardedRef) => {
     const ref = useForwardedRef(forwardedRef);
 
     const classNames = cn(
       className,
       styles.richtext,
       hasSpacings && styles.has_spacings,
-      hasStyles && styles.has_styles,
     );
 
     return <RichTextContent ref={ref} {...props} className={classNames} />;

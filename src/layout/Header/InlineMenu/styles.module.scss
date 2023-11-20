@@ -36,10 +36,7 @@
   align-items: center;
   justify-content: center;
 
-  font-size: px-to-rem(20);
-  font-style: normal;
-  font-weight: 400;
-  line-height: px-to-rem(34);
+  @include text-smaller;
   text-decoration: none;
   color: currentColor;
 
