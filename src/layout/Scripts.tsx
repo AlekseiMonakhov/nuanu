@@ -67,6 +67,37 @@ export const LayoutScripts: FC = () => {
             'var update=function(){var e=document.documentElement.clientWidth,t=document.documentElement.clientHeight;document.documentElement.style.setProperty("--vw",e/100+"px"),document.documentElement.style.setProperty("--vh",t/100+"px"),document.documentElement.style.setProperty("--vr",Math.sqrt(e**2+t**2)/2/100+"px")};window.addEventListener("resize",update),update();',
         }}
       />
+
+      <Script
+        strategy="beforeInteractive"
+        id="js_adaptive_font_size"
+        dangerouslySetInnerHTML={{
+          __html: `
+            function updateFontSize() {
+              var k = 1;
+              var width = window.innerWidth;
+              var height = window.innerHeight;
+
+              if (width >= 1199) {
+                k = width / 1728;
+              }
+              else if (width >= 900) {
+                k = width / 1200;
+              }
+              else {
+                k = width > height ? 1 : window.innerWidth / 393;
+              }
+
+              var fontSize = 16 * Math.min(Math.max(k, 0.8125), 1);
+
+              document.documentElement.style.fontSize = Math.round(fontSize) + 'px';
+            }
+
+            updateFontSize();
+            window.addEventListener('resize', updateFontSize);
+          `,
+        }}
+      />
     </>
   );
 };
