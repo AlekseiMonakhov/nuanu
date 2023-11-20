@@ -1,5 +1,8 @@
 import { FC, useEffect, useRef, useState } from 'react';
-import { ProgressPreloader as PreloaderModule } from '@anton.bobrov/vevet-init';
+import {
+  ProgressPreloader as PreloaderModule,
+  clamp,
+} from '@anton.bobrov/vevet-init';
 import store from '@/store/store';
 import { layoutSlice } from '@/store/reducers/layout';
 import { useStoreLexicon } from '@/store/reducers/page';
@@ -12,6 +15,8 @@ export const Preloader: FC = () => {
 
   const [isDone, setIsDone] = useState(false);
   const [progress, setProgress] = useState(0);
+
+  const percent = parseInt((progress * 100).toFixed(0), 10);
 
   useEffect(() => {
     const container = parentRef.current;
@@ -45,13 +50,15 @@ export const Preloader: FC = () => {
       role="progressbar"
       aria-valuemin={0}
       aria-valuemax={100}
-      aria-valuenow={parseInt((progress * 100).toFixed(0), 10)}
+      aria-valuenow={percent}
       aria-label={lexicon.label}
     >
       <div
         className={styles.progress}
-        style={{ transform: `scale(${progress}, 1)` }}
+        style={{ transform: `scale(1, ${progress})` }}
       />
+
+      <div className={styles.percent}>{clamp(percent, [0, 99])}%</div>
     </div>
   );
 };
