@@ -1,11 +1,11 @@
 import { forwardRef, useId, useImperativeHandle, useRef } from 'react';
 import { useFormContext } from 'react-hook-form';
-import styles from './styles.module.scss';
-import { FormInputBox } from '../Box';
-import { IFormInputProps } from './types';
+import cn from 'classnames';
 import { validateInputValueByType } from './validate';
+import { IFormBaseInputProps } from './types';
+import styles from './styles.module.scss';
 
-export const FormInput = forwardRef<HTMLInputElement, IFormInputProps>(
+export const FormBaseInput = forwardRef<HTMLInputElement, IFormBaseInputProps>(
   (
     {
       className,
@@ -13,7 +13,6 @@ export const FormInput = forwardRef<HTMLInputElement, IFormInputProps>(
       name,
       type = 'text',
       id: idProp,
-      label,
       required,
       min,
       max,
@@ -33,7 +32,6 @@ export const FormInput = forwardRef<HTMLInputElement, IFormInputProps>(
 
     const generatedId = useId();
     const id = idProp || generatedId;
-    const errorId = useId();
 
     const { register, formState } = useFormContext();
 
@@ -59,31 +57,21 @@ export const FormInput = forwardRef<HTMLInputElement, IFormInputProps>(
     const isError = !!error;
 
     return (
-      <FormInputBox
-        className={className}
+      <input
+        {...inputProps}
+        {...registered}
+        ref={(element) => {
+          setRef(element);
+          ref.current = element;
+        }}
+        className={cn(className, styles.base_input)}
         style={style}
+        type={type}
         id={id}
-        label={label}
-        isError={isError}
-        errorId={errorId}
-        error={error}
-      >
-        <input
-          {...inputProps}
-          className={styles.input}
-          {...registered}
-          ref={(element) => {
-            setRef(element);
-            ref.current = element;
-          }}
-          type={type}
-          id={id}
-          aria-invalid={type === 'hidden' ? undefined : isError}
-          aria-describedby={isError ? errorId : undefined}
-        />
-      </FormInputBox>
+        aria-invalid={type === 'hidden' ? undefined : isError}
+      />
     );
   },
 );
 
-FormInput.displayName = 'FormInput';
+FormBaseInput.displayName = 'FormBaseInput';

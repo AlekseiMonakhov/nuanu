@@ -4,7 +4,6 @@ import { LayoutContainer } from '@/layout/Container';
 import { LayoutWrap } from '@/layout/Wrap';
 import { Block } from './Block';
 import { Buttons } from './lorem/Buttons';
-import { Form } from './lorem/Form';
 import { Typography } from './lorem/Typography';
 import { useTemplate } from '../_hooks/useTemplate';
 import { ILoremComponents } from './types';
@@ -23,10 +22,6 @@ const LoremComponents: FC<ILoremComponents> = () => {
 
         <Block title="Buttons">
           <Buttons />
-        </Block>
-
-        <Block title="Form">
-          <Form />
         </Block>
       </LayoutWrap>
     </LayoutContainer>
