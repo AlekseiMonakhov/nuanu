@@ -35,6 +35,17 @@ const lexicon: DeepRequired<ILexicon> = {
       title: 'Inside',
     },
   },
+
+  form: {
+    subscribe: {
+      label: 'Newsletter Subscription',
+      enterEmail: 'Enter your email',
+      submit: 'Sign up',
+      description:
+        'Sign up for our newsletter and join the growing Nuanu community',
+      successText: 'We successfully subscribed you to the Nuanu newsletter ',
+    },
+  },
 };
 
 export default lexicon;

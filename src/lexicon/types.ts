@@ -32,4 +32,14 @@ export interface ILexicon {
       title: 'Inside';
     };
   };
+
+  form: {
+    subscribe: {
+      label: string;
+      enterEmail: string;
+      submit: string;
+      description: string;
+      successText: string;
+    };
+  };
 }

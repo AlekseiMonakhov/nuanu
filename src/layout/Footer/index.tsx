@@ -8,6 +8,7 @@ import { IProps } from './types';
 import styles from './styles.module.scss';
 import { FooterLinks } from './Links';
 import { FooterLogo } from './Logo';
+import { FooterSubscribeForm } from './SubscribeForm';
 
 const Component = forwardRef<HTMLDivElement, IProps>(
   ({ className, style, theme = 'light' }, forwardedRef) => {
@@ -33,7 +34,7 @@ const Component = forwardRef<HTMLDivElement, IProps>(
         style={style}
       >
         <div className={styles.container}>
-          <div className={styles.form}>form</div>
+          <FooterSubscribeForm className={styles.form} />
 
           <div className={styles.columns}>
             <FooterLinks title={menuLexicon.site} links={menu}>
