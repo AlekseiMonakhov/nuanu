@@ -1,8 +1,6 @@
 @import '@/styles/base';
 
 .footer {
-  margin-top: 250px;
-
   &.theme_dark {
     background: var(--color-primary-dark-base);
     color: var(--color-total-white);
