@@ -49,6 +49,7 @@
 
 .text {
   margin: 0;
+  outline: none;
 
   @include viewport-desktop {
     @include text-smaller;

@@ -1,4 +1,5 @@
-import { FC, useState } from 'react';
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+import { FC, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Form as FormComponent } from '@/components/Form';
 import { useStoreLexicon } from '@/store/reducers/page';
@@ -8,19 +9,28 @@ import styles from './styles.module.scss';
 import { FooterSubscribeFormInput } from './Input';
 
 export const FooterSubscribeForm: FC<IProps> = ({ className, style }) => {
+  const textRef = useRef<HTMLParagraphElement>(null);
+
   const form = useForm({ mode: 'all' });
+
   const {
     form: { subscribe: lexicon },
   } = useStoreLexicon();
 
   const [isSuccess, setIsSuccess] = useState(false);
 
+  const handleSuccess = () => {
+    setIsSuccess(true);
+
+    setTimeout(() => textRef.current && textRef.current.focus(), 0);
+  };
+
   return (
     <div className={className} style={style}>
       <FormComponent
         form={form}
         action="/api/form/subscribe"
-        onSuccess={() => setIsSuccess(true)}
+        onSuccess={handleSuccess}
         aria-label={lexicon.label}
       >
         <div className={styles.container}>
@@ -32,7 +42,7 @@ export const FooterSubscribeForm: FC<IProps> = ({ className, style }) => {
           />
 
           <div className={styles.actions}>
-            <p className={styles.text}>
+            <p ref={textRef} className={styles.text} tabIndex={0}>
               {isSuccess ? lexicon.successText : lexicon.description}
             </p>
 
