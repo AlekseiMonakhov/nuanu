@@ -10,7 +10,11 @@ const Component = forwardRef<
   HTMLButtonElement | HTMLAnchorElement,
   TCtaButtonProps
 >(({ className, style, theme, text, sup, kind = 'simple', ...props }, ref) => {
-  const classNames = cn(styles[`theme_${theme}`], styles[`kind_${kind}`]);
+  const classNames = cn(
+    styles[`theme_${theme}`],
+    styles[`kind_${kind}`],
+    sup && styles.has_sup,
+  );
 
   return (
     <ButtonAnchor
