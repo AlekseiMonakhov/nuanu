@@ -22,8 +22,7 @@ export const HomeParagraphItem: FC<IProps> = ({
   className,
   style,
   index,
-  image,
-  video,
+  media: mediaProp,
   title,
   description,
   action: actionProp,
@@ -49,10 +48,8 @@ export const HomeParagraphItem: FC<IProps> = ({
   );
 
   const media = useMemo(
-    () => (
-      <MediaVideoOrImage className={styles.media} image={image} video={video} />
-    ),
-    [image, video],
+    () => <MediaVideoOrImage {...mediaProp} className={styles.media} />,
+    [mediaProp],
   );
 
   const stats = useMemo(() => {

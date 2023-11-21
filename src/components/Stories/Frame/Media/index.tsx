@@ -10,8 +10,7 @@ const Component: FC<IProps> = ({
   isActive,
   index,
   onHidden,
-  image,
-  video,
+  media,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -44,10 +43,9 @@ const Component: FC<IProps> = ({
 
   return (
     <MediaVideoOrImage
+      {...media}
       ref={ref}
       className={styles.stories_frame_media}
-      image={image}
-      video={video}
       role="group"
       aria-roledescription="slide"
       aria-label={`${lexicon.slideNumber + (index + 1)}`}
