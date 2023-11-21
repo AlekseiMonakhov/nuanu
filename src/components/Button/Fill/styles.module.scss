@@ -2,6 +2,7 @@
 
 .button {
   @include reset-button;
+  text-decoration: none;
 
   position: relative;
   
