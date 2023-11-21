@@ -15,7 +15,7 @@ type TVideoModal = {
   duration?: string;
 };
 
-export type TActionButtonRendererAction = TLink | TVideoModal;
+export type TActionButtonAction = TLink | TVideoModal;
 
 export interface IActionButtonRendererProps {
   text: string;
@@ -32,7 +32,7 @@ export type TActionButtonRenderer = (
 ) => ReactElement | null;
 
 export interface IProps {
-  action: TActionButtonRendererAction;
+  action: TActionButtonAction;
   renderButton: TActionButtonRenderer;
   buttonProps?: any;
 }
