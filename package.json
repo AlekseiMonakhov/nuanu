@@ -42,6 +42,7 @@
     "@types/react-portal": "^4.0.5",
     "cross-env": "^7.0.3",
     "eslint": "^8.53.0",
+    "loader-utils": "^3.2.1",
     "prettier": "^3.0.3",
     "sass": "^1.69.5",
     "stylelint": "^14.11.0",

@@ -3,6 +3,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
+const addClassnameObfuscation = require('./config/addClassNameObfuscation');
 const headers = require('./config/headers');
 const rewrites = require('./config/rewrites');
 
@@ -24,6 +25,10 @@ const nextConfig = {
   },
   rewrites: () => rewrites,
   webpack: (config, { webpack, buildId }) => {
+    if (process.env.NODE_ENV === 'production') {
+      addClassnameObfuscation(config);
+    }
+
     config.plugins.push(
       new webpack.DefinePlugin({
         'process.env.CONFIG_BUILD_ID': JSON.stringify(buildId),
