@@ -1,0 +1,41 @@
+@import '@/styles/base';
+
+.content {
+  @include viewport-phone {
+    text-align: center;
+  }
+
+  * + .description {
+    @include viewport-desktop {
+      margin-top: px-to-rem(42);
+    }
+    @include viewport-tablet {
+      margin-top: px-to-rem(26);
+    }
+    @include viewport-phone {
+      margin-top: px-to-rem(11);
+    }
+  }
+
+  .children {
+    margin-top: px-to-rem(90);
+    
+    @include viewport-phone {
+      display: none;
+    }
+  }
+}
+
+.title {
+  @include viewport-tablet-min {
+    @include text-heading-2;
+  }
+  
+  @include viewport-phone {
+    @include text-heading-1;
+  }
+}
+
+.description {
+  @include text-body;
+}

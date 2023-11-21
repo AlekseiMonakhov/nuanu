@@ -1,0 +1,38 @@
+@import '@/styles/base';
+
+.layout {
+  position: relative;
+  padding: 0 2px;
+}
+
+.container {
+  position: sticky;
+  top: 0;
+  padding: 0 0 px-to-rem(20);
+}
+
+.content {
+  padding: px-to-rem(30) calc(var(--wrap) - 2px);
+}
+
+.stats {
+  display: grid;
+  height: px-to-rem(415);
+}
+
+.media {
+  position: absolute;
+  top: px-to-rem(-20);
+  left: 2px;
+  height: 100%;
+  width: calc(100% - 4px);
+  pointer-events: none;
+
+  &__container {
+    @include absolute-fullsize;
+    
+    border-radius: 12px;
+    transform: translateZ(0);
+    overflow: hidden;
+  }
+}

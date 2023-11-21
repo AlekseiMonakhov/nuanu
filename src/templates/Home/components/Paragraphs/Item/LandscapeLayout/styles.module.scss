@@ -1,0 +1,62 @@
+@import '@/styles/base';
+
+.layout {
+  --height: calc(100 * var(--vh));
+  padding: 0 var(--wrap);
+
+  @include viewport-desktop {
+    --pad-y: calc(8.95 * var(--vh));
+  }
+  @include viewport-tablet-max {
+    --pad-y: #{px-to-rem(60)};
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 0.49fr 0.386fr;
+  justify-content: space-between;
+}
+
+.aside {
+  --media-height: calc((var(--height) - var(--pad-y) * 2) * 0.792);
+
+  &__media {
+    position: relative;
+    display: grid;
+    height: calc(var(--media-height) + var(--height));
+    margin-top: calc(var(--height) * -1);
+    padding: var(--pad-y) 0 calc(var(--height) - var(--pad-y));
+    pointer-events: none;
+  }
+
+  &__content {
+    position: sticky;
+    top: 0;
+    height: var(--height);
+    padding: var(--pad-y) 0;
+    
+    display: grid;
+  }
+}
+
+.media {
+  position: relative;
+  border-radius: 20px;
+  transform: translateZ(0);
+  overflow: hidden;
+}
+
+.content {
+  position: sticky;
+  top: 0;
+  height: max-content;
+  min-height: var(--height);
+
+  @include viewport-desktop {
+    padding: calc(var(--pad-y) + #{px-to-rem(110)}) 0;
+  }
+  @include viewport-tablet-max {
+    padding: calc(var(--pad-y) + #{px-to-rem(54)}) 0;
+  }
+}

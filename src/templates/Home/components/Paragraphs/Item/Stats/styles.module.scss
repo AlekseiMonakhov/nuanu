@@ -1,0 +1,127 @@
+@import '@/styles/base';
+
+.stats {
+  &.type_0 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .item {
+      @include viewport-desktop {
+        border-radius: px-to-rem(160);
+      }
+      @include viewport-tablet {
+        border-radius: px-to-rem(120);
+      }
+      @include viewport-phone {
+        border-radius: px-to-rem(60);
+      }
+
+      &:nth-child(1) {
+        grid-row: 1 / 3;
+        border-radius: px-to-rem(60);
+      }
+    }
+  }
+  
+  &.type_1 {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    .item {
+      @include viewport-desktop {
+        border-radius: px-to-rem(100);
+      }
+      @include viewport-tablet {
+        border-radius: px-to-rem(90);
+      }
+      @include viewport-phone {
+        border-radius: px-to-rem(80);
+      }
+
+      &:nth-child(2) {
+        @include viewport-desktop {
+          border-radius: px-to-rem(40);
+        }
+        @include viewport-tablet {
+          border-radius: px-to-rem(38);
+        }
+        @include viewport-phone {
+          border-radius: px-to-rem(36);
+        }
+      }
+    }
+  }
+  
+  &.type_2 {
+    display: grid;
+    grid-template-rows: 0.388fr 0.612fr;
+
+    .item {
+      @include viewport-desktop {
+        border-radius: px-to-rem(160);
+      }
+      @include viewport-tablet {
+        border-radius: px-to-rem(120);
+      }
+      @include viewport-phone {
+        border-radius: px-to-rem(60);
+      }
+
+      &:nth-child(1) {
+        grid-column: 1 / 3;
+
+        @include viewport-desktop {
+          border-radius: px-to-rem(360);
+        }
+        @include viewport-tablet {
+          border-radius: px-to-rem(240);
+        }
+      }
+    }
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  overflow: hidden;
+
+  background-color: var(--color-primary-base);
+
+  > * + * {
+    @include viewport-desktop {
+      margin-top: px-to-rem(10);
+    }
+    @include viewport-tablet {
+      margin-top: px-to-rem(8);
+    }
+    @include viewport-phone {
+      margin-top: px-to-rem(6);
+    }
+  }
+}
+
+.title {
+  margin: 0;
+
+  @include viewport-desktop {
+    @include text-display;
+  }
+  @include viewport-tablet-max {
+    @include text-heading-1;
+  }
+}
+
+.description {
+  margin: 0;
+
+  @include viewport-desktop {
+    @include text-smaller;
+  }
+  @include viewport-tablet-max {
+    @include text-small;
+  }
+}

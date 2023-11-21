@@ -11,10 +11,11 @@ import { HomeFeatures } from './components/Features';
 import styles from './styles.module.scss';
 import { HomeInside } from './components/Inside';
 import { HomeLongRead } from './components/LongRead';
+import { HomeParagraphs } from './components/Paragraphs';
 
 const HASSECTIONSLIDER = true;
 
-const Home: FC<IHome> = ({ stories, longRead }) => {
+const Home: FC<IHome> = ({ stories, longRead, paragraphs }) => {
   useTemplate();
 
   const pageRef = useRef<HTMLDivElement>(null);
@@ -58,6 +59,8 @@ const Home: FC<IHome> = ({ stories, longRead }) => {
         )}
       >
         {longRead && <HomeLongRead {...longRead} />}
+
+        {paragraphs && <HomeParagraphs {...paragraphs} />}
 
         <Footer />
       </div>

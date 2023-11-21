@@ -269,6 +269,109 @@ const handler = async (
           },
         ],
       },
+
+      paragraphs: {
+        items: [
+          {
+            key: 0,
+            image: {
+              original: '',
+              thumb: '/lorem/home/paragraphs/0.jpg',
+              thumbWebp: '',
+              width: 0,
+              height: 0,
+              alt: '',
+            },
+            video: null,
+            title: 'Live',
+            description:
+              'Discover your home experience the essence of comfort and quality at Nuanu. From tranquil retreats to high-quality havens, we provide the perfect space for your stay',
+            action: {
+              kind: 'link',
+              text: 'View accommodation options',
+              href: '/accomodation',
+              target: null,
+            },
+            stats: [
+              { key: 0, title: 'Value 0', description: 'Description 0' },
+              { key: 1, title: 'Value 1', description: 'Description 1' },
+              {
+                key: 2,
+                title: '24',
+                description: 'hour services<br />are available',
+              },
+            ],
+          },
+          {
+            key: 1,
+            image: {
+              original: '',
+              thumb: '/lorem/home/paragraphs/1.jpg',
+              thumbWebp: '',
+              width: 0,
+              height: 0,
+              alt: '',
+            },
+            video: null,
+            title: 'Work',
+            description:
+              'Your ideas are a valuable part of our journey. Step into our co-creating space, where innovation thrives and new ideas are nurtured. Share your vision and collaborate with us to shape something extraordinary',
+            action: {
+              kind: 'link',
+              text: 'Collaborate with us',
+              href: '/',
+              target: null,
+            },
+            stats: [
+              { key: 0, title: 'Title 0', description: 'Description 0' },
+              {
+                key: 1,
+                title: '24',
+                description: 'hour services<br />are available',
+              },
+              {
+                key: 2,
+                title: '24',
+                description: 'hour services<br />are available',
+              },
+            ],
+          },
+          {
+            key: 2,
+            image: {
+              original: '',
+              thumb: '/lorem/home/paragraphs/2.jpg',
+              thumbWebp: '',
+              width: 0,
+              height: 0,
+              alt: '',
+            },
+            video: null,
+            title: 'Play',
+            description:
+              'At nuanu, events are the playgrounds of creativity and connection. Experience the magic of play as we nurture vibrant gatherings and events that inspire and engage',
+            action: {
+              kind: 'link',
+              text: 'Collaborate with us',
+              href: '/',
+              target: null,
+            },
+            stats: [
+              { key: 0, title: 'Title 0', description: 'Description 0' },
+              {
+                key: 1,
+                title: '24',
+                description: 'hour services<br />are available',
+              },
+              {
+                key: 2,
+                title: '24',
+                description: 'hour services<br />are available',
+              },
+            ],
+          },
+        ],
+      },
     },
   });
 };
