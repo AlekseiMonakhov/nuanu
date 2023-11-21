@@ -1,12 +1,20 @@
-import { FC, memo } from 'react';
+import { FC, memo, useMemo } from 'react';
 import cn from 'classnames';
 import { ExpandContent } from '@anton.bobrov/react-components';
 import { useStoreLexicon } from '@/store/reducers/page';
+import { CtaButton } from '@/components/Button/Cta';
+import { ActionButton } from '@/components/Button/Action';
+import { IActionButtonRendererProps } from '@/components/Button/Action/types';
 import { IProps } from './types';
 import styles from './styles.module.scss';
-import { Action } from './Action';
 
 const ACCORDION_DURATION = 350;
+
+const RenderAction = (props: IActionButtonRendererProps) => (
+  <CtaButton {...(props as any)} />
+);
+
+const RenderActionMemo = memo(RenderAction);
 
 const Component: FC<IProps> = ({
   className,
@@ -14,11 +22,13 @@ const Component: FC<IProps> = ({
   isActive,
   isHovered,
   index,
-  contentTheme = 'dark',
+  theme = 'dark',
   label,
   action,
 }) => {
   const { navigation: lexicon } = useStoreLexicon();
+
+  const actionButtonProps = useMemo(() => ({ theme }), [theme]);
 
   return (
     <div
@@ -44,7 +54,11 @@ const Component: FC<IProps> = ({
 
       {action && (
         <div className={cn(styles.action, styles.v_phone)}>
-          <Action action={action} theme={contentTheme} />
+          <ActionButton
+            action={action}
+            renderButton={RenderActionMemo}
+            buttonProps={actionButtonProps}
+          />
         </div>
       )}
 
@@ -56,7 +70,11 @@ const Component: FC<IProps> = ({
           hasAlpha={false}
         >
           <div className={styles.action}>
-            <Action action={action} theme={contentTheme} />
+            <ActionButton
+              action={action}
+              renderButton={RenderActionMemo}
+              buttonProps={actionButtonProps}
+            />
           </div>
         </ExpandContent>
       )}

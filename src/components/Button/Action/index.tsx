@@ -1,21 +1,21 @@
 import { FC, memo } from 'react';
-import { CtaButton } from '@/components/Button/Cta';
-import { useStoreLexicon } from '@/store/reducers/page';
 import { VideoModalAnchor } from '@/components/Video/Modal/Anchor';
-import { IStoriesFrameContentActionProps } from './types';
+import { IProps } from './types';
 
-const Component: FC<IStoriesFrameContentActionProps> = ({ action, theme }) => {
-  const { navigation: lexicon } = useStoreLexicon();
-
+const Component: FC<IProps> = ({
+  action,
+  renderButton: Button,
+  buttonProps,
+}) => {
   if (action.kind === 'link') {
     return (
-      <CtaButton
-        theme={theme}
+      <Button
+        {...buttonProps}
         tag="a"
+        text={action.text}
         href={action.href}
         target={action.target ?? undefined}
         rel={action.target === '_blank' ? 'noopener noreferrer' : undefined}
-        text={action.text}
       />
     );
   }
@@ -25,12 +25,11 @@ const Component: FC<IStoriesFrameContentActionProps> = ({ action, theme }) => {
       <VideoModalAnchor
         modalProps={{ player: action.player }}
         anchor={
-          <CtaButton
-            theme={theme}
+          <Button
+            {...buttonProps}
             tag="button"
             type="button"
-            kind="play"
-            text={lexicon.watch}
+            text={action.text}
             sup={action.duration}
           />
         }
@@ -41,4 +40,4 @@ const Component: FC<IStoriesFrameContentActionProps> = ({ action, theme }) => {
   return null;
 };
 
-export const Action = memo(Component);
+export const ActionButton = memo(Component);

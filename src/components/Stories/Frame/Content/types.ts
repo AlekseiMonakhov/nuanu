@@ -1,21 +1,13 @@
-import { IBaseComponent, IVideoPlayer } from '@anton.bobrov/react-components';
-
-type TCTA =
-  | { kind: 'link'; href: string; target?: '_blank' | null; text: string }
-  | { kind: 'video_modal'; player: IVideoPlayer; duration?: string };
+import { TActionButtonRendererAction } from '@/components/Button/Action/types';
+import { IBaseComponent } from '@anton.bobrov/react-components';
 
 type TTheme = 'dark' | 'light';
 
-export interface IStoriesFrameContentActionProps {
-  action: TCTA;
-  theme: TTheme;
-}
-
 export interface IStoriesFrameContentProps {
-  contentTheme?: TTheme;
+  theme?: TTheme;
   /** nl2br */
   label?: string | null;
-  action?: TCTA | null;
+  action?: TActionButtonRendererAction | null;
 }
 
 export interface IProps extends IStoriesFrameContentProps, IBaseComponent {

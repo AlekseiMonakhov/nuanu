@@ -12,7 +12,6 @@ const lexicon: DeepRequired<ILexicon> = {
     close: 'Close',
     breadcrumbs: 'Breadcrumbs',
     play: 'Play',
-    watch: 'Watch',
     next: 'Next',
     previous: 'Previous',
     changeSlide: 'Change Slide',
