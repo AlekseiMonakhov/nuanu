@@ -14,4 +14,5 @@ export interface IProps
     HTMLAttributes<HTMLDivElement> {
   onLoad?: () => void;
   isPlaying?: boolean;
+  placeholderTheme?: 'light' | 'dark';
 }

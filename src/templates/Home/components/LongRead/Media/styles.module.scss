@@ -9,8 +9,6 @@
   position: absolute;
   overflow: hidden;
   
-  background-color: var(--color-primary-dark-base);
-  
   @include transition(transform var(--duration));
 
   @include viewport-tablet-min {

@@ -7,13 +7,24 @@ import styles from './styles.module.scss';
 
 const Component = forwardRef<HTMLDivElement, IProps>(
   (
-    { className, style, image, video, onLoad, isPlaying = true, ...props },
+    {
+      className,
+      style,
+      image,
+      video,
+      onLoad,
+      isPlaying = true,
+      placeholderTheme,
+      ...props
+    },
     forwardedRef,
   ) => {
     const ref = useForwardedRef(forwardedRef);
     const videoRef = useRef<HTMLVideoElement>(null);
 
     const [isAutoPlay] = useState(isPlaying);
+
+    const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
       if (!videoRef.current) {
@@ -30,7 +41,12 @@ const Component = forwardRef<HTMLDivElement, IProps>(
     return (
       <div
         ref={ref}
-        className={cn(className, styles.media)}
+        className={cn(
+          className,
+          styles.media,
+          isLoaded && styles.loaded,
+          placeholderTheme && styles[`placeholder_${placeholderTheme}`],
+        )}
         style={style}
         {...props}
       >
@@ -47,7 +63,16 @@ const Component = forwardRef<HTMLDivElement, IProps>(
           />
         )}
 
-        {image && <LazyImage paths={image} onLoad={onLoad} position="cover" />}
+        {image && (
+          <LazyImage
+            paths={image}
+            onLoad={() => {
+              setIsLoaded(true);
+              onLoad?.();
+            }}
+            position="cover"
+          />
+        )}
       </div>
     );
   },

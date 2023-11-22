@@ -48,7 +48,13 @@ export const HomeParagraphItem: FC<IProps> = ({
   );
 
   const media = useMemo(
-    () => <MediaVideoOrImage {...mediaProp} className={styles.media} />,
+    () => (
+      <MediaVideoOrImage
+        {...mediaProp}
+        className={styles.media}
+        placeholderTheme="light"
+      />
+    ),
     [mediaProp],
   );
 

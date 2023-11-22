@@ -43,6 +43,7 @@ export const Media: FC<IProps> = ({ items: itemsProp, activeIndex }) => {
           }}
           key={key}
           isPlaying={activeIndex === itemIndex}
+          placeholderTheme="light"
         />
       ))}
     </div>
