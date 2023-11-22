@@ -16,6 +16,8 @@
   
   @include text-small-caps;
 
+  @include transition(background-color 0.35s);
+
   @include viewport-desktop {
     height: px-to-rem(60);
     border-radius: 12px;
@@ -39,13 +41,21 @@
   }
 
   &.theme_light {
-    background-color: rgba(var(--color-primary-base--rgb), 0.5);
+    background-color: var(--color-background-light);
     color: var(--color-primary-dark-base);
+
+    @include non-mobile-hover {
+      background-color: var(--color-primary-base);
+    }
   }
 
   &.theme_dark {
-    background-color: rgba(var(--color-58--rgb), 0.5);
+    background-color: var(--color-background-menu-dark);
     color: var(--color-total-white);
+
+    @include non-mobile-hover {
+      background-color: var(--color-background-menu-light);
+    }
   }
 
   &:disabled {
