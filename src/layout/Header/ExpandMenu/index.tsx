@@ -40,10 +40,14 @@ export const HeaderExpandMenu: FC<IProps> = ({ className, style, id }) => {
     >
       <div ref={containerRef} className={styles.container}>
         <ul className={styles.links}>
-          {menu.map(({ key, href, name }) => (
+          {menu.map(({ key, href, name, isHighlighted, isActive }) => (
             <li key={key} className={styles.li}>
-              <Link href={href} className={styles.link}>
-                {name}
+              <Link
+                href={href}
+                className={cn(styles.link, isHighlighted && styles.highlighted)}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                {isHighlighted ? <span>{name}</span> : name}
               </Link>
             </li>
           ))}
