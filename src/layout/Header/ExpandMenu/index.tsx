@@ -1,17 +1,14 @@
 import { FC, useRef } from 'react';
 import cn from 'classnames';
 import { clampScope } from '@anton.bobrov/vevet-init';
-import { useStoreGlobal } from '@/store/reducers/page';
-import Link from 'next/link';
 import { useMenuStates } from './useMenuStates';
 import { IProps } from './types';
 import styles from './styles.module.scss';
+import { HeaderMenuLinks } from '../MenuLinks';
 
 export const HeaderExpandMenu: FC<IProps> = ({ className, style, id }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-
-  const { menu } = useStoreGlobal();
 
   const { isOpened } = useMenuStates({
     duration: 750,
@@ -39,19 +36,7 @@ export const HeaderExpandMenu: FC<IProps> = ({ className, style, id }) => {
       aria-hidden={!isOpened}
     >
       <div ref={containerRef} className={styles.container}>
-        <ul className={styles.links}>
-          {menu.map(({ key, href, name, isHighlighted, isActive }) => (
-            <li key={key} className={styles.li}>
-              <Link
-                href={href}
-                className={cn(styles.link, isHighlighted && styles.highlighted)}
-                aria-current={isActive ? 'page' : undefined}
-              >
-                {isHighlighted ? <span>{name}</span> : name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <HeaderMenuLinks className={styles.links} />
 
         <div className={styles.action}>action</div>
       </div>

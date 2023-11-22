@@ -13,7 +13,7 @@ import { HeaderExpandMenu } from './ExpandMenu';
 export const Header: FC = () => {
   const ref = useRef<HTMLElement>(null);
 
-  const { links, menu } = useStoreGlobal();
+  const { links } = useStoreGlobal();
   const lexicon = useStoreLexicon();
   const { theme } = useStoreHeader();
 
@@ -38,7 +38,7 @@ export const Header: FC = () => {
           <LogoPhone />
         </Link>
 
-        <HeaderInlineMenu className={styles.inline_menu} links={menu} />
+        <HeaderInlineMenu className={styles.inline_menu} />
 
         <div className={styles.action}>action</div>
 

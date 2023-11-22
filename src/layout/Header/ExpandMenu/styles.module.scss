@@ -30,40 +30,12 @@
 
 .links {
   @include reset-ul;
-
   padding: px-to-rem(12) px-to-rem(24) px-to-rem(26);
 
-  .li {
+  @include text-body;
+
+  > li {
     padding: px-to-rem(9) 0;
-  }
-
-  .link {
-    color: currentColor;
-    text-decoration: none;
-
-    @include text-body;
-  }
-}
-
-.link {
-  position: relative;
-
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  
-  &.highlighted {
-    &::after {
-      content: '';
-      display: block;
-      width: 7px;
-      height: 7px;
-      margin-left: 3px;
-      margin-top: 2px;
-      border-radius: 50%;
-      background-color: var(--color-highlight);
-    }
   }
 }
 
