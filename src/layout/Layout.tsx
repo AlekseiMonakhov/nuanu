@@ -13,6 +13,7 @@ import { BreadcrumbsJSON } from './Breadcrumbs/JSON';
 import { Preloader } from './Preloader';
 import { Header } from './Header';
 import { RouterCurtain } from './RouterCurtain';
+import { Cookies } from './Cookies';
 
 export const Layout: FC<PropsWithChildren> = ({ children }) => {
   const { key } = useStorePage();
@@ -45,6 +46,8 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
             <Header />
 
             {children}
+
+            <Cookies />
 
             <RouterCurtain />
           </ScrollView.Provider>

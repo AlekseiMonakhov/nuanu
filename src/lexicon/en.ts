@@ -43,6 +43,12 @@ const lexicon: DeepRequired<ILexicon> = {
       successText: 'We successfully subscribed you to the Nuanu newsletter ',
     },
   },
+
+  cookies: {
+    description:
+      'We use cookies to provide you with the best website experience. <a href={{privacyPolicyHref}}>Privacy Policy</a>',
+    accept: 'Accept',
+  },
 };
 
 export default lexicon;

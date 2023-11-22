@@ -40,4 +40,9 @@ export interface ILexicon {
       successText: string;
     };
   };
+
+  cookies: {
+    description: string;
+    accept: string;
+  };
 }

@@ -43,6 +43,8 @@ const Component = forwardRef<HTMLDivElement, IProps>(
               links={social}
               target="_blank"
             />
+
+            {/* // TODO privacy policy */}
           </div>
         </div>
 

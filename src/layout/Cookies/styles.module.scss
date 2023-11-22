@@ -1,0 +1,28 @@
+@import '@/styles/base';
+
+.cookies {
+  position: fixed;
+  z-index: 99;
+
+  @include viewport-tablet-min {
+    right: var(--wrap);
+    bottom: px-to-rem(35);
+    width: 46.2vw;
+  }
+
+  @include viewport-phone {
+    bottom: var(--wrap);
+    left: var(--wrap);
+    width: calc(100% - var(--wrap) * 2);
+  }
+
+  opacity: 0;
+  transform: translate3d(0, -1rem, 0);
+
+  @include transition((opacity 0.5s, transform 0.5s));
+
+  &.show {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
