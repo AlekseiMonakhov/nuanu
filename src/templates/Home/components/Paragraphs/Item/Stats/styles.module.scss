@@ -54,7 +54,13 @@
   
   &.type_2 {
     display: grid;
-    grid-template-rows: 0.388fr 0.612fr;
+
+    @include viewport-tablet-min {
+      grid-template-rows: 0.388fr 0.612fr;
+    }
+    @include viewport-phone {
+      grid-template-rows: 0.361fr 0.639fr;
+    }
 
     .item {
       @include viewport-desktop {
