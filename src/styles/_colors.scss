@@ -11,7 +11,8 @@ $colors: (
   'line': #d9d9d9,
   'background-menu-dark': #53535333,
   'background-menu-light': #e2e2e233,
-  'background-light': #f2f2f280
+  'background-light': #f2f2f280,
+  'background-black': #0009
 );
 
 @function hex-to-rgb ($hex) {

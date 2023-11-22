@@ -37,17 +37,25 @@
   }
 
   &.theme_light {
-    background-color: var(--color-total-white);
+    background-color: var(--color-primary-base);
     color: var(--color-primary-dark-base);
+    
+    @include non-mobile-hover {
+      background-color: var(--color-background-light);
+    }
   }
     
   &.theme_dark {
     background-color: var(--color-primary-dark-base);
     color: var(--color-total-white);
+    
+    @include non-mobile-hover {
+      background-color: var(--color-background-black);
+    }
   }
 
   &.success {
-    background-color: var(--color-green-success);
+    background-color: var(--color-green-success) !important;
     color: var(--color-total-white);
   }
 

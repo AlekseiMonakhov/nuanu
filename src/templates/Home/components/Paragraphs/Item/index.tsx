@@ -13,7 +13,7 @@ import { Stats } from './Stats';
 
 // TODO change button
 const RenderAction: TActionButtonRenderer = (props) => (
-  <FillButton {...(props as any)} theme="dark" className={styles.action} />
+  <FillButton {...(props as any)} theme="light" className={styles.action} />
 );
 
 const RenderActionMemo = memo(RenderAction);
