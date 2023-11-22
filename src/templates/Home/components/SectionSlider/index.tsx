@@ -70,6 +70,10 @@ const Component: FC<IProps> = ({
     store.dispatch(
       headerSlice.actions.setTheme(step === length ? 'light' : 'dark'),
     );
+
+    return () => {
+      store.dispatch(headerSlice.actions.setTheme('light'));
+    };
   }, [length, step]);
 
   return (
