@@ -29,7 +29,7 @@ export const HeaderInlineMenu: FC<IProps> = ({ className, style, links }) => {
             )}
             aria-current={isActive ? 'page' : undefined}
           >
-            {isHighlighted ? <span>{name}</span> : name}
+            <span>{name}</span>
           </Link>
         </li>
       ))}
