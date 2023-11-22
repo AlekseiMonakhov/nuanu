@@ -46,8 +46,10 @@
     color: currentColor;
     text-decoration: none;
 
+    @include transition(opacity 0.35s);
+
     @include non-mobile-hover {
-      text-decoration: underline;
+      opacity: 0.5;
     }
   }
 }
