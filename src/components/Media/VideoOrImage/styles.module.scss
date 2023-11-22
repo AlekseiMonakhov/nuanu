@@ -3,7 +3,7 @@
 .media {
   @include absolute-fullsize;
 
-  @include transition(background-color 0.35s);
+  @include transition(background-color 0.35s, 0.35s);
 
   &:not(.loaded) {
     &.placeholder_dark {
