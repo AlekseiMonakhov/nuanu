@@ -28,7 +28,13 @@ const Component: FC<IProps> = ({
 }) => {
   const { navigation: lexicon } = useStoreLexicon();
 
-  const actionButtonProps = useMemo(() => ({ theme }), [theme]);
+  const actionButtonProps = useMemo(
+    () => ({
+      theme,
+      kind: action?.kind === 'video_modal' ? 'play' : undefined,
+    }),
+    [action?.kind, theme],
+  );
 
   return (
     <div
