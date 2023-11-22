@@ -17,6 +17,7 @@ export interface IPageGlobal {
   };
   links: {
     home: string;
+    privacyPolicy: string;
   };
   languages: ILinksLanguage[];
   menu: ILinkMenu[];
