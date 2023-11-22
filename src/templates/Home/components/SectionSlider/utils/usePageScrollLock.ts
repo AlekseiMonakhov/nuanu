@@ -1,20 +1,31 @@
-import { isBrowser, useEventListener } from '@anton.bobrov/react-hooks';
+import {
+  isBrowser,
+  useEvent,
+  useEventListener,
+} from '@anton.bobrov/react-hooks';
 import { useEffect } from 'react';
 
 export function usePageScrollLock(
-  isEnabled: boolean,
+  isEnabledProp: boolean,
   lockScrollClassName: string,
 ) {
+  // TODO: replace hook with one from react-kit (new release)
   useEventListener({
     ref: isBrowser ? window : null,
     target: 'scroll',
     listener: () => {
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     },
-    isDisabled: !isEnabled,
+    isDisabled: !isEnabledProp,
+  });
+
+  const toggleDocumentScrollLock = useEvent((isEnabled: boolean) => {
+    document.documentElement.classList.toggle(lockScrollClassName, isEnabled);
   });
 
   useEffect(() => {
-    document.documentElement.classList.toggle(lockScrollClassName, isEnabled);
-  }, [isEnabled, lockScrollClassName]);
+    toggleDocumentScrollLock(isEnabledProp);
+
+    return () => toggleDocumentScrollLock(false);
+  }, [isEnabledProp, toggleDocumentScrollLock]);
 }
