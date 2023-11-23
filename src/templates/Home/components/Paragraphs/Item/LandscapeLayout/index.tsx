@@ -10,7 +10,7 @@ import { Factoids } from '../Factoids';
 import { Content } from '../Content';
 
 const RenderAction: TActionButtonRenderer = (props) => (
-  <FillButton {...(props as any)} theme="light" />
+  <FillButton {...(props as any)} theme="light" size="large" hasArrow />
 );
 
 const RenderActionMemo = memo(RenderAction);
