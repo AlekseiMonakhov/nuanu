@@ -1,10 +1,8 @@
 import { IBaseComponent } from '@anton.bobrov/react-components';
-import { ReactNode } from 'react';
+import { IHomeParagraphsItem } from '../types';
 
-export interface IProps extends IBaseComponent {
-  content: ReactNode;
-  media: ReactNode;
-  factoids: ReactNode;
+export interface IProps extends IBaseComponent, IHomeParagraphsItem {
+  index: number;
   isLarge: boolean;
   isReverse: boolean;
 }

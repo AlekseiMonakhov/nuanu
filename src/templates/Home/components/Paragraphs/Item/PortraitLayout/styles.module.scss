@@ -5,7 +5,11 @@
   padding: 0 2px;
 
   --factoids-height: #{px-to-rem(415)};
-  --action-height: #{px-to-rem(70)};
+  --action-height: 0.001px;
+
+  &.has_action {
+    --action-height: #{px-to-rem(70)};
+  }
 
   &::before {
     content: '';
@@ -31,18 +35,20 @@
 
 .action {
   padding-top: 2px;
+  height: var(--action-height);
 
   a,
   button {
+    width: 100%;
     height: var(--action-height);
   }
 }
 
 .media {
   position: absolute;
-  bottom: calc(var(--factoids-height) + var(--action-height) + 4px);
-  left: 0;
-  width: 100%;
+  bottom: calc(var(--factoids-height) + var(--action-height) + 2px);
+  left: 2px;
+  width: calc(100% - 4px);
   height: var(--factoids-height);
   
   overflow: hidden;

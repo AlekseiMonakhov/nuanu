@@ -1,3 +1,4 @@
+import { IBaseComponent } from '@anton.bobrov/react-components';
 import { ReactNode } from 'react';
 
 export interface IContentProps {
@@ -7,6 +8,6 @@ export interface IContentProps {
   description?: string;
 }
 
-export interface IProps extends IContentProps {
+export interface IProps extends IContentProps, IBaseComponent {
   children?: ReactNode;
 }

@@ -1,10 +1,17 @@
 import { FC } from 'react';
 import { RichText } from '@/components/Typography/RichText';
+import cn from 'classnames';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 
-export const Content: FC<IProps> = ({ title, description, children }) => (
-  <div className={styles.content}>
+export const Content: FC<IProps> = ({
+  className,
+  style,
+  title,
+  description,
+  children,
+}) => (
+  <div className={cn(className, styles.content)} style={style}>
     {title && (
       <h2
         className={styles.title}

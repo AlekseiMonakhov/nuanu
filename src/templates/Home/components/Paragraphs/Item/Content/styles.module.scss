@@ -19,10 +19,6 @@
 
   .children {
     margin-top: px-to-rem(90);
-    
-    @include viewport-phone {
-      display: none;
-    }
   }
 }
 

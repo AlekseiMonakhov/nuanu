@@ -56,8 +56,9 @@
   min-height: var(--content-height);
   height: max-content;
   padding-top: px-to-rem(110);
+  max-width: px-to-rem(630);
 
-  > * {
-    max-width: px-to-rem(630);
+  .action {
+    width: 100%;
   }
 }
