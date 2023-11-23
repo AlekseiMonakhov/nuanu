@@ -26,38 +26,38 @@ export const FooterSubscribeForm: FC<IProps> = ({ className, style }) => {
   };
 
   return (
-    <div className={className} style={style}>
-      <FormComponent
-        form={form}
-        action="/api/form/subscribe"
-        onSuccess={handleSuccess}
-        aria-label={lexicon.label}
-      >
-        <div className={styles.container}>
-          <FooterSubscribeFormInput
-            name="email"
-            type="email"
-            placeholder={lexicon.enterEmail}
-            readOnly={isSuccess}
+    <FormComponent
+      className={className}
+      style={style}
+      form={form}
+      action="/api/form/subscribe"
+      onSuccess={handleSuccess}
+      aria-label={lexicon.label}
+    >
+      <div className={styles.container}>
+        <FooterSubscribeFormInput
+          name="email"
+          type="email"
+          placeholder={lexicon.enterEmail}
+          readOnly={isSuccess}
+        />
+
+        <div className={styles.actions}>
+          <p ref={textRef} className={styles.text} tabIndex={0}>
+            {isSuccess ? lexicon.successText : lexicon.description}
+          </p>
+
+          <FillButton
+            className={styles.submit}
+            tag="button"
+            type="submit"
+            theme="dark"
+            text={lexicon.submit}
+            isSuccess={isSuccess}
+            disabled={isSuccess}
           />
-
-          <div className={styles.actions}>
-            <p ref={textRef} className={styles.text} tabIndex={0}>
-              {isSuccess ? lexicon.successText : lexicon.description}
-            </p>
-
-            <FillButton
-              className={styles.submit}
-              tag="button"
-              type="submit"
-              theme="dark"
-              text={lexicon.submit}
-              isSuccess={isSuccess}
-              disabled={isSuccess}
-            />
-          </div>
         </div>
-      </FormComponent>
-    </div>
+      </div>
+    </FormComponent>
   );
 };
