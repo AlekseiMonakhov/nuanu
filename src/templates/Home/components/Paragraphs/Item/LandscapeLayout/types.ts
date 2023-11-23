@@ -4,5 +4,7 @@ import { ReactNode } from 'react';
 export interface IProps extends IBaseComponent {
   content: ReactNode;
   media: ReactNode;
-  stats: ReactNode;
+  factoids: ReactNode;
+  isLarge: boolean;
+  isReverse: boolean;
 }

@@ -8,19 +8,27 @@ export const LandscapeLayout: FC<IProps> = ({
   style,
   content,
   media,
-  stats,
+  factoids,
+  isLarge,
+  isReverse,
 }) => (
-  <article className={cn(className, styles.layout)} style={style}>
-    <div className={styles.container}>
-      <div className={styles.aside}>
-        <div className={styles.aside__content}>{stats}</div>
+  <article
+    className={cn(
+      className,
+      styles.layout,
+      isReverse && styles.reverse,
+      isLarge && styles.large,
+    )}
+    style={style}
+  >
+    <div className={styles.aside}>
+      <div className={styles.aside__factoids}>{factoids}</div>
 
-        <div className={styles.aside__media}>
-          <div className={styles.media}>{media}</div>
-        </div>
+      <div className={styles.aside__media}>
+        <div className={styles.media}>{media}</div>
       </div>
-
-      <div className={styles.content}>{content}</div>
     </div>
+
+    <div className={styles.content}>{content}</div>
   </article>
 );

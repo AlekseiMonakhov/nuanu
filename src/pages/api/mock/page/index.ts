@@ -302,9 +302,9 @@ const handler = async (
               href: '/accomodation',
               target: null,
             },
-            stats: [
-              { key: 0, title: 'Value 0', description: 'Description 0' },
-              { key: 1, title: 'Value 1', description: 'Description 1' },
+            factoids: [
+              { key: 0, title: 'Value 1', description: 'Description 1' },
+              { key: 1, title: 'Value 2', description: 'Description 2' },
               {
                 key: 2,
                 title: '24',
@@ -334,8 +334,8 @@ const handler = async (
               href: '/',
               target: null,
             },
-            stats: [
-              { key: 0, title: 'Title 0', description: 'Description 0' },
+            factoids: [
+              { key: 0, title: 'Value 1', description: 'Description 1' },
               {
                 key: 1,
                 title: '24',
@@ -370,17 +370,16 @@ const handler = async (
               href: '/',
               target: null,
             },
-            stats: [
-              { key: 0, title: 'Title 0', description: 'Description 0' },
+            factoids: [
               {
                 key: 1,
-                title: '24',
-                description: 'hour services<br />are available',
+                title: '5',
+                description: 'high-level restaurants<br />and cafes',
               },
               {
                 key: 2,
-                title: '24',
-                description: 'hour services<br />are available',
+                title: '17',
+                description: 'high-level restaurants<br />villas and bars',
               },
             ],
           },

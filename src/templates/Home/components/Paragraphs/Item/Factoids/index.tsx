@@ -3,8 +3,8 @@ import cn from 'classnames';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 
-export const Stats: FC<IProps> = ({ items, index }) => (
-  <div className={cn(styles.stats, styles[`type_${index % 3}`])}>
+export const Factoids: FC<IProps> = ({ items, index }) => (
+  <div className={cn(styles.factoids, styles[`type_${index % 3}`])}>
     {items.map(({ key, title, description }) => (
       <div key={key} className={cn(styles.item)}>
         {title && (

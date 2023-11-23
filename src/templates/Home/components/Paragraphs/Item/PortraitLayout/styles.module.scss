@@ -3,36 +3,49 @@
 .layout {
   position: relative;
   padding: 0 2px;
+
+  --factoids-height: #{px-to-rem(415)};
+  --action-height: #{px-to-rem(70)};
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: var(--factoids-height);
+  }
 }
 
 .container {
   position: sticky;
-  top: 0;
-  padding: 0 0 px-to-rem(20);
+  bottom: 0;
 }
 
 .content {
   padding: px-to-rem(30) calc(var(--wrap) - 2px);
 }
 
-.stats {
+.factoids {
   display: grid;
-  height: px-to-rem(415);
+  height: var(--factoids-height);
+}
+
+.action {
+  padding-top: 2px;
+
+  a,
+  button {
+    height: var(--action-height);
+  }
 }
 
 .media {
   position: absolute;
-  top: px-to-rem(-20);
-  left: 2px;
-  height: 100%;
-  width: calc(100% - 4px);
-  pointer-events: none;
-
-  &__container {
-    @include absolute-fullsize;
-    
-    border-radius: 12px;
-    transform: translateZ(0);
-    overflow: hidden;
-  }
+  bottom: calc(var(--factoids-height) + var(--action-height) + 4px);
+  left: 0;
+  width: 100%;
+  height: var(--factoids-height);
+  
+  overflow: hidden;
+  transform: translateZ(0);
+  border-radius: 12px;
 }

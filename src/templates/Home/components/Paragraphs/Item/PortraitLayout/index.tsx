@@ -1,8 +1,5 @@
-import { FC, useRef, useState } from 'react';
+import { FC } from 'react';
 import cn from 'classnames';
-import { useClientSize } from '@anton.bobrov/react-hooks';
-import { vevet } from '@anton.bobrov/vevet-init';
-import { useOnResize } from '@anton.bobrov/react-vevet-hooks';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 
@@ -11,52 +8,20 @@ export const PortraitLayout: FC<IProps> = ({
   style,
   content,
   media,
-  stats,
+  factoids,
   action,
-}) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const statsRef = useRef<HTMLDivElement>(null);
-  const actionRef = useRef<HTMLDivElement>(null);
+}) => (
+  <article className={cn(className, styles.layout)} style={style}>
+    <div className={styles.pad} />
 
-  const { clientHeight: containerHeight } = useClientSize(containerRef);
-  const { clientHeight: statsHeight } = useClientSize(statsRef);
-  const { clientHeight: actionHeight } = useClientSize(actionRef);
+    <div className={styles.container}>
+      <div className={styles.content}>{content}</div>
 
-  const [top, setTop] = useState(0);
+      <div className={styles.factoids}>{factoids}</div>
 
-  useOnResize(
-    () => setTop(vevet.viewport.height - containerHeight),
-    [containerHeight],
-  );
+      <div className={styles.action}>{action}</div>
+    </div>
 
-  return (
-    <article
-      className={cn(className, styles.layout)}
-      style={{ ...style, height: containerHeight + statsHeight }}
-    >
-      <div ref={containerRef} className={styles.container} style={{ top }}>
-        <div className={styles.content}>{content}</div>
-
-        <div ref={statsRef} className={styles.stats}>
-          {stats}
-        </div>
-
-        <div ref={actionRef} className={styles.action}>
-          {action}
-        </div>
-      </div>
-
-      <div className={styles.media}>
-        <div
-          className={styles.media__container}
-          style={{
-            top: containerHeight - statsHeight - actionHeight,
-            height: statsHeight,
-          }}
-        >
-          {media}
-        </div>
-      </div>
-    </article>
-  );
-};
+    <div className={styles.media}>{media}</div>
+  </article>
+);

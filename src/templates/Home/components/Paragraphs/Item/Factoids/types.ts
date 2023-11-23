@@ -8,9 +8,9 @@ type TItem = {
   description?: string;
 };
 
-export type TStatsItems = TItem[];
+export type TFactoidsItems = TItem[];
 
 export interface IProps {
   index: number;
-  items: TStatsItems;
+  items: TFactoidsItems;
 }

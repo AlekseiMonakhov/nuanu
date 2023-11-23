@@ -9,7 +9,7 @@ import styles from './styles.module.scss';
 import { Content } from './Content';
 import { LandscapeLayout } from './LandscapeLayout';
 import { PortraitLayout } from './PortraitLayout';
-import { Stats } from './Stats';
+import { Factoids } from './Factoids';
 
 // TODO change button
 const RenderAction: TActionButtonRenderer = (props) => (
@@ -26,7 +26,7 @@ export const HomeParagraphItem: FC<IProps> = ({
   title,
   description,
   action: actionProp,
-  stats: statsProp,
+  factoids: factoidsProp,
 }) => {
   const breakpoint = useBreakpointName();
 
@@ -48,23 +48,17 @@ export const HomeParagraphItem: FC<IProps> = ({
   );
 
   const media = useMemo(
-    () => (
-      <MediaVideoOrImage
-        {...mediaProp}
-        className={styles.media}
-        placeholderTheme="light"
-      />
-    ),
+    () => <MediaVideoOrImage {...mediaProp} placeholderTheme="light" />,
     [mediaProp],
   );
 
-  const stats = useMemo(() => {
-    if (!statsProp) {
+  const factoids = useMemo(() => {
+    if (!factoidsProp) {
       return null;
     }
 
-    return <Stats items={statsProp} index={index} />;
-  }, [statsProp, index]);
+    return <Factoids items={factoidsProp} index={index} />;
+  }, [factoidsProp, index]);
 
   if (breakpoint === 'phone') {
     return (
@@ -73,7 +67,7 @@ export const HomeParagraphItem: FC<IProps> = ({
         style={style}
         content={content}
         media={media}
-        stats={stats}
+        factoids={factoids}
         action={action}
       />
     );
@@ -85,7 +79,9 @@ export const HomeParagraphItem: FC<IProps> = ({
       style={style}
       content={content}
       media={media}
-      stats={stats}
+      factoids={factoids}
+      isLarge={index === 1}
+      isReverse={index % 2 !== 0}
     />
   );
 };

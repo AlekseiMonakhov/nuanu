@@ -1,11 +1,17 @@
 @import '@/styles/base';
 
 .home_paragraphs {
+  @include viewport-tablet-min {
+    padding-top: px-to-rem(100);
+
+    .item + .item {
+      margin-top: px-to-rem(100);
+    }
+  }
+  
   @include viewport-phone {
-    .item {
-      + .item {
-        margin-top: px-to-rem(80);
-      }
+    .item  + .item {
+      margin-top: px-to-rem(100);
     }
   }
 }
