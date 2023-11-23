@@ -27,16 +27,16 @@ export const HomeLongRead: FC<IProps> = ({
       <div className={styles.container}>
         <Media items={items} activeIndex={activeIndex} />
 
-        <p
-          className={styles.title}
-          dangerouslySetInnerHTML={{ __html: title }}
-        />
-
         <Labels
           className={styles.labels}
           items={items}
           activeIndex={activeIndex}
-        />
+        >
+          <p
+            className={styles.title}
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
+        </Labels>
       </div>
     </div>
   );

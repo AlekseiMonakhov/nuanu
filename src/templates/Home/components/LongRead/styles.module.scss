@@ -10,40 +10,49 @@
 
 .container {
   position: sticky;
-  top: 0;
+  top: calc(100vh - var(--height));
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: var(--height);
+
+  @include viewport-tablet-min {
+    --height: 100vh;
+  }
+  @include viewport-phone {
+    --height: calc(100vh - var(--header-height) - var(--header-top) * 2);
+  }
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   
-  .labels,
-  .title {
+  .labels {
     position: relative;
     z-index: 1;
+
+    @include viewport-phone {
+      margin-top: calc(-0.095 * var(--height));
+    }
   }
 }
 
 .title {
+  text-align: center;
+
   @include viewport-desktop {
     @include text-heading-2;
     line-height: 100% !important;
-    margin: 0 0 px-to-rem(20) !important;
   }
 
   @include viewport-tablet {
     @include text-heading-2;
     line-height: 100% !important;
-    margin: 0 0 px-to-rem(14) !important;
   }
 
   @include viewport-phone {
     @include text-heading-2;
     line-height: 100% !important;
-    margin: 0 0 px-to-rem(8) !important;
 
     @media (orientation: landscape) {
       display: none;

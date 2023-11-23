@@ -30,6 +30,23 @@
       }
     }
   }
+
+  .children {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+
+    @include viewport-desktop {
+      margin-bottom: px-to-rem(20);
+    }
+    @include viewport-tablet {
+      margin-bottom: px-to-rem(14);
+    }
+    @include viewport-phone {
+      margin-bottom: px-to-rem(8);
+    }
+  }
 }
 
 .track {

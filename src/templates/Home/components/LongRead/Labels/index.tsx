@@ -8,6 +8,7 @@ export const Labels: FC<IProps> = ({
   style,
   items,
   activeIndex,
+  children,
 }) => (
   <div className={cn(className, styles.labels)} style={style}>
     <div className={styles.scene}>
@@ -22,5 +23,7 @@ export const Labels: FC<IProps> = ({
         ))}
       </div>
     </div>
+
+    <div className={styles.children}>{children}</div>
   </div>
 );

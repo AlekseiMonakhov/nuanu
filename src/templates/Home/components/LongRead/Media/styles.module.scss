@@ -12,7 +12,7 @@
   @include transition(transform var(--duration));
 
   @include viewport-tablet-min {
-    --y-ratio: calc(100vh / 1117);
+    --y-ratio: calc(var(--height) / 1117);
     --x-ratio: calc(100vw / 1728);
   
     top: calc(var(--desktop-top) * var(--y-ratio));
@@ -24,7 +24,7 @@
   }
 
   @include viewport-phone {
-    --y-ratio: calc(100vh / 746);
+    --y-ratio: calc(var(--height) / 660);
     --x-ratio: calc(100vw / 393);
   
     top: calc(var(--phone-top) * var(--y-ratio));
