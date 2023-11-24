@@ -5,29 +5,19 @@ import { useStoreLexicon } from '@/store/reducers/page';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 
-const Component: FC<IProps> = ({
-  duration,
-  isActive,
-  index,
-  onHidden,
-  media,
-}) => {
+const Component: FC<IProps> = ({ duration, isActive, index, media }) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const { navigation: lexicon } = useStoreLexicon();
 
   const { play, reverse } = useTimeline({
     duration,
-    onProgress({ progress, easing }) {
+    onProgress({ easing }) {
       if (!ref.current) {
         return;
       }
 
       ref.current.style.opacity = `${easing}`;
-
-      if (progress === 0 && !isActive) {
-        onHidden();
-      }
     },
   });
 

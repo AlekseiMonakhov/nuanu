@@ -4,6 +4,5 @@ export interface IProps {
   duration: number;
   isActive: boolean;
   index: number;
-  onHidden: () => void;
   media?: IMediaVideoOrImageProps;
 }

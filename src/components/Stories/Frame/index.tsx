@@ -44,7 +44,7 @@ const Component: FC<IProps> = ({
     setActiveKey(key);
   });
 
-  const { keys, remove: removeKey } = usePrerenderedKeys(activeKey);
+  const { prerenderedKeys } = usePrerenderedKeys(activeKey);
   const { getNextKey, getPrevKey } = useSiblingKeys(items);
 
   return (
@@ -61,7 +61,7 @@ const Component: FC<IProps> = ({
         {items.map(({ key, ...item }, index) => {
           const isActive = key === activeKey;
 
-          if (!keys.includes(key)) {
+          if (!prerenderedKeys.includes(key)) {
             return null;
           }
 
@@ -72,7 +72,6 @@ const Component: FC<IProps> = ({
               duration={changeDuration}
               isActive={isActive}
               index={index}
-              onHidden={() => removeKey(key)}
             />
           );
         })}
