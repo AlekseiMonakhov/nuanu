@@ -4,7 +4,6 @@ body {
 }
 
 html {
-  font-family: $font-family;
   font-size: 16px;
   line-height: 100%;
   @include loading-indicator;
@@ -20,7 +19,7 @@ input,
 textarea,
 button,
 select {
-  font-family: $font-family;
+  font-family: inherit;
 }
 
 * {

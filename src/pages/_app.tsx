@@ -1,5 +1,6 @@
 import '@/styles/index.scss';
 import 'src/router';
+import localFont from 'next/font/local';
 import type { AppProps } from 'next/app';
 import { useEffect, useRef } from 'react';
 import { Provider } from 'react-redux';
@@ -10,6 +11,16 @@ import { LayoutHead } from '@/layout/Head';
 import { Layout } from '@/layout/Layout';
 import { TemplateRenderer } from '@/templates/Renderer';
 import { pageSlice } from '@/store/reducers/page';
+
+const suisseIntlFont = localFont({
+  variable: '--font-suisse-intl',
+  src: [
+    {
+      path: '../assets/fonts/SuisseIntl/SuisseIntl-Regular.woff2',
+      weight: 'normal',
+    },
+  ],
+});
 
 type TStaticProps = {
   statusCode: number;
@@ -54,6 +65,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     return (
       <Provider store={store}>
         <LayoutHead />
+
+        <style jsx global>{`
+          html {
+            font-family: ${suisseIntlFont.style.fontFamily};
+          }
+        `}</style>
 
         <Layout>
           <TemplateRenderer>
