@@ -4,7 +4,7 @@ import { IProps } from './types';
 import { LandscapeLayout } from './LandscapeLayout';
 import { PortraitLayout } from './PortraitLayout';
 
-export const HomeParagraphItem: FC<IProps> = ({
+export const HomeParagraphsItem: FC<IProps> = ({
   className,
   style,
   index,
