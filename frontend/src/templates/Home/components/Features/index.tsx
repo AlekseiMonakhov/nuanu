@@ -3,10 +3,9 @@ import { useStoreLexicon } from '@/store/reducers/page';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 import { HomeImageMap } from '../ImageMap';
-
-import imageJpg from './img/image.jpeg';
-import imageWebp from './img/image.webp';
 import { TotalArea } from './Overlays/TotalArea';
+
+import image from './image.jpg';
 
 const Component: FC<IProps> = () => {
   const {
@@ -16,8 +15,9 @@ const Component: FC<IProps> = () => {
   return (
     <HomeImageMap
       datGuiName={lexicon.title}
-      imageJpg={imageJpg}
-      imageWebp={imageWebp}
+      src={image.src}
+      width={image.width}
+      height={image.height}
       alt={lexicon.title}
       overlay={
         <div className={styles.overlay}>
