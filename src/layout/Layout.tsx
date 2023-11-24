@@ -2,7 +2,6 @@ import { FC, PropsWithChildren } from 'react';
 import {
   LinkClickInterceptor,
   PageScroll,
-  ScrollView,
   TLinkClickInterceptorHandler,
 } from '@anton.bobrov/react-components';
 import { useRouter } from 'next/router';
@@ -17,7 +16,7 @@ import { Cookies } from './Cookies';
 
 export const Layout: FC<PropsWithChildren> = ({ children }) => {
   const { key } = useStorePage();
-  const { isFirstLoaded, isPageVisible, isPageReady } = useStoreLayout();
+  const { isPageReady } = useStoreLayout();
 
   const router = useRouter();
 
@@ -36,21 +35,16 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
     <LinkClickInterceptor onInternalClick={onInternalLinkClick}>
       <PageScroll.Provider canBeSmooth={false}>
         <PageScroll.ScrollBar resizeKey={isPageReady ? key : undefined}>
-          <ScrollView.Provider
-            instanceKey={key}
-            isEnabled={isFirstLoaded && isPageVisible}
-          >
-            <Preloader />
+          <Preloader />
 
-            <BreadcrumbsJSON />
-            <Header />
+          <BreadcrumbsJSON />
+          <Header />
 
-            {children}
+          {children}
 
-            <Cookies />
+          <Cookies />
 
-            <RouterCurtain />
-          </ScrollView.Provider>
+          <RouterCurtain />
         </PageScroll.ScrollBar>
       </PageScroll.Provider>
     </LinkClickInterceptor>
