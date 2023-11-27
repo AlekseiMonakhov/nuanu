@@ -1,8 +1,6 @@
 @import '@/styles/base';
 
 .navigation_button {
-  @include reset-button;
-
   display: flex;
   flex-direction: row;
   align-items: center;

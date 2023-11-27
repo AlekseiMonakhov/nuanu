@@ -71,6 +71,8 @@
 }
 
 .item {
+  margin: 0;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,8 +97,6 @@
 }
 
 .title {
-  margin: 0;
-
   @include viewport-desktop {
     @include text-display;
   }
@@ -106,8 +106,6 @@
 }
 
 .description {
-  margin: 0;
-
   @include viewport-desktop {
     @include text-smaller;
   }

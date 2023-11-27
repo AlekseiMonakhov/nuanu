@@ -23,12 +23,20 @@ export interface ILexicon {
   };
 
   home: {
+    stories: {
+      title: string;
+    };
+
     features: {
-      title: 'Features';
+      title: string;
     };
 
     inside: {
-      title: 'Inside';
+      title: string;
+    };
+
+    site: {
+      title: string;
     };
   };
 

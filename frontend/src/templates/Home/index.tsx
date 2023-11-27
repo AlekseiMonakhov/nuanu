@@ -1,7 +1,6 @@
-import { FC, useMemo, useRef } from 'react';
+import { FC, useRef } from 'react';
 import { StoriesFullScreen } from '@/components/Stories/FullScreen';
 import { useEvent } from '@anton.bobrov/react-hooks';
-import { useStoreLexicon } from '@/store/reducers/page';
 import { Footer } from '@/layout/Footer';
 import cn from 'classnames';
 import { IHome } from './types';
@@ -12,6 +11,7 @@ import styles from './styles.module.scss';
 import { HomeInside } from './components/Inside';
 import { HomeLongRead } from './components/LongRead';
 import { HomeParagraphs } from './components/Paragraphs';
+import { useSectionNames } from './utils/useSectionNames';
 
 const HASSECTIONSLIDER = true;
 
@@ -19,8 +19,6 @@ const Home: FC<IHome> = ({ stories, longRead, paragraphs }) => {
   useTemplate();
 
   const pageRef = useRef<HTMLDivElement>(null);
-
-  const { home: lexicon } = useStoreLexicon();
 
   const renderEnd = useEvent((progress: number) => {
     if (!pageRef.current) {
@@ -30,17 +28,14 @@ const Home: FC<IHome> = ({ stories, longRead, paragraphs }) => {
     pageRef.current.style.opacity = `${progress}`;
   });
 
-  const sectionNames = useMemo(
-    () => ['Stories', lexicon.inside.title, lexicon.features.title, 'Site'],
-    [lexicon.features.title, lexicon.inside.title],
-  );
+  const secitonNames = useSectionNames({ hasStories: !!stories });
 
   return (
     <>
       {HASSECTIONSLIDER && (
         <HomeSectionSlider
           className={styles.slider}
-          names={sectionNames}
+          names={secitonNames}
           onEndProgress={renderEnd}
         >
           {stories && <StoriesFullScreen {...stories} />}

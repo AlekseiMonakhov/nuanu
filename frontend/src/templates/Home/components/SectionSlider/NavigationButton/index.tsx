@@ -4,11 +4,11 @@ import { IProps } from './types';
 import styles from './styles.module.scss';
 
 const Component: FC<IProps> = ({ className, style, text, onClick }) => (
-  <button
-    type="button"
+  <div
     className={cn(className, styles.navigation_button)}
     style={style}
     onClick={onClick}
+    aria-hidden
   >
     <span>{text}</span>
 
@@ -24,7 +24,7 @@ const Component: FC<IProps> = ({ className, style, text, onClick }) => (
         fill="currentColor"
       />
     </svg>
-  </button>
+  </div>
 );
 
 export const NavigationButton = memo(Component);

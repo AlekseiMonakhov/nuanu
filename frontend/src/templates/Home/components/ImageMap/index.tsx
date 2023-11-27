@@ -45,19 +45,22 @@ const Component: FC<IProps> = ({
           height={height}
           alt={alt}
           draggable={false}
+          aria-hidden
         />
 
         <div className={styles.overlay}>{overlay}</div>
       </div>
 
-      <XDragIndicator
-        className={cn(
-          styles.drag_indicator,
-          !hasHorizontalScroll && styles.hide,
-        )}
-        progress={xProgress}
-        isActive={isDragging}
-      />
+      {isDraggable && (
+        <XDragIndicator
+          className={cn(
+            styles.drag_indicator,
+            !hasHorizontalScroll && styles.hide,
+          )}
+          progress={xProgress}
+          isActive={isDragging}
+        />
+      )}
     </div>
   );
 };

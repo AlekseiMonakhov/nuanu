@@ -6,21 +6,21 @@ import styles from './styles.module.scss';
 export const Factoids: FC<IProps> = ({ items, index }) => (
   <div className={cn(styles.factoids, styles[`type_${index % 3}`])}>
     {items.map(({ key, title, description }) => (
-      <div key={key} className={cn(styles.item)}>
+      <p key={key} className={cn(styles.item)}>
         {title && (
-          <p
+          <b
             className={styles.title}
             dangerouslySetInnerHTML={{ __html: title }}
           />
         )}
 
         {description && (
-          <p
+          <span
             className={styles.description}
             dangerouslySetInnerHTML={{ __html: description }}
           />
         )}
-      </div>
+      </p>
     ))}
   </div>
 );

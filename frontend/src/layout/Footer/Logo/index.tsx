@@ -10,6 +10,7 @@ export const FooterLogo: FC<IProps> = ({ className, style }) => (
     viewBox="0 0 41 30"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    aria-hidden
   >
     <path
       fillRule="evenodd"
