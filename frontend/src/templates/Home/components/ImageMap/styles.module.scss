@@ -17,3 +17,9 @@
     @include absolute-fullsize;
   }
 }
+
+.drag_indicator {
+  &.hide {
+    display: none;
+  }
+}

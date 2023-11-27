@@ -17,6 +17,9 @@ interface IProps {
   sourceWidth: number;
   sourceHeight: number;
   isDraggable: boolean;
+  onDragStart: () => void;
+  onDragEnd: () => void;
+  onDrag: (props: { xProgress: number; yProgress: number }) => void;
 }
 
 export function useDrag({
@@ -26,6 +29,9 @@ export function useDrag({
   sourceWidth,
   sourceHeight,
   isDraggable,
+  onDragStart: onDragStartProp,
+  onDragEnd: onDragEndProp,
+  onDrag,
 }: IProps) {
   const xRef = useRef<IWithLerp>({ current: 0, target: 0 });
   const yRef = useRef<IWithLerp>({ current: 0, target: 0 });
@@ -43,6 +49,9 @@ export function useDrag({
     sourceWidth,
     sourceHeight,
   });
+
+  const onDragStart = useEvent(onDragStartProp);
+  const onDragEnd = useEvent(onDragEndProp);
 
   /** Calculate coordinates */
   const calcCoords = useEvent(() => {
@@ -70,6 +79,11 @@ export function useDrag({
 
     x.current = lerp(x.current, x.target, ease);
     y.current = lerp(y.current, y.target, ease);
+
+    onDrag({
+      xProgress: (x.current / dimensions.xLine) * -2,
+      yProgress: (y.current / dimensions.yLine) * -2,
+    });
 
     if (x.current === x.target && y.current === y.target) {
       // eslint-disable-next-line @typescript-eslint/no-use-before-define
@@ -126,6 +140,14 @@ export function useDrag({
       play();
     });
 
+    dragger.addCallback('start', () => onDragStart());
+    dragger.addCallback('end', () => onDragEnd());
+
     return () => dragger.destroy();
-  }, [containerRef, play, isDraggable]);
+  }, [containerRef, play, isDraggable, onDragStart, onDragEnd]);
+
+  return {
+    hasVerticalScroll: dimensions.yLine > 0,
+    hasHorizontalScroll: dimensions.xLine > 0,
+  };
 }
