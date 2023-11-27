@@ -1,9 +1,10 @@
 import { forwardRef, memo, useEffect, useRef, useState } from 'react';
-import { LazyImage, LazyVideo } from '@anton.bobrov/react-components';
+import { LazyVideo } from '@anton.bobrov/react-components';
 import cn from 'classnames';
 import { useForwardedRef } from '@anton.bobrov/react-hooks';
 import { IProps } from './types';
 import styles from './styles.module.scss';
+import { DynamicImage } from '../DynamicImage';
 
 const Component = forwardRef<HTMLDivElement, IProps>(
   (
@@ -64,8 +65,8 @@ const Component = forwardRef<HTMLDivElement, IProps>(
         )}
 
         {image && (
-          <LazyImage
-            paths={image}
+          <DynamicImage
+            {...image}
             onLoad={() => {
               setIsLoaded(true);
               onLoad?.();

@@ -1,5 +1,5 @@
 import { FC, memo, useRef } from 'react';
-import Image from 'next/image';
+import { DynamicImage } from '@/components/Media/DynamicImage';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 import { useDrag } from './utils/useDrag';
@@ -26,13 +26,12 @@ const Component: FC<IProps> = ({
   return (
     <div ref={containerRef} className={styles.image_map}>
       <div ref={draggableSceneRef} className={styles.draggable_scene}>
-        <Image
-          src={src}
+        <DynamicImage
+          original={src}
           width={width}
           height={height}
           alt={alt}
           draggable={false}
-          loading="eager"
         />
 
         <div className={styles.overlay}>{overlay}</div>

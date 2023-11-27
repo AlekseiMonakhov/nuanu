@@ -1,11 +1,8 @@
-import {
-  IImagePaths,
-  IImageAdaptivePaths,
-} from '@anton.bobrov/react-components';
 import { HTMLAttributes } from 'react';
+import { TDynamicImageProps } from '../DynamicImage/types';
 
 export interface IMediaVideoOrImageProps {
-  image?: null | IImagePaths | IImageAdaptivePaths;
+  image?: null | TDynamicImageProps;
   video?: null | string;
 }
 

@@ -18,26 +18,8 @@ const handler = async (
             key: 0,
             media: {
               image: {
-                original: '',
-                thumb: '/lorem/home/stories/0.jpg',
-                thumbWebp: '',
-                sizes: {
-                  640: '',
-                  750: '',
-                  1024: '',
-                  1440: '',
-                  1920: '',
-                  2560: '',
-                },
-                sizesWebp: {
-                  640: '',
-                  750: '',
-                  1024: '',
-                  1440: '',
-                  1920: '',
-                  2560: '',
-                },
-                width: 0,
+                original: '/lorem/home/stories/0.jpg',
+                width: 900,
                 height: 0,
                 alt: '',
               },
@@ -62,25 +44,7 @@ const handler = async (
             key: 1,
             media: {
               image: {
-                original: '',
-                thumb: '/lorem/home/stories/1.jpg',
-                thumbWebp: '',
-                sizes: {
-                  640: '',
-                  750: '',
-                  1024: '',
-                  1440: '',
-                  1920: '',
-                  2560: '',
-                },
-                sizesWebp: {
-                  640: '',
-                  750: '',
-                  1024: '',
-                  1440: '',
-                  1920: '',
-                  2560: '',
-                },
+                original: '/lorem/home/stories/1.jpg',
                 width: 0,
                 height: 0,
                 alt: '',
@@ -102,25 +66,7 @@ const handler = async (
             key: 2,
             media: {
               image: {
-                original: '',
-                thumb: '/lorem/home/stories/2.jpg',
-                thumbWebp: '',
-                sizes: {
-                  640: '',
-                  750: '',
-                  1024: '',
-                  1440: '',
-                  1920: '',
-                  2560: '',
-                },
-                sizesWebp: {
-                  640: '',
-                  750: '',
-                  1024: '',
-                  1440: '',
-                  1920: '',
-                  2560: '',
-                },
+                original: '/lorem/home/stories/2.jpg',
                 width: 0,
                 height: 0,
                 alt: '',
@@ -138,25 +84,7 @@ const handler = async (
             key: 3,
             media: {
               image: {
-                original: '',
-                thumb: '/lorem/home/stories/3.jpg',
-                thumbWebp: '',
-                sizes: {
-                  640: '',
-                  750: '',
-                  1024: '',
-                  1440: '',
-                  1920: '',
-                  2560: '',
-                },
-                sizesWebp: {
-                  640: '',
-                  750: '',
-                  1024: '',
-                  1440: '',
-                  1920: '',
-                  2560: '',
-                },
+                original: '/lorem/home/stories/3.jpg',
                 width: 0,
                 height: 0,
                 alt: '',
@@ -191,9 +119,7 @@ const handler = async (
               {
                 key: 0,
                 image: {
-                  original: '',
-                  thumb: '/lorem/home/longread/0.jpg',
-                  thumbWebp: '',
+                  original: '/lorem/home/longread/0.jpg',
                   width: 0,
                   height: 0,
                   alt: '',
@@ -203,9 +129,7 @@ const handler = async (
               {
                 key: 1,
                 image: {
-                  original: '',
-                  thumb: '/lorem/home/longread/1.jpg',
-                  thumbWebp: '',
+                  original: '/lorem/home/longread/1.jpg',
                   width: 0,
                   height: 0,
                   alt: '',
@@ -221,9 +145,7 @@ const handler = async (
               {
                 key: 0,
                 image: {
-                  original: '',
-                  thumb: '/lorem/home/longread/2.jpg',
-                  thumbWebp: '',
+                  original: '/lorem/home/longread/2.jpg',
                   width: 0,
                   height: 0,
                   alt: '',
@@ -233,9 +155,7 @@ const handler = async (
               {
                 key: 1,
                 image: {
-                  original: '',
-                  thumb: '/lorem/home/longread/3.jpg',
-                  thumbWebp: '',
+                  original: '/lorem/home/longread/3.jpg',
                   width: 0,
                   height: 0,
                   alt: '',
@@ -251,9 +171,7 @@ const handler = async (
               {
                 key: 0,
                 image: {
-                  original: '',
-                  thumb: '/lorem/home/longread/4.jpg',
-                  thumbWebp: '',
+                  original: '/lorem/home/longread/4.jpg',
                   width: 0,
                   height: 0,
                   alt: '',
@@ -263,9 +181,7 @@ const handler = async (
               {
                 key: 1,
                 image: {
-                  original: '',
-                  thumb: '/lorem/home/longread/5.jpg',
-                  thumbWebp: '',
+                  original: '/lorem/home/longread/5.jpg',
                   width: 0,
                   height: 0,
                   alt: '',
@@ -284,9 +200,7 @@ const handler = async (
             key: 0,
             media: {
               image: {
-                original: '',
-                thumb: '/lorem/home/paragraphs/0.jpg',
-                thumbWebp: '',
+                original: '/lorem/home/paragraphs/0.jpg',
                 width: 0,
                 height: 0,
                 alt: '',
@@ -316,9 +230,7 @@ const handler = async (
             key: 1,
             media: {
               image: {
-                original: '',
-                thumb: '/lorem/home/paragraphs/1.jpg',
-                thumbWebp: '',
+                original: '/lorem/home/paragraphs/1.jpg',
                 width: 0,
                 height: 0,
                 alt: '',
@@ -352,9 +264,7 @@ const handler = async (
             key: 2,
             media: {
               image: {
-                original: '',
-                thumb: '/lorem/home/paragraphs/2.jpg',
-                thumbWebp: '',
+                original: '/lorem/home/paragraphs/2.jpg',
                 width: 0,
                 height: 0,
                 alt: '',
