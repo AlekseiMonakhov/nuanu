@@ -18,6 +18,7 @@ const Component: FC<IProps> = () => {
       height={image.height}
       alt={lexicon.title}
       overlay={<div />}
+      isDraggable
     />
   );
 };

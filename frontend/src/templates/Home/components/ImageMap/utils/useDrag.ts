@@ -16,6 +16,7 @@ interface IProps {
   draggableSceneRef: RefObject<HTMLElement>;
   sourceWidth: number;
   sourceHeight: number;
+  isDraggable: boolean;
 }
 
 export function useDrag({
@@ -24,6 +25,7 @@ export function useDrag({
   draggableSceneRef,
   sourceWidth,
   sourceHeight,
+  isDraggable,
 }: IProps) {
   const xRef = useRef<IWithLerp>({ current: 0, target: 0 });
   const yRef = useRef<IWithLerp>({ current: 0, target: 0 });
@@ -111,7 +113,7 @@ export function useDrag({
   }, [dimensions.height, dimensions.width, draggableSceneRef, play]);
 
   useEffect(() => {
-    if (!containerRef.current) {
+    if (!containerRef.current || !isDraggable) {
       return undefined;
     }
 
@@ -125,5 +127,5 @@ export function useDrag({
     });
 
     return () => dragger.destroy();
-  }, [containerRef, play]);
+  }, [containerRef, play, isDraggable]);
 }

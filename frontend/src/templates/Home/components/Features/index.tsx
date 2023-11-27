@@ -24,6 +24,7 @@ const Component: FC<IProps> = () => {
           <TotalArea />
         </div>
       }
+      isDraggable={false}
     />
   );
 };

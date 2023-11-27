@@ -8,7 +8,10 @@
 
 .draggable_scene {
   @include absolute-fullsize;
-  cursor: all-scroll;
+
+  &.draggable {
+    cursor: all-scroll;
+  }
 
   .overlay {
     @include absolute-fullsize;

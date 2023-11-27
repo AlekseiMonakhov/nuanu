@@ -7,4 +7,5 @@ export interface IProps {
   height: number;
   alt: string;
   overlay: ReactElement;
+  isDraggable: boolean;
 }
