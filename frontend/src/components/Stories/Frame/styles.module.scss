@@ -1,0 +1,62 @@
+@import '@/styles/base';
+
+.stories_frame {
+  @include absolute-fullsize;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2px;
+  background-color: var(--color-total-white);
+
+  @include viewport-desktop {
+    border-radius: 12px;
+  }
+  @include viewport-tablet {
+    border-radius: 10px;
+  }
+  @include viewport-phone {
+    border-radius: 8px;
+  }
+
+  .base_stories {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @include viewport-desktop {
+      border-radius: 10px;
+    }
+    @include viewport-tablet {
+      border-radius: 8px;
+    }
+    @include viewport-phone {
+      border-radius: 6px;
+    }
+  }
+
+  .content {
+    flex-shrink: 0;
+    width: 100%;
+  }
+}
+
+.title {
+  margin: 0;
+
+  @include viewport-tablet-min {
+    padding: 12px 10px 10px;
+  }
+  @include viewport-phone {
+    padding: 7px 10px;
+  }
+
+  @include viewport-desktop {
+    @include text-smaller;
+  }
+  @include viewport-tablet-max {
+    @include text-small;
+  }
+}
