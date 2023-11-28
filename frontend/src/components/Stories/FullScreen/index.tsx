@@ -7,10 +7,6 @@ import styles from './styles.module.scss';
 import { DotsContent } from './DotsContent';
 import { MainContent } from './MainContent';
 
-// const DotsNavigation: TStoriesBaseDotsNavigationRenderer = (props) => (
-//   <StoriesBaseDotsNavigation {...props} className={styles.dots_navigation} />
-// );
-
 const Component: FC<IProps> = ({ className, style, items }) => {
   const finishedAnimationCountRef = useRef(0);
 
