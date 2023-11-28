@@ -1,6 +1,23 @@
 @import '@/styles/base';
 
 .stories_fullscreen {
+  .dots_content {
+    @include viewport-tablet-min {
+      left: calc((var(--dot-width) + var(--gap)) * var(--index));
+      width: var(--dot-width);
+    }
+
+    @include viewport-desktop {
+      bottom: px-to-rem(18);
+    }
+
+    @include viewport-phone {
+      @media (orientation: landscape) {
+        display: none;
+      }
+    }
+  }
+
   .dots_navigation {
     --height: 39px;
 

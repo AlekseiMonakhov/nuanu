@@ -5,10 +5,9 @@ import { TKey } from '@anton.bobrov/react-components';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 import { usePrerenderedKeys } from './utils/usePrerenderedKeys';
-import { StoriesFrameMedia } from './Media';
-import { StoriesFrameDotsNavigation } from './DotsNavigation';
-import { StoriesFrameContent } from './Content';
-import { StoriesFrameArrowsNavigation } from './ArrowsNavigation';
+import { StoriesBaseMedia } from './Media';
+import { StoriesBaseDotsNavigation } from './DotsNavigation';
+import { StoriesBaseArrowsNavigation } from './ArrowsNavigation';
 import { useSiblingKeys } from './utils/useSiblingKeys';
 
 const Component: FC<IProps> = ({
@@ -19,20 +18,20 @@ const Component: FC<IProps> = ({
   onActiveKey: onActiveKeyProp,
   onPrev,
   onNext,
-  renderDotsNavigation: RenderDotsNavigation = StoriesFrameDotsNavigation,
-  changeDuration = 250,
   hasAutoChange: hasAutoChangeProp = false,
-  autoChangeDuration = 5000,
+  autoChangeTimeout = 5000,
   hasOverlay = false,
   isDisabled = false,
   children,
+  dotsNavigationClassName,
+  dotsNavigationChildren,
+  onDotHover,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const id = useId();
 
   const [activeKey, setActiveKey] = useState(activeKeyProp ?? items[0].key);
-  const [hoveredKey, setHoveredKey] = useState<TKey | null>(null);
 
   const { state: viewportState } = useOnInViewport({ ref });
 
@@ -50,7 +49,7 @@ const Component: FC<IProps> = ({
   return (
     <section
       ref={ref}
-      className={cn(className, styles.stories_frame)}
+      className={cn(className, styles.stories_base)}
       style={style}
       aria-roledescription="carousel"
       aria-live="off"
@@ -66,10 +65,9 @@ const Component: FC<IProps> = ({
           }
 
           return (
-            <StoriesFrameMedia
+            <StoriesBaseMedia
               key={key}
               {...item}
-              duration={changeDuration}
               isActive={isActive}
               index={index}
             />
@@ -79,7 +77,7 @@ const Component: FC<IProps> = ({
 
       {children && <div className={styles.children}>{children}</div>}
 
-      <StoriesFrameArrowsNavigation
+      <StoriesBaseArrowsNavigation
         controllableId={id}
         onPrev={() => {
           onActiveKey(getPrevKey(activeKey));
@@ -92,32 +90,23 @@ const Component: FC<IProps> = ({
         isDisabled={isDisabled}
       />
 
-      <RenderDotsNavigation
+      <StoriesBaseDotsNavigation
+        className={dotsNavigationClassName}
         items={items}
         activeKey={activeKey}
         onActiveKey={onActiveKey}
         hasAutoChange={!!hasAutoChange}
-        autoChangeDuration={autoChangeDuration}
-        onDotHover={setHoveredKey}
+        autoChangeTimeout={autoChangeTimeout}
+        onDotHover={onDotHover}
         onPrev={() => onPrev?.()}
         onNext={() => onNext?.()}
         controllableId={id}
         isDisabled={isDisabled}
       >
-        {items.map(({ key, ...props }, index) => (
-          <StoriesFrameContent
-            {...props}
-            className={styles.content}
-            key={key}
-            style={{ '--index': index }}
-            isActive={key === activeKey}
-            isHovered={key === hoveredKey}
-            index={index}
-          />
-        ))}
-      </RenderDotsNavigation>
+        {dotsNavigationChildren}
+      </StoriesBaseDotsNavigation>
     </section>
   );
 };
 
-export const StoriesFrame = memo(Component);
+export const StoriesBase = memo(Component);

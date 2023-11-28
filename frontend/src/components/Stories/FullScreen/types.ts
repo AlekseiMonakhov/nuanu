@@ -1,11 +1,14 @@
 import { IBaseComponent } from '@anton.bobrov/react-components';
-import { IContentItemProps } from './ContentItem/types';
-import { IStories, IStoriesItem } from '../global';
+import { IStoriesBase, IStoriesBaseItem } from '../Base/global';
+import { IDotsContentProps } from './DotsContent/types';
+import { IMainContentProps } from './MainContent/types';
 
 export interface IStoriesFullScreenItem
-  extends IStoriesItem,
-    IContentItemProps {}
+  extends IStoriesBaseItem,
+    IDotsContentProps,
+    IMainContentProps {}
 
-export interface IStoriesFullScreen extends IStories<IStoriesFullScreenItem> {}
+export interface IStoriesFullScreen
+  extends IStoriesBase<IStoriesFullScreenItem> {}
 
 export interface IProps extends IStoriesFullScreen, IBaseComponent {}

@@ -9,14 +9,13 @@ import styles from './styles.module.scss';
 export const Dot: FC<IProps> = ({
   className,
   style,
-  isActive,
-  autoChangeDuration,
-  hasAutoChange,
-  onAutoChangeEnd: onAutoChangeEndProp,
-  onClick,
   index,
-  label,
+  isActive,
+  onClick,
+  hasAutoChange,
+  autoChangeTimeout,
   controllableId,
+  onAutoChangeEnd: onAutoChangeEndProp,
   isDisabled,
   ...props
 }) => {
@@ -31,7 +30,7 @@ export const Dot: FC<IProps> = ({
       return undefined;
     }
 
-    const tm = new Timeline({ duration: autoChangeDuration });
+    const tm = new Timeline({ duration: autoChangeTimeout });
 
     tm.addCallback('progress', ({ progress }) => {
       if (!progressRef.current) {
@@ -47,13 +46,7 @@ export const Dot: FC<IProps> = ({
     tm.play();
 
     return () => tm.destroy();
-  }, [
-    autoChangeDuration,
-    hasAutoChange,
-    isActive,
-    isDisabled,
-    onAutoChangeEnd,
-  ]);
+  }, [autoChangeTimeout, hasAutoChange, isActive, isDisabled, onAutoChangeEnd]);
 
   useEffect(() => {
     if (!hasAutoChange || isActive) {
@@ -83,7 +76,7 @@ export const Dot: FC<IProps> = ({
       type="button"
       onClick={() => !isDisabled && onClick()}
       onPointerUpCapture={(event) => event.stopPropagation()}
-      aria-label={`${lexicon.slideNumber + (index + 1)} (${label})`}
+      aria-label={`${lexicon.slideNumber + (index + 1)})`}
       aria-current={isActive}
       aria-controls={controllableId}
       aria-disabled={isDisabled}

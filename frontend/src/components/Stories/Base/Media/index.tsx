@@ -5,13 +5,13 @@ import { useStoreLexicon } from '@/store/reducers/page';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 
-const Component: FC<IProps> = ({ duration, isActive, index, media }) => {
+const Component: FC<IProps> = ({ isActive, index, media }) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const { navigation: lexicon } = useStoreLexicon();
 
   const { play, reverse } = useTimeline({
-    duration,
+    duration: 250,
     onProgress({ easing }) {
       if (!ref.current) {
         return;
@@ -29,13 +29,13 @@ const Component: FC<IProps> = ({ duration, isActive, index, media }) => {
     }
 
     reverse();
-  }, [duration, isActive, play, reverse]);
+  }, [isActive, play, reverse]);
 
   return (
     <MediaVideoOrImage
       {...media}
       ref={ref}
-      className={styles.stories_frame_media}
+      className={styles.stories_base_media}
       priority={index === 0}
       role="group"
       aria-roledescription="slide"
@@ -45,4 +45,4 @@ const Component: FC<IProps> = ({ duration, isActive, index, media }) => {
   );
 };
 
-export const StoriesFrameMedia = memo(Component);
+export const StoriesBaseMedia = memo(Component);

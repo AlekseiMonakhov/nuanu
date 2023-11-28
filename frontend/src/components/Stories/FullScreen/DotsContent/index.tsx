@@ -40,7 +40,7 @@ const Component: FC<IProps> = ({
     <div
       className={cn(
         className,
-        styles.stories_frame_content,
+        styles.dots_content,
         isActive && styles.active,
         isHovered && styles.hovered,
       )}
@@ -88,4 +88,4 @@ const Component: FC<IProps> = ({
   );
 };
 
-export const StoriesFrameContent = memo(Component);
+export const DotsContent = memo(Component);

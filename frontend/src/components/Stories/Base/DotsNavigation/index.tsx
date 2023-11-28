@@ -1,26 +1,28 @@
 import cn from 'classnames';
-import { memo, useRef } from 'react';
+import { FC, memo, useRef } from 'react';
 import { vevet } from '@anton.bobrov/vevet-init';
 import { useStoreLexicon } from '@/store/reducers/page';
 import { useEvent, usePrevious } from '@anton.bobrov/react-hooks';
 import { TKey } from '@anton.bobrov/react-components';
 import styles from './styles.module.scss';
-import { TStoriesFrameDotsNavigationRenderer } from './types';
 import { Dot } from './Dot';
 import { useSiblingKeys } from '../utils/useSiblingKeys';
+import { IProps } from './types';
 
-const Component: TStoriesFrameDotsNavigationRenderer = ({
+const Component: FC<IProps> = ({
   className,
   style,
   items,
   activeKey,
   onActiveKey,
-  onDotHover,
   onNext,
   onPrev,
   isDisabled,
+  hasAutoChange,
+  autoChangeTimeout,
+  controllableId,
+  onDotHover,
   children,
-  ...props
 }) => {
   const hoverTimeoutRef = useRef<NodeJS.Timeout | undefined>();
 
@@ -45,23 +47,24 @@ const Component: TStoriesFrameDotsNavigationRenderer = ({
 
   return (
     <div
-      className={cn(className, styles.stories_frame_dots_navigation)}
+      className={cn(className, styles.stories_base_dots_navigation)}
       style={{ ...style, '--count': items.length }}
     >
       <ul className={styles.dots_list} aria-label={lexicon.changeSlide}>
-        {items.map(({ key, label }, index) => (
+        {items.map(({ key }, index) => (
           <li key={key} className={styles.dots_item}>
             <Dot
-              {...props}
               className={styles.dot}
+              index={index}
               isActive={activeKey === key}
+              onClick={() => onDotClick(key)}
+              hasAutoChange={hasAutoChange}
+              autoChangeTimeout={autoChangeTimeout}
+              controllableId={`${controllableId}_${key}`}
               onAutoChangeEnd={() => {
                 onActiveKey(getNextKey(key));
                 onNext();
               }}
-              onClick={() => onDotClick(key)}
-              index={index}
-              label={label}
               isDisabled={isDisabled}
               onMouseEnter={() => {
                 if (vevet.viewport.isPhone) {
@@ -72,7 +75,7 @@ const Component: TStoriesFrameDotsNavigationRenderer = ({
                   clearTimeout(hoverTimeoutRef.current);
                 }
 
-                onDotHover(key);
+                onDotHover?.(key);
               }}
               onMouseLeave={() => {
                 if (hoverTimeoutRef.current) {
@@ -80,7 +83,7 @@ const Component: TStoriesFrameDotsNavigationRenderer = ({
                 }
 
                 hoverTimeoutRef.current = setTimeout(
-                  () => onDotHover(null),
+                  () => onDotHover?.(null),
                   150,
                 );
               }}
@@ -94,4 +97,4 @@ const Component: TStoriesFrameDotsNavigationRenderer = ({
   );
 };
 
-export const StoriesFrameDotsNavigation = memo(Component);
+export const StoriesBaseDotsNavigation = memo(Component);

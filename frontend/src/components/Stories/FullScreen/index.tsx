@@ -1,43 +1,61 @@
 import { FC, memo, useRef, useState } from 'react';
 import cn from 'classnames';
+import { TKey } from '@anton.bobrov/react-components';
 import { IProps } from './types';
-import { StoriesFrame } from '../Frame';
+import { StoriesBase } from '../Base';
 import styles from './styles.module.scss';
-import { ContentItem } from './ContentItem';
-import { TStoriesFrameDotsNavigationRenderer } from '../Frame/DotsNavigation/types';
-import { StoriesFrameDotsNavigation } from '../Frame/DotsNavigation';
+import { DotsContent } from './DotsContent';
+import { MainContent } from './MainContent';
 
-const DotsNavigation: TStoriesFrameDotsNavigationRenderer = (props) => (
-  <StoriesFrameDotsNavigation {...props} className={styles.dots_navigation} />
-);
+// const DotsNavigation: TStoriesBaseDotsNavigationRenderer = (props) => (
+//   <StoriesBaseDotsNavigation {...props} className={styles.dots_navigation} />
+// );
 
-const Component: FC<IProps> = ({ className, style, items, ...props }) => {
+const Component: FC<IProps> = ({ className, style, items }) => {
   const finishedAnimationCountRef = useRef(0);
 
   const [activeKey, setActiveKey] = useState(items[0].key);
+  const [hoveredKey, setHoveredKey] = useState<TKey | null>(null);
+
   const [direction, setDirection] = useState<'prev' | 'next' | undefined>();
   const [isDisabled, setIsDisabled] = useState(false);
 
   return (
-    <StoriesFrame
-      {...props}
+    <StoriesBase
       className={cn(className, styles.stories_fullscreen)}
+      style={style}
       items={items}
       activeKey={activeKey}
       onActiveKey={setActiveKey}
-      renderDotsNavigation={DotsNavigation}
       hasOverlay
       onPrev={() => setDirection('prev')}
       onNext={() => setDirection('next')}
       hasAutoChange
       isDisabled={isDisabled}
+      dotsNavigationClassName={styles.dots_navigation}
+      dotsNavigationChildren={
+        <>
+          {items.map(({ key, ...props }, index) => (
+            <DotsContent
+              {...props}
+              className={styles.dots_content}
+              key={key}
+              style={{ '--index': index }}
+              isActive={key === activeKey}
+              isHovered={key === hoveredKey}
+              index={index}
+            />
+          ))}
+        </>
+      }
+      onDotHover={setHoveredKey}
     >
       {items.map(({ key, ...item }, index) => (
-        <ContentItem
+        <MainContent
           {...item}
           key={key}
-          isActive={key === activeKey}
           index={index}
+          isActive={key === activeKey}
           direction={direction}
           onAnimationStart={() => setIsDisabled(true)}
           onAnimationEnd={() => {
@@ -50,7 +68,7 @@ const Component: FC<IProps> = ({ className, style, items, ...props }) => {
           }}
         />
       ))}
-    </StoriesFrame>
+    </StoriesBase>
   );
 };
 

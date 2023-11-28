@@ -26,7 +26,7 @@ const Component: FC<IProps> = ({
     <section
       ref={ref}
       className={cn(
-        styles.content_item,
+        styles.main_content,
         isDefaultActive && styles.default_active,
         isActive && styles.active,
       )}
@@ -50,4 +50,4 @@ const Component: FC<IProps> = ({
   );
 };
 
-export const ContentItem = memo(Component);
+export const MainContent = memo(Component);
