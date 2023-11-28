@@ -16,7 +16,13 @@ import { HomePersonTypes } from './components/PersonTypes';
 
 const HASSECTIONSLIDER = true;
 
-const Home: FC<IHome> = ({ stories, longRead, paragraphs, personTypes }) => {
+const Home: FC<IHome> = ({
+  stories,
+  inside,
+  longRead,
+  paragraphs,
+  personTypes,
+}) => {
   useTemplate();
 
   const pageRef = useRef<HTMLDivElement>(null);
@@ -29,7 +35,10 @@ const Home: FC<IHome> = ({ stories, longRead, paragraphs, personTypes }) => {
     pageRef.current.style.opacity = `${progress}`;
   });
 
-  const secitonNames = useSectionNames({ hasStories: !!stories });
+  const secitonNames = useSectionNames({
+    hasStories: !!stories,
+    hasInside: !!inside,
+  });
 
   return (
     <>
@@ -41,7 +50,7 @@ const Home: FC<IHome> = ({ stories, longRead, paragraphs, personTypes }) => {
         >
           {stories && <StoriesFullScreen {...stories} />}
 
-          <HomeInside />
+          {inside && <HomeInside {...inside} />}
 
           <HomeFeatures />
         </HomeSectionSlider>

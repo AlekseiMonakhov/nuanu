@@ -109,6 +109,235 @@ const handler = async (
         ],
       },
 
+      inside: {
+        items: [
+          {
+            key: 0,
+            title: 'Eco-living',
+            stories: [
+              {
+                key: 0,
+                media: {
+                  image: {
+                    original: '/lorem/home/inside/0.jpg',
+                    width: 0,
+                    height: 0,
+                    alt: '',
+                  },
+                  video: null,
+                },
+                title: 'Jungle Kids<br/>For children 4 to 7 years old',
+              },
+              {
+                key: 1,
+                media: {
+                  image: {
+                    original: '/lorem/home/inside/1.jpg',
+                    width: 0,
+                    height: 0,
+                    alt: '',
+                  },
+                  video: null,
+                },
+                title: 'Yoga every Monday<br>Master classes',
+              },
+            ],
+          },
+          {
+            key: 1,
+            title: 'Collaborations',
+            stories: [
+              {
+                key: 0,
+                media: {
+                  image: {
+                    original: '/lorem/home/inside/1.jpg',
+                    width: 0,
+                    height: 0,
+                    alt: '',
+                  },
+                  video: null,
+                },
+                title: 'Title<br/>Title',
+              },
+              {
+                key: 1,
+                media: {
+                  image: {
+                    original: '/lorem/home/inside/2.jpg',
+                    width: 0,
+                    height: 0,
+                    alt: '',
+                  },
+                  video: null,
+                },
+                title: 'Yoga every Monday',
+              },
+            ],
+          },
+          {
+            key: 2,
+            title: `Nature's Embrace${''}`,
+            stories: [
+              {
+                key: 0,
+                media: {
+                  image: {
+                    original: '/lorem/home/inside/2.jpg',
+                    width: 0,
+                    height: 0,
+                    alt: '',
+                  },
+                  video: null,
+                },
+                title: 'Title<br/>Title',
+              },
+              {
+                key: 1,
+                media: {
+                  image: {
+                    original: '/lorem/home/inside/0.jpg',
+                    width: 0,
+                    height: 0,
+                    alt: '',
+                  },
+                  video: null,
+                },
+                title: '',
+              },
+            ],
+          },
+          {
+            key: 3,
+            title: 'Gatherings',
+            stories: [
+              {
+                key: 0,
+                media: {
+                  image: {
+                    original: '/lorem/home/inside/0.jpg',
+                    width: 0,
+                    height: 0,
+                    alt: '',
+                  },
+                  video: null,
+                },
+                title: 'Title',
+              },
+              {
+                key: 1,
+                media: {
+                  image: {
+                    original: '/lorem/home/inside/1.jpg',
+                    width: 0,
+                    height: 0,
+                    alt: '',
+                  },
+                  video: null,
+                },
+                title: 'Some title',
+              },
+            ],
+          },
+          {
+            key: 4,
+            title: 'Art Expressions',
+            stories: [
+              {
+                key: 0,
+                media: {
+                  image: {
+                    original: '/lorem/home/inside/1.jpg',
+                    width: 0,
+                    height: 0,
+                    alt: '',
+                  },
+                  video: null,
+                },
+                title: 'Title',
+              },
+              {
+                key: 1,
+                media: {
+                  image: {
+                    original: '/lorem/home/inside/2.jpg',
+                    width: 0,
+                    height: 0,
+                    alt: '',
+                  },
+                  video: null,
+                },
+                title: 'Some title',
+              },
+            ],
+          },
+          {
+            key: 5,
+            title: 'Wellness',
+            stories: [
+              {
+                key: 0,
+                media: {
+                  image: {
+                    original: '/lorem/home/inside/2.jpg',
+                    width: 0,
+                    height: 0,
+                    alt: '',
+                  },
+                  video: null,
+                },
+                title: 'Title',
+              },
+              {
+                key: 1,
+                media: {
+                  image: {
+                    original: '/lorem/home/inside/0.jpg',
+                    width: 0,
+                    height: 0,
+                    alt: '',
+                  },
+                  video: null,
+                },
+                title: 'Some title',
+              },
+            ],
+          },
+          {
+            key: 6,
+            title: 'Learning',
+            stories: [
+              {
+                key: 0,
+                media: {
+                  image: {
+                    original: '/lorem/home/inside/0.jpg',
+                    width: 0,
+                    height: 0,
+                    alt: '',
+                  },
+                  video: null,
+                },
+                title: 'Title',
+              },
+              {
+                key: 1,
+                media: {
+                  image: {
+                    original: '/lorem/home/inside/1.jpg',
+                    width: 0,
+                    height: 0,
+                    alt: '',
+                  },
+                  video: null,
+                },
+                title: 'Some title',
+              },
+            ],
+          },
+        ],
+      },
+
       longRead: {
         title: 'Changing the way we',
         items: [

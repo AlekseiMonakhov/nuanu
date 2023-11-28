@@ -2,10 +2,11 @@ import { useStoreLexicon } from '@/store/reducers/page';
 import { useMemo } from 'react';
 
 interface IProps {
-  hasStories?: boolean;
+  hasStories: boolean;
+  hasInside: boolean;
 }
 
-export function useSectionNames({ hasStories }: IProps) {
+export function useSectionNames({ hasStories, hasInside }: IProps) {
   const { home: lexicon } = useStoreLexicon();
 
   const sectionNames = useMemo(() => {
@@ -15,12 +16,16 @@ export function useSectionNames({ hasStories }: IProps) {
       names.push(lexicon.stories.title);
     }
 
-    names.push(lexicon.inside.title);
+    if (hasInside) {
+      names.push(lexicon.inside.title);
+    }
+
     names.push(lexicon.features.title);
     names.push(lexicon.site.title);
 
     return names;
   }, [
+    hasInside,
     hasStories,
     lexicon.features.title,
     lexicon.inside.title,

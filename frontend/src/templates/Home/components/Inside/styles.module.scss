@@ -1,0 +1,44 @@
+@import '@/styles/base';
+
+.home_inside {
+  .navigation {
+    @include absolute-fullsize;
+  }
+
+  .stories_container {
+    position: absolute;
+
+    @include viewport-tablet-min {
+      bottom: calc(var(--wrap) - #{px-to-rem(4)});
+      right: calc(var(--wrap) - #{px-to-rem(4)});
+      width: px-to-rem(328);
+      height: px-to-rem(576);
+      max-height: 75%;
+    }
+
+    @include viewport-phone {
+      bottom: px-to-rem(12);
+      right: px-to-rem(12);
+      width: px-to-rem(248);
+      height: px-to-rem(490);
+      max-height: calc(100% - var(--header-height) - var(--header-top) * 2 - #{px-to-rem(84)});
+    }
+  }
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stories_container {
+  &.unactive {
+    pointer-events: none;
+  }
+
+  > :global(.rkc-fade-content__item) {
+    @include absolute-fullsize;
+  }
+}
