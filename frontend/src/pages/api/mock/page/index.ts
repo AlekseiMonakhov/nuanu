@@ -295,6 +295,60 @@ const handler = async (
           },
         ],
       },
+
+      personTypes: {
+        title: 'A home for visionaries, leaders, creators, and makers',
+        items: [
+          {
+            key: 0,
+            title: 'Visionary',
+            description:
+              'One who has ideas<br />or conceives projects<br />regarded as impractical',
+            image: {
+              original: '/lorem/home/person_type/0.png',
+              width: 0,
+              height: 0,
+              alt: '',
+            },
+          },
+          {
+            key: 1,
+            title: 'Leader',
+            description:
+              'A person who provides<br/>structures and frameworks<br/>for the growth of people',
+            image: {
+              original: '/lorem/home/person_type/1.png',
+              width: 0,
+              height: 0,
+              alt: '',
+            },
+          },
+          {
+            key: 2,
+            title: 'Creator',
+            description:
+              'They make things happen and provide opportunities for others. Can convince themselves and others if anything',
+            image: {
+              original: '/lorem/home/person_type/2.png',
+              width: 0,
+              height: 0,
+              alt: '',
+            },
+          },
+          {
+            key: 3,
+            title: 'Maker',
+            description:
+              'They are driven by stability<br />and security and they choose<br />meaningful goals to pursue',
+            image: {
+              original: '/lorem/home/person_type/3.png',
+              width: 0,
+              height: 0,
+              alt: '',
+            },
+          },
+        ],
+      },
     },
   });
 };

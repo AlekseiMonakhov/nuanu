@@ -1,0 +1,103 @@
+@import '@/styles/base';
+
+.home_person_types {
+  position: relative;
+
+  @include viewport-tablet-min {
+    --aside-width: 37.6%;
+
+    padding: var(--wrap) 0;
+
+    .aside {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: var(--aside-width);
+      height: 100%;
+      padding: px-to-rem(70) var(--wrap) px-to-rem(60);
+
+      background: rgba(var(--color-total-white--rgb), 0.5);
+      backdrop-filter: blur(15px);
+
+      .title {
+        max-width: 8.82em;
+      }
+    }
+
+    .main {
+      --clamp: calc(var(--wrap) - #{px-to-rem(15)});
+      --pad-left: calc(var(--aside-width) + var(--clamp));
+      --pad-right: calc(100% - var(--aside-width) - var(--slide-width) - var(--clamp));
+
+      @include viewport-desktop {
+        --slide-width: #{px-to-rem(580)};
+      }
+      @include viewport-tablet {
+        --slide-width: #{px-to-rem(480)};
+      }
+
+      position: relative;
+      width: 100%;
+      z-index: 0;
+      padding-left: var(--pad-left);
+      padding-right: var(--pad-right);
+
+      .slide {
+        width: var(--slide-width);
+        padding: 0 px-to-rem(15);
+      }
+    }
+  }
+
+  @include viewport-phone {
+    .aside {
+      padding: 0 var(--wrap) px-to-rem(30);
+    }
+
+    .main {
+      padding: 0 var(--wrap) 0 calc(var(--wrap) - 3px);
+
+      .slide {
+        width: calc(100vw - var(--wrap) * 2 - 3px);
+        max-width: px-to-rem(420);
+        box-sizing: content-box;
+        padding: 0 3px;
+
+        @media (orientation:landscape) {
+          width: px-to-rem(360);
+          max-width: initial;
+        }
+      }
+    }
+  }
+}
+
+.title {
+  @include text-heading-2;
+}
+
+.main {
+  :global(.swiper-wrapper) {
+    align-items: stretch;
+  }
+
+  .slide {
+    display: grid;
+    height: auto;
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}
+
+.inner_slide {
+  min-height: 350px;
+  background-color: #ccc;
+
+  &.large {
+    height: 400px;
+  }
+}

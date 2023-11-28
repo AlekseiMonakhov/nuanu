@@ -9,3 +9,15 @@
     opacity: 0;
   }
 }
+
+.person_types {
+  @include viewport-desktop {
+    margin-top: px-to-rem(200);
+  }
+  @include viewport-tablet {
+    margin-top: px-to-rem(150);
+  }
+  @include viewport-phone {
+    margin-top: px-to-rem(100);
+  }
+}

@@ -12,10 +12,11 @@ import { HomeInside } from './components/Inside';
 import { HomeLongRead } from './components/LongRead';
 import { HomeParagraphs } from './components/Paragraphs';
 import { useSectionNames } from './utils/useSectionNames';
+import { HomePersonTypes } from './components/PersonTypes';
 
 const HASSECTIONSLIDER = true;
 
-const Home: FC<IHome> = ({ stories, longRead, paragraphs }) => {
+const Home: FC<IHome> = ({ stories, longRead, paragraphs, personTypes }) => {
   useTemplate();
 
   const pageRef = useRef<HTMLDivElement>(null);
@@ -56,6 +57,10 @@ const Home: FC<IHome> = ({ stories, longRead, paragraphs }) => {
         {longRead && <HomeLongRead {...longRead} />}
 
         {paragraphs && <HomeParagraphs {...paragraphs} />}
+
+        {personTypes && (
+          <HomePersonTypes className={styles.person_types} {...personTypes} />
+        )}
 
         <Footer />
       </div>
