@@ -17,6 +17,7 @@ const Component = forwardRef<HTMLDivElement, IProps>(
       isPlaying = true,
       placeholderTheme,
       position = 'cover',
+      priority,
       ...props
     },
     forwardedRef,
@@ -73,6 +74,7 @@ const Component = forwardRef<HTMLDivElement, IProps>(
               onLoad?.();
             }}
             position={position}
+            priority={priority}
           />
         )}
       </div>

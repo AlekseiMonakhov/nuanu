@@ -23,4 +23,5 @@ export type TProps = TDynamicImageProps &
   TBaseImageProps & {
     /** @default cover */
     position?: false | 'cover' | 'contain' | 'fullabs';
+    priority?: boolean;
   };

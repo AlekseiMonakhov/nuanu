@@ -13,4 +13,5 @@ export interface IProps
   isPlaying?: boolean;
   placeholderTheme?: 'light' | 'dark';
   position?: 'cover' | 'contain';
+  priority?: boolean;
 }

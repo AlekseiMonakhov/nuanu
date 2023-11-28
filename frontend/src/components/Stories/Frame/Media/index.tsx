@@ -36,6 +36,7 @@ const Component: FC<IProps> = ({ duration, isActive, index, media }) => {
       {...media}
       ref={ref}
       className={styles.stories_frame_media}
+      priority={index === 0}
       role="group"
       aria-roledescription="slide"
       aria-label={`${lexicon.slideNumber + (index + 1)}`}
