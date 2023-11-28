@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, ReactNode } from 'react';
 
 export interface IProps {
   datGuiName: string;
@@ -8,4 +8,5 @@ export interface IProps {
   alt: string;
   overlay: ReactElement;
   isDraggable: boolean;
+  children?: ReactNode;
 }

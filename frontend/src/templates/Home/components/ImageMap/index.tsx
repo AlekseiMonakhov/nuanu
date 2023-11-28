@@ -14,6 +14,7 @@ const Component: FC<IProps> = ({
   alt,
   overlay,
   isDraggable,
+  children,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const draggableSceneRef = useRef<HTMLDivElement>(null);
@@ -61,6 +62,8 @@ const Component: FC<IProps> = ({
           isActive={isDragging}
         />
       )}
+
+      {children && <div className={styles.children}>{children}</div>}
     </div>
   );
 };
