@@ -7,6 +7,8 @@ import { useDrag } from './utils/useDrag';
 import { XDragIndicator } from './XDragIndicator';
 
 const Component: FC<IProps> = ({
+  className,
+  style,
   datGuiName,
   src,
   width,
@@ -35,35 +37,40 @@ const Component: FC<IProps> = ({
   });
 
   return (
-    <div ref={containerRef} className={styles.image_map}>
-      <div
-        ref={draggableSceneRef}
-        className={cn(styles.draggable_scene, isDraggable && styles.draggable)}
-      >
-        <DynamicImage
-          original={src}
-          width={width}
-          height={height}
-          alt={alt}
-          draggable={false}
-          aria-hidden
-        />
+    <div className={cn(className, styles.image_map)} style={style}>
+      <div ref={containerRef} className={styles.draggable_container}>
+        <div
+          ref={draggableSceneRef}
+          className={cn(
+            styles.draggable_scene,
+            isDraggable && styles.draggable,
+          )}
+        >
+          <DynamicImage
+            original={src}
+            width={width}
+            height={height}
+            alt={alt}
+            draggable={false}
+            aria-hidden
+          />
 
-        <div className={styles.overlay}>{overlay}</div>
+          <div className={styles.overlay}>{overlay}</div>
+        </div>
+
+        {isDraggable && (
+          <XDragIndicator
+            className={cn(
+              styles.drag_indicator,
+              !hasHorizontalScroll && styles.hide,
+            )}
+            progress={xProgress}
+            isActive={isDragging}
+          />
+        )}
       </div>
 
-      {isDraggable && (
-        <XDragIndicator
-          className={cn(
-            styles.drag_indicator,
-            !hasHorizontalScroll && styles.hide,
-          )}
-          progress={xProgress}
-          isActive={isDragging}
-        />
-      )}
-
-      {children && <div className={styles.children}>{children}</div>}
+      {children}
     </div>
   );
 };

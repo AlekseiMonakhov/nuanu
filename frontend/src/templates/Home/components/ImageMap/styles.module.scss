@@ -2,7 +2,10 @@
 
 .image_map {
   @include absolute-fullsize;
+}
 
+.draggable_container {
+  @include absolute-fullsize;
   user-select: none;
 }
 
@@ -22,8 +25,4 @@
   &.hide {
     display: none;
   }
-}
-
-.children {
-  @include absolute-fullsize;
 }

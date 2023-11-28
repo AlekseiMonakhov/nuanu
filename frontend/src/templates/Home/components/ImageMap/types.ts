@@ -1,6 +1,7 @@
+import { IBaseComponent } from '@anton.bobrov/react-components';
 import { ReactElement, ReactNode } from 'react';
 
-export interface IProps {
+export interface IProps extends IBaseComponent {
   datGuiName: string;
   src: string;
   width: number;
