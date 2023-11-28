@@ -48,6 +48,13 @@
         padding: 0 px-to-rem(15);
       }
     }
+
+    .arrows {
+      position: absolute;
+      left: var(--wrap);
+      bottom: calc(var(--wrap) + #{px-to-rem(10)});
+      z-index: 2;
+    }
   }
 
   @include viewport-phone {
@@ -69,6 +76,11 @@
           max-width: initial;
         }
       }
+    }
+
+    .arrows {
+      margin-left: var(--wrap);
+      margin-top: px-to-rem(20);
     }
   }
 }

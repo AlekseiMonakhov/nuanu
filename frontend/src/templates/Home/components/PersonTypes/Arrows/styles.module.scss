@@ -1,0 +1,82 @@
+@import '@/styles/base';
+
+.arrows {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+
+  background-color: var(--color-primary-base);
+  border-radius: px-to-rem(60);
+
+  @include viewport-tablet-min {
+    padding: 6px;
+
+    > * + * {
+      margin-left: px-to-rem(10);
+    }
+  }
+
+  @include viewport-phone {
+    padding: 3px;
+
+    > * + * {
+      margin-left: px-to-rem(5);
+    }
+  }
+}
+
+.button {
+  @include reset-button;
+  position: relative;
+  border-radius: 50%;
+  background-color: rgba(var(--color-total-white--rgb), 1);
+
+  @include transition(background-color 0.35s);
+
+  &::before {
+    content: '';
+    @include absolute-fullsize;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include transition(opacity 0.25s);
+  }
+
+  @include viewport-tablet-min {
+    width: px-to-rem(56);
+    height: px-to-rem(56);
+
+    &::before {
+      background-image: url('./img/arrow_desktop.svg');
+      background-size: px-to-rem(40) auto;
+    }
+  }
+
+  @include viewport-phone {
+    width: px-to-rem(38);
+    height: px-to-rem(38);
+
+    &::before {
+      background-image: url('./img/arrow_phone.svg');
+      background-size: px-to-rem(20) auto;
+    }
+  }
+
+  &.prev {
+    transform: rotate(180deg);
+  }
+
+  &:disabled {
+    &::before {
+      opacity: 0.1;
+    }
+  }
+
+  @include non-mobile-hover {
+    &:not(:disabled) {
+      background-color: rgba(var(--color-total-white--rgb), 0.7);
+    }
+  }
+}
