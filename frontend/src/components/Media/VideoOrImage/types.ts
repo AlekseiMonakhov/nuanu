@@ -12,4 +12,5 @@ export interface IProps
   onLoad?: () => void;
   isPlaying?: boolean;
   placeholderTheme?: 'light' | 'dark';
+  position?: 'cover' | 'contain';
 }

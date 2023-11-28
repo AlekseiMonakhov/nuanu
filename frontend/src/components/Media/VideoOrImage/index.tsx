@@ -16,6 +16,7 @@ const Component = forwardRef<HTMLDivElement, IProps>(
       onLoad,
       isPlaying = true,
       placeholderTheme,
+      position = 'cover',
       ...props
     },
     forwardedRef,
@@ -59,7 +60,7 @@ const Component = forwardRef<HTMLDivElement, IProps>(
             loop
             playsInline
             onLoadedMetadata={onLoad}
-            position="cover"
+            position={position}
             autoPlay={isAutoPlay}
           />
         )}
@@ -71,7 +72,7 @@ const Component = forwardRef<HTMLDivElement, IProps>(
               setIsLoaded(true);
               onLoad?.();
             }}
-            position="cover"
+            position={position}
           />
         )}
       </div>
