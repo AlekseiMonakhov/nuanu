@@ -33,6 +33,7 @@ const Home: FC<IHome> = ({
     }
 
     pageRef.current.style.opacity = `${progress}`;
+    pageRef.current.style.paddingTop = progress === 0 ? '' : '0'; // network performance fix
   });
 
   const secitonNames = useSectionNames({
