@@ -41,6 +41,7 @@ const Component: FC<IProps> = ({ isActive, index, media }) => {
       aria-roledescription="slide"
       aria-label={`${lexicon.slideNumber + (index + 1)}`}
       aria-hidden={!isActive}
+      draggable={false}
     />
   );
 };

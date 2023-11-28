@@ -18,6 +18,7 @@ const Component = forwardRef<HTMLDivElement, IProps>(
       placeholderTheme,
       position = 'cover',
       priority,
+      draggable,
       ...props
     },
     forwardedRef,
@@ -75,6 +76,7 @@ const Component = forwardRef<HTMLDivElement, IProps>(
             }}
             position={position}
             priority={priority}
+            draggable={draggable}
           />
         )}
       </div>

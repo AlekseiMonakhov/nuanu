@@ -14,4 +14,5 @@ export interface IProps
   placeholderTheme?: 'light' | 'dark';
   position?: 'cover' | 'contain';
   priority?: boolean;
+  draggable?: boolean;
 }
