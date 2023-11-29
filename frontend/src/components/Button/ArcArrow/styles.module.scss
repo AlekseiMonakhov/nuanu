@@ -1,0 +1,80 @@
+@import '@/styles/base';
+
+.button {
+  @include reset-button;
+  text-decoration: none;
+
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: px-to-rem(30);
+  background-color: var(--color-total-white);
+    
+  @include non-mobile-hover {
+    background-color: var(--color-primary-base);
+  }
+
+  @include viewport-desktop {
+    height: px-to-rem(50);
+    padding: 0 px-to-rem(18);
+
+    @include text-smaller;
+  }
+
+  @include viewport-tablet-max {
+    @include text-small;
+  }
+
+  @include viewport-tablet-max {
+    height: px-to-rem(46);
+    padding: 0 px-to-rem(18);
+  }
+
+  @include viewport-phone {
+    height: px-to-rem(42);
+    padding: 0 px-to-rem(15);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    background-image: url('./img/arrow.svg');
+    background-size: 100% 100%;
+  }
+
+  &.arrow_bl {
+    &::before {
+      bottom: -4px;
+      left: -4px;
+    }
+  }
+
+  &.arrow_br {
+    &::before {
+      transform: rotate(270deg);
+      bottom: -3px;
+      right: -5px;
+    }
+  }
+
+  &.arrow_tl {
+    &::before {
+      transform: rotate(90deg);
+      top: -4px;
+      left: -4px;
+    }
+  }
+
+  &.arrow_tr {
+    &::before {
+      transform: rotate(180deg);
+      top: -4px;
+      right: -4px;
+    }
+  }
+}
