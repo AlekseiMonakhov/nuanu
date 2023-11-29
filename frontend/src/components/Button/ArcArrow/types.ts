@@ -5,4 +5,5 @@ export type TArcArrowButtonArrowPosition = 'bl' | 'br' | 'tl' | 'tr';
 export type TArcArrowButtonProps = TButtonAnchor & {
   text: string;
   arrowPosition: TArcArrowButtonArrowPosition;
+  isActive?: boolean;
 };
