@@ -1,8 +1,7 @@
 # Nuanu Front-end
 
 ## Config
-node v20.2.0 \
-npm v9.6.6
+node version > 18.x
 
 ## Getting started
 Create **.env.local** file with the following contents:
