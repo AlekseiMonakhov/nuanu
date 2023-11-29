@@ -21,6 +21,8 @@ const Component = forwardRef<
     {...props}
   >
     <span className={styles.text}>{text}</span>
+
+    <span className={cn(styles.close, isActive && styles.active)} />
   </ButtonAnchor>
 ));
 

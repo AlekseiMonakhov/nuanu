@@ -88,3 +88,49 @@
     }
   }
 }
+
+.close {
+  @include transition((width 0.35s, margin-right 0.35s, opacity 0.35s));
+
+  width: 0;
+  margin-right: 0;
+  margin-left: 0;
+  opacity: 0;
+  transform: translateZ(0);
+
+  background-image: url('./img/close.svg');
+  background-position: center;
+  background-size: 15px;
+  background-repeat: no-repeat;
+
+  &.active {
+    opacity: 1;
+  }
+
+  @include viewport-desktop {
+    height: px-to-rem(40);
+  
+    &.active {
+      width: px-to-rem(40);
+      margin-right: px-to-rem(-11);
+    }
+  }
+
+  @include viewport-tablet {
+    height: px-to-rem(30);
+  
+    &.active {
+      width: px-to-rem(30);
+      margin-left: px-to-rem(6);
+    }
+  }
+
+  @include viewport-phone {
+    height: px-to-rem(20);
+  
+    &.active {
+      width: px-to-rem(20);
+      margin-left: px-to-rem(6);
+    }
+  }
+}
