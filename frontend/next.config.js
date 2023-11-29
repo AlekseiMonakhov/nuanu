@@ -15,6 +15,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  images: {
+    minimumCacheTTL: 3600 * 24 * 365,
+  },
   headers() {
     return [
       {
