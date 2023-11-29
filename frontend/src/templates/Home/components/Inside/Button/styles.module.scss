@@ -1,6 +1,7 @@
 @import '@/styles/base';
 
-.button {
+.button_container {
   &.has_position {
-    position: absolute;}
+    position: absolute;
+  } 
 }

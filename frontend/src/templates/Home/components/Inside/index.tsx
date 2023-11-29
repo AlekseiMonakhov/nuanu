@@ -1,4 +1,4 @@
-import { FC, memo, useState } from 'react';
+import { FC, memo, useRef, useState } from 'react';
 import { useStoreLexicon } from '@/store/reducers/page';
 import { StoriesFrame } from '@/components/Stories/Frame';
 import { FadeContent, TKey } from '@anton.bobrov/react-components';
@@ -19,6 +19,8 @@ const Component: FC<IProps> = ({ items }) => {
   const [activeKey, setActiveKey] = useState<TKey | 'none'>('none');
   const isNoneSelected = useDebouncedProp(activeKey === 'none', 16);
 
+  const storiesContainer = useRef<HTMLDivElement>(null);
+
   return (
     <HomeImageMap
       className={styles.home_inside}
@@ -33,21 +35,26 @@ const Component: FC<IProps> = ({ items }) => {
             <Button
               key={key}
               index={index}
-              onClick={() => setActiveKey(key)}
+              isActive={activeKey === key}
+              onClick={() =>
+                activeKey !== key ? setActiveKey(key) : setActiveKey('none')
+              }
               text={title}
+              targetPositionRef={storiesContainer}
             />
           ))}
         </div>
       }
-      isDraggable
+      isDraggable={isNoneSelected}
     >
       <FadeContent
+        ref={storiesContainer}
         className={cn(
           styles.stories_container,
           isNoneSelected && styles.unactive,
         )}
         activeKey={activeKey}
-        duration={isNoneSelected ? 10 : 500}
+        duration={500}
         content={[
           {
             key: 'none',
