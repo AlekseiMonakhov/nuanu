@@ -1,13 +1,13 @@
 import { FC, memo, useState } from 'react';
 import { useStoreLexicon } from '@/store/reducers/page';
 import { StoriesFrame } from '@/components/Stories/Frame';
-import { FillButton } from '@/components/Button/Fill';
 import { FadeContent, TKey } from '@anton.bobrov/react-components';
 import cn from 'classnames';
 import { useDebouncedProp } from '@anton.bobrov/react-hooks';
 import { IProps } from './types';
 import { HomeImageMap } from '../ImageMap';
 import styles from './styles.module.scss';
+import { Button } from './Button';
 
 import image from './image.jpg';
 
@@ -29,14 +29,12 @@ const Component: FC<IProps> = ({ items }) => {
       alt={lexicon.title}
       overlay={
         <div className={styles.navigation}>
-          {items.map(({ key, title }) => (
-            <FillButton
+          {items.map(({ key, title }, index) => (
+            <Button
               key={key}
-              tag="button"
-              type="button"
-              text={title}
-              theme="light"
+              index={index}
               onClick={() => setActiveKey(key)}
+              text={title}
             />
           ))}
         </div>
