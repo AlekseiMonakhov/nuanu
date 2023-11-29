@@ -1,7 +1,10 @@
 import { IPageAPI } from '@/types/Page';
 import dynamic from 'next/dynamic';
-import { FC, PropsWithChildren } from 'react';
+import { FC, PropsWithChildren, useState } from 'react';
 import { useStorePage } from '@/store/reducers/page';
+import { useChange } from '@anton.bobrov/react-hooks';
+import store from '@/store/store';
+import { layoutSlice } from '@/store/reducers/layout';
 import { IHome } from './Home/types';
 import { ILoremComponents } from './_LoremComponents/types';
 import { INotFound } from './NotFound/types';
@@ -28,10 +31,24 @@ const Empty = dynamic(() => import('./Empty'), {
 });
 
 export const TemplateRenderer: FC<PropsWithChildren> = () => {
-  const props = useStorePage();
-  const apiProps = props as TPageTemplateRegistryAPI;
+  const props = useStorePage() as TPageTemplateRegistryAPI;
 
-  const { key } = props;
+  const [state, setState] = useState({
+    key: +new Date(),
+    ...props,
+  });
+
+  useChange(() => {
+    const key = +new Date();
+
+    store.dispatch(layoutSlice.actions.setKey(key));
+    setState({
+      ...props,
+      key,
+    });
+  }, props);
+
+  const { key, ...apiProps } = state;
 
   switch (apiProps.templateName) {
     case 'Home':

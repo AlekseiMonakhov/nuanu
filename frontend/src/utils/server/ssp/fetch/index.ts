@@ -48,7 +48,6 @@ async function fetchProps(context: GetServerSidePropsContext) {
     page: {
       props: {
         ...jsonProps,
-        key: +new Date(),
         lexicon: getLexicon(jsonProps.global.lang),
         url: {
           base: baseUrl,
@@ -61,14 +60,29 @@ async function fetchProps(context: GetServerSidePropsContext) {
 
   // set meta image
   if (props.page) {
-    if (!props.page.props.global.meta.image && props.page.props.template) {
-      const matches = JSON.stringify(props.page.props.template).match(
+    const { global, template } = props.page.props;
+
+    // set meta image
+    if (!global.meta.image && template) {
+      const matches = JSON.stringify(template).match(
         /(http?s)?[^"' ]*\.(jpg|png)/,
       );
 
-      if (matches && props.page.props.global.meta) {
-        props.page.props.global.meta.image = matches.shift();
+      if (matches && global.meta) {
+        global.meta.image = matches.shift();
       }
+    }
+
+    // set cache
+    const isCacheable = global.meta.cacheable ?? true;
+
+    if (isCacheable) {
+      const maxAge = process.env.NEXT_PUBLIC_API_PAGE ? 3600 : 2592000;
+
+      context.res.setHeader(
+        'Cache-Control',
+        `public, max-age=${maxAge}, stale-while-revalidate=2592000`,
+      );
     }
   }
 

@@ -1,10 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { useSelector } from 'react-redux';
+import { TKey } from '@anton.bobrov/react-components';
 import { TAppState } from '../store';
 
 type TRouterCurtainState = 'show' | 'hide' | 'shown' | 'hidden';
 
 type TState = {
+  key: TKey;
   isFirstLoaded: boolean;
   isPageLoading: boolean;
   isPageReady: boolean;
@@ -13,6 +15,7 @@ type TState = {
 };
 
 const initialState: TState = {
+  key: 0,
   isFirstLoaded: false,
   isPageLoading: false,
   isPageReady: false,
@@ -24,6 +27,10 @@ export const layoutSlice = createSlice({
   name: 'loading',
   initialState,
   reducers: {
+    setKey: (state, payload: PayloadAction<TKey>) => ({
+      ...state,
+      key: payload.payload,
+    }),
     setIsFirstLoaded: (state) => ({
       ...state,
       isFirstLoaded: true,

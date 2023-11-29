@@ -7,7 +7,6 @@ import {
 import { useRouter } from 'next/router';
 import { useEvent } from '@anton.bobrov/react-hooks';
 import { useStoreLayout } from '@/store/reducers/layout';
-import { useStorePage } from '@/store/reducers/page';
 import { BreadcrumbsJSON } from './Breadcrumbs/JSON';
 import { Preloader } from './Preloader';
 import { Header } from './Header';
@@ -15,8 +14,7 @@ import { RouterCurtain } from './RouterCurtain';
 import { Cookies } from './Cookies';
 
 export const Layout: FC<PropsWithChildren> = ({ children }) => {
-  const { key } = useStorePage();
-  const { isPageReady } = useStoreLayout();
+  const { key, isPageReady } = useStoreLayout();
 
   const router = useRouter();
 

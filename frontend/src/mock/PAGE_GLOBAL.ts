@@ -11,6 +11,7 @@ export const PAGE_GLOBAL: DeepRequired<IPageGlobal> = {
     keywords: '',
     image: '',
     searchable: true,
+    cacheable: true,
   },
 
   links: {

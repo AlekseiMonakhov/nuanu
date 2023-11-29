@@ -1,7 +1,6 @@
 import { TBreadcrumbs } from '@/layout/Breadcrumbs/types';
 import { ILexicon } from '@/lexicon/types';
 import { DeepRequired } from 'ts-essentials';
-import { TKey } from '@anton.bobrov/react-components';
 import { ILink, ILinkMenu, ILinksLanguage } from './Link';
 
 /** Global page props */
@@ -14,6 +13,7 @@ export interface IPageGlobal {
     keywords?: string;
     image?: string;
     searchable?: boolean;
+    cacheable?: boolean;
   };
   links: {
     home: string;
@@ -39,7 +39,6 @@ export interface IPageAPI<
 /** Page Props */
 export interface IPage<N extends string, T extends Record<string, any>>
   extends IPageAPI<N, T> {
-  key: TKey;
   lexicon: ILexicon;
   url: {
     base: string;
