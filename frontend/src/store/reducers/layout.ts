@@ -7,6 +7,7 @@ type TRouterCurtainState = 'show' | 'hide' | 'shown' | 'hidden';
 
 type TState = {
   key: TKey;
+  scrollBarKey: number;
   isFirstLoaded: boolean;
   isPageLoading: boolean;
   isPageReady: boolean;
@@ -16,6 +17,7 @@ type TState = {
 
 const initialState: TState = {
   key: 0,
+  scrollBarKey: 0,
   isFirstLoaded: false,
   isPageLoading: false,
   isPageReady: false,
@@ -30,6 +32,10 @@ export const layoutSlice = createSlice({
     setKey: (state, payload: PayloadAction<TKey>) => ({
       ...state,
       key: payload.payload,
+    }),
+    refreshScrollBar: (state) => ({
+      ...state,
+      scrollBarKey: state.scrollBarKey + 1,
     }),
     setIsFirstLoaded: (state) => ({
       ...state,

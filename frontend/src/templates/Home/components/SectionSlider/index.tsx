@@ -12,6 +12,7 @@ import { useDatGUISettings } from '@anton.bobrov/react-dat-gui';
 import { clamp } from '@anton.bobrov/vevet-init';
 import { headerSlice } from '@/store/reducers/header';
 import store from '@/store/store';
+import { layoutSlice } from '@/store/reducers/layout';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 import { SectionSliderSlide } from './Slide';
@@ -61,7 +62,10 @@ const Component: FC<IProps> = ({
     belowRef,
     length,
     name,
-    onHide: () => setIsHidden(true),
+    onHide: () => {
+      setIsHidden(true);
+      store.dispatch(layoutSlice.actions.refreshScrollBar());
+    },
     onStep: setStep,
   });
 

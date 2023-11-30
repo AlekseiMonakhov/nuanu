@@ -14,7 +14,7 @@ import { RouterCurtain } from './RouterCurtain';
 import { Cookies } from './Cookies';
 
 export const Layout: FC<PropsWithChildren> = ({ children }) => {
-  const { key, isPageReady } = useStoreLayout();
+  const { key, scrollBarKey, isPageReady } = useStoreLayout();
 
   const router = useRouter();
 
@@ -32,7 +32,9 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <LinkClickInterceptor onInternalClick={onInternalLinkClick}>
       <PageScroll.Provider canBeSmooth={false}>
-        <PageScroll.ScrollBar resizeKey={isPageReady ? key : undefined}>
+        <PageScroll.ScrollBar
+          resizeKey={isPageReady ? `${key}${scrollBarKey}` : undefined}
+        >
           <Preloader />
 
           <BreadcrumbsJSON />
