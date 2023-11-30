@@ -3,5 +3,9 @@
 .button_container {
   &.has_position {
     position: absolute;
+
+    &.active {
+      z-index: 1;
+    }
   } 
 }

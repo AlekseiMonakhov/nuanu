@@ -31,6 +31,7 @@ export const Button: FC<IProps> = ({
       className={cn(
         styles.button_container,
         initialPosition?.arrow && styles.has_position,
+        isActive && styles.active,
       )}
       style={initialPosition?.style}
     >
