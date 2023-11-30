@@ -9,10 +9,10 @@
     position: absolute;
 
     @include viewport-tablet-min {
-      bottom: calc(var(--wrap) - #{px-to-rem(4)});
-      right: calc(var(--wrap) - #{px-to-rem(4)});
+      bottom: var(--wrap);
+      right: var(--wrap);
       width: px-to-rem(328);
-      height: px-to-rem(576);
+      height: px-to-rem(654);
       max-height: 75%;
     }
 
