@@ -16,7 +16,7 @@
   padding-right: var(--wrap);
 
   @include viewport-tablet-min {
-    padding-bottom: 2.5%;
+    padding-bottom: 1.5%;
   }
 
   @include viewport-phone {
@@ -45,7 +45,7 @@
     max-width: 35.88em;
 
     @include viewport-desktop {
-      margin-top: px-to-rem(30);
+      margin-top: px-to-rem(40);
     }
     @include viewport-tablet {
       margin-top: px-to-rem(24);
