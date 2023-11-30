@@ -44,7 +44,7 @@ export function useDrag({
     },
   });
 
-  const dimensions = useMapDimensions({
+  const { dimensions, dimensionsRef } = useMapDimensions({
     containerRef,
     sourceWidth,
     sourceHeight,
@@ -140,11 +140,23 @@ export function useDrag({
       play();
     });
 
+    dragger.addCallback('move', ({ event, diff }) => {
+      const directionDiff = Math.abs(
+        dimensionsRef.current.xLine > 0 ? diff.x : diff.y,
+      );
+      const canPropagate = directionDiff <= 5;
+
+      if (!canPropagate) {
+        event.stopImmediatePropagation();
+        event.stopPropagation();
+      }
+    });
+
     dragger.addCallback('start', () => onDragStart());
     dragger.addCallback('end', () => onDragEnd());
 
     return () => dragger.destroy();
-  }, [containerRef, play, isDraggable, onDragStart, onDragEnd]);
+  }, [containerRef, play, isDraggable, onDragStart, onDragEnd, dimensionsRef]);
 
   return {
     hasVerticalScroll: dimensions.yLine > 0,

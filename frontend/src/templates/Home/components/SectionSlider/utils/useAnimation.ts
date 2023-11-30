@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { useDatGUISettings } from '@anton.bobrov/react-dat-gui';
 import { useEvent } from '@anton.bobrov/react-hooks';
-import { clamp, SlideProgress } from '@anton.bobrov/vevet-init';
+import { clamp, SlideProgress, vevet } from '@anton.bobrov/vevet-init';
 import { RefObject, useEffect, useState } from 'react';
 import { usePageScrollLock } from './usePageScrollLock';
 
@@ -112,7 +112,7 @@ export function useAnimation({
       min: 0,
       max: length,
       step: 1,
-      hasDrag: false,
+      hasDrag: vevet.isMobile,
       dragSpeed: 3,
       wheelSpeed: 2,
       friction: 0.9,
