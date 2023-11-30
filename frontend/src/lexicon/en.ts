@@ -55,7 +55,7 @@ const lexicon: DeepRequired<ILexicon> = {
 
   cookies: {
     description:
-      'We use cookies to provide you with the best website experience. <a href={{privacyPolicyHref}}>Privacy Policy</a>',
+      'We use cookies to provide you with the best website experience. <a href={{privacyPolicyHref}}>Privacy policy</a>',
     accept: 'Accept',
   },
 };
