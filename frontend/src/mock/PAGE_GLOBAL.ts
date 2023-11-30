@@ -59,13 +59,6 @@ export const PAGE_GLOBAL: DeepRequired<IPageGlobal> = {
       isActive: false,
       isHighlighted: false,
     },
-    {
-      key: 6,
-      name: 'Components',
-      href: '/_components',
-      isActive: false,
-      isHighlighted: false,
-    },
   ],
 
   breadcrumbs: [{ id: 0, href: '/', name: 'Home' }],
