@@ -159,7 +159,7 @@ export function useDrag({
   }, [containerRef, play, isDraggable, onDragStart, onDragEnd, dimensionsRef]);
 
   return {
-    hasVerticalScroll: dimensions.yLine > 0,
-    hasHorizontalScroll: dimensions.xLine > 0,
+    hasVerticalScroll: dimensions.yLine > 10,
+    hasHorizontalScroll: dimensions.xLine > 10,
   };
 }
