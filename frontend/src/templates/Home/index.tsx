@@ -1,6 +1,5 @@
 import { FC, useRef } from 'react';
 import { StoriesFullScreen } from '@/components/Stories/FullScreen';
-import { useEvent } from '@anton.bobrov/react-hooks';
 import { Footer } from '@/layout/Footer';
 import cn from 'classnames';
 import { IHome } from './types';
@@ -27,15 +26,6 @@ const Home: FC<IHome> = ({
 
   const pageRef = useRef<HTMLDivElement>(null);
 
-  const renderEnd = useEvent((progress: number) => {
-    if (!pageRef.current) {
-      return;
-    }
-
-    pageRef.current.style.opacity = `${progress}`;
-    pageRef.current.style.paddingTop = progress === 0 ? '' : '0'; // network performance fix
-  });
-
   const secitonNames = useSectionNames({
     hasStories: !!stories,
     hasInside: !!inside,
@@ -47,7 +37,7 @@ const Home: FC<IHome> = ({
         <HomeSectionSlider
           className={styles.slider}
           names={secitonNames}
-          onEndProgress={renderEnd}
+          belowRef={pageRef}
         >
           {stories && <StoriesFullScreen {...stories} />}
 

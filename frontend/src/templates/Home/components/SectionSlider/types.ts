@@ -1,8 +1,8 @@
 import { IBaseComponent } from '@anton.bobrov/react-components';
-import { ReactElement } from 'react';
+import { ReactElement, RefObject } from 'react';
 
 export interface IProps extends IBaseComponent {
   names: string[];
-  onEndProgress: (progress: number) => void;
+  belowRef: RefObject<HTMLElement>;
   children: (ReactElement | undefined)[];
 }

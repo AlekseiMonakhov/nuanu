@@ -1,18 +1,5 @@
 @import '@/styles/base';
 
-.lock_scroll {
-  overflow: hidden;
-
-  body {
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-
 .section_slider {
   --height: calc(100 * var(--vh));
   --slide-height: calc(var(--height) - 2 * var(--gap));

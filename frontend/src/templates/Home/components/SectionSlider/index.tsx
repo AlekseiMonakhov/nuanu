@@ -22,7 +22,7 @@ const Component: FC<IProps> = ({
   className,
   style,
   names,
-  onEndProgress,
+  belowRef,
   children: childrenProp,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -58,14 +58,14 @@ const Component: FC<IProps> = ({
   const { handler } = useAnimation({
     ref,
     containerRef,
+    belowRef,
     length,
     name,
-    onEndProgress,
     onHide: () => setIsHidden(true),
     onStep: setStep,
-    lockScrollClassName: styles.lock_scroll,
   });
 
+  // toggle header theme
   useEffect(() => {
     store.dispatch(
       headerSlice.actions.setTheme(step === length ? 'light' : 'dark'),

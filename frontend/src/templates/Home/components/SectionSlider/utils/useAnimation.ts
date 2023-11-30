@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { useDatGUISettings } from '@anton.bobrov/react-dat-gui';
 import { useEvent } from '@anton.bobrov/react-hooks';
 import { clamp, SlideProgress } from '@anton.bobrov/vevet-init';
@@ -7,12 +8,11 @@ import { usePageScrollLock } from './usePageScrollLock';
 interface IProps {
   ref: RefObject<HTMLElement>;
   containerRef: RefObject<HTMLElement>;
+  belowRef: RefObject<HTMLElement>;
   length: number;
   name: string;
-  onEndProgress: (progress: number) => void;
   onHide: () => void;
   onStep: (step: number) => void;
-  lockScrollClassName: string;
 }
 
 const SETTINGS = {
@@ -23,22 +23,20 @@ const SETTINGS = {
 export function useAnimation({
   ref,
   containerRef,
+  belowRef,
   length,
   name,
-  onEndProgress: onEndProgressProp,
   onHide: onHideProp,
   onStep: onStepProp,
-  lockScrollClassName,
 }: IProps) {
   const [handler, setHandler] = useState<SlideProgress | null>(null);
 
   const [isPageScrollLocked, setIsPageScrollLocked] = useState(true);
 
-  const onEndProgress = useEvent(onEndProgressProp);
   const onHide = useEvent(onHideProp);
   const onStep = useEvent(onStepProp);
 
-  usePageScrollLock(isPageScrollLocked, lockScrollClassName);
+  usePageScrollLock(isPageScrollLocked);
 
   useDatGUISettings({
     name: `${name} Progress Handler`,
@@ -71,6 +69,18 @@ export function useAnimation({
     } else if (!isPageScrollLocked) {
       setIsPageScrollLocked(true);
     }
+  });
+
+  const onEndProgress = useEvent((progress: number) => {
+    if (!belowRef.current) {
+      return;
+    }
+
+    belowRef.current.style.opacity = `${progress}`;
+
+    // network performance fix
+    // for images not to be loaded at once
+    belowRef.current.style.paddingTop = progress === 0 ? '' : '0';
   });
 
   const render = useEvent(() => {
