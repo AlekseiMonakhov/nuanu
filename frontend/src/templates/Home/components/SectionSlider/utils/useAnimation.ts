@@ -103,6 +103,9 @@ export function useAnimation({
       max: length,
       step: 1,
       hasDrag: false,
+      dragSpeed: 3,
+      wheelSpeed: 2,
+      friction: 0.9,
     });
 
     setHandler(instance);
