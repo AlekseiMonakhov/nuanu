@@ -13,6 +13,8 @@
   border-radius: px-to-rem(30);
 
   background-color: var(--color-total-white);
+  color: var(--color-primary-dark-base);
+  
   @include transition(background-color 0.35s);
     
   @include non-mobile-hover {
