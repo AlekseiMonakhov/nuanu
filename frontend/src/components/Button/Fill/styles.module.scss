@@ -43,17 +43,29 @@
 
     @include viewport-desktop {
       height: px-to-rem(120);
-      padding: 0 px-to-rem(70);
+      padding: 0 px-to-rem(60);
+
+      &.has_arrow {
+        padding: 0 px-to-rem(40) 0 px-to-rem(60);
+      }
     }
   
     @include viewport-tablet {
       height: px-to-rem(96);
-      padding: 0 px-to-rem(50);
+      padding: 0 px-to-rem(46);
+
+      &.has_arrow {
+        padding: 0 px-to-rem(42) 0 px-to-rem(46);
+      }
     }
   
     @include viewport-phone {
       height: px-to-rem(70);
       padding: 0 px-to-rem(32);
+
+      &.has_arrow {
+        padding: 0 px-to-rem(25) 0 px-to-rem(32);
+      }
     }
   }
 
