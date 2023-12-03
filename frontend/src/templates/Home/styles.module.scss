@@ -7,7 +7,8 @@
 .page {
   &.is_default_hidden {
     opacity: 0;
-    padding-top: 500vh; // network performance fix
+    // TODO: network performance fix
+    // padding-top: 0; // network performance fix
   }
 }
 

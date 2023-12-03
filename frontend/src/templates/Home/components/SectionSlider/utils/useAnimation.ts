@@ -78,9 +78,10 @@ export function useAnimation({
 
     belowRef.current.style.opacity = `${progress}`;
 
+    // TODO
     // network performance fix
     // for images not to be loaded at once
-    belowRef.current.style.paddingTop = progress === 0 ? '' : '0';
+    // belowRef.current.style.paddingTop = progress === 0 ? '' : '0';
   });
 
   const render = useEvent(() => {
