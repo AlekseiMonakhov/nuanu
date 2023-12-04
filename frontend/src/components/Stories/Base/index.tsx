@@ -19,7 +19,7 @@ const Component: FC<IProps> = ({
   onPrev,
   onNext,
   hasAutoChange: hasAutoChangeProp = false,
-  autoChangeTimeout = 5000,
+  autoChangeTimeout = 10000,
   hasOverlay = false,
   isDisabled = false,
   children,

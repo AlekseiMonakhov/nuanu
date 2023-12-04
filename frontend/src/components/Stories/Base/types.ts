@@ -9,7 +9,7 @@ export interface IStoriesBaseProps extends IStoriesBase {
   onNext?: () => void;
   /** @default false */
   hasAutoChange?: boolean;
-  /** @default 5000 */
+  /** @default 10000 */
   autoChangeTimeout?: number;
   /** @default false */
   hasOverlay?: boolean;
