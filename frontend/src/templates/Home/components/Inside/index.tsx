@@ -4,6 +4,7 @@ import { StoriesFrame } from '@/components/Stories/Frame';
 import { FadeContent, TKey } from '@anton.bobrov/react-components';
 import cn from 'classnames';
 import { useDebouncedProp } from '@anton.bobrov/react-hooks';
+import { childOf } from 'vevet-dom';
 import { IProps } from './types';
 import { HomeImageMap } from '../ImageMap';
 import styles from './styles.module.scss';
@@ -29,6 +30,15 @@ const Component: FC<IProps> = ({ items }) => {
       width={image.width}
       height={image.height}
       alt={lexicon.title}
+      onClick={(event) => {
+        if (!storiesContainer.current || isNoneSelected) {
+          return;
+        }
+
+        if (!childOf(event.target as any, storiesContainer.current)) {
+          setActiveKey('none');
+        }
+      }}
       overlay={
         <div className={styles.navigation}>
           {items.map(({ key, title }, index) => (
@@ -36,6 +46,7 @@ const Component: FC<IProps> = ({ items }) => {
               key={key}
               index={index}
               isActive={activeKey === key}
+              isDisabled={activeKey !== key && !isNoneSelected}
               onClick={() =>
                 activeKey !== key ? setActiveKey(key) : setActiveKey('none')
               }

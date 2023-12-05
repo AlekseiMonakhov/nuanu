@@ -9,6 +9,7 @@ import { useActiveAnimation } from './utils/useActiveAnimation';
 export const Button: FC<IProps> = ({
   index,
   isActive,
+  isDisabled,
   onClick,
   text,
   targetPositionRef,
@@ -41,7 +42,7 @@ export const Button: FC<IProps> = ({
         type="button"
         text={text}
         arrowPosition={initialPosition?.arrow ?? 'bl'}
-        onClick={onClick}
+        onClick={() => !isDisabled && onClick()}
         isActive={isActive}
       />
     </div>

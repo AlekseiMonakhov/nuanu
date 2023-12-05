@@ -1,5 +1,5 @@
 import { IBaseComponent } from '@anton.bobrov/react-components';
-import { ReactElement, ReactNode } from 'react';
+import { HTMLAttributes, ReactElement, ReactNode } from 'react';
 
 export interface IProps extends IBaseComponent {
   datGuiName: string;
@@ -9,5 +9,6 @@ export interface IProps extends IBaseComponent {
   alt: string;
   overlay: ReactElement;
   isDraggable: boolean;
+  onClick?: HTMLAttributes<HTMLElement>['onClick'];
   children?: ReactNode;
 }
