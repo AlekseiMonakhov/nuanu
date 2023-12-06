@@ -9,7 +9,6 @@ const Component: FC<PropsWithChildren<IProps>> = ({
   className,
   style,
   hasTopSpacing = true,
-  hasContentTopSpacing = true,
   hasFooter = true,
 }) => (
   <>
@@ -21,14 +20,7 @@ const Component: FC<PropsWithChildren<IProps>> = ({
       )}
       style={style}
     >
-      <div
-        className={cn(
-          styles.content,
-          hasTopSpacing && hasContentTopSpacing && styles.top_spacing,
-        )}
-      >
-        {children}
-      </div>
+      {children}
     </main>
 
     {hasFooter && <Footer />}
