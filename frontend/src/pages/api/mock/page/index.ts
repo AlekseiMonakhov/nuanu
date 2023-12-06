@@ -75,24 +75,6 @@ const handler = async (
             },
             theme: 'dark',
             label: 'Suara festival 2024 Open Call',
-            action: null,
-            title: 'Suara festival 2024 Open Call',
-            description:
-              'Open to artists, architects and cultural workers, we provide grants to help you realize your vision',
-          },
-          {
-            key: 3,
-            media: {
-              image: {
-                original: '/lorem/home/stories/3.jpg',
-                width: 0,
-                height: 0,
-                alt: '',
-              },
-              video: null,
-            },
-            theme: 'light',
-            label: 'City of the future',
             action: {
               kind: 'video_modal',
               player: {
@@ -103,8 +85,9 @@ const handler = async (
               text: 'Watch',
               duration: '2:02',
             },
-            title: 'Changing the way we live, work & play',
-            description: `Nuanu isn't just a city in Bali's heart; it's a blend of modernity and tradition, embodying urban living in harmony with nature${''}`,
+            title: 'Suara festival 2024 Open Call',
+            description:
+              'Open to artists, architects and cultural workers, we provide grants to help you realize your vision',
           },
         ],
       },
