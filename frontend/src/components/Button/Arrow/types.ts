@@ -1,7 +1,6 @@
 import { TButtonAnchor } from '@anton.bobrov/react-components';
 
-export type TFillButtonProps = TButtonAnchor & {
+export type TArrowButtonProps = TButtonAnchor & {
   text: string;
   theme: 'light' | 'dark';
-  isSuccess?: boolean;
 };

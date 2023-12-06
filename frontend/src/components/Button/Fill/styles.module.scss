@@ -13,61 +13,28 @@
 
   border-radius: px-to-rem(100);
 
+  @include viewport-desktop {
+    height: px-to-rem(60);
+    padding: 0 px-to-rem(40);
+    
+    @include text-smaller;
+  }
+  
+  @include viewport-tablet {
+    height: px-to-rem(56);
+    padding: 0 px-to-rem(34);
+
+    @include text-small;
+  }
+  
+  @include viewport-phone {
+    height: px-to-rem(50);
+    padding: 0 px-to-rem(30);
+
+    @include text-small;
+  }
+
   @include transition((background-color 0.35s, color 0.35s));
-
-  &.size_medium {
-    @include viewport-desktop {
-      height: px-to-rem(60);
-      padding: 0 px-to-rem(40);
-      
-      @include text-smaller;
-    }
-    
-    @include viewport-tablet {
-      height: px-to-rem(56);
-      padding: 0 px-to-rem(34);
-  
-      @include text-small;
-    }
-    
-    @include viewport-phone {
-      height: px-to-rem(50);
-      padding: 0 px-to-rem(30);
-  
-      @include text-small;
-    }
-  }
-
-  &.size_large {
-    @include text-body;
-
-    @include viewport-desktop {
-      height: px-to-rem(120);
-      padding: 0 px-to-rem(60);
-
-      &.has_arrow {
-        padding: 0 px-to-rem(40) 0 px-to-rem(60);
-      }
-    }
-  
-    @include viewport-tablet {
-      height: px-to-rem(96);
-      padding: 0 px-to-rem(46);
-
-      &.has_arrow {
-        padding: 0 px-to-rem(42) 0 px-to-rem(46);
-      }
-    }
-  
-    @include viewport-phone {
-      height: px-to-rem(70);
-      padding: 0 px-to-rem(32);
-
-      &.has_arrow {
-        padding: 0 px-to-rem(25) 0 px-to-rem(32);
-      }
-    }
-  }
 
   &.theme_light {
     background-color: var(--color-primary-base);
@@ -107,32 +74,6 @@
   &.hide {
     opacity: 0;
     visibility: hidden;
-  }
-
-  &.has_arrow {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .desktop_arrow {
-    width: px-to-rem(40);
-    height: auto;
-    
-    @include viewport-phone {
-      display: none;
-    }
-  }
-
-  .phone_arrow {
-    width: px-to-rem(20);
-    height: auto;
-    
-    @include viewport-tablet-min {
-      display: none;
-    }
   }
 }
 

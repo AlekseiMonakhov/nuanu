@@ -1,7 +1,7 @@
 import { FC, memo } from 'react';
 import cn from 'classnames';
 import { TActionButtonRenderer } from '@/components/Button/Action/types';
-import { FillButton } from '@/components/Button/Fill';
+import { ArrowButton } from '@/components/Button/Arrow';
 import { MediaVideoOrImage } from '@/components/Media/VideoOrImage';
 import { ActionButton } from '@/components/Button/Action';
 import { IProps } from './types';
@@ -10,7 +10,7 @@ import { Factoids } from '../Factoids';
 import { Content } from '../Content';
 
 const RenderAction: TActionButtonRenderer = (props) => (
-  <FillButton {...(props as any)} theme="light" size="large" hasArrow />
+  <ArrowButton {...(props as any)} theme="light" />
 );
 
 const RenderActionMemo = memo(RenderAction);

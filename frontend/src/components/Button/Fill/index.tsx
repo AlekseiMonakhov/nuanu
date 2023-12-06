@@ -4,24 +4,13 @@ import { ButtonAnchor } from '@anton.bobrov/react-components';
 import { useDebouncedProp } from '@anton.bobrov/react-hooks';
 import styles from './styles.module.scss';
 import { TFillButtonProps } from './types';
-import { DesktopArrow } from './icons/DesktopArrow';
-import { PhoneArrow } from './icons/PhoneArrow';
 
 const Component = forwardRef<
   HTMLButtonElement | HTMLAnchorElement,
   TFillButtonProps
 >(
   (
-    {
-      className,
-      style,
-      text,
-      theme,
-      size = 'medium',
-      hasArrow,
-      isSuccess: isSuccessProp,
-      ...props
-    },
+    { className, style, text, theme, isSuccess: isSuccessProp, ...props },
     ref,
   ) => {
     const [isSuccessRendered, setIsSuccessRendered] = useState(false);
@@ -40,28 +29,14 @@ const Component = forwardRef<
           styles.button,
           className,
           styles[`theme_${theme}`],
-          styles[`size_${size}`],
           isSuccess && styles.success,
         )}
         style={style}
         title={text}
         {...props}
       >
-        <span
-          className={cn(
-            styles.content,
-            hasArrow && styles.has_arrow,
-            isSuccess && styles.hide,
-          )}
-        >
+        <span className={cn(styles.content, isSuccess && styles.hide)}>
           {text}
-
-          {hasArrow && (
-            <>
-              <DesktopArrow className={styles.desktop_arrow} />
-              <PhoneArrow className={styles.phone_arrow} />
-            </>
-          )}
         </span>
 
         {isSuccessRendered && (
