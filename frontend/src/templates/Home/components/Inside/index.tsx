@@ -1,10 +1,14 @@
-import { FC, memo, useRef, useState } from 'react';
+import { FC, memo, useId, useRef, useState } from 'react';
 import { useStoreLexicon } from '@/store/reducers/page';
 import { StoriesFrame } from '@/components/Stories/Frame';
 import { FadeContent, TKey } from '@anton.bobrov/react-components';
 import cn from 'classnames';
-import { useDebouncedProp } from '@anton.bobrov/react-hooks';
-import { childOf } from 'vevet-dom';
+import {
+  isBrowser,
+  useDebouncedProp,
+  useEventListener,
+} from '@anton.bobrov/react-hooks';
+import { childOf, parentByClassName } from 'vevet-dom';
 import { IProps } from './types';
 import { HomeImageMap } from '../ImageMap';
 import styles from './styles.module.scss';
@@ -22,6 +26,32 @@ const Component: FC<IProps> = ({ items }) => {
 
   const storiesContainer = useRef<HTMLDivElement>(null);
 
+  const id = useId();
+  const buttonClassName = `${id}-button`;
+
+  useEventListener({
+    ref: isBrowser ? window : null,
+    target: 'click',
+    listener: (event) => {
+      if (!storiesContainer.current || isNoneSelected) {
+        return;
+      }
+
+      const buttonParent = parentByClassName(
+        event.target as any,
+        buttonClassName,
+      );
+
+      if (buttonParent) {
+        return;
+      }
+
+      if (!childOf(event.target as any, storiesContainer.current)) {
+        setActiveKey('none');
+      }
+    },
+  });
+
   return (
     <HomeImageMap
       className={styles.home_inside}
@@ -30,25 +60,16 @@ const Component: FC<IProps> = ({ items }) => {
       width={image.width}
       height={image.height}
       alt={lexicon.title}
-      onClick={(event) => {
-        if (!storiesContainer.current || isNoneSelected) {
-          return;
-        }
-
-        if (!childOf(event.target as any, storiesContainer.current)) {
-          setActiveKey('none');
-        }
-      }}
       overlay={
         <div className={styles.navigation}>
           {items.map(({ key, title }, index) => (
             <Button
               key={key}
+              className={buttonClassName}
               index={index}
               isActive={activeKey === key}
-              isDisabled={activeKey !== key && !isNoneSelected}
               onClick={() =>
-                activeKey !== key ? setActiveKey(key) : setActiveKey('none')
+                activeKey === key ? setActiveKey('none') : setActiveKey(key)
               }
               text={title}
               targetPositionRef={storiesContainer}
