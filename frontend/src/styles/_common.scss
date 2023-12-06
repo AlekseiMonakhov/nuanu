@@ -6,6 +6,8 @@ body {
 html {
   font-size: 16px;
   line-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  
   @include loading-indicator;
 }
 
