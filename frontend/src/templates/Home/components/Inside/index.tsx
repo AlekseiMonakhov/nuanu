@@ -9,6 +9,7 @@ import {
   useEventListener,
 } from '@anton.bobrov/react-hooks';
 import { childOf, parentByClassName } from 'vevet-dom';
+import { useBreakpointName } from '@anton.bobrov/react-vevet-hooks';
 import { IProps } from './types';
 import { HomeImageMap } from '../ImageMap';
 import styles from './styles.module.scss';
@@ -28,6 +29,8 @@ const Component: FC<IProps> = ({ items }) => {
 
   const id = useId();
   const buttonClassName = `${id}-button`;
+
+  const breakpointName = useBreakpointName();
 
   useEventListener({
     ref: isBrowser ? window : null,
@@ -77,7 +80,7 @@ const Component: FC<IProps> = ({ items }) => {
           ))}
         </div>
       }
-      isDraggable={isNoneSelected}
+      isDraggable={isNoneSelected && breakpointName === 'phone'}
     >
       <FadeContent
         ref={storiesContainer}
