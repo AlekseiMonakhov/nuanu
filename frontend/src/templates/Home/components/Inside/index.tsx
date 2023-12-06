@@ -68,7 +68,11 @@ const Component: FC<IProps> = ({ items }) => {
           {items.map(({ key, title }, index) => (
             <Button
               key={key}
-              className={buttonClassName}
+              className={cn(
+                buttonClassName,
+                styles.button,
+                !isNoneSelected && key !== activeKey && styles.hide,
+              )}
               index={index}
               isActive={activeKey === key}
               onClick={() =>
