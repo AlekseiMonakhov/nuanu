@@ -131,13 +131,8 @@ const handler = async (
               {
                 key: 1,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/1.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/video_0.mp4',
                 },
                 title: 'Yoga every Monday<br>Master classes',
               },
@@ -150,26 +145,16 @@ const handler = async (
               {
                 key: 0,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/1.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/video_1.mp4',
                 },
                 title: 'Title<br/>Title',
               },
               {
                 key: 1,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/2.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/video_2.mp4',
                 },
                 title: 'Yoga every Monday',
               },
@@ -183,7 +168,7 @@ const handler = async (
                 key: 0,
                 media: {
                   image: {
-                    original: '/lorem/home/inside/2.jpg',
+                    original: '/lorem/home/inside/1.jpg',
                     width: 0,
                     height: 0,
                     alt: '',
@@ -196,7 +181,7 @@ const handler = async (
                 key: 1,
                 media: {
                   image: {
-                    original: '/lorem/home/inside/0.jpg',
+                    original: '/lorem/home/inside/2.jpg',
                     width: 0,
                     height: 0,
                     alt: '',
@@ -214,26 +199,16 @@ const handler = async (
               {
                 key: 0,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/0.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/video_3.mp4',
                 },
                 title: 'Title',
               },
               {
                 key: 1,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/1.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/video_4.mp4',
                 },
                 title: 'Some title',
               },
@@ -246,13 +221,8 @@ const handler = async (
               {
                 key: 0,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/1.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/video_5.mp4',
                 },
                 title: 'Title',
               },
@@ -260,7 +230,7 @@ const handler = async (
                 key: 1,
                 media: {
                   image: {
-                    original: '/lorem/home/inside/2.jpg',
+                    original: '/lorem/home/inside/0.jpg',
                     width: 0,
                     height: 0,
                     alt: '',
@@ -279,7 +249,7 @@ const handler = async (
                 key: 0,
                 media: {
                   image: {
-                    original: '/lorem/home/inside/2.jpg',
+                    original: '/lorem/home/inside/1.jpg',
                     width: 0,
                     height: 0,
                     alt: '',
@@ -292,7 +262,7 @@ const handler = async (
                 key: 1,
                 media: {
                   image: {
-                    original: '/lorem/home/inside/0.jpg',
+                    original: '/lorem/home/inside/2.jpg',
                     width: 0,
                     height: 0,
                     alt: '',
@@ -310,26 +280,16 @@ const handler = async (
               {
                 key: 0,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/0.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/video_0.mp4',
                 },
                 title: 'Title',
               },
               {
                 key: 1,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/1.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/video_1.mp4',
                 },
                 title: 'Some title',
               },
