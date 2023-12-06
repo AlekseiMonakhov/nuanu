@@ -50,6 +50,7 @@ const Component = forwardRef<HTMLDivElement, IProps>(
         <div className={styles.bottom}>
           <div className={styles.bottom__info}>
             <p>{copyright}</p>
+
             <p>
               <Link href={links.privacyPolicy}>
                 {menuLexicon.privacyPolicy}

@@ -114,6 +114,7 @@
 }
 
 .bottom {
+
   @include viewport-tablet-min {
     display: grid;
     justify-content: space-between;
@@ -145,6 +146,7 @@
 
   &__info {
     @include text-smaller;
+    opacity: 0.5;
 
     @include viewport-tablet-min {
       display: grid;
