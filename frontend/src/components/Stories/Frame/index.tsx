@@ -15,6 +15,7 @@ const Component: FC<IProps> = ({ className, style, items }) => {
         items={items}
         activeKey={activeKey}
         onActiveKey={setActiveKey}
+        hasAutoChange
       />
 
       <div className={styles.content}>
