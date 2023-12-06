@@ -1,4 +1,4 @@
-import { FC, memo, useId, useRef, useState } from 'react';
+import { FC, memo, useEffect, useId, useRef, useState } from 'react';
 import cn from 'classnames';
 import { useEvent, useOnInViewport } from '@anton.bobrov/react-hooks';
 import { TKey } from '@anton.bobrov/react-components';
@@ -19,7 +19,7 @@ const Component: FC<IProps> = ({
   onPrev,
   onNext,
   hasAutoChange: hasAutoChangeProp = false,
-  autoChangeTimeout = 10000,
+  autoChangeDuration = 10000,
   hasOverlay = false,
   isDisabled = false,
   children,
@@ -35,8 +35,8 @@ const Component: FC<IProps> = ({
 
   const { state: viewportState } = useOnInViewport({ ref });
 
-  const hasAutoChange =
-    viewportState === 'in' && hasAutoChangeProp && items.length > 1;
+  const hasAutoChange = hasAutoChangeProp && items.length > 1;
+  const isAutoChangeEnabled = hasAutoChange && viewportState === 'in';
 
   const onActiveKey = useEvent((key: TKey) => {
     onActiveKeyProp?.(key);
@@ -44,7 +44,15 @@ const Component: FC<IProps> = ({
   });
 
   const { prerenderedKeys } = usePrerenderedKeys(activeKey);
-  const { getNextKey, getPrevKey } = useSiblingKeys(items);
+  const { getNextKey, getPrevKey } = useSiblingKeys(items, activeKey);
+
+  const [storyProgress, setStoryProgress] = useState(0);
+
+  useEffect(() => {
+    if (storyProgress === 1) {
+      onActiveKey(getNextKey());
+    }
+  }, [storyProgress, onActiveKey, getNextKey]);
 
   return (
     <section
@@ -57,7 +65,7 @@ const Component: FC<IProps> = ({
       aria-label="Stories"
     >
       <div className={cn(styles.media, hasOverlay && styles.has_overlay)}>
-        {items.map(({ key, ...item }, index) => {
+        {items.map(({ key, media }, index) => {
           const isActive = key === activeKey;
 
           if (!prerenderedKeys.includes(key)) {
@@ -67,9 +75,15 @@ const Component: FC<IProps> = ({
           return (
             <StoriesBaseMedia
               key={key}
-              {...item}
-              isActive={isActive}
               index={index}
+              media={media}
+              hasProgress={hasAutoChange}
+              isProgressEnabled={isAutoChangeEnabled}
+              progressDuration={autoChangeDuration}
+              isActive={isActive}
+              onProgress={(value) =>
+                setStoryProgress(parseFloat(value.toFixed(3)))
+              }
             />
           );
         })}
@@ -80,11 +94,11 @@ const Component: FC<IProps> = ({
       <StoriesBaseArrowsNavigation
         controllableId={id}
         onPrev={() => {
-          onActiveKey(getPrevKey(activeKey));
+          onActiveKey(getPrevKey());
           onPrev?.();
         }}
         onNext={() => {
-          onActiveKey(getNextKey(activeKey));
+          onActiveKey(getNextKey());
           onNext?.();
         }}
         isDisabled={isDisabled}
@@ -93,15 +107,14 @@ const Component: FC<IProps> = ({
       <StoriesBaseDotsNavigation
         className={dotsNavigationClassName}
         items={items}
+        isDisabled={isDisabled}
         activeKey={activeKey}
         onActiveKey={onActiveKey}
-        hasAutoChange={!!hasAutoChange}
-        autoChangeTimeout={autoChangeTimeout}
-        onDotHover={onDotHover}
         onPrev={() => onPrev?.()}
         onNext={() => onNext?.()}
+        onDotHover={onDotHover}
+        progress={hasAutoChange ? storyProgress : null}
         controllableId={id}
-        isDisabled={isDisabled}
       >
         {dotsNavigationChildren}
       </StoriesBaseDotsNavigation>

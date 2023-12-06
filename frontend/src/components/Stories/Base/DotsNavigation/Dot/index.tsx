@@ -1,7 +1,5 @@
-import { FC, useEffect, useRef } from 'react';
+import { FC, useEffect, useState } from 'react';
 import cn from 'classnames';
-import { Timeline, clampScope } from '@anton.bobrov/vevet-init';
-import { useEvent } from '@anton.bobrov/react-hooks';
 import { useStoreLexicon } from '@/store/reducers/page';
 import { IProps } from './types';
 import styles from './styles.module.scss';
@@ -12,61 +10,20 @@ export const Dot: FC<IProps> = ({
   index,
   isActive,
   onClick,
-  hasAutoChange,
-  autoChangeTimeout,
+  progress: progressProp,
   controllableId,
-  onAutoChangeEnd: onAutoChangeEndProp,
   isDisabled,
   ...props
 }) => {
-  const progressRef = useRef<HTMLSpanElement>(null);
-
-  const onAutoChangeEnd = useEvent(onAutoChangeEndProp);
-
   const { navigation: lexicon } = useStoreLexicon();
 
-  useEffect(() => {
-    if (!hasAutoChange || !isActive || isDisabled) {
-      return undefined;
-    }
-
-    const tm = new Timeline({ duration: autoChangeTimeout });
-
-    tm.addCallback('progress', ({ progress }) => {
-      if (!progressRef.current) {
-        return;
-      }
-
-      progressRef.current.style.opacity = `${clampScope(progress, [0, 0.05])}`;
-      progressRef.current.style.width = `${progress * 100}%`;
-    });
-
-    tm.addCallback('end', onAutoChangeEnd);
-
-    tm.play();
-
-    return () => tm.destroy();
-  }, [autoChangeTimeout, hasAutoChange, isActive, isDisabled, onAutoChangeEnd]);
+  const [progress, setProgress] = useState<null | number>(0);
 
   useEffect(() => {
-    if (!hasAutoChange || isActive) {
-      return undefined;
+    if (isActive) {
+      setProgress(progressProp);
     }
-
-    const tm = new Timeline({ duration: 250 });
-
-    tm.addCallback('progress', ({ easing }) => {
-      if (!progressRef.current) {
-        return;
-      }
-
-      progressRef.current.style.opacity = `${1 - easing}`;
-    });
-
-    tm.play();
-
-    return () => tm.destroy();
-  }, [hasAutoChange, isActive]);
+  }, [isActive, progressProp]);
 
   return (
     <button
@@ -81,14 +38,11 @@ export const Dot: FC<IProps> = ({
       aria-controls={controllableId}
       aria-disabled={isDisabled}
     >
-      <span
-        className={cn(
-          styles.progress_container,
-          hasAutoChange && styles.has_auto_change_animation,
-          isActive && styles.active,
-        )}
-      >
-        <span ref={progressRef} className={styles.progress} />
+      <span className={styles.progress_container}>
+        <span
+          className={cn(styles.progress, isActive && styles.active)}
+          style={{ transform: `scale(${progress}, 1)` }}
+        />
       </span>
     </button>
   );

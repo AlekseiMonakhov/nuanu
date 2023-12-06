@@ -10,7 +10,7 @@ export interface IStoriesBaseProps extends IStoriesBase {
   /** @default false */
   hasAutoChange?: boolean;
   /** @default 10000 */
-  autoChangeTimeout?: number;
+  autoChangeDuration?: number;
   /** @default false */
   hasOverlay?: boolean;
   /** @default false */

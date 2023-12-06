@@ -4,14 +4,13 @@ import { IStoriesBaseItem } from '../global';
 
 export interface IProps extends IBaseComponent {
   items: IStoriesBaseItem[];
+  isDisabled: boolean;
   activeKey: TKey;
   onActiveKey: (key: TKey) => void;
   onPrev: () => void;
   onNext: () => void;
-  hasAutoChange: boolean;
-  autoChangeTimeout: number;
-  controllableId: string;
-  isDisabled: boolean;
   onDotHover?: (key: TKey | null) => void;
+  progress: number | null;
+  controllableId: string;
   children?: ReactNode;
 }

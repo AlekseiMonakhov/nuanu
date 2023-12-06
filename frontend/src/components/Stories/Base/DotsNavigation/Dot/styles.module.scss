@@ -30,22 +30,20 @@
   border-radius: 6px;
   overflow: hidden;
   background-color: rgba(var(--color-total-white--rgb), 0.3);
-
-  &:not(.has_auto_change_animation) {
-    @include transition(background-color 0.25s);
-
-    &.active {
-      background-color: var(--color-total-white);
-    }
-
-    .progress {
-      display: none;
-    }
-  }
 }
 
 .progress {
   @include absolute-fullsize;
   border-radius: inherit;
   background-color: var(--color-total-white);
+
+  transform-origin: top left;
+
+  opacity: 0;
+  transition: opacity 0.25s;
+
+  &.active {
+    opacity: 1;
+    transition-delay: 0.1s;
+  }
 }
