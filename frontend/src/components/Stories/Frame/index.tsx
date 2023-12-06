@@ -37,4 +37,6 @@ const Component: FC<IProps> = ({ className, style, items }) => {
   );
 };
 
+Component.displayName = 'StoriesFrame';
+
 export const StoriesFrame = memo(Component);

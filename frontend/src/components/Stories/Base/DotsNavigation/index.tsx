@@ -88,4 +88,6 @@ const Component: FC<IProps> = ({
   );
 };
 
+Component.displayName = 'StoriesBaseDotsNavigation';
+
 export const StoriesBaseDotsNavigation = memo(Component);

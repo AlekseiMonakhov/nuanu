@@ -57,4 +57,6 @@ const Component: FC<IProps> = ({
   );
 };
 
+Component.displayName = 'SectionSliderSlide';
+
 export const SectionSliderSlide = memo(Component);

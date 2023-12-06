@@ -76,4 +76,6 @@ const Component: FC<IProps> = ({
   );
 };
 
+Component.displayName = 'StoriesBaseMedia';
+
 export const StoriesBaseMedia = memo(Component);

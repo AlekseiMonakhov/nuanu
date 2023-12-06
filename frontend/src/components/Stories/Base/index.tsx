@@ -122,4 +122,6 @@ const Component: FC<IProps> = ({
   );
 };
 
+Component.displayName = 'StoriesBase';
+
 export const StoriesBase = memo(Component);

@@ -17,4 +17,6 @@ const Component: FC<IProps> = ({ className, style, items }) => (
   </section>
 );
 
+Component.displayName = 'HomeParagraphs';
+
 export const HomeParagraphs = memo(Component);

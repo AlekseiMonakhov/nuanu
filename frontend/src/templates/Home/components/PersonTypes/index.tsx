@@ -58,4 +58,6 @@ const Component: FC<IProps> = ({ className, style, title, items }) => {
   );
 };
 
+Component.displayName = 'HomePersonTypes';
+
 export const HomePersonTypes = memo(Component);

@@ -109,4 +109,6 @@ const Component: FC<IProps> = ({ items }) => {
   );
 };
 
+Component.displayName = 'HomeInside';
+
 export const HomeInside = memo(Component);

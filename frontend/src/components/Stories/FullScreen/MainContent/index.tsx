@@ -50,4 +50,6 @@ const Component: FC<IProps> = ({
   );
 };
 
+Component.displayName = 'MainContent';
+
 export const MainContent = memo(Component);

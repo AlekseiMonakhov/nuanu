@@ -82,4 +82,6 @@ const Component: FC<IProps> = ({
   );
 };
 
+Component.displayName = 'HomeImageMap';
+
 export const HomeImageMap = memo(Component);
