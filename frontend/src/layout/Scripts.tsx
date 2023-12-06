@@ -42,7 +42,7 @@ export const LayoutScripts: FC = () => {
         id="js_settings"
         dangerouslySetInnerHTML={{
           __html: `
-            window.USE_DAT_GUI = ${process.env.NODE_ENV === 'development'};
+            window.USE_DAT_GUI = true;
           `,
         }}
       />
