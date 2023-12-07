@@ -68,4 +68,6 @@ const Component: FC<IProps> = ({ className, style, items }) => {
   );
 };
 
+Component.displayName = 'StoriesFullScreen';
+
 export const StoriesFullScreen = memo(Component);

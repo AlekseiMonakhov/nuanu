@@ -75,24 +75,6 @@ const handler = async (
             },
             theme: 'dark',
             label: 'Suara festival 2024 Open Call',
-            action: null,
-            title: 'Suara festival 2024 Open Call',
-            description:
-              'Open to artists, architects and cultural workers, we provide grants to help you realize your vision',
-          },
-          {
-            key: 3,
-            media: {
-              image: {
-                original: '/lorem/home/stories/3.jpg',
-                width: 0,
-                height: 0,
-                alt: '',
-              },
-              video: null,
-            },
-            theme: 'light',
-            label: 'City of the future',
             action: {
               kind: 'video_modal',
               player: {
@@ -103,8 +85,9 @@ const handler = async (
               text: 'Watch',
               duration: '2:02',
             },
-            title: 'Changing the way we live, work & play',
-            description: `Nuanu isn't just a city in Bali's heart; it's a blend of modernity and tradition, embodying urban living in harmony with nature${''}`,
+            title: 'Suara festival 2024 Open Call',
+            description:
+              'Open to artists, architects and cultural workers, we provide grants to help you realize your vision',
           },
         ],
       },
@@ -131,13 +114,8 @@ const handler = async (
               {
                 key: 1,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/1.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/video_0.mp4',
                 },
                 title: 'Yoga every Monday<br>Master classes',
               },
@@ -150,26 +128,16 @@ const handler = async (
               {
                 key: 0,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/1.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/video_1.mp4',
                 },
                 title: 'Title<br/>Title',
               },
               {
                 key: 1,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/2.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/video_2.mp4',
                 },
                 title: 'Yoga every Monday',
               },
@@ -183,7 +151,7 @@ const handler = async (
                 key: 0,
                 media: {
                   image: {
-                    original: '/lorem/home/inside/2.jpg',
+                    original: '/lorem/home/inside/1.jpg',
                     width: 0,
                     height: 0,
                     alt: '',
@@ -196,7 +164,7 @@ const handler = async (
                 key: 1,
                 media: {
                   image: {
-                    original: '/lorem/home/inside/0.jpg',
+                    original: '/lorem/home/inside/2.jpg',
                     width: 0,
                     height: 0,
                     alt: '',
@@ -214,26 +182,16 @@ const handler = async (
               {
                 key: 0,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/0.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/video_3.mp4',
                 },
                 title: 'Title',
               },
               {
                 key: 1,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/1.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/video_4.mp4',
                 },
                 title: 'Some title',
               },
@@ -246,13 +204,8 @@ const handler = async (
               {
                 key: 0,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/1.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/video_5.mp4',
                 },
                 title: 'Title',
               },
@@ -260,7 +213,7 @@ const handler = async (
                 key: 1,
                 media: {
                   image: {
-                    original: '/lorem/home/inside/2.jpg',
+                    original: '/lorem/home/inside/0.jpg',
                     width: 0,
                     height: 0,
                     alt: '',
@@ -279,7 +232,7 @@ const handler = async (
                 key: 0,
                 media: {
                   image: {
-                    original: '/lorem/home/inside/2.jpg',
+                    original: '/lorem/home/inside/1.jpg',
                     width: 0,
                     height: 0,
                     alt: '',
@@ -292,7 +245,7 @@ const handler = async (
                 key: 1,
                 media: {
                   image: {
-                    original: '/lorem/home/inside/0.jpg',
+                    original: '/lorem/home/inside/2.jpg',
                     width: 0,
                     height: 0,
                     alt: '',
@@ -310,26 +263,16 @@ const handler = async (
               {
                 key: 0,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/0.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/video_0.mp4',
                 },
                 title: 'Title',
               },
               {
                 key: 1,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/1.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/video_1.mp4',
                 },
                 title: 'Some title',
               },

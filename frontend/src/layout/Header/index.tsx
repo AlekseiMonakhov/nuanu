@@ -3,6 +3,9 @@ import Link from 'next/link';
 import { useStoreGlobal, useStoreLexicon } from '@/store/reducers/page';
 import { useStoreHeader } from '@/store/reducers/header';
 import cn from 'classnames';
+import store from '@/store/store';
+import { menuSlice } from '@/store/reducers/menu';
+import { useEventListener } from '@anton.bobrov/react-hooks';
 import styles from './styles.module.scss';
 import { HeaderInlineMenu } from './InlineMenu';
 import { LogoDesktop } from '../Logo/Desktop';
@@ -11,17 +14,27 @@ import { HeaderExpandMenuButton } from './ExpandMenuButton';
 import { HeaderExpandMenu } from './ExpandMenu';
 
 export const Header: FC = () => {
-  const ref = useRef<HTMLElement>(null);
-
   const { links } = useStoreGlobal();
   const lexicon = useStoreLexicon();
   const { theme } = useStoreHeader();
 
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const expandMenuId = useId();
 
+  useEventListener({
+    ref: containerRef,
+    target: 'click',
+    listener: (event) => {
+      if (event.target === containerRef.current) {
+        store.dispatch(menuSlice.actions.toggle());
+      }
+    },
+  });
+
   return (
-    <header ref={ref} className={cn(styles.header, styles[theme])}>
-      <div className={styles.header_container}>
+    <header className={cn(styles.header, styles[theme])}>
+      <div ref={containerRef} className={styles.header_container}>
         <Link
           href={links.home}
           className={styles.logo_desktop}

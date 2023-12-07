@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { FC, memo, useRef, useState } from 'react';
 import { DynamicImage } from '@/components/Media/DynamicImage';
 import cn from 'classnames';
@@ -16,6 +18,7 @@ const Component: FC<IProps> = ({
   alt,
   overlay,
   isDraggable,
+  onClick,
   children,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -37,7 +40,11 @@ const Component: FC<IProps> = ({
   });
 
   return (
-    <div className={cn(className, styles.image_map)} style={style}>
+    <div
+      className={cn(className, styles.image_map)}
+      style={style}
+      onClick={onClick}
+    >
       <div ref={containerRef} className={styles.draggable_container}>
         <div
           ref={draggableSceneRef}
@@ -74,5 +81,7 @@ const Component: FC<IProps> = ({
     </div>
   );
 };
+
+Component.displayName = 'HomeImageMap';
 
 export const HomeImageMap = memo(Component);

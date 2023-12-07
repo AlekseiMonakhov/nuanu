@@ -120,4 +120,6 @@ const Component: FC<IProps> = ({
   );
 };
 
+Component.displayName = 'HomeSectionSlider';
+
 export const HomeSectionSlider = memo(Component);

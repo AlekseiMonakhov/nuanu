@@ -7,6 +7,8 @@ import styles from './styles.module.scss';
 import { useActiveAnimation } from './utils/useActiveAnimation';
 
 export const Button: FC<IProps> = ({
+  className,
+  style,
   index,
   isActive,
   onClick,
@@ -29,11 +31,12 @@ export const Button: FC<IProps> = ({
     <div
       ref={buttonContainerRef}
       className={cn(
+        className,
         styles.button_container,
         initialPosition?.arrow && styles.has_position,
         isActive && styles.active,
       )}
-      style={initialPosition?.style}
+      style={{ ...style, ...initialPosition?.style }}
     >
       <ArcArrowButton
         ref={buttonRef}

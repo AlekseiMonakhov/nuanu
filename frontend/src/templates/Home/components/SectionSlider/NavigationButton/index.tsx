@@ -27,4 +27,6 @@ const Component: FC<IProps> = ({ className, style, text, onClick }) => (
   </div>
 );
 
+Component.displayName = 'NavigationButton';
+
 export const NavigationButton = memo(Component);

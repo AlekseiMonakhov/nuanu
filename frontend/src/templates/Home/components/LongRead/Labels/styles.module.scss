@@ -5,30 +5,18 @@
   width: 100%;
   height: var(--size);
 
+  --size: 1.25em;
+
   @include text-display;
   line-height: 100% !important;
-
-  @include viewport-desktop {
-    --size: 0.97em;
-  }
-  @include viewport-tablet-max {
-    --size: 1em;
-  }
 
   .scene {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(var(--size) * 1.5);
-    padding: 0 calc(var(--size) * 0.5);
+    height: var(--size);
     overflow: hidden;
-
-    @include viewport-phone {
-      @media (orientation: landscape) {
-        height: calc(var(--size) * 1);
-      }
-    }
   }
 
   .children {
@@ -38,13 +26,13 @@
     width: 100%;
 
     @include viewport-desktop {
-      margin-bottom: px-to-rem(20);
+      margin-bottom: px-to-rem(8);
     }
     @include viewport-tablet {
-      margin-bottom: px-to-rem(14);
+      margin-bottom: px-to-rem(5);
     }
     @include viewport-phone {
-      margin-bottom: px-to-rem(8);
+      margin-bottom: px-to-rem(2);
     }
   }
 }
@@ -58,6 +46,12 @@
 
 .label {
   margin: 0;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: var(--size);
 
   white-space: nowrap;
   text-align: center;

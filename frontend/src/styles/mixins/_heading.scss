@@ -64,20 +64,16 @@
   font-style: normal;
   font-weight: 400;
   letter-spacing: -1px;
+  line-height: 104%;
   
   @include viewport-desktop {
     font-size: px-to-rem(100);
-    line-height: 104%;
   }
-  
   @include viewport-tablet {
-    font-size: px-to-rem(80);
-    line-height: 102%;
+    font-size: px-to-rem(76);
   }
-  
   @include viewport-phone {
-    font-size: px-to-rem(60);
-    line-height: 100%;
+    font-size: px-to-rem(52);
   }
 }
 

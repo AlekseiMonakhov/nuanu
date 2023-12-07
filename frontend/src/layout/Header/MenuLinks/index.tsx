@@ -1,16 +1,26 @@
 import { FC } from 'react';
 import cn from 'classnames';
-import { useStoreGlobal, useStorePage } from '@/store/reducers/page';
+import {
+  useStoreGlobal,
+  useStoreLexicon,
+  useStorePage,
+} from '@/store/reducers/page';
 import Link from 'next/link';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 
-export const HeaderMenuLinks: FC<IProps> = ({ className, style, ...props }) => {
+export const HeaderMenuLinks: FC<IProps> = ({ className, style }) => {
   const { menu } = useStoreGlobal();
   const { templateName } = useStorePage();
 
+  const { menu: lexicon } = useStoreLexicon();
+
   return (
-    <ul {...props} className={cn(className, styles.links)} style={style}>
+    <ul
+      className={cn(className, styles.links)}
+      style={style}
+      aria-label={lexicon.label}
+    >
       {menu.map(({ key, href, name, isHighlighted, isActive }) => (
         <li key={key}>
           <Link

@@ -27,4 +27,6 @@ const Component: FC<PropsWithChildren<IProps>> = ({
   </>
 );
 
+Component.displayName = 'LayoutContainer';
+
 export const LayoutContainer = memo(Component);

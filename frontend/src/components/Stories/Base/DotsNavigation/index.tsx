@@ -2,33 +2,29 @@ import cn from 'classnames';
 import { FC, memo, useRef } from 'react';
 import { vevet } from '@anton.bobrov/vevet-init';
 import { useStoreLexicon } from '@/store/reducers/page';
-import { useEvent, usePrevious } from '@anton.bobrov/react-hooks';
+import { isNumber, useEvent, usePrevious } from '@anton.bobrov/react-hooks';
 import { TKey } from '@anton.bobrov/react-components';
 import styles from './styles.module.scss';
 import { Dot } from './Dot';
-import { useSiblingKeys } from '../utils/useSiblingKeys';
 import { IProps } from './types';
 
 const Component: FC<IProps> = ({
   className,
   style,
   items,
+  isDisabled,
   activeKey,
   onActiveKey,
-  onNext,
   onPrev,
-  isDisabled,
-  hasAutoChange,
-  autoChangeTimeout,
-  controllableId,
+  onNext,
   onDotHover,
+  progress,
+  controllableId,
   children,
 }) => {
   const hoverTimeoutRef = useRef<NodeJS.Timeout | undefined>();
 
   const { navigation: lexicon } = useStoreLexicon();
-
-  const { getNextKey } = useSiblingKeys(items);
 
   const prevActiveKey = usePrevious(activeKey, activeKey);
 
@@ -58,13 +54,8 @@ const Component: FC<IProps> = ({
               index={index}
               isActive={activeKey === key}
               onClick={() => onDotClick(key)}
-              hasAutoChange={hasAutoChange}
-              autoChangeTimeout={autoChangeTimeout}
+              progress={isNumber(progress) ? progress : 1}
               controllableId={`${controllableId}_${key}`}
-              onAutoChangeEnd={() => {
-                onActiveKey(getNextKey(key));
-                onNext();
-              }}
               isDisabled={isDisabled}
               onMouseEnter={() => {
                 if (vevet.viewport.isPhone) {
@@ -96,5 +87,7 @@ const Component: FC<IProps> = ({
     </div>
   );
 };
+
+Component.displayName = 'StoriesBaseDotsNavigation';
 
 export const StoriesBaseDotsNavigation = memo(Component);

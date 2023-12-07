@@ -54,6 +54,10 @@
   }
 
   .inline_menu {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     height: 100%;
 
     @include viewport-tablet-max {
