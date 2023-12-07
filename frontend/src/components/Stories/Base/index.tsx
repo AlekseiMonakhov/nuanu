@@ -92,7 +92,6 @@ const Component: FC<IProps> = ({
       {children && <div className={styles.children}>{children}</div>}
 
       <StoriesBaseArrowsNavigation
-        controllableId={id}
         onPrev={() => {
           onActiveKey(getPrevKey());
           onPrev?.();
@@ -114,7 +113,6 @@ const Component: FC<IProps> = ({
         onNext={() => onNext?.()}
         onDotHover={onDotHover}
         progressHandler={hasAutoChange ? progressHandler : null}
-        controllableId={id}
       >
         {dotsNavigationChildren}
       </StoriesBaseDotsNavigation>

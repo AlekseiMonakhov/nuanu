@@ -13,6 +13,5 @@ export interface IProps extends IBaseComponent, TButtonProps {
   isActive: boolean;
   onClick: () => void;
   progressHandler: ReturnType<typeof useProgressHandler> | null;
-  controllableId: string;
   isDisabled: boolean;
 }

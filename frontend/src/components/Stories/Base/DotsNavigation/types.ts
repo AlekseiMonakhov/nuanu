@@ -12,6 +12,5 @@ export interface IProps extends IBaseComponent {
   onNext: () => void;
   onDotHover?: (key: TKey | null) => void;
   progressHandler: ReturnType<typeof useProgressHandler> | null;
-  controllableId: string;
   children?: ReactNode;
 }

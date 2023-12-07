@@ -12,7 +12,6 @@ export const Dot: FC<IProps> = ({
   isActive,
   onClick,
   progressHandler,
-  controllableId,
   isDisabled,
   ...props
 }) => {
@@ -53,7 +52,6 @@ export const Dot: FC<IProps> = ({
       onPointerUpCapture={(event) => event.stopPropagation()}
       aria-label={`${lexicon.slideNumber + (index + 1)} (${label})`}
       aria-current={isActive}
-      aria-controls={controllableId}
       aria-disabled={isDisabled}
     >
       <span className={styles.progress_container}>

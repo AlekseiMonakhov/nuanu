@@ -19,7 +19,6 @@ const Component: FC<IProps> = ({
   onNext,
   onDotHover,
   progressHandler,
-  controllableId,
   children,
 }) => {
   const hoverTimeoutRef = useRef<NodeJS.Timeout | undefined>();
@@ -68,7 +67,6 @@ const Component: FC<IProps> = ({
               isActive={activeKey === key}
               onClick={() => onDotClick(key)}
               progressHandler={progressHandler}
-              controllableId={`${controllableId}_${key}`}
               isDisabled={isDisabled}
               onMouseEnter={() => {
                 if (vevet.viewport.isPhone) {
