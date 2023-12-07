@@ -4,10 +4,6 @@ import { ILexicon } from './types';
 const lexicon: DeepRequired<ILexicon> = {
   siteName: 'Nuanu Inc.',
 
-  preloader: {
-    label: 'Loading',
-  },
-
   navigation: {
     close: 'Close',
     breadcrumbs: 'Breadcrumbs',
