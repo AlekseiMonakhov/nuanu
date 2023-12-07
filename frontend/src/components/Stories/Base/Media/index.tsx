@@ -1,11 +1,20 @@
 import { FC, memo, useEffect, useRef } from 'react';
-import { MediaVideoOrImage } from '@/components/Media/VideoOrImage';
 import { useTimeline } from '@anton.bobrov/react-vevet-hooks';
 import { useStoreLexicon } from '@/store/reducers/page';
 import { IProps } from './types';
 import styles from './styles.module.scss';
+import { Image } from './Image';
+import { Video } from './Video';
 
-const Component: FC<IProps> = ({ isActive, index, media }) => {
+const Component: FC<IProps> = ({
+  index,
+  media,
+  progressDuration,
+  isActive,
+  onProgress,
+  hasProgress,
+  isProgressEnabled,
+}) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const { navigation: lexicon } = useStoreLexicon();
@@ -32,18 +41,41 @@ const Component: FC<IProps> = ({ isActive, index, media }) => {
   }, [isActive, play, reverse]);
 
   return (
-    <MediaVideoOrImage
-      {...media}
+    <div
       ref={ref}
       className={styles.stories_base_media}
-      priority={index === 0}
       role="group"
       aria-roledescription="slide"
       aria-label={`${lexicon.slideNumber + (index + 1)}`}
       aria-hidden={!isActive}
-      draggable={false}
-    />
+    >
+      {media?.image && (
+        <Image
+          isActive={isActive}
+          progressDuration={progressDuration}
+          priority={index === 0}
+          onProgress={onProgress}
+          hasProgress={hasProgress}
+          isProgressEnabled={isProgressEnabled}
+          {...media.image}
+          alt={media.image.alt}
+        />
+      )}
+
+      {media?.video && (
+        <Video
+          isActive={isActive}
+          src={media.video}
+          onProgress={onProgress}
+          hasProgress={hasProgress}
+          isProgressEnabled={isProgressEnabled}
+          isLoop={!hasProgress}
+        />
+      )}
+    </div>
   );
 };
+
+Component.displayName = 'StoriesBaseMedia';
 
 export const StoriesBaseMedia = memo(Component);

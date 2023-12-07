@@ -43,4 +43,6 @@ const Component: FC = () => {
   );
 };
 
+Component.displayName = 'BreadcrumbsList';
+
 export const BreadcrumbsList = memo(Component);

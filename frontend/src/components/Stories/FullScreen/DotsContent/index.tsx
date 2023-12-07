@@ -88,4 +88,6 @@ const Component: FC<IProps> = ({
   );
 };
 
+Component.displayName = 'DotsContent';
+
 export const DotsContent = memo(Component);

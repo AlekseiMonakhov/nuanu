@@ -34,4 +34,6 @@ const Component: FC<IProps> = ({
   );
 };
 
+Component.displayName = 'StoriesBaseArrowsNavigation';
+
 export const StoriesBaseArrowsNavigation = memo(Component);

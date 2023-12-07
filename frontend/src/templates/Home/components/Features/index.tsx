@@ -29,4 +29,6 @@ const Component: FC<IProps> = () => {
   );
 };
 
+Component.displayName = 'HomeFeatures';
+
 export const HomeFeatures = memo(Component);

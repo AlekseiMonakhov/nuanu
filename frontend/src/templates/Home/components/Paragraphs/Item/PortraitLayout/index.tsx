@@ -1,18 +1,18 @@
 import { FC, memo, useRef, useState } from 'react';
 import cn from 'classnames';
-import { FillButton } from '@/components/Button/Fill';
 import { TActionButtonRenderer } from '@/components/Button/Action/types';
 import { ActionButton } from '@/components/Button/Action';
 import { MediaVideoOrImage } from '@/components/Media/VideoOrImage';
 import { useOnInViewport } from '@anton.bobrov/react-hooks';
 import { useOnPageScroll } from '@anton.bobrov/react-components';
+import { ArrowButton } from '@/components/Button/Arrow';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 import { Content } from '../Content';
 import { Factoids } from '../Factoids';
 
 const RenderAction: TActionButtonRenderer = (props) => (
-  <FillButton {...(props as any)} size="large" hasArrow />
+  <ArrowButton {...(props as any)} />
 );
 
 const RenderActionMemo = memo(RenderAction);

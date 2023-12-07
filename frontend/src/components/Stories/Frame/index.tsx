@@ -15,6 +15,7 @@ const Component: FC<IProps> = ({ className, style, items }) => {
         items={items}
         activeKey={activeKey}
         onActiveKey={setActiveKey}
+        hasAutoChange
       />
 
       <div className={styles.content}>
@@ -35,5 +36,7 @@ const Component: FC<IProps> = ({ className, style, items }) => {
     </div>
   );
 };
+
+Component.displayName = 'StoriesFrame';
 
 export const StoriesFrame = memo(Component);

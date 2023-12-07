@@ -43,4 +43,6 @@ const Component: FC<TProps> = ({
   );
 };
 
+Component.displayName = 'DynamicImage';
+
 export const DynamicImage = memo(Component);

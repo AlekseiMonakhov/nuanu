@@ -29,4 +29,6 @@ const Component: FC = () => {
   );
 };
 
+Component.displayName = 'BreadcrumbsJSON';
+
 export const BreadcrumbsJSON = memo(Component);

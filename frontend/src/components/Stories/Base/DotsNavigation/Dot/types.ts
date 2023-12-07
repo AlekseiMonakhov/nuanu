@@ -10,9 +10,7 @@ export interface IProps extends IBaseComponent, TButtonProps {
   index: number;
   isActive: boolean;
   onClick: () => void;
-  hasAutoChange: boolean;
-  autoChangeTimeout: number;
+  progress: null | number;
   controllableId: string;
-  onAutoChangeEnd: () => void;
   isDisabled: boolean;
 }

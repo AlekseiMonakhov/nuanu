@@ -11,7 +11,7 @@ import { FooterSubscribeFormInput } from './Input';
 export const FooterSubscribeForm: FC<IProps> = ({ className, style }) => {
   const textRef = useRef<HTMLParagraphElement>(null);
 
-  const form = useForm({ mode: 'all' });
+  const form = useForm({ mode: 'onSubmit' });
 
   const {
     form: { subscribe: lexicon },

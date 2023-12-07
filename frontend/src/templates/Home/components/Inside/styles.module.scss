@@ -42,3 +42,14 @@
     @include absolute-fullsize;
   }
 }
+
+.button {
+  @include transition(opacity 0.25s);
+
+  &.hide {
+    @include viewport-phone {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}

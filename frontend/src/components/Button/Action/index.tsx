@@ -40,4 +40,6 @@ const Component: FC<IProps> = ({
   return null;
 };
 
+Component.displayName = 'ActionButton';
+
 export const ActionButton = memo(Component);

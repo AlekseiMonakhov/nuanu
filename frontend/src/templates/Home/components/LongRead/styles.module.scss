@@ -32,7 +32,7 @@
     z-index: 1;
 
     @include viewport-phone {
-      margin-top: calc(-0.095 * var(--height));
+      margin-top: calc(-0.11 * var(--height));
     }
   }
 }
@@ -51,7 +51,7 @@
   }
 
   @include viewport-phone {
-    @include text-heading-2;
+    @include text-heading-1;
     line-height: 100% !important;
 
     @media (orientation: landscape) {
