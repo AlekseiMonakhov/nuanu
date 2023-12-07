@@ -2,6 +2,7 @@ import { FC, memo, useEffect, useId, useRef, useState } from 'react';
 import cn from 'classnames';
 import { useEvent, useOnInViewport } from '@anton.bobrov/react-hooks';
 import { TKey } from '@anton.bobrov/react-components';
+import { useStoreLayout } from '@/store/reducers/layout';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 import { usePrerenderedKeys } from './utils/usePrerenderedKeys';
@@ -32,11 +33,13 @@ const Component: FC<IProps> = ({
   const id = useId();
 
   const [activeKey, setActiveKey] = useState(activeKeyProp ?? items[0].key);
+  const { isPageVisible } = useStoreLayout();
 
   const { state: viewportState } = useOnInViewport({ ref });
 
   const hasAutoChange = hasAutoChangeProp && items.length > 1;
-  const isAutoChangeEnabled = hasAutoChange && viewportState === 'in';
+  const isAutoChangeEnabled =
+    hasAutoChange && viewportState === 'in' && isPageVisible;
 
   const onActiveKey = useEvent((key: TKey) => {
     onActiveKeyProp?.(key);
