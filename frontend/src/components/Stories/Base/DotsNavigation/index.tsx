@@ -2,7 +2,7 @@ import cn from 'classnames';
 import { FC, memo, useRef } from 'react';
 import { vevet } from '@anton.bobrov/vevet-init';
 import { useStoreLexicon } from '@/store/reducers/page';
-import { isNumber, useEvent, usePrevious } from '@anton.bobrov/react-hooks';
+import { useEvent, usePrevious } from '@anton.bobrov/react-hooks';
 import { TKey } from '@anton.bobrov/react-components';
 import styles from './styles.module.scss';
 import { Dot } from './Dot';
@@ -18,7 +18,7 @@ const Component: FC<IProps> = ({
   onPrev,
   onNext,
   onDotHover,
-  progress,
+  progressHandler,
   controllableId,
   children,
 }) => {
@@ -54,7 +54,7 @@ const Component: FC<IProps> = ({
               index={index}
               isActive={activeKey === key}
               onClick={() => onDotClick(key)}
-              progress={isNumber(progress) ? progress : 1}
+              progressHandler={progressHandler}
               controllableId={`${controllableId}_${key}`}
               isDisabled={isDisabled}
               onMouseEnter={() => {

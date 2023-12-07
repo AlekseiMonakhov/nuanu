@@ -1,4 +1,4 @@
-import { FC, memo, useEffect, useId, useRef, useState } from 'react';
+import { FC, memo, useId, useRef, useState } from 'react';
 import cn from 'classnames';
 import { useEvent, useOnInViewport } from '@anton.bobrov/react-hooks';
 import { TKey } from '@anton.bobrov/react-components';
@@ -10,6 +10,7 @@ import { StoriesBaseMedia } from './Media';
 import { StoriesBaseDotsNavigation } from './DotsNavigation';
 import { StoriesBaseArrowsNavigation } from './ArrowsNavigation';
 import { useSiblingKeys } from './utils/useSiblingKeys';
+import { useProgressHandler } from './utils/useProgressHandler';
 
 const Component: FC<IProps> = ({
   className,
@@ -49,13 +50,11 @@ const Component: FC<IProps> = ({
   const { prerenderedKeys } = usePrerenderedKeys(activeKey);
   const { getNextKey, getPrevKey } = useSiblingKeys(items, activeKey);
 
-  const [storyProgress, setStoryProgress] = useState(0);
-
-  useEffect(() => {
-    if (storyProgress === 1) {
+  const progressHandler = useProgressHandler((progress) => {
+    if (progress === 1) {
       onActiveKey(getNextKey());
     }
-  }, [storyProgress, onActiveKey, getNextKey]);
+  });
 
   return (
     <section
@@ -84,9 +83,7 @@ const Component: FC<IProps> = ({
               isProgressEnabled={isAutoChangeEnabled}
               progressDuration={autoChangeDuration}
               isActive={isActive}
-              onProgress={(value) =>
-                setStoryProgress(parseFloat(value.toFixed(3)))
-              }
+              onProgress={progressHandler.setProgress}
             />
           );
         })}
@@ -116,7 +113,7 @@ const Component: FC<IProps> = ({
         onPrev={() => onPrev?.()}
         onNext={() => onNext?.()}
         onDotHover={onDotHover}
-        progress={hasAutoChange ? storyProgress : null}
+        progressHandler={hasAutoChange ? progressHandler : null}
         controllableId={id}
       >
         {dotsNavigationChildren}

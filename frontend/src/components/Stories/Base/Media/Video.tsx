@@ -57,12 +57,16 @@ export const Video: FC<TVideoProps> = ({
       playsInline
       position="cover"
       onTimeUpdate={(event) => {
-        if (hasProgress && isProgressEnabled) {
+        const progress =
+          event.currentTarget.currentTime / event.currentTarget.duration;
+
+        if (hasProgress && isProgressEnabled && progress < 1) {
           onProgress(
             event.currentTarget.currentTime / event.currentTarget.duration,
           );
         }
       }}
+      onEnded={() => onProgress(1)}
     />
   );
 };
