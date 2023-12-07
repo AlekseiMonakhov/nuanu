@@ -41,17 +41,30 @@ const Component: FC<IProps> = ({
     }
   });
 
+  const getItemLabel = useEvent((item: any) => {
+    if ('label' in item) {
+      return item.label as string;
+    }
+
+    if ('title' in item) {
+      return item.title as string;
+    }
+
+    return null;
+  });
+
   return (
     <div
       className={cn(className, styles.stories_base_dots_navigation)}
       style={{ ...style, '--count': items.length }}
     >
       <ul className={styles.dots_list} aria-label={lexicon.changeSlide}>
-        {items.map(({ key }, index) => (
+        {items.map(({ key, ...item }, index) => (
           <li key={key} className={styles.dots_item}>
             <Dot
               className={styles.dot}
               index={index}
+              label={getItemLabel(item)}
               isActive={activeKey === key}
               onClick={() => onDotClick(key)}
               progressHandler={progressHandler}

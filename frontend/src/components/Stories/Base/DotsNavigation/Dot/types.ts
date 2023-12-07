@@ -9,6 +9,7 @@ type TButtonProps = Pick<
 
 export interface IProps extends IBaseComponent, TButtonProps {
   index: number;
+  label: string | null;
   isActive: boolean;
   onClick: () => void;
   progressHandler: ReturnType<typeof useProgressHandler> | null;

@@ -8,6 +8,7 @@ export const Dot: FC<IProps> = ({
   className,
   style,
   index,
+  label,
   isActive,
   onClick,
   progressHandler,
@@ -50,7 +51,7 @@ export const Dot: FC<IProps> = ({
       type="button"
       onClick={() => !isDisabled && onClick()}
       onPointerUpCapture={(event) => event.stopPropagation()}
-      aria-label={`${lexicon.slideNumber + (index + 1)}`}
+      aria-label={`${lexicon.slideNumber + (index + 1)} (${label})`}
       aria-current={isActive}
       aria-controls={controllableId}
       aria-disabled={isDisabled}
