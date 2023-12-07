@@ -1,6 +1,10 @@
 export interface ILexicon {
   siteName: string;
 
+  preloader: {
+    label: string;
+  };
+
   navigation: {
     close: string;
     breadcrumbs: string;

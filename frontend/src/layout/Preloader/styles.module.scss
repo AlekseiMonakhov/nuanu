@@ -15,3 +15,22 @@
 
   background-color: var(--color-primary-dark-base);
 }
+
+.progress {
+  @include absolute-fullsize;
+  background-color: var(--color-primary-base);
+
+  transform-origin: top left;
+  transform: scale(1, 0);
+}
+
+.percent {
+  position: absolute;
+  left: var(--wrap);
+  bottom: var(--wrap);
+
+  color: var(--color-total-white);
+  mix-blend-mode: difference;
+
+  @include text-heading-2;
+}
