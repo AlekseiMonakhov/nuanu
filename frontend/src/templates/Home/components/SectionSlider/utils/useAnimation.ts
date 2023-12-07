@@ -18,6 +18,8 @@ interface IProps {
 const SETTINGS = {
   ease: 0.1,
   friction: 0.5,
+  wheelSpeed: 2,
+  dragSpeed: 3,
 };
 
 export function useAnimation({
@@ -55,9 +57,23 @@ export function useAnimation({
         max: 1,
         step: 0.001,
       },
+      wheelSpeed: {
+        value: SETTINGS.wheelSpeed,
+        type: 'number',
+        min: 0,
+        max: 4,
+        step: 0.001,
+      },
+      dragSpeed: {
+        value: SETTINGS.dragSpeed,
+        type: 'number',
+        min: 0,
+        max: 4,
+        step: 0.001,
+      },
     },
-    onChange: ({ ease, friction }) => {
-      handler?.changeProps({ ease, friction });
+    onChange: ({ ease, friction, wheelSpeed }) => {
+      handler?.changeProps({ ease, friction, wheelSpeed });
     },
   });
 
@@ -114,9 +130,6 @@ export function useAnimation({
       max: length,
       step: 1,
       hasDrag: vevet.isMobile,
-      dragSpeed: 3,
-      wheelSpeed: 2,
-      friction: 0.9,
     });
 
     setHandler(instance);
