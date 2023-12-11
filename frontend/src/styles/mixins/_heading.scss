@@ -118,13 +118,13 @@
   font-weight: 400;
 
   @include viewport-desktop {
-    font-size: px-to-rem(20);
-    line-height: 130%;
+    font-size: px-to-rem(18);
+    line-height: px-to-rem(34);
   }
 
   @include viewport-tablet {
-    font-size: px-to-rem(16);
-    line-height: 115%;
+    font-size: px-to-rem(15);
+    line-height: px-to-rem(24);
   }
 
   @include viewport-phone {
@@ -148,4 +148,12 @@
   @include viewport-phone {
     font-size: px-to-rem(15);
   }
+}
+
+@mixin text-smaller-caps {
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  font-size: px-to-rem(12);
 }
