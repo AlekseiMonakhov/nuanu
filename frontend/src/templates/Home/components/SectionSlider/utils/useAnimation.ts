@@ -1,6 +1,8 @@
 import { Callbacks, NCallbacks, clamp } from '@anton.bobrov/vevet-init';
 import { RefObject, useEffect, useState } from 'react';
 import { useEvent } from '@anton.bobrov/react-hooks';
+import store from '@/store/store';
+import { layoutSlice } from '@/store/reducers/layout';
 import { usePageScrollLock } from './usePageScrollLock';
 import { useWheel } from './useWheel';
 import { useSync } from './useSync';
@@ -32,6 +34,13 @@ export function useAnimation({ ref, belowRef, length }: IProps): IUseAnimation {
   const [targetProgress, setTargetProgress] = useState(0);
   const [isEnd, setIsEnd] = useState(false);
   const [callbacks, setCallbacks] = useState<TCallbacks | null>(null);
+
+  // end callbacks
+  useEffect(() => {
+    if (isEnd) {
+      store.dispatch(layoutSlice.actions.refreshScrollBar());
+    }
+  }, [isEnd]);
 
   // render end
   const renderEnd = useEvent((progress: number) => {
