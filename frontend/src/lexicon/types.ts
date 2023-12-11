@@ -23,19 +23,11 @@ export interface ILexicon {
   };
 
   home: {
-    stories: {
-      title: string;
-    };
-
     features: {
       title: string;
     };
 
     inside: {
-      title: string;
-    };
-
-    site: {
       title: string;
     };
   };

@@ -1,144 +1,97 @@
-/* eslint-disable no-param-reassign */
-import { useDatGUISettings } from '@anton.bobrov/react-dat-gui';
-import { useEvent } from '@anton.bobrov/react-hooks';
-import { clamp, SlideProgress, vevet } from '@anton.bobrov/vevet-init';
+import { Callbacks, NCallbacks, clamp } from '@anton.bobrov/vevet-init';
 import { RefObject, useEffect, useState } from 'react';
+import { useEvent } from '@anton.bobrov/react-hooks';
 import { usePageScrollLock } from './usePageScrollLock';
+import { useWheel } from './useWheel';
+import { useSync } from './useSync';
+import { useDrag } from './useDrag';
 
 interface IProps {
   ref: RefObject<HTMLElement>;
-  containerRef: RefObject<HTMLElement>;
   belowRef: RefObject<HTMLElement>;
   length: number;
-  name: string;
-  onHide: () => void;
-  onStep: (step: number) => void;
 }
 
-const SETTINGS = {
-  ease: 0.1,
-  friction: 0.5,
-  wheelSpeed: 2,
-  dragSpeed: 3,
-};
+interface ICallbacks extends NCallbacks.ITypes {
+  render: { progress: number };
+}
 
-export function useAnimation({
-  ref,
-  containerRef,
-  belowRef,
-  length,
-  name,
-  onHide: onHideProp,
-  onStep: onStepProp,
-}: IProps) {
-  const [handler, setHandler] = useState<SlideProgress | null>(null);
+type TCallbacks = Callbacks<ICallbacks>;
 
-  const [isPageScrollLocked, setIsPageScrollLocked] = useState(true);
+export interface IUseAnimation {
+  callbacks: TCallbacks | null;
+  length: number;
+  isEnd: boolean;
+  targetProgress: number;
+}
 
-  const onHide = useEvent(onHideProp);
-  const onStep = useEvent(onStepProp);
+export function useAnimation({ ref, belowRef, length }: IProps): IUseAnimation {
+  const min = 0;
+  const max = length;
 
-  usePageScrollLock(isPageScrollLocked);
+  const [targetProgress, setTargetProgress] = useState(0);
+  const [isEnd, setIsEnd] = useState(false);
+  const [callbacks, setCallbacks] = useState<TCallbacks | null>(null);
 
-  useDatGUISettings({
-    name: `${name} Progress Handler`,
-    settings: {
-      ease: {
-        value: SETTINGS.ease,
-        type: 'number',
-        min: 0,
-        max: 0.5,
-        step: 0.001,
-      },
-      friction: {
-        value: SETTINGS.friction,
-        type: 'number',
-        min: 0,
-        max: 1,
-        step: 0.001,
-      },
-      wheelSpeed: {
-        value: SETTINGS.wheelSpeed,
-        type: 'number',
-        min: 0,
-        max: 4,
-        step: 0.001,
-      },
-      dragSpeed: {
-        value: SETTINGS.dragSpeed,
-        type: 'number',
-        min: 0,
-        max: 4,
-        step: 0.001,
-      },
-    },
-    onChange: ({ ease, friction, wheelSpeed }) => {
-      handler?.changeProps({ ease, friction, wheelSpeed });
-    },
-  });
-
-  const togglePageScrollLock = useEvent((isLocked: boolean) => {
-    if (isLocked) {
-      if (isPageScrollLocked) {
-        setIsPageScrollLocked(false);
-      }
-    } else if (!isPageScrollLocked) {
-      setIsPageScrollLocked(true);
-    }
-  });
-
-  const onEndProgress = useEvent((progress: number) => {
-    if (!belowRef.current) {
+  // render end
+  const renderEnd = useEvent((progress: number) => {
+    const container = ref.current;
+    const below = belowRef.current;
+    if (!container || !below) {
       return;
     }
 
-    belowRef.current.style.opacity = `${progress}`;
-
-    // TODO
-    // network performance fix
-    // for images not to be loaded at once
-    // belowRef.current.style.paddingTop = progress === 0 ? '' : '0';
-  });
-
-  const render = useEvent(() => {
-    const container = containerRef.current;
-    if (!handler || !container) {
-      return;
-    }
-
-    const endProgress = clamp(handler.progress - length + 1, [0, 1]);
-    onEndProgress(endProgress);
+    const endProgress = clamp(progress - length + 1, [0, 1]);
 
     container.style.transform = `translate(0, ${endProgress * -100}%)`;
+    below.style.opacity = `${endProgress}`;
 
-    togglePageScrollLock(endProgress > 0.98);
-
-    if (endProgress >= 1) {
-      onHide();
-    }
+    setIsEnd(endProgress === 1);
   });
 
+  // render scene
+  const render = useEvent((progress: number) => {
+    // launch callbacks
+    callbacks?.tbt('render', { progress });
+
+    // render end
+    renderEnd(progress);
+  });
+
+  // sync progress
+  const { isAnimating } = useSync({
+    value: targetProgress,
+    onRender: (progress) => render(progress),
+  });
+
+  // create callbacks
   useEffect(() => {
-    if (!ref.current) {
-      return undefined;
-    }
+    const instance = new Callbacks<ICallbacks>();
+    setCallbacks(instance);
 
-    const instance = new SlideProgress({
-      ...SETTINGS,
-      container: ref.current,
-      min: 0,
-      max: length,
-      step: 1,
-      hasDrag: vevet.isMobile,
-    });
+    return instance.destroy();
+  }, []);
 
-    setHandler(instance);
+  // lock scroll
+  usePageScrollLock(!isEnd);
 
-    instance.addCallback('render', () => render());
-    instance.addCallback('step', () => onStep(instance.steppedProgress));
+  // add wheel
+  useWheel({
+    isEnabled: !isAnimating,
+    isEnd,
+    onWheel: (direction) => {
+      setTargetProgress((val) => clamp(val + direction, [min, max]));
+    },
+  });
 
-    return () => instance.destroy();
-  }, [length, onStep, ref, render]);
+  // add drag
+  useDrag({
+    isEnabled: !isAnimating,
+    isEnd,
+    onDrag: (direction) => {
+      setTargetProgress((val) => clamp(val + direction, [min, max]));
+    },
+  });
 
-  return { handler };
+  return { callbacks, length, isEnd, targetProgress };
 }

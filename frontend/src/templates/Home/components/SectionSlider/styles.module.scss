@@ -2,13 +2,19 @@
 
 .section_slider {
   --height: calc(100 * var(--vh));
-  --slide-height: calc(var(--height) - 2 * var(--gap));
 
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: var(--height);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: var(--gap);
 
   @include viewport-desktop {
     --gap: 4px;
@@ -30,32 +36,6 @@
 }
 
 .container {
-  @include absolute-fullsize;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  padding: var(--gap);
-
-  .scroll_down {
-    margin-top: var(--gap);
-    flex-shrink: 0;
-
-    @include viewport-tablet-min {
-      display: none;
-    }
-
-    @include viewport-phone {
-      @media (orientation:landscape) {
-        display: none;
-      }
-    }
-  }
-}
-
-.scene {
   position: relative;
   width: 100%;
   height: 100%;

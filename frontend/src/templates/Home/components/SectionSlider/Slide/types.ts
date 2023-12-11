@@ -1,10 +1,7 @@
-import { SlideProgress } from '@anton.bobrov/vevet-init';
 import { ReactElement } from 'react';
+import { IUseAnimation } from '../utils/useAnimation';
 
-export interface IProps {
-  children: ReactElement;
+export interface IProps extends Pick<IUseAnimation, 'callbacks' | 'length'> {
   index: number;
-  length: number;
-  handler: SlideProgress | null;
-  yParallax: number;
+  children: ReactElement;
 }

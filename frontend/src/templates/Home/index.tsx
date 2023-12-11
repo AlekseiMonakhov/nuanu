@@ -10,7 +10,6 @@ import styles from './styles.module.scss';
 import { HomeInside } from './components/Inside';
 import { HomeLongRead } from './components/LongRead';
 import { HomeParagraphs } from './components/Paragraphs';
-import { useSectionNames } from './utils/useSectionNames';
 import { HomePersonTypes } from './components/PersonTypes';
 
 const HASSECTIONSLIDER = true;
@@ -26,19 +25,10 @@ const Home: FC<IHome> = ({
 
   const pageRef = useRef<HTMLDivElement>(null);
 
-  const secitonNames = useSectionNames({
-    hasStories: !!stories,
-    hasInside: !!inside,
-  });
-
   return (
     <>
       {HASSECTIONSLIDER && (
-        <HomeSectionSlider
-          className={styles.slider}
-          names={secitonNames}
-          belowRef={pageRef}
-        >
+        <HomeSectionSlider className={styles.slider} belowRef={pageRef}>
           {stories && <StoriesFullScreen {...stories} />}
 
           {inside && <HomeInside {...inside} />}

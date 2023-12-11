@@ -26,20 +26,12 @@ const lexicon: DeepRequired<ILexicon> = {
   },
 
   home: {
-    stories: {
-      title: 'Stories',
-    },
-
     features: {
       title: 'Features',
     },
 
     inside: {
       title: 'Inside',
-    },
-
-    site: {
-      title: 'Site',
     },
   },
 
