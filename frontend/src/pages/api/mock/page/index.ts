@@ -58,6 +58,7 @@ const handler = async (
               href: 'https://google.com/',
               target: '_blank',
               text: 'Apply now',
+              sup: null,
             },
             title: 'Some Title',
             description: '',
@@ -385,6 +386,7 @@ const handler = async (
             action: {
               kind: 'link',
               text: 'View accommodation options',
+              sup: null,
               href: '/accomodation',
               target: null,
             },
@@ -415,6 +417,7 @@ const handler = async (
             action: {
               kind: 'link',
               text: 'Collaborate with us',
+              sup: null,
               href: '/',
               target: null,
             },
@@ -449,6 +452,7 @@ const handler = async (
             action: {
               kind: 'link',
               text: 'Collaborate with us',
+              sup: null,
               href: '/',
               target: null,
             },

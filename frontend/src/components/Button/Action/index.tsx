@@ -13,6 +13,7 @@ const Component: FC<IProps> = ({
         {...buttonProps}
         tag="a"
         text={action.text}
+        sup={action.sup}
         href={action.href}
         target={action.target ?? undefined}
         rel={action.target === '_blank' ? 'noopener noreferrer' : undefined}

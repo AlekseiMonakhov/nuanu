@@ -4,6 +4,7 @@ import { ReactElement } from 'react';
 type TLink = {
   kind: 'link';
   text: string;
+  sup: string | null;
   href: string;
   target?: '_blank' | null;
 };
