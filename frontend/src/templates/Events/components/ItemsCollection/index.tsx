@@ -1,11 +1,10 @@
 import { FC, memo } from 'react';
-import cn from 'classnames';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 import { EventsItem } from '../Item';
 
-const Component: FC<IProps> = ({ className, style, items }) => (
-  <div className={cn(className, styles.events_items_collection)} style={style}>
+const Component: FC<IProps> = ({ items }) => (
+  <div className={styles.events_items_collection}>
     {items.map(({ key, ...item }) => (
       <EventsItem key={key} {...item} />
     ))}

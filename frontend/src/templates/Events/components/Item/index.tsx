@@ -1,14 +1,11 @@
-import { FC, memo } from 'react';
-import cn from 'classnames';
+import { FC } from 'react';
 import { DynamicImage } from '@/components/Media/DynamicImage';
 import Link from 'next/link';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 import { useDates } from './useDates';
 
-const Component: FC<IProps> = ({
-  className,
-  style,
+export const EventsItem: FC<IProps> = ({
   href,
   image,
   startTime,
@@ -21,12 +18,7 @@ const Component: FC<IProps> = ({
   const { dayNumber, month, time } = useDates(startTime, endTime);
 
   return (
-    <Link
-      className={cn(className, styles.events_item)}
-      style={style}
-      href={href}
-      target="_blank"
-    >
+    <Link className={styles.events_item} href={href} target="_blank">
       <div className={styles.image}>
         {image && <DynamicImage {...image} />}
 
@@ -71,7 +63,3 @@ const Component: FC<IProps> = ({
     </Link>
   );
 };
-
-Component.displayName = 'EventsItem';
-
-export const EventsItem = memo(Component);
