@@ -6,8 +6,9 @@ import { headerSlice } from '@/store/reducers/header';
 import { useTemplate } from '../_hooks/useTemplate';
 import styles from './styles.module.scss';
 import { IEvents } from './types';
+import { EventsItemsCollection } from './components/ItemsCollection';
 
-const Events: FC<IEvents> = ({ stories }) => {
+const Events: FC<IEvents> = ({ stories, items }) => {
   useTemplate();
 
   useEffect(() => {
@@ -21,12 +22,12 @@ const Events: FC<IEvents> = ({ stories }) => {
   return (
     <div className={styles.page}>
       <div className={styles.screen}>
-        {stories && (
-          <StoriesFullScreen className={styles.stories} {...stories} />
-        )}
+        <StoriesFullScreen className={styles.stories} {...stories} />
 
         <div className={styles.filters} />
       </div>
+
+      <EventsItemsCollection items={items} />
 
       <Footer theme="dark" />
     </div>

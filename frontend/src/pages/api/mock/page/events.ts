@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { PAGE_GLOBAL } from '@/mock/PAGE_GLOBAL';
 import { TPageTemplateRegistryAPI } from '@/templates/Renderer';
+import { MOCK_EVENTS } from '@/mock/EVENTS';
 
 const handler = async (
   req: NextApiRequest,
@@ -85,6 +86,8 @@ const handler = async (
           },
         ],
       },
+
+      items: MOCK_EVENTS,
     },
   });
 };
