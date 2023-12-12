@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useEvent } from '@anton.bobrov/react-hooks';
-import { uniqueeArray } from '@/utils/uniqueeArray';
+import { uniqueeArray, useEvent } from '@anton.bobrov/react-hooks';
 import { TFormBaseSelectFullOption } from '../types';
 import { useSelectedOptions } from './useSelectedOptions';
 

@@ -1,7 +1,6 @@
 import { useId, useMemo } from 'react';
 import { TimeZone } from '@/utils/datetime/settings';
-import { useEvent } from '@anton.bobrov/react-hooks';
-import { uniqueeArray } from '@/utils/uniqueeArray';
+import { uniqueeArray, useEvent } from '@anton.bobrov/react-hooks';
 import { IEventsItem } from '../../Item/types';
 
 export function useGroups(itemsProp: IEventsItem[]) {

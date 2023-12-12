@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
-import { uniqueeArray } from '@/utils/uniqueeArray';
 import { useStoreLexicon } from '@/store/reducers/page';
 import { TKey } from '@anton.bobrov/react-components';
 import { TFormBaseSelectOption } from '@/components/Form/BaseSelect/types';
+import { uniqueeArray } from '@anton.bobrov/react-hooks';
 import { IEventsItem } from '../components/Item/types';
 
 export type TFilter = {
