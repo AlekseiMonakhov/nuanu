@@ -1,6 +1,7 @@
 import { useId, useMemo } from 'react';
 import { TimeZone } from '@/utils/datetime/settings';
 import { useEvent } from '@anton.bobrov/react-hooks';
+import { uniqueeArray } from '@/utils/uniqueeArray';
 import { IEventsItem } from '../../Item/types';
 
 export function useGroups(itemsProp: IEventsItem[]) {
@@ -30,9 +31,7 @@ export function useGroups(itemsProp: IEventsItem[]) {
   );
 
   const groups = useMemo(() => {
-    const names = itemsData
-      .map((item) => item.monthYear)
-      .filter((item, index, array) => array.indexOf(item) === index);
+    const names = uniqueeArray(itemsData.map((item) => item.monthYear));
 
     return names.map((name, index) => ({
       key: index,
