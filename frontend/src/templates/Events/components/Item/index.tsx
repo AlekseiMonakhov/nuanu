@@ -39,12 +39,7 @@ const Component: FC<IProps> = ({
 
       <div className={styles.content}>
         <div className={styles.base_info}>
-          {type && (
-            <p
-              className={styles.type}
-              dangerouslySetInnerHTML={{ __html: type }}
-            />
-          )}
+          {type && <p className={styles.type}>{type}</p>}
 
           {title && (
             <p

@@ -7,8 +7,8 @@ export interface IEventsItem {
   image: TDynamicImageProps;
   startTime: string;
   endTime?: string;
-  /** nl2br */
   type?: string;
+  tags?: string[];
   /** nl2br */
   title?: string;
   place?: string;
