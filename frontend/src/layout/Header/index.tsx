@@ -33,7 +33,7 @@ export const Header: FC = () => {
   });
 
   return (
-    <header className={cn(styles.header, styles[theme])}>
+    <header className={cn(styles.header, styles[theme])} id="header">
       <div ref={containerRef} className={styles.header_container}>
         <Link
           href={links.home}
