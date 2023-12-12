@@ -13,7 +13,11 @@ const Component: FC<IProps> = ({
 }) => (
   <div className={styles.events_items_collection}>
     {items.map(({ key, ...item }) => (
-      <EventsItem key={key} {...item} className={itemsClassName} />
+      <EventsItem
+        key={key}
+        {...item}
+        className={`${itemsClassName}   ${key}`}
+      />
     ))}
 
     {bannerTitle && (

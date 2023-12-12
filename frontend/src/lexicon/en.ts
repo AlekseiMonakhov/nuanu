@@ -55,6 +55,11 @@ const lexicon: DeepRequired<ILexicon> = {
     addEvent: {
       title: 'Host your own event at <br />Nuanu in {month}',
     },
+
+    filters: {
+      type: 'Event type',
+      tags: 'Filters',
+    },
   },
 };
 

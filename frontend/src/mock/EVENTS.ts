@@ -43,5 +43,5 @@ export const MOCK_EVENTS: DeepRequired<DeepRequired<IEventsItem>[]> = times(
       price: index % 3 === 0 ? 0 : getRandomInt(1, 10),
     };
   },
-  100,
+  40,
 );

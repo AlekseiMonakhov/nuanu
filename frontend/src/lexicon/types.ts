@@ -51,5 +51,9 @@ export interface ILexicon {
     addEvent: {
       title: string;
     };
+    filters: {
+      type: string;
+      tags: string;
+    };
   };
 }
