@@ -18,7 +18,12 @@ export const EventsItem: FC<IProps> = ({
   const { dayNumber, month, time } = useDates(startTime, endTime);
 
   return (
-    <Link className={styles.events_item} href={href} target="_blank">
+    <Link
+      className={styles.events_item}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div className={styles.image}>
         {image && <DynamicImage {...image} />}
 

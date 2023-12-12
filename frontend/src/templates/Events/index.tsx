@@ -6,7 +6,7 @@ import { headerSlice } from '@/store/reducers/header';
 import { useTemplate } from '../_hooks/useTemplate';
 import styles from './styles.module.scss';
 import { IEvents } from './types';
-import { EventsItemsCollection } from './components/ItemsCollection';
+import { EventsGroupedItemsCollection } from './components/GroupedItemsCollection';
 
 const Events: FC<IEvents> = ({ stories, items }) => {
   useTemplate();
@@ -27,7 +27,7 @@ const Events: FC<IEvents> = ({ stories, items }) => {
         <div className={styles.filters} />
       </div>
 
-      <EventsItemsCollection items={items} />
+      <EventsGroupedItemsCollection items={items} />
 
       <Footer theme="dark" />
     </div>

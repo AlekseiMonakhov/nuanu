@@ -15,7 +15,7 @@
   @include viewport-phone {
     grid-template-columns: 1fr;
 
-    @media (min-width: 500px) or (orienation: landscape) {
+    @media (min-width: 550px) or (orienation: landscape) {
       grid-template-columns: repeat(2, 1fr);
     }
   }
