@@ -13,17 +13,7 @@
   align-items: center;
   justify-content: center;
 
-  padding: var(--gap);
-
-  @include viewport-desktop {
-    --gap: 4px;
-  }
-  @include viewport-tablet {
-    --gap: 3px;
-  }
-  @include viewport-phone {
-    --gap: 2px;
-  }
+  padding: var(--grid-gap);
 
   .stories {
     position: relative;
@@ -34,7 +24,7 @@
 
   .filters {
     width: 100%;
-    margin-top: var(--gap);
+    margin-top: var(--grid-gap);
     flex-shrink: 0;
 
     background-color: #ccc;

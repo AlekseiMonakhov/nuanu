@@ -2,19 +2,17 @@
 
 .events_items_collection {
   display: grid;
+  gap: var(--grid-gap);
 
   @include viewport-desktop {
-    gap: 4px;
     grid-template-columns: repeat(4, 1fr);
   }
 
   @include viewport-tablet {
-    gap: 3px;
     grid-template-columns: repeat(3, 1fr);
   }
 
   @include viewport-phone {
-    gap: 2px;
     grid-template-columns: 1fr;
 
     @media (min-width: 500px) or (orienation: landscape) {
