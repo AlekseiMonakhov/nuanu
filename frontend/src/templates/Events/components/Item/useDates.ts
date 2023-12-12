@@ -31,7 +31,7 @@ export function useDates(startTime: string, endTime?: string) {
 
   const time = useMemo(() => {
     if (!endTime) {
-      return undefined;
+      return getTime(startTime);
     }
 
     const start = getTime(startTime);
