@@ -46,4 +46,10 @@ export interface ILexicon {
     description: string;
     accept: string;
   };
+
+  events: {
+    addEvent: {
+      title: string;
+    };
+  };
 }

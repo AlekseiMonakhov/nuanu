@@ -50,6 +50,12 @@ const lexicon: DeepRequired<ILexicon> = {
       'We use cookies to provide you with the best website experience. <a href={{privacyPolicyHref}}>Privacy policy</a>',
     accept: 'Accept',
   },
+
+  events: {
+    addEvent: {
+      title: 'Host your own event at <br />Nuanu in {month}',
+    },
+  },
 };
 
 export default lexicon;

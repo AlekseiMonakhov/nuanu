@@ -37,6 +37,8 @@ export function useGroups(itemsProp: IEventsItem[]) {
     return names.map((name, index) => ({
       key: index,
       name,
+      month: name.split(' ')[0],
+      year: name.split(' ')[1],
       id: `${id}-${index}`,
       items: itemsData.filter((item) => item.monthYear === name),
       isFirst: index === 0,

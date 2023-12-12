@@ -5,6 +5,8 @@ import { IProps } from './types';
 import styles from './styles.module.scss';
 
 export const Head: FC<IProps> = ({
+  className,
+  style,
   name,
   isFirst,
   isLast,
@@ -14,7 +16,7 @@ export const Head: FC<IProps> = ({
   const { navigation: lexicon } = useStoreLexicon();
 
   return (
-    <div className={styles.head}>
+    <div className={cn(className, styles.head)} style={style}>
       <div>
         {!isFirst && (
           <button

@@ -14,11 +14,11 @@ const titles = [
 
 const types = ['lecture', 'workshop', 'meetup'];
 
-const startDate = +new Date();
+const startDate = 1702386339594;
 
 export const MOCK_EVENTS: DeepRequired<DeepRequired<IEventsItem>[]> = times(
   (index) => {
-    const timeOffset = 1000 * 3600 * 24 * 3 * index;
+    const timeOffset = 1000 * 3600 * 24 * 2.2 * index;
 
     return {
       key: index,

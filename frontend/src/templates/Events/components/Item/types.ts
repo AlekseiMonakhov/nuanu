@@ -1,5 +1,5 @@
 import { TDynamicImageProps } from '@/components/Media/DynamicImage/types';
-import { TKey } from '@anton.bobrov/react-components';
+import { IBaseComponent, TKey } from '@anton.bobrov/react-components';
 
 export interface IEventsItem {
   key: TKey;
@@ -15,4 +15,4 @@ export interface IEventsItem {
   price?: number;
 }
 
-export interface IProps extends IEventsItem {}
+export interface IProps extends IEventsItem, IBaseComponent {}
