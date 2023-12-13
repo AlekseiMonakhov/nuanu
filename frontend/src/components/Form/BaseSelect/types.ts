@@ -13,6 +13,7 @@ export type TFormBaseSelectFullOption = {
 
 export interface IFormBaseSelectProps extends IBaseComponent {
   placeholder: string;
+  counterPostfix: string;
   value: string | undefined;
   onChange: (value: string) => void;
   options: TFormBaseSelectOption[];

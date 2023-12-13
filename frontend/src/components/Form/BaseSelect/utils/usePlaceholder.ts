@@ -4,11 +4,17 @@ import { useSelectedOptions } from './useSelectedOptions';
 
 interface IProps {
   defaultPlaceholder: string;
+  counterPostfix: string;
   value: string | undefined;
   options: TFormBaseSelectFullOption[];
 }
 
-export function usePlaceholder({ defaultPlaceholder, value, options }: IProps) {
+export function usePlaceholder({
+  defaultPlaceholder,
+  counterPostfix,
+  value,
+  options,
+}: IProps) {
   const selectedOptions = useSelectedOptions({ value, options });
 
   const placeholder = useMemo(() => {
@@ -20,8 +26,8 @@ export function usePlaceholder({ defaultPlaceholder, value, options }: IProps) {
       return selectedOptions[0].value;
     }
 
-    return `${selectedOptions.length} types`;
-  }, [defaultPlaceholder, selectedOptions]);
+    return `${selectedOptions.length} ${counterPostfix}`;
+  }, [defaultPlaceholder, selectedOptions, counterPostfix]);
 
   return { placeholder, isEmpty: selectedOptions.length === 0 };
 }

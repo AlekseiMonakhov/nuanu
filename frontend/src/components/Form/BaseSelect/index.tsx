@@ -3,6 +3,8 @@
 import { FC, useId, useRef } from 'react';
 import cn from 'classnames';
 import { usePropState } from '@anton.bobrov/react-hooks';
+import { IconDesktopCheck } from '@/components/Icons/DesktopCheck';
+import { IconPhoneCheck } from '@/components/Icons/PhoneCheck';
 import { IFormBaseSelectProps } from './types';
 import styles from './styles.module.scss';
 import { usePlaceholder } from './utils/usePlaceholder';
@@ -11,11 +13,14 @@ import { useFullOptions } from './utils/useFullOptions';
 import { useListboxStates } from './utils/useListboxStates';
 import { useSelectedOptions } from './utils/useSelectedOptions';
 import { useListboxNavigation } from './utils/useListboxNavigation';
+import { IconDesktopSelectChevron } from '../../Icons/DesktopSelectChevron';
+import { IconPhoneSelectChevron } from '../../Icons/PhoneSelectChevron';
 
 export const FormBaseSelect: FC<IFormBaseSelectProps> = ({
   className,
   style,
   placeholder: defaultPlaceholder,
+  counterPostfix,
   value,
   onChange,
   options: optionsProp,
@@ -35,6 +40,7 @@ export const FormBaseSelect: FC<IFormBaseSelectProps> = ({
 
   const { placeholder, isEmpty } = usePlaceholder({
     defaultPlaceholder,
+    counterPostfix,
     value,
     options,
   });
@@ -79,6 +85,11 @@ export const FormBaseSelect: FC<IFormBaseSelectProps> = ({
         }
       >
         <span className={styles.placeholder}>{placeholder}</span>
+
+        <span className={cn(styles.chevron, isOpened && styles.active)}>
+          <IconDesktopSelectChevron className={styles.element_desktop} />
+          <IconPhoneSelectChevron className={styles.element_phone} />
+        </span>
       </div>
 
       <div
@@ -106,6 +117,11 @@ export const FormBaseSelect: FC<IFormBaseSelectProps> = ({
               onClick={() => toggleOptionKey(option.key)}
             >
               {option.value}
+
+              <span className={cn(styles.check, isSelected && styles.active)}>
+                <IconDesktopCheck className={styles.element_desktop} />
+                <IconPhoneCheck className={styles.element_phone} />
+              </span>
             </div>
           );
         })}

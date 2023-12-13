@@ -29,6 +29,7 @@ export const EventsFilters: FC<IProps> = ({
         <FormBaseSelect
           key={key}
           placeholder={label}
+          counterPostfix={key === 'type' ? 'types' : 'filters'}
           value={values[key]}
           onChange={(value) => setValues((prev) => ({ ...prev, [key]: value }))}
           options={options}

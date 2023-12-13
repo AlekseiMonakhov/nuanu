@@ -41,6 +41,58 @@
   }
 }
 
+.element {
+  &_desktop {
+    display: block;
+
+    @include viewport-phone {
+      display: none;
+    }
+  }
+  
+  &_phone {
+    display: block;
+
+    @include viewport-tablet-min {
+      display: none;
+    }
+  }
+}
+
+.chevron,
+.check {
+  svg {
+    height: auto;
+    
+    @include viewport-desktop {
+      width: px-to-rem(40);
+    }
+    @include viewport-tablet {
+      width: px-to-rem(30);
+    }
+    @include viewport-phone {
+      width: px-to-rem(21);
+    }
+  }
+}
+
+.chevron {
+  @include transition(transform 0.35s);
+  
+  &.active {
+    transform: rotate(180deg);
+  }
+}
+
+.check {
+  opacity: 0;
+  @include transition(opacity 0.35s);
+  
+  &.active {
+    opacity: 1;
+  }
+}
+
 .thumb,
 .option {
   display: flex;
@@ -69,18 +121,18 @@
 
   &.active {
     background-color: var(--color-parking-size);
-    color: var(--color-primary-base);
+    color: var(--color-total-white);
   }
 }
 
 .option {
   &:not(.active) {  @include non-mobile-hover {
       background-color: var(--color-parking-size);
-      color: var(--color-primary-base);
+      color: var(--color-total-white);
     }}
 
   &.aria_active:not(.active) {
     background-color: rgba(var(--color-parking-size--rgb), 0.75);
-    color: var(--color-primary-base);
+    color: var(--color-total-white);
   }
 }
