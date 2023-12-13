@@ -52,6 +52,10 @@ const lexicon: DeepRequired<ILexicon> = {
   },
 
   events: {
+    tickets: 'Tickets',
+    buyTickets: 'Buy tickets',
+    free: 'Free',
+
     addEvent: {
       title: 'Host your own event at <br />Nuanu in {month}',
     },

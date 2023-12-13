@@ -12,7 +12,7 @@ export interface IEventsItem {
   /** nl2br */
   title?: string;
   place?: string;
-  price?: number;
+  price?: string | null;
 }
 
 export interface IProps extends IEventsItem, IBaseComponent {}

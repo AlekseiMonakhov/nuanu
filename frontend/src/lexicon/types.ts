@@ -48,6 +48,10 @@ export interface ILexicon {
   };
 
   events: {
+    tickets: string;
+    buyTickets: string;
+    free: string;
+
     addEvent: {
       title: string;
     };

@@ -2,6 +2,9 @@ import { FC, memo } from 'react';
 import { DynamicImage } from '@/components/Media/DynamicImage';
 import Link from 'next/link';
 import cn from 'classnames';
+import { isString } from '@anton.bobrov/react-hooks';
+import { BuyButton } from '@/components/Button/Buy';
+import { useStoreLexicon } from '@/store/reducers/page';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 import { useDates } from './useDates';
@@ -19,6 +22,8 @@ const Component: FC<IProps> = ({
   price,
 }) => {
   const { dayNumber, month, time } = useDates(startTime, endTime);
+
+  const { events: lexicon } = useStoreLexicon();
 
   return (
     <Link
@@ -61,7 +66,16 @@ const Component: FC<IProps> = ({
             <span>{place}</span>
           </div>
 
-          <div className={styles.order_info__button}>{price}</div>
+          {isString(price) && (
+            <BuyButton
+              tag="button"
+              type="button"
+              text={price === '0' ? lexicon.free : lexicon.tickets}
+              price={price === '0' ? null : price}
+              hasOverlayHover={price !== '0'}
+              overlayHoverText={lexicon.buyTickets}
+            />
+          )}
         </div>
       </div>
     </Link>

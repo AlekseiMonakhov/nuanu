@@ -40,7 +40,7 @@ export const MOCK_EVENTS: DeepRequired<DeepRequired<IEventsItem>[]> = times(
         .slice(0, randomInt(0, tags.length)),
       title: titles[index % titles.length],
       place: 'Nuanu, Labyrinth',
-      price: index % 3 === 0 ? 0 : getRandomInt(1, 10),
+      price: index % 3 === 0 ? '0' : `${getRandomInt(250, 250)}k`,
     };
   },
   40,
