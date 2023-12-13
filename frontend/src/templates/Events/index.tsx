@@ -1,9 +1,8 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import { StoriesFullScreen } from '@/components/Stories/FullScreen';
 import { Footer } from '@/layout/Footer';
-import store from '@/store/store';
-import { headerSlice } from '@/store/reducers/header';
 import cn from 'classnames';
+import { useHeaderIntersectionTheme } from '@/utils/hooks/useHeaderIntersectionTheme';
 import { useTemplate } from '../_hooks/useTemplate';
 import styles from './styles.module.scss';
 import { IEvents } from './types';
@@ -15,17 +14,13 @@ import { useFilteredItems } from './utils/useFilteredItems';
 const Events: FC<IEvents> = ({ stories, items: itemsProp }) => {
   useTemplate();
 
-  useEffect(() => {
-    store.dispatch(headerSlice.actions.setTheme('dark'));
+  const storiesRef = useRef<HTMLElement>(null);
 
-    return () => {
-      store.dispatch(headerSlice.actions.setDefaultTheme());
-    };
-  }, []);
-
-  const [isFitlersOpened, setIsFitlersOpened] = useState(false);
+  useHeaderIntersectionTheme(storiesRef, 'dark', 'light');
 
   const filters = useFilters(itemsProp);
+
+  const [isFitlersOpened, setIsFitlersOpened] = useState(false);
 
   const [activeFilters, setActiveFilters] = useState<Record<string, string>>(
     {},
@@ -36,7 +31,11 @@ const Events: FC<IEvents> = ({ stories, items: itemsProp }) => {
   return (
     <div className={styles.page}>
       <div className={styles.screen}>
-        <StoriesFullScreen className={styles.stories} {...stories} />
+        <StoriesFullScreen
+          ref={storiesRef}
+          className={styles.stories}
+          {...stories}
+        />
 
         <EventsFilters
           className={styles.filters}
