@@ -1,7 +1,7 @@
 :root {
   @include viewport-tablet-min {
     --header-top: calc(var(--vh) * 3.581);
-    --header-height: #{px-to-rem(60)};
+    --header-height: #{px-to-rem(50)};
   }
   
   @include viewport-phone {

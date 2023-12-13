@@ -10,34 +10,24 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
   overflow: hidden;
-  backdrop-filter: blur(7px);
+  
+  height: px-to-rem(50);
+  padding: 0 px-to-rem(20);
+
+  @include transition(background-color 0.35s);
+  backdrop-filter: blur(15px);
   
   @include text-small-caps;
 
-  @include transition(background-color 0.35s);
-
   @include viewport-desktop {
-    height: px-to-rem(60);
     border-radius: 12px;
-    padding: 0 px-to-rem(30);
-
-    &.has_sup {
-      padding-right: px-to-rem(25);
-    }
   }
-
   @include viewport-tablet {
-    height: px-to-rem(56);
     border-radius: 11px;
-    padding: 0 px-to-rem(24);
   }
-
   @include viewport-phone {
-    height: px-to-rem(50);
     border-radius: 10px;
-    padding: 0 px-to-rem(20);
   }
 
   &.theme_light {
@@ -50,7 +40,7 @@
   }
 
   &.theme_dark {
-    background-color: var(--color-background-menu-dark);
+    background-color: var(--color-background-menu-light);
     color: var(--color-total-white);
 
     @include non-mobile-hover {
@@ -72,13 +62,13 @@
 
   .icon_play {
     @include viewport-desktop {
-      margin-right: 0;
-      margin-left: px-to-rem(-10);
+      margin-right: 2px;
+      margin-left: px-to-rem(-12);
     }
 
     @include viewport-tablet {
       margin-right: px-to-rem(4);
-      margin-left: px-to-rem(-5);
+      margin-left: px-to-rem(-6);
     }
 
     @include viewport-phone {
@@ -101,7 +91,15 @@
 }
 
 .sup {
-  opacity: 0.5;
+  @include viewport-desktop {
+    opacity: 0.5;
+  }
+  @include viewport-tablet {
+    opacity: 0.6;
+  }
+  @include viewport-phone {
+    opacity: 0.7;
+  }
 }
 
 .icon {
@@ -112,7 +110,6 @@
 }
 
 .icon_play {
-  
   width: auto;
 
   @include viewport-desktop {

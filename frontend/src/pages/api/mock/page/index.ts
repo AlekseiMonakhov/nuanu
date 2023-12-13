@@ -38,7 +38,7 @@ const handler = async (
               text: 'Watch',
             },
             title: 'Changing the way we live, work & play',
-            description: `Nuanu isn't just a city in Bali's heart; it's a blend of modernity and tradition, embodying urban living in harmony with nature${''}`,
+            description: null,
           },
           {
             key: 1,
@@ -61,7 +61,7 @@ const handler = async (
               sup: null,
             },
             title: 'Some Title',
-            description: '',
+            description: null,
           },
           {
             key: 2,
@@ -87,8 +87,7 @@ const handler = async (
               duration: '2:02',
             },
             title: 'Suara festival 2024 Open Call',
-            description:
-              'Open to artists, architects and cultural workers, we provide grants to help you realize your vision',
+            description: null,
           },
         ],
       },

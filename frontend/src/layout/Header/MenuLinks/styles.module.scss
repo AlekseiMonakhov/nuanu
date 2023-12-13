@@ -9,6 +9,8 @@
 
 .link {
   position: relative;
+  display: block;
+  width: max-content;
 
   span {
     @include transition(opacity 0.35s);
@@ -51,21 +53,18 @@
       top: 0;
       left: 100%;
       display: block;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background-color: var(--color-highlight);
+      background-color: #8fff00;
 
       @include viewport-tablet-min {
-        width: 0.5em;
-        height: 0.5em;
-        margin-left: 2px;
-        margin-top: -1px;
+        margin-top: 5px;
       }
 
       @include viewport-phone {
-        width: 7px;
-        height: 7px;
-        right: -3px;
         margin-top: 1px;
+        margin-left: 2px;
       }
     }
   }

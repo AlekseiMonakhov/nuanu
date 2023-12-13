@@ -16,7 +16,7 @@
   padding-right: var(--wrap);
 
   @include viewport-tablet-min {
-    padding-bottom: 1.5%;
+    padding-bottom: 7.1%;
   }
 
   @include viewport-phone {
@@ -51,7 +51,7 @@
       margin-top: px-to-rem(24);
     }
     @include viewport-phone {
-      margin-top: px-to-rem(19);
+      margin-top: px-to-rem(8);
     }
   }
 }
@@ -63,11 +63,20 @@
 .description {
   margin: 0;
 
-  @include viewport-tablet-min {
-    @include text-body;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(40);
+    letter-spacing: -1px;
+  }
+
+  @include viewport-tablet {
+    font-size: px-to-rem(30);
   }
   
   @include viewport-phone {
-    @include text-small;
+    font-size: px-to-rem(20);
   }
 }

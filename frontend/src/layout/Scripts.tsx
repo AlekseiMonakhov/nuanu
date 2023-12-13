@@ -79,13 +79,15 @@ export const LayoutScripts: FC = () => {
               var height = window.innerHeight;
 
               if (width >= 1199) {
-                k = width / 1728;
+                if (width < 1600) {
+                  k = width / 1600;
+                }
               }
               else if (width >= 900) {
                 k = width / 1200;
               }
               else {
-                k = width > height ? 1 : window.innerWidth / 393;
+                k = width > height ? 1 : width / 393;
               }
 
               var fontSize = 16 * Math.min(Math.max(k, 0.8125), 1);
