@@ -42,6 +42,11 @@
   top: px-to-rem(15);
   left: px-to-rem(15);
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   background: var(--color-background-dark);
   backdrop-filter: blur(10px);
 
@@ -49,33 +54,31 @@
   text-align: center;
 
   @include viewport-desktop {
-    border-radius: 6px;
-    padding: px-to-rem(10) px-to-rem(19) px-to-rem(4);
+    width: px-to-rem(80);
+    height: px-to-rem(80);
+    border-radius: 8px;
   }
 
   @include viewport-tablet {
-    border-radius: 8px;
-    padding: px-to-rem(10) px-to-rem(16);
+    width: px-to-rem(68);
+    height: px-to-rem(68);
+    border-radius: 7px;
   }
 
   @include viewport-phone {
-    border-radius: 7px;
-    padding: px-to-rem(8) px-to-rem(13) px-to-rem(12);
+    width: px-to-rem(56);
+    height: px-to-rem(56);
+    border-radius: 6px;
   }
 
   b {
-    display: block;
     @include text-body;
   }
 
   span {
-    display: block;
-
     @include viewport-tablet-min {
       @include text-small-caps;
-      margin-top: px-to-rem(-8);
     }
-
     @include viewport-phone {
       @include text-smaller-caps;
     }
@@ -91,11 +94,11 @@
   color: var(--color-primary-dark-base);
 
   @include viewport-desktop {
-    padding: px-to-rem(22) px-to-rem(20) px-to-rem(25);
+    padding: px-to-rem(26) px-to-rem(20) px-to-rem(25);
     border-radius: 12px;
 
     .order_info {
-      margin-top: px-to-rem(20);
+      margin-top: px-to-rem(40);
     }
   }
 
@@ -104,7 +107,7 @@
     border-radius: 8px 8px 10px 10px;
 
     .order_info {
-      margin-top: px-to-rem(30);
+      margin-top: px-to-rem(34);
     }
   }
 
@@ -113,7 +116,7 @@
     border-radius: 4px 4px 8px 8px;
 
     .order_info {
-      margin-top: px-to-rem(40);
+      margin-top: px-to-rem(28);
     }
   }
 }
@@ -128,8 +131,8 @@
     margin: 0;
     @include text-body;
 
-    @include viewport-desktop {
-      margin-top: px-to-rem(4);
+    @include viewport-tablet-min {
+      margin-top: px-to-rem(10);
     }
   }
 }
@@ -151,17 +154,8 @@
   }
 
   &__button {
+    height: px-to-rem(50);
     width: 120px;
     background-color: #f0f;
-
-    @include viewport-desktop {
-      height: px-to-rem(60);
-    }
-    @include viewport-tablet {
-      height: px-to-rem(54);
-    }
-    @include viewport-phone {
-      height: px-to-rem(50);
-    }
   }
 }
