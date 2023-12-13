@@ -36,6 +36,7 @@ const handler = async (
               sup: '$5',
             },
             title: 'Suara Festival',
+            titleSize: 'large',
             description: '24 September 2024',
           },
           {
@@ -59,6 +60,7 @@ const handler = async (
               sup: '$5',
             },
             title: 'Suara Festival',
+            titleSize: 'large',
             description: '24 September 2024',
           },
           {
@@ -82,6 +84,7 @@ const handler = async (
               sup: '$5',
             },
             title: 'Suara Festival',
+            titleSize: 'large',
             description: '24 September 2024',
           },
         ],

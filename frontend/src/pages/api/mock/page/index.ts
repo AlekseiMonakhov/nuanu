@@ -38,6 +38,7 @@ const handler = async (
               text: 'Watch',
             },
             title: 'Changing the way we live, work & play',
+            titleSize: 'medium',
             description: null,
           },
           {
@@ -61,6 +62,7 @@ const handler = async (
               sup: null,
             },
             title: 'Some Title',
+            titleSize: 'medium',
             description: null,
           },
           {
@@ -87,6 +89,7 @@ const handler = async (
               duration: '2:02',
             },
             title: 'Suara festival 2024 Open Call',
+            titleSize: 'medium',
             description: null,
           },
         ],

@@ -9,6 +9,7 @@ import { useAnimation } from './utils/useAnimation';
 
 const Component: FC<IProps> = ({
   title,
+  titleSize = 'medium',
   description,
   isActive,
   index,
@@ -22,11 +23,14 @@ const Component: FC<IProps> = ({
 
   useAnimation({ isActive, ref, ...props });
 
+  const hasDescription = Boolean(description);
+
   return (
     <section
       ref={ref}
       className={cn(
         styles.main_content,
+        hasDescription && styles.has_description,
         isDefaultActive && styles.default_active,
         isActive && styles.active,
       )}
@@ -37,7 +41,7 @@ const Component: FC<IProps> = ({
     >
       {title && (
         <TagName
-          className={styles.title}
+          className={cn(styles.title, styles[`size_${titleSize}`])}
           tagName={index === 0 ? 'h1' : 'h2'}
           dangerouslySetInnerHTML={{ __html: title }}
         />

@@ -17,6 +17,11 @@
 
   @include viewport-tablet-min {
     padding-bottom: 7.1%;
+
+    &.has_description {
+      padding-bottom: 0;
+      padding-top: 1%;
+    }
   }
 
   @include viewport-phone {
@@ -57,7 +62,21 @@
 }
 
 .title {
-  @include text-heading-1;
+  margin: 0;
+
+  &.size_large {
+    @include viewport-tablet-min {
+      @include text-heading-1;
+    }
+    
+    @include viewport-phone {
+      @include text-display;
+    }
+  }
+  
+  &.size_medium {
+    @include text-heading-1;
+  }
 }
 
 .description {
