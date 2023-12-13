@@ -2,10 +2,11 @@
 
 .layout {
   position: relative;
-  padding: 0 2px;
+  padding: 0 var(--gap);
 
   --factoids-height: #{px-to-rem(415)};
   --action-height: 0.001px;
+  --gap: 2px;
 
   &.has_action {
     --action-height: #{px-to-rem(70)};
@@ -25,7 +26,7 @@
 }
 
 .content {
-  padding: px-to-rem(30) calc(var(--wrap) - 2px);
+  padding: px-to-rem(30) calc(var(--wrap) - var(--gap) * 2);
 }
 
 .factoids {
@@ -34,8 +35,8 @@
 }
 
 .action {
-  padding-top: 2px;
-  height: calc(var(--action-height) + 2px);
+  padding: var(--gap) 0;
+  height: calc(var(--action-height) + var(--gap) * 2);
 
   a,
   button {
@@ -46,8 +47,8 @@
 
 .media {
   position: absolute;
-  bottom: calc(var(--factoids-height) + var(--action-height) + 2px);
-  left: 2px;
+  bottom: calc(var(--factoids-height) + var(--action-height) + var(--gap) * 2);
+  left: var(--gap);
   width: calc(100% - 4px);
   height: var(--factoids-height);
   
