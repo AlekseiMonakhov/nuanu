@@ -21,12 +21,12 @@
   }
 
   &.dark {
-    --color-bg: rgba(83, 83, 83, 0.2);
+    --color-bg: var(--color-background-menu-dark);
     --color-text: var(--color-total-white);
   }
 
   &.light {
-    --color-bg: rgba(226, 226, 226, 0.2);
+    --color-bg: var(--color-background-menu-light);
     --color-text: var(--color-primary-dark-base);
   }
 
@@ -66,7 +66,7 @@
   }
 
   .logo_desktop {
-    width: px-to-rem(169);
+    width: px-to-rem(165);
 
     @include viewport-phone {
       display: none;
@@ -106,7 +106,7 @@
 .inline_menu {
   border-radius: 12px;
   background-color: var(--color-bg);
-  backdrop-filter: blur(7px);
+  backdrop-filter: blur(15px);
   
   @include transition(background-color var(--theme-duration));
 }

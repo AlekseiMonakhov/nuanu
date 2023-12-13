@@ -8,9 +8,11 @@ import { layoutSlice } from '@/store/reducers/layout';
 import { IHome } from './Home/types';
 import { ILoremComponents } from './_LoremComponents/types';
 import { INotFound } from './NotFound/types';
+import { IEvents } from './Events/types';
 
 export type TPageTemplateRegistryAPI =
   | IPageAPI<'Home', IHome, true>
+  | IPageAPI<'Events/Index', IEvents, true>
   | IPageAPI<'NotFound', INotFound, true>
   | IPageAPI<'_LoremComponents', ILoremComponents, true>;
 
@@ -19,6 +21,10 @@ const NotFound = dynamic(() => import('./NotFound'), {
 });
 
 const Home = dynamic(() => import('./Home'), {
+  ssr: true,
+});
+
+const EventsIndex = dynamic(() => import('./Events'), {
   ssr: true,
 });
 
@@ -53,6 +59,9 @@ export const TemplateRenderer: FC<PropsWithChildren> = () => {
   switch (apiProps.templateName) {
     case 'Home':
       return <Home key={key} {...apiProps.template} />;
+
+    case 'Events/Index':
+      return <EventsIndex key={key} {...apiProps.template} />;
 
     case 'NotFound':
       return <NotFound key={key} {...apiProps.template} />;

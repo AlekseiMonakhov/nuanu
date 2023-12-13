@@ -10,7 +10,7 @@
   border-radius: 12px;
 
   @include viewport-desktop {
-    padding: px-to-rem(30);
+    padding: px-to-rem(18) px-to-rem(30) px-to-rem(30);
 
     .image {
       width: px-to-rem(300);
@@ -43,7 +43,16 @@
     width: 100%;
   }
 
-  > * + * {
+  .image {
+    @include viewport-tablet-min {
+      margin-top: px-to-rem(23) !important;
+    }
+    @include viewport-phone {
+      margin-top: px-to-rem(30) !important;
+    }
+  }
+
+  .description {
     @include viewport-tablet-min {
       margin-top: px-to-rem(32) !important;
     }

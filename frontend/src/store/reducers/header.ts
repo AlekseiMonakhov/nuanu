@@ -20,6 +20,10 @@ export const headerSlice = createSlice({
       ...state,
       theme: payload.payload,
     }),
+    setDefaultTheme: (state) => ({
+      ...state,
+      theme: 'light',
+    }),
   },
 });
 

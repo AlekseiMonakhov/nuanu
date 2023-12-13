@@ -4,7 +4,7 @@ export interface IMainContentProps {
   /** nl2br */
   title?: string;
   /** wysiwyg */
-  description?: string;
+  description?: string | null;
 }
 
 export interface IProps extends IMainContentProps, IUseAnimationProps {

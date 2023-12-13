@@ -1,0 +1,20 @@
+@import '@/styles/base';
+
+.events_grouped_items_collection {
+  padding: 0 var(--grid-gap) var(--grid-gap) var(--grid-gap);
+}
+
+.events_grouped_items_collection,
+.group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--grid-gap);
+}
+
+.has_darken {
+  @include transition(opacity 0.35s);
+
+  &.darken {
+    opacity: 0.2;
+  }
+}

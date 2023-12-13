@@ -46,4 +46,18 @@ export interface ILexicon {
     description: string;
     accept: string;
   };
+
+  events: {
+    tickets: string;
+    buyTickets: string;
+    free: string;
+
+    addEvent: {
+      title: string;
+    };
+    filters: {
+      type: string;
+      tags: string;
+    };
+  };
 }

@@ -1,0 +1,100 @@
+@import '@/styles/base';
+
+.events_banner_add {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+
+  text-decoration: none;
+  
+  @include viewport-desktop {
+    border-radius: 200px;
+  }
+  @include viewport-tablet {
+    border-radius: 106px;
+  }
+  @include viewport-phone {
+    border-radius: 12px;
+  }
+
+  &.has_hover {
+    @include transition((border-radius 0.35s, background-color 0.35s, color 0.35s));
+    background-color: var(--color-total-white);
+    color: var(--color-primary-dark-base);
+    
+    &.is_hovered {
+      background-color: transparent;
+      color: var(--color-primary-base);
+    }
+  }
+
+  &.no_hover {
+    color: var(--color-primary-base);
+  }
+}
+
+.image {
+  @include absolute-fullsize;
+
+  &::after {
+    content: '';
+    display: block;
+    @include absolute-fullsize;
+    background-color: rgba(var(--color-total-black--rgb), 0.4);
+  }
+
+  &.has_hover {
+    @include transition((opacity 0.35s, transform 1s));
+    opacity: 0;
+    transform: scale(1.05);
+    
+    &.is_hovered {
+      opacity: 1;
+      transform: scale(1.0001);
+    }
+  }
+}
+
+.container {
+  @include absolute-fullsize;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.plus {
+  margin: 0;
+  overflow: hidden;
+
+  font-style: normal;
+  line-height: 104%;
+  font-weight: 400;
+  letter-spacing: -1px;
+  text-align: center;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(50);
+    padding-bottom: px-to-rem(20);
+  }
+
+  @include viewport-tablet {
+    font-size: px-to-rem(42);
+    padding-bottom: px-to-rem(16);
+  }
+
+  @include viewport-phone {
+    font-size: px-to-rem(35);
+    padding-bottom: px-to-rem(12);
+  }
+}
+
+.title {
+  margin: 0;
+
+  font-size: px-to-rem(30);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-align: center;
+}

@@ -8,7 +8,7 @@
     }
 
     @include viewport-desktop {
-      bottom: px-to-rem(18);
+      bottom: px-to-rem(12);
     }
 
     @include viewport-phone {
@@ -31,7 +31,7 @@
 
     @include viewport-tablet-min {
       --bottom: calc(4.47 * var(--vh) - 18px);
-      --left: var(--wrap);
+      --left: calc(var(--wrap) - var(--grid-gap));
     }
 
     @include viewport-phone {

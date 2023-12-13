@@ -15,16 +15,16 @@
 
   @include viewport-desktop {
     height: px-to-rem(60);
-    padding: 0 px-to-rem(40);
+    padding: 0 px-to-rem(20);
     
     @include text-smaller;
   }
   
   @include viewport-tablet {
     height: px-to-rem(56);
-    padding: 0 px-to-rem(34);
+    padding: 0 px-to-rem(24);
 
-    @include text-small;
+    @include text-smaller;
   }
   
   @include viewport-phone {

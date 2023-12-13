@@ -14,17 +14,8 @@
   align-items: center;
   justify-content: center;
 
+  --gap: var(--grid-gap);
   padding: var(--gap);
-
-  @include viewport-desktop {
-    --gap: 4px;
-  }
-  @include viewport-tablet {
-    --gap: 3px;
-  }
-  @include viewport-phone {
-    --gap: 2px;
-  }
 
   @include transition((opacity 0.5s, visibility 0.5s));
 

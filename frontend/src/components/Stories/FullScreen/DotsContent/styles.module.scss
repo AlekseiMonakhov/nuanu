@@ -43,7 +43,7 @@
   justify-content: flex-start;
 
   @include viewport-desktop {
-    padding-top: px-to-rem(26);    
+    padding-top: px-to-rem(22);    
   }
   @include viewport-tablet {
     padding-top: px-to-rem(15);    
