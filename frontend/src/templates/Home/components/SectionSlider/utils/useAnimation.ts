@@ -12,6 +12,7 @@ interface IProps {
   ref: RefObject<HTMLElement>;
   belowRef: RefObject<HTMLElement>;
   length: number;
+  onTargetUpdate: (index: number) => void;
 }
 
 interface ICallbacks extends NCallbacks.ITypes {
@@ -27,13 +28,25 @@ export interface IUseAnimation {
   targetProgress: number;
 }
 
-export function useAnimation({ ref, belowRef, length }: IProps): IUseAnimation {
+export function useAnimation({
+  ref,
+  belowRef,
+  length,
+  onTargetUpdate: onTargetUpdateProp,
+}: IProps): IUseAnimation {
   const min = 0;
   const max = length;
+
+  const onTargetUpdate = useEvent(onTargetUpdateProp);
 
   const [targetProgress, setTargetProgress] = useState(0);
   const [isEnd, setIsEnd] = useState(false);
   const [callbacks, setCallbacks] = useState<TCallbacks | null>(null);
+
+  useEffect(
+    () => onTargetUpdate(targetProgress),
+    [onTargetUpdate, targetProgress],
+  );
 
   // end callbacks
   useEffect(() => {

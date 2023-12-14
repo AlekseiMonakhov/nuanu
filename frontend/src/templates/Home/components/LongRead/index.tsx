@@ -11,6 +11,7 @@ export const HomeLongRead: FC<IProps> = ({
   style,
   title,
   items,
+  shouldRenderMedia,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -25,7 +26,7 @@ export const HomeLongRead: FC<IProps> = ({
       style={style}
     >
       <div className={styles.container}>
-        <Media items={items} activeIndex={activeIndex} />
+        {shouldRenderMedia && <Media items={items} activeIndex={activeIndex} />}
 
         <Labels
           className={styles.labels}

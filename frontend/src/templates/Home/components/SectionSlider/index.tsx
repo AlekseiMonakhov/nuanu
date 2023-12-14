@@ -11,6 +11,7 @@ const Component: FC<IProps> = ({
   className,
   style,
   belowRef,
+  onTargetUpdate,
   children: childrenProp,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -29,6 +30,7 @@ const Component: FC<IProps> = ({
     ref,
     belowRef,
     length,
+    onTargetUpdate,
   });
 
   // toggle header theme

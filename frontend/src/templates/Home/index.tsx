@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react';
+import { FC, useRef, useState } from 'react';
 import { StoriesFullScreen } from '@/components/Stories/FullScreen';
 import { Footer } from '@/layout/Footer';
 import cn from 'classnames';
@@ -25,10 +25,16 @@ const Home: FC<IHome> = ({
 
   const pageRef = useRef<HTMLDivElement>(null);
 
+  const [sliderTargetIndex, setSliderTargetIndex] = useState(0);
+
   return (
     <>
       {HASSECTIONSLIDER && (
-        <HomeSectionSlider className={styles.slider} belowRef={pageRef}>
+        <HomeSectionSlider
+          className={styles.slider}
+          belowRef={pageRef}
+          onTargetUpdate={setSliderTargetIndex}
+        >
           {stories && <StoriesFullScreen {...stories} />}
 
           {inside && <HomeInside {...inside} />}
@@ -44,7 +50,12 @@ const Home: FC<IHome> = ({
           HASSECTIONSLIDER && styles.is_default_hidden,
         )}
       >
-        {longRead && <HomeLongRead {...longRead} />}
+        {longRead && (
+          <HomeLongRead
+            {...longRead}
+            shouldRenderMedia={HASSECTIONSLIDER ? sliderTargetIndex > 1 : true}
+          />
+        )}
 
         {paragraphs && <HomeParagraphs {...paragraphs} />}
 
