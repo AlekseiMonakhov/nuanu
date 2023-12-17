@@ -2,7 +2,7 @@ import { headerSlice } from '@/store/reducers/header';
 import store from '@/store/store';
 import { useOnPageScroll } from '@anton.bobrov/react-components';
 import { useEvent } from '@anton.bobrov/react-hooks';
-import { RefObject, useEffect, useRef, useState } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 
 type TTheme = 'dark' | 'light';
 
@@ -12,14 +12,12 @@ export function useHeaderIntersectionTheme(
   targetOutTheme: TTheme,
 ) {
   const [startTheme] = useState(store.getState().header.theme);
-  const currentThemeRef = useRef(startTheme);
 
   const setTheme = useEvent((theme: TTheme) => {
-    if (theme === currentThemeRef.current) {
+    if (theme === store.getState().header.theme) {
       return;
     }
 
-    currentThemeRef.current = theme;
     store.dispatch(headerSlice.actions.setTheme(theme));
   });
 
