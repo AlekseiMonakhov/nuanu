@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { PAGE_GLOBAL } from '@/mock/PAGE_GLOBAL';
+import { GET_PAGE_GLOBAL } from '@/mock/PAGE_GLOBAL';
 import { TPageTemplateRegistryAPI } from '@/templates/Renderer';
 import { MOCK_EVENTS } from '@/mock/EVENTS';
 
@@ -7,6 +7,8 @@ const handler = async (
   req: NextApiRequest,
   res: NextApiResponse<TPageTemplateRegistryAPI>,
 ) => {
+  const PAGE_GLOBAL = GET_PAGE_GLOBAL({ req, templateName: 'Events/Index' });
+
   res.json({
     global: PAGE_GLOBAL,
 

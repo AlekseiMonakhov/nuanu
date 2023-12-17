@@ -1,7 +1,16 @@
-import { DeepRequired } from 'ts-essentials';
+import { TPageTemplateRegistryAPI } from '@/templates/Renderer';
 import { IPageGlobal } from '@/types/Page';
+import { NextApiRequest } from 'next';
+import { DeepRequired } from 'ts-essentials';
 
-export const PAGE_GLOBAL: DeepRequired<IPageGlobal> = {
+interface IProps {
+  req: NextApiRequest;
+  templateName: TPageTemplateRegistryAPI['templateName'];
+}
+
+export const GET_PAGE_GLOBAL = ({
+  templateName,
+}: IProps): DeepRequired<IPageGlobal> => ({
   lang: 'en',
   dir: 'ltr',
 
@@ -28,14 +37,14 @@ export const PAGE_GLOBAL: DeepRequired<IPageGlobal> = {
       key: 0,
       name: 'City',
       href: '/',
-      isActive: true,
+      isActive: templateName === 'Home',
       isHighlighted: false,
     },
     {
       key: 2,
       name: 'Events',
       href: '/events',
-      isActive: false,
+      isActive: templateName === 'Events/Index',
       isHighlighted: true,
     },
     {
@@ -85,4 +94,4 @@ export const PAGE_GLOBAL: DeepRequired<IPageGlobal> = {
       href: 'https://www.linkedin.com/company/nuanu/',
     },
   ],
-};
+});
