@@ -1,13 +1,21 @@
 import { useEventListener } from '@anton.bobrov/react-hooks';
 import { RefObject } from 'react';
 
-interface IProps {
+interface IOnCallbackProps {
+  emitterRef: RefObject<HTMLElement>;
+  listboxRef: RefObject<HTMLElement>;
+}
+
+export interface IUseBaseNavigation {
+  onOpen?: (props: IOnCallbackProps) => void;
+  onClose?: (props: IOnCallbackProps) => void;
+}
+
+interface IProps extends IUseBaseNavigation {
   emitterRef: RefObject<HTMLElement>;
   listboxRef: RefObject<HTMLElement>;
   isOpened: boolean;
   setIsOpened: (isOpened: boolean) => void;
-  onOpen?: () => void;
-  onClose?: () => void;
 }
 
 export function useBaseNavigation({
@@ -20,12 +28,12 @@ export function useBaseNavigation({
 }: IProps) {
   const open = () => {
     setIsOpened(true);
-    onOpen?.();
+    onOpen?.({ emitterRef, listboxRef });
   };
 
   const close = () => {
     setIsOpened(false);
-    onClose?.();
+    onClose?.({ emitterRef, listboxRef });
   };
 
   const toggle = () => {

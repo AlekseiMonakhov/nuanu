@@ -1,4 +1,5 @@
 import { IBaseComponent } from '@anton.bobrov/react-components';
+import { IUseBaseNavigation } from './utils/useBaseNavigation';
 
 export type TFormBaseSelectOption = {
   key: string;
@@ -11,7 +12,9 @@ export type TFormBaseSelectFullOption = {
   id: string;
 };
 
-export interface IFormBaseSelectProps extends IBaseComponent {
+export interface IFormBaseSelectProps
+  extends IBaseComponent,
+    IUseBaseNavigation {
   placeholder: string;
   counterPostfix: string;
   value: string | undefined;
@@ -19,6 +22,4 @@ export interface IFormBaseSelectProps extends IBaseComponent {
   options: TFormBaseSelectOption[];
   isMultiple?: boolean;
   isOpened?: boolean;
-  onOpen?: () => void;
-  onClose?: () => void;
 }
