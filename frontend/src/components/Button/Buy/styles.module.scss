@@ -16,6 +16,7 @@
   border: 1px solid var(--color-primary-dark-base);
   background: var(--color-total-white);
   backdrop-filter: blur(15px);
+  color: var(--color-primary-dark-base);
 
   @include text-small-caps;
 
