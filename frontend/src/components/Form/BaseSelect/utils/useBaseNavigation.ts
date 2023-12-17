@@ -3,6 +3,7 @@ import { RefObject } from 'react';
 
 interface IProps {
   emitterRef: RefObject<HTMLElement>;
+  listboxRef: RefObject<HTMLElement>;
   isOpened: boolean;
   setIsOpened: (isOpened: boolean) => void;
   onOpen?: () => void;
@@ -11,6 +12,7 @@ interface IProps {
 
 export function useBaseNavigation({
   emitterRef,
+  listboxRef,
   isOpened,
   setIsOpened,
   onOpen,
@@ -75,12 +77,16 @@ export function useBaseNavigation({
     ref: typeof document !== 'undefined' ? document : null,
     target: 'click',
     listener: (event) => {
-      const element = emitterRef.current;
-      if (!element) {
+      if (!emitterRef.current || !listboxRef.current) {
         return;
       }
 
-      if (!element.contains(event?.target as Node) && event.which === 1) {
+      const isEmitter = emitterRef.current.contains(event?.target as Node);
+      const isListbox = listboxRef.current?.contains(event?.target as Node);
+
+      const isOutsideClick = !isEmitter && !isListbox;
+
+      if (isOutsideClick && event.which === 1) {
         event.preventDefault();
         event.stopPropagation();
         event.stopImmediatePropagation();

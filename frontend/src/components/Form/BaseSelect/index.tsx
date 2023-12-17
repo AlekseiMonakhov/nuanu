@@ -33,6 +33,7 @@ export const FormBaseSelect: FC<IFormBaseSelectProps> = ({
   const menuId = useId();
 
   const emitterRef = useRef<HTMLDivElement>(null);
+  const listboxRef = useRef<HTMLDivElement>(null);
 
   const options = useFullOptions(optionsProp);
 
@@ -45,7 +46,14 @@ export const FormBaseSelect: FC<IFormBaseSelectProps> = ({
     options,
   });
 
-  useBaseNavigation({ emitterRef, isOpened, setIsOpened, onOpen, onClose });
+  useBaseNavigation({
+    emitterRef,
+    listboxRef,
+    isOpened,
+    setIsOpened,
+    onOpen,
+    onClose,
+  });
 
   const selectedOption = useSelectedOptions({ value, options });
 
@@ -93,6 +101,7 @@ export const FormBaseSelect: FC<IFormBaseSelectProps> = ({
       </div>
 
       <div
+        ref={listboxRef}
         className={cn(styles.options, isOpened && styles.is_opened)}
         id={menuId}
         role="listbox"
