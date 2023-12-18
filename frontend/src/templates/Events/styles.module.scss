@@ -6,27 +6,17 @@
 }
 
 .screen {
-  width: 100%;
-  height: calc(100 * var(--vh));
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
   padding: var(--grid-gap);
+
+  > * +  * {
+    margin-top: var(--grid-gap);
+  }
 
   .stories {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: calc(100 * var(--vh) - var(--grid-gap) * 2);
     border-radius: 10px;
-  }
-
-  .filters {
-    width: 100%;
-    margin-top: var(--grid-gap);
-    flex-shrink: 0;
   }
 }
 

@@ -1,10 +1,11 @@
-import { FC, memo } from 'react';
+import { FC, memo, useRef } from 'react';
 import { DynamicImage } from '@/components/Media/DynamicImage';
 import Link from 'next/link';
 import cn from 'classnames';
 import { isString } from '@anton.bobrov/react-hooks';
 import { BuyButton } from '@/components/Button/Buy';
 import { useStoreLexicon } from '@/store/reducers/page';
+import { useNonMobilePointerHover } from '@anton.bobrov/react-vevet-hooks';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 import { useDates } from './useDates';
@@ -21,12 +22,17 @@ const Component: FC<IProps> = ({
   place,
   price,
 }) => {
+  const ref = useRef<HTMLAnchorElement>(null);
+
   const { dayNumber, month, time } = useDates(startTime, endTime);
 
   const { events: lexicon } = useStoreLexicon();
 
+  const isHovered = useNonMobilePointerHover(ref);
+
   return (
     <Link
+      ref={ref}
       className={cn(className, styles.events_item)}
       style={style}
       href={href}
@@ -74,6 +80,7 @@ const Component: FC<IProps> = ({
               price={price === '0' ? null : price}
               hasOverlayHover={price !== '0'}
               overlayHoverText={lexicon.buyTickets}
+              isHovered={isHovered}
             />
           )}
         </div>
