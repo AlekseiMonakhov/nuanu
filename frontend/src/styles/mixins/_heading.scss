@@ -8,20 +8,18 @@
   font-style: normal;
   font-weight: 400;
   letter-spacing: -1px;
+  line-height: 110%;
 
   @include viewport-desktop {
     font-size: px-to-rem(80);
-    line-height: 110%;
   }
 
   @include viewport-tablet {
     font-size: px-to-rem(68);
-    line-height: 107%;
   }
 
   @include viewport-phone {
     font-size: px-to-rem(35);
-    line-height: 104%;
   }
 }
 
