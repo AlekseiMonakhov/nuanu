@@ -12,24 +12,22 @@
   justify-content: center;
 
   border-radius: px-to-rem(100);
+  padding: 0 px-to-rem(30);
 
   @include viewport-desktop {
     height: px-to-rem(60);
-    padding: 0 px-to-rem(20);
     
     @include text-smaller;
   }
   
   @include viewport-tablet {
     height: px-to-rem(56);
-    padding: 0 px-to-rem(24);
 
     @include text-smaller;
   }
   
   @include viewport-phone {
     height: px-to-rem(50);
-    padding: 0 px-to-rem(30);
 
     @include text-small;
   }
