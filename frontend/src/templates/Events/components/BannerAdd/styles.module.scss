@@ -19,12 +19,14 @@
 
   &.has_hover {
     @include transition((border-radius 0.35s, background-color 0.35s, color 0.35s));
+    
     background-color: var(--color-total-white);
     color: var(--color-primary-dark-base);
     
     &.is_hovered {
       background-color: transparent;
       color: var(--color-primary-base);
+      border-radius: 60px;
     }
   }
 
