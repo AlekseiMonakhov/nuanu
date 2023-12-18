@@ -7,4 +7,5 @@ export type TBuyButtonProps = TButtonAnchor & {
   hasOverlayHover?: boolean;
   /** @default 'buy' */
   overlayHoverText?: string;
+  isHovered?: boolean;
 };

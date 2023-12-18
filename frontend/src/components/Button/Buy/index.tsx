@@ -21,6 +21,7 @@ const Component = forwardRef<
       price,
       hasOverlayHover: hasOverlayHoverProp = true,
       overlayHoverText = 'buy',
+      isHovered: isHoveredProp,
       ...props
     },
     forwardedRef,
@@ -28,7 +29,8 @@ const Component = forwardRef<
     const ref = useForwardedRef(forwardedRef);
 
     const isPointerHovered = useNonMobilePointerHover(ref);
-    const isHovered = isPointerHovered;
+
+    const isHovered = isPointerHovered || isHoveredProp;
 
     const breakpointName = useBreakpointName();
 
