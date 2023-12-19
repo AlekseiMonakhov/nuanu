@@ -5,7 +5,7 @@
   width: 100%;
   height: var(--size);
 
-  --size: 1.25em;
+  --size: 1em;
 
   @include text-display;
   line-height: 100% !important;
@@ -15,7 +15,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: var(--size);
+    height: calc(var(--size) + 0.1em);
     overflow: hidden;
   }
 
@@ -26,22 +26,22 @@
     width: 100%;
 
     @include viewport-desktop {
-      margin-bottom: px-to-rem(8);
+      margin-bottom: px-to-rem(20);
     }
     @include viewport-tablet {
-      margin-bottom: px-to-rem(5);
+      margin-bottom: px-to-rem(14);
     }
     @include viewport-phone {
-      margin-bottom: px-to-rem(2);
+      margin-bottom: px-to-rem(8);
     }
   }
 }
 
 .track {
-  --active-index: 0;
-  @include transition(transform var(--duration));
+  --progress: 0;
 
-  transform: translate3d(0, calc(var(--active-index) * var(--size) * -1), 0);
+  will-change: transform;
+  transform: translate3d(0, calc(var(--progress) * var(--size) * -1), 0);
 }
 
 .label {
@@ -55,11 +55,4 @@
 
   white-space: nowrap;
   text-align: center;
-
-  @include transition(opacity var(--duration));
-  opacity: 0.2;
-
-  &.active {
-    opacity: 1;
-  }
 }

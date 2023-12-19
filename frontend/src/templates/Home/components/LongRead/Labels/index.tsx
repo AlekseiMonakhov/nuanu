@@ -1,29 +1,53 @@
-import { FC } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import cn from 'classnames';
 import { IProps } from './types';
 import styles from './styles.module.scss';
+import { Label } from './Label';
 
 export const Labels: FC<IProps> = ({
   className,
   style,
   items,
-  activeIndex,
+  onProgressMove,
   children,
-}) => (
-  <div className={cn(className, styles.labels)} style={style}>
-    <div className={styles.scene}>
-      <div className={styles.track} style={{ '--active-index': activeIndex }}>
-        {items.map(({ key, label }, index) => (
-          <p
-            key={key}
-            className={cn(styles.label, index === activeIndex && styles.active)}
-          >
-            {label}
-          </p>
-        ))}
-      </div>
-    </div>
+}) => {
+  const trackRef = useRef<HTMLDivElement>(null);
 
-    <div className={styles.children}>{children}</div>
-  </div>
-);
+  const { length } = items;
+
+  useEffect(
+    () =>
+      onProgressMove((progress) => {
+        if (!trackRef.current) {
+          return;
+        }
+
+        trackRef.current.style.setProperty(
+          '--progress',
+          `${progress * (length - 1)}`,
+        );
+      }),
+    [length, onProgressMove],
+  );
+
+  return (
+    <div className={cn(className, styles.labels)} style={style}>
+      <div className={styles.scene}>
+        <div ref={trackRef} className={styles.track}>
+          {items.map(({ key, label }, index) => (
+            <Label
+              key={key}
+              className={styles.label}
+              text={label}
+              index={index}
+              length={length}
+              onProgressMove={onProgressMove}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className={styles.children}>{children}</div>
+    </div>
+  );
+};

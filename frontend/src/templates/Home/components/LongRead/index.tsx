@@ -16,8 +16,7 @@ export const HomeLongRead: FC<IProps> = ({
   const ref = useRef<HTMLDivElement>(null);
 
   const { length } = items;
-
-  const { activeIndex } = useAnimationState(ref, length);
+  const { activeIndex, onProgressMove } = useAnimationState(ref, length);
 
   return (
     <div
@@ -31,7 +30,7 @@ export const HomeLongRead: FC<IProps> = ({
         <Labels
           className={styles.labels}
           items={items}
-          activeIndex={activeIndex}
+          onProgressMove={onProgressMove}
         >
           <p
             className={styles.title}
