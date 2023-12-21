@@ -42,4 +42,8 @@
 .action {
   padding: px-to-rem(19) px-to-rem(24);
   border-top: 1px solid rgba(var(--color-line--rgb), 0.2);
+
+  &__button {
+    width: 100%;
+  }
 }

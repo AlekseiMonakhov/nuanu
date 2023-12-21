@@ -1,6 +1,8 @@
 import { FC, useRef } from 'react';
 import cn from 'classnames';
 import { clampScope } from '@anton.bobrov/vevet-init';
+import { useStoreLexicon } from '@/store/reducers/page';
+import { ArrowButton } from '@/components/Button/Arrow';
 import { useMenuStates } from './useMenuStates';
 import { IProps } from './types';
 import styles from './styles.module.scss';
@@ -9,6 +11,8 @@ import { HeaderMenuLinks } from '../MenuLinks';
 export const HeaderExpandMenu: FC<IProps> = ({ className, style, id }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const { menu: lexicon } = useStoreLexicon();
 
   const { isOpened } = useMenuStates({
     duration: 750,
@@ -38,7 +42,18 @@ export const HeaderExpandMenu: FC<IProps> = ({ className, style, id }) => {
       <div ref={containerRef} className={styles.container}>
         <HeaderMenuLinks className={styles.links} />
 
-        <div className={styles.action}>action</div>
+        <div className={styles.action}>
+          <ArrowButton
+            className={styles.action__button}
+            tag="a"
+            href="https://google.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            text={lexicon.bookTour}
+            theme="blue"
+            size={60}
+          />
+        </div>
       </div>
     </div>
   );

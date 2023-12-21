@@ -6,6 +6,7 @@ import cn from 'classnames';
 import store from '@/store/store';
 import { menuSlice } from '@/store/reducers/menu';
 import { useEventListener } from '@anton.bobrov/react-hooks';
+import { FillButton } from '@/components/Button/Fill';
 import styles from './styles.module.scss';
 import { HeaderInlineMenu } from './InlineMenu';
 import { LogoDesktop } from '../Logo/Desktop';
@@ -53,7 +54,17 @@ export const Header: FC = () => {
 
         <HeaderInlineMenu className={styles.inline_menu} />
 
-        <div className={styles.action}>action</div>
+        <div className={styles.action}>
+          <FillButton
+            tag="a"
+            href="https://google.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            text={lexicon.menu.bookTour}
+            theme="blue"
+            size={50}
+          />
+        </div>
 
         <HeaderExpandMenuButton
           className={styles.expan_menu_button}

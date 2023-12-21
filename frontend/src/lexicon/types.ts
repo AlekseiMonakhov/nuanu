@@ -20,6 +20,7 @@ export interface ILexicon {
     site: string;
     social: string;
     privacyPolicy: string;
+    bookTour: string;
   };
 
   footer: {
