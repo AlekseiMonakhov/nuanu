@@ -40,7 +40,7 @@
   }
 
   &.theme_dark {
-    background-color: var(--color-background-menu-light);
+    background-color: var(--color-background-menu-dark);
     color: var(--color-total-white);
 
     @include non-mobile-hover {
