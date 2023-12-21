@@ -22,6 +22,11 @@ export interface ILexicon {
     privacyPolicy: string;
   };
 
+  footer: {
+    generalEnquires: string;
+    newBusiness: string;
+  };
+
   home: {
     features: {
       title: string;
@@ -34,10 +39,10 @@ export interface ILexicon {
 
   form: {
     subscribe: {
+      title: string;
       label: string;
-      enterEmail: string;
+      yourEmail: string;
       submit: string;
-      description: string;
       successText: string;
     };
   };

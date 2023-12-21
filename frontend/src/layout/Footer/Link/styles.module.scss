@@ -1,0 +1,25 @@
+@import '@/styles/base';
+
+.footer_link {
+  position: relative;
+  display: block;
+  width: max-content;
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(0, -50%);
+    width: px-to-rem(40);
+    height: auto;
+
+    opacity: 0;
+    @include transition(opacity 0.35s);
+  }
+
+  @include non-mobile-hover {
+    .arrow {
+      opacity: 1;
+    }
+  }
+}

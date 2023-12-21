@@ -1,50 +1,33 @@
-import { FC, useId, useState } from 'react';
+import { FC, useId } from 'react';
 import cn from 'classnames';
 import { FormBaseInput } from '@/components/Form/BaseInput';
 import { useFormContext } from 'react-hook-form';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 
-export const FooterSubscribeFormInput: FC<IProps> = ({
+export const FooterSubscribeInput: FC<IProps> = ({
   className,
   style,
   name,
-  onFocus,
-  onBlur,
+  children,
   ...props
 }) => {
-  const { formState, getValues } = useFormContext();
+  const { formState } = useFormContext();
   const errorId = useId();
-
-  const [isFocused, setIsFocused] = useState(false);
 
   const error = formState.errors[name];
   const isError = !!error;
 
-  const value = getValues(name);
-
   return (
-    <div className={cn(className, styles.input)} style={style}>
-      <div
-        className={cn(
-          styles.input_container,
-          !isFocused && !props.readOnly && styles.has_custom_cursor,
-          value?.length === 0 && styles.empty,
-        )}
-      >
+    <div className={cn(className, styles.form_subscribe_input)} style={style}>
+      <div className={styles.input_container}>
         <FormBaseInput
           {...props}
           className={cn(styles.input, isError && styles.is_error)}
           name={name}
-          onFocus={(event) => {
-            setIsFocused(true);
-            onFocus?.(event);
-          }}
-          onBlur={(event) => {
-            setIsFocused(false);
-            onBlur?.(event);
-          }}
         />
+
+        <div className={styles.children}>{children}</div>
       </div>
 
       {error?.message && (

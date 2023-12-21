@@ -52,51 +52,8 @@
     }
   }
 
-  &.success {
-    background-color: var(--color-green-success) !important;
-    color: var(--color-total-white);
-  }
-
   &:disabled {
     cursor: default;
     opacity: 0.5;
-  }
-}
-
-.content,
-.success_icon {
-  @include transition((visibility 0.35s, opacity 0.35s));
-}
-
-.content {
-  &.hide {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-.success_icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: auto;
-
-  opacity: 0;
-  visibility: hidden;
-
-  &.show {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  @include viewport-desktop {
-    width: px-to-rem(30);
-  }
-  @include viewport-tablet {
-    width: px-to-rem(24);
-  }
-  @include viewport-phone {
-    width: px-to-rem(20);
   }
 }

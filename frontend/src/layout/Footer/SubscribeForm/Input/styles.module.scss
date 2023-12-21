@@ -1,83 +1,85 @@
 @import '@/styles/base';
 
+.form_subscribe_input {
+  position: relative;
+}
+
 .input_container {
   position: relative;
-  color: currentColor;
+  width: 100%;
 
-  @include input-placeholder-color(rgba(var(--color-primary-dark-base--rgb), 0.5));
+  @include viewport-desktop {
+    height: px-to-rem(100);
+  }
+  @include viewport-tablet {
+    height: px-to-rem(80);
+  }
+  @include viewport-phone {
+    height: px-to-rem(60);
+  }
+  
+  @include input-placeholder-color(rgba(var(--color-primary-dark-base--rgb), 0.3));
 
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 1px;
-    height: 90%;
-    transform: translate(0, -50%);
-    background-color: currentColor;
+  .input {
+    @include absolute-fullsize;
 
-    animation-name: caret;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
+    @include viewport-desktop {
+      padding: 0 px-to-rem(100) 0 px-to-rem(30);
+    }
+    @include viewport-tablet {
+      padding: 0 px-to-rem(80) 0 px-to-rem(24);
+    }
+    @include viewport-phone {
+      padding: 0 px-to-rem(60) 0 px-to-rem(20);
+    }
   }
 
-  @keyframes caret {
-    0% {
-      opacity: 0;
+  .children {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    @include viewport-desktop {
+      width: px-to-rem(40);
+      height: px-to-rem(40);
+      right: px-to-rem(30);
     }
 
-    25% {
-      opacity: 0;
+    @include viewport-tablet {
+      width: px-to-rem(30);
+      height: px-to-rem(30);
+      right: px-to-rem(24);
     }
 
-    26% {
-      opacity: 1;
-    }
-
-    75% {
-      opacity: 1;
-    }
-
-    76% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 0;
-    }
-  } 
-
-  &:not(.has_custom_cursor),
-  &:not(.empty) {
-    &::before {
-      display: none;
+    @include viewport-phone {
+      width: px-to-rem(20);
+      height: px-to-rem(20);
+      right: px-to-rem(20);
     }
   }
 }
 
 .input {
-  display: block;
-  width: 100%;
-  
+  border-radius: 12px;
+  background-color: var(--color-primary-base);
+  color: var(--color-primary-dark-base);
+
   font-style: normal;
   font-weight: 400;
-  line-height: 120%;
-  color: currentColor;
 
   @include viewport-desktop {
-    font-size: px-to-rem(60);
-    letter-spacing: -1px;
+    line-height: 120%;
+    font-size: px-to-rem(25);
   }
-  
+
   @include viewport-tablet {
-    font-size: px-to-rem(42);
+    line-height: 124%;
+    font-size: px-to-rem(22);
   }
 
   @include viewport-phone {
-    font-size: px-to-rem(25);
+    line-height: 130%;
+    font-size: px-to-rem(20);
   }
 
   &.is_error {
@@ -88,7 +90,7 @@
 .error_text {
   margin: px-to-rem(10) 0 0 0;
 
-  font-size: px-to-rem(15);
+  font-size: px-to-rem(16);
   line-height: 120%;
 
   color: var(--color-squara-red);

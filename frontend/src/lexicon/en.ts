@@ -25,6 +25,11 @@ const lexicon: DeepRequired<ILexicon> = {
     privacyPolicy: 'Privacy Policy',
   },
 
+  footer: {
+    generalEnquires: 'General enquires',
+    newBusiness: 'New business',
+  },
+
   home: {
     features: {
       title: 'Features',
@@ -37,11 +42,11 @@ const lexicon: DeepRequired<ILexicon> = {
 
   form: {
     subscribe: {
-      label: 'Newsletter Subscription',
-      enterEmail: 'Enter your email',
+      title: 'Subscribe to <br/> our newsletter',
+      label: 'Newsletter subscription',
+      yourEmail: 'Your email',
       submit: 'Sign up',
-      description: 'Sign up for our newsletter and join Nuanu community',
-      successText: 'We successfully subscribed you to the Nuanu newsletter ',
+      successText: 'We successfully subscribed you to the Nuanu newsletter',
     },
   },
 
