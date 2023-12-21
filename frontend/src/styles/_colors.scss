@@ -15,7 +15,8 @@ $colors: (
   'background-light': #f2f2f280,
   'background-black': #0009,
   'parking-size': #4a57cd,
-  'a9a9a9': #a9a9a9
+  'a9a9a9': #a9a9a9,
+  'light-blue': #0096f7
 );
 
 @function hex-to-rgb ($hex) {

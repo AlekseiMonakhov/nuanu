@@ -1,10 +1,12 @@
 @import '@/styles/base';
 
-.button {
+.fill_button {
   @include reset-button;
   text-decoration: none;
 
   position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
   
   display: inline-flex;
   flex-direction: row;
@@ -15,21 +17,29 @@
   padding: 0 px-to-rem(30);
 
   @include viewport-desktop {
-    height: px-to-rem(60);
-    
     @include text-smaller;
   }
-  
   @include viewport-tablet {
-    height: px-to-rem(56);
-
     @include text-smaller;
   }
-  
   @include viewport-phone {
-    height: px-to-rem(50);
-
     @include text-small;
+  }
+
+  &.size_60 {
+    @include viewport-desktop {
+      height: px-to-rem(60);
+    }
+    @include viewport-tablet {
+      height: px-to-rem(56);
+    }
+    @include viewport-phone {
+      height: px-to-rem(50);
+    }
+  }
+
+  &.size_50 {
+    height: px-to-rem(50);
   }
 
   @include transition((background-color 0.35s, color 0.35s));
@@ -51,9 +61,34 @@
       background-color: var(--color-background-black);
     }
   }
+    
+  &.theme_blue {
+    background-color: var(--color-light-blue);
+    color: var(--color-total-white);
+
+    &::before {
+      content: '';
+      display: block;
+      @include absolute-fullsize;
+      background-color: rgba(var(--color-total-white--rgb), 0.3);
+
+      opacity: 0;
+      @include transition((opacity 0.35s));
+    }
+    
+    @include non-mobile-hover {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
 
   &:disabled {
     cursor: default;
     opacity: 0.5;
+  }
+
+  .text {
+    position: relative;
   }
 }

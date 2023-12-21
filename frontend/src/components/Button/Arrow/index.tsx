@@ -9,10 +9,15 @@ import { PhoneArrow } from './icons/PhoneArrow';
 const Component = forwardRef<
   HTMLButtonElement | HTMLAnchorElement,
   TArrowButtonProps
->(({ className, style, text, theme, ...props }, ref) => (
+>(({ className, style, text, theme, size, ...props }, ref) => (
   <ButtonAnchor
     ref={ref}
-    className={cn(styles.button, className, styles[`theme_${theme}`])}
+    className={cn(
+      styles.button,
+      className,
+      styles[`theme_${theme}`],
+      styles[`size_${size}`],
+    )}
     style={style}
     title={text}
     {...props}

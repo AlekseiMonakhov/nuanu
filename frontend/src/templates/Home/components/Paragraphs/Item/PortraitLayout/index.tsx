@@ -12,7 +12,7 @@ import { Content } from '../Content';
 import { Factoids } from '../Factoids';
 
 const RenderAction: TActionButtonRenderer = (props) => (
-  <ArrowButton {...(props as any)} />
+  <ArrowButton {...(props as any)} size={120} />
 );
 
 const RenderActionMemo = memo(RenderAction);

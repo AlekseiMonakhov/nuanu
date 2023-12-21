@@ -41,7 +41,7 @@
   a,
   button {
     width: 100%;
-    height: var(--action-height);
+    height: var(--action-height) !important;
   }
 }
 

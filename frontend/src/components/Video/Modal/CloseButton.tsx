@@ -15,6 +15,7 @@ const Component: TModalCloseButtonRenderer = ({ onClick }) => {
         theme="light"
         onClick={onClick}
         text={lexicon.navigation.close}
+        size={60}
       />
     </div>
   );

@@ -30,6 +30,7 @@ export const Content = forwardRef<HTMLDivElement, IProps>(
             theme="dark"
             onClick={onAccept}
             text={lexicon.accept}
+            size={60}
           />
         </div>
       </div>

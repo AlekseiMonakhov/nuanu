@@ -14,31 +14,38 @@
   
   @include text-body;
 
-  @include viewport-desktop {
-    height: px-to-rem(120);
-    padding: 0 px-to-rem(40) 0 px-to-rem(60);
-    
-    @include non-mobile-hover {
-      padding: 0 px-to-rem(30) 0 px-to-rem(45);
+  &.size_120 {
+    @include viewport-desktop {
+      height: px-to-rem(120);
+      padding: 0 px-to-rem(40) 0 px-to-rem(60);
+      
+      @include non-mobile-hover {
+        padding: 0 px-to-rem(30) 0 px-to-rem(45);
+      }
     }
-  }
-  
-  @include viewport-tablet {
-    height: px-to-rem(96);
-    padding: 0 px-to-rem(32) 0 px-to-rem(46);
     
-    @include non-mobile-hover {
+    @include viewport-tablet {
+      height: px-to-rem(96);
+      padding: 0 px-to-rem(32) 0 px-to-rem(46);
+      
+      @include non-mobile-hover {
+        padding: 0 px-to-rem(25) 0 px-to-rem(32);
+      }
+    }
+    
+    @include viewport-phone {
+      height: px-to-rem(70);
       padding: 0 px-to-rem(25) 0 px-to-rem(32);
+      
+      @include non-mobile-hover {
+        padding: 0 px-to-rem(20) 0 px-to-rem(25);
+      }
     }
   }
-  
-  @include viewport-phone {
-    height: px-to-rem(70);
-    padding: 0 px-to-rem(25) 0 px-to-rem(32);
-    
-    @include non-mobile-hover {
-      padding: 0 px-to-rem(20) 0 px-to-rem(25);
-    }
+
+  &.size_60 {
+    height: px-to-rem(60);
+    padding: 0 px-to-rem(30) 0;
   }
 
   @include transition((background-color 0.35s, color 0.35s, padding 0.35s));
@@ -61,6 +68,11 @@
       background-color: var(--color-primary-base);
       color: var(--color-primary-dark-base);
     }
+  }
+    
+  &.theme_blue {
+    background-color: var(--color-light-blue);
+    color: var(--color-total-white);
   }
 
   &.success {
