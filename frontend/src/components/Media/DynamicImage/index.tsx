@@ -13,6 +13,7 @@ const Component: FC<TProps> = ({
   alt,
   onLoad,
   position = 'cover',
+  sizes = '100vw',
   ...props
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -31,7 +32,8 @@ const Component: FC<TProps> = ({
       width={width}
       height={height}
       alt={alt ?? original}
-      sizes="100vw"
+      sizes={sizes === 'none' ? undefined : sizes}
+      quality={85}
       onLoad={(event) => {
         setIsLoaded(true);
 

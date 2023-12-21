@@ -24,4 +24,6 @@ export type TProps = TDynamicImageProps &
     /** @default cover */
     position?: false | 'cover' | 'contain' | 'fullabs';
     priority?: boolean;
+    /** @default '100vw' */
+    sizes?: 'none' | '100vw';
   };

@@ -59,6 +59,7 @@ const Component: FC<IProps> = ({
             height={height}
             alt={alt}
             draggable={false}
+            sizes="none"
             aria-hidden
           />
 
