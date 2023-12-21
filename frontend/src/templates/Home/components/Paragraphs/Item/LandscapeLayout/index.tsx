@@ -48,14 +48,20 @@ export const LandscapeLayout: FC<IProps> = ({
       </div>
     </div>
 
-    <Content className={styles.content} title={title} description={description}>
-      {action && (
-        <ActionButton
-          action={action}
-          renderButton={RenderActionMemo}
-          buttonProps={{ className: styles.action }}
-        />
-      )}
-    </Content>
+    <div className={styles.content}>
+      <Content
+        className={styles.content__inner}
+        title={title}
+        description={description}
+      >
+        {action && (
+          <ActionButton
+            action={action}
+            renderButton={RenderActionMemo}
+            buttonProps={{ className: styles.action }}
+          />
+        )}
+      </Content>
+    </div>
   </article>
 );
