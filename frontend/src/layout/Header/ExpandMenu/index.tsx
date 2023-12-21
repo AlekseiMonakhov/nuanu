@@ -15,7 +15,7 @@ export const HeaderExpandMenu: FC<IProps> = ({ className, style, id }) => {
   const { menu: lexicon } = useStoreLexicon();
 
   const { isOpened } = useMenuStates({
-    duration: 750,
+    duration: 375,
     onProgress: (progress) => {
       if (!ref.current || !containerRef.current) {
         return;
