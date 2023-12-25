@@ -16,7 +16,7 @@
 
   &.size_120 {
     @include viewport-desktop {
-      height: px-to-rem(120);
+      height: px-to-rem(110);
       padding: 0 px-to-rem(40) 0 px-to-rem(60);
       
       @include non-mobile-hover {
@@ -25,7 +25,7 @@
     }
     
     @include viewport-tablet {
-      height: px-to-rem(96);
+      height: px-to-rem(90);
       padding: 0 px-to-rem(32) 0 px-to-rem(46);
       
       @include non-mobile-hover {
