@@ -51,11 +51,7 @@ export const LandscapeLayout: FC<IProps> = ({
     </div>
 
     <div className={styles.content}>
-      <Content
-        className={styles.content__inner}
-        title={title}
-        description={description}
-      >
+      <Content title={title} description={description}>
         {action && (
           <ActionButton
             action={action}
