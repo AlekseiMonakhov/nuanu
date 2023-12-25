@@ -11,14 +11,14 @@
   color: var(--color-primary-dark-base);
 
   @include viewport-desktop {
-    height: px-to-rem(110);
-    padding: 0 px-to-rem(20);
+    height: px-to-rem(120);
+    padding: 0 px-to-rem(40);
     border-radius: 12px;
   }
 
   @include viewport-tablet {
-    height: px-to-rem(90);
-    padding: 0 px-to-rem(20);
+    height: px-to-rem(95);
+    padding: 0 px-to-rem(32);
     border-radius: 10px;
   }
 
