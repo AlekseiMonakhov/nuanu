@@ -398,8 +398,17 @@ const handler = async (
               target: null,
             },
             factoids: [
-              { key: 0, title: 'Value 1', description: 'Description 1' },
-              { key: 1, title: 'Value 2', description: 'Description 2' },
+              {
+                key: 0,
+                title: '7',
+                description: 'types of accommodation<br /> in eco-living',
+              },
+              {
+                key: 1,
+                title: '3',
+                description:
+                  'educational programs<br />for children and adults',
+              },
               {
                 key: 2,
                 title: '24',
@@ -429,16 +438,16 @@ const handler = async (
               target: null,
             },
             factoids: [
-              { key: 0, title: 'Value 1', description: 'Description 1' },
+              { key: 0, title: '36', description: 'collaborative projects' },
               {
                 key: 1,
-                title: '24',
-                description: 'hour services<br />are available',
+                title: '18',
+                description: 'global companies<br />partner with us',
               },
               {
                 key: 2,
-                title: '24',
-                description: 'hour services<br />are available',
+                title: '209',
+                description: 'members<br />in Nuanu team',
               },
             ],
           },
@@ -458,21 +467,21 @@ const handler = async (
               'At nuanu, events are the playgrounds of creativity and connection. Experience the magic of play as we nurture vibrant gatherings and events that inspire and engage',
             action: {
               kind: 'link',
-              text: 'Collaborate with us',
+              text: 'View upcoming events',
               sup: null,
-              href: '/',
+              href: '/events',
               target: null,
             },
             factoids: [
               {
                 key: 1,
-                title: '5',
-                description: 'high-level restaurants<br />and cafes',
+                title: '114',
+                description: 'events carried out',
               },
               {
                 key: 2,
-                title: '17',
-                description: 'high-level restaurants<br />villas and bars',
+                title: '35',
+                description: 'different activities daily',
               },
             ],
           },
