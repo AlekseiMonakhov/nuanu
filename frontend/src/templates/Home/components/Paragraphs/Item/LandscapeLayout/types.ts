@@ -5,4 +5,5 @@ export interface IProps extends IBaseComponent, IHomeParagraphsItem {
   index: number;
   isLarge: boolean;
   isReverse: boolean;
+  hasExtraTopPadding?: boolean;
 }

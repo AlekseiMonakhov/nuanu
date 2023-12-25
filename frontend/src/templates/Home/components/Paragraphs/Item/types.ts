@@ -13,4 +13,5 @@ export interface IHomeParagraphsItem extends IContentProps {
 
 export interface IProps extends IBaseComponent, IHomeParagraphsItem {
   index: number;
+  hasExtraTopPadding?: boolean;
 }

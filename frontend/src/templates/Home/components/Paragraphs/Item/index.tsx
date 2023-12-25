@@ -8,6 +8,7 @@ export const HomeParagraphsItem: FC<IProps> = ({
   className,
   style,
   index,
+  hasExtraTopPadding,
   ...props
 }) => {
   const breakpoint = useBreakpointName();
@@ -31,6 +32,7 @@ export const HomeParagraphsItem: FC<IProps> = ({
       index={index}
       isLarge={index === 1}
       isReverse={index % 2 !== 0}
+      hasExtraTopPadding={hasExtraTopPadding}
     />
   );
 };

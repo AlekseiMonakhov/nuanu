@@ -57,7 +57,9 @@ const Home: FC<IHome> = ({
           />
         )}
 
-        {paragraphs && <HomeParagraphs {...paragraphs} />}
+        {paragraphs && (
+          <HomeParagraphs {...paragraphs} hasExtraTopPadding={!longRead} />
+        )}
 
         {personTypes && (
           <HomePersonTypes className={styles.person_types} {...personTypes} />

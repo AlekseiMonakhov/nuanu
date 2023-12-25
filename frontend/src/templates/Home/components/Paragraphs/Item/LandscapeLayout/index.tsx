@@ -26,6 +26,7 @@ export const LandscapeLayout: FC<IProps> = ({
   action,
   title,
   description,
+  hasExtraTopPadding,
 }) => (
   <article
     className={cn(
@@ -33,6 +34,7 @@ export const LandscapeLayout: FC<IProps> = ({
       styles.layout,
       isReverse && styles.reverse,
       isLarge && styles.large,
+      hasExtraTopPadding && styles.has_extra_top_padding,
     )}
     style={style}
   >

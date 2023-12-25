@@ -5,4 +5,6 @@ export interface IHomeParagraphsProps {
   items: IHomeParagraphsItem[];
 }
 
-export interface IProps extends IBaseComponent, IHomeParagraphsProps {}
+export interface IProps extends IBaseComponent, IHomeParagraphsProps {
+  hasExtraTopPadding?: boolean;
+}
