@@ -107,23 +107,26 @@ const handler = async (
               {
                 key: 0,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/0.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/eco-living/willow-hotel.mp4',
                 },
-                title: 'Jungle Kids<br/>For children 4 to 7 years old',
+                title: 'Willow Hotel<br />4-star oceanfront hotel',
               },
               {
                 key: 1,
                 media: {
                   image: null,
-                  video: '/lorem/home/inside/video_0.mp4',
+                  video: '/lorem/home/inside/eco-living/tree-house.mp4',
                 },
-                title: 'Yoga every Monday<br>Master classes',
+                title: 'Tree House<br />Eco-living deep in nature',
+              },
+              {
+                key: 2,
+                media: {
+                  image: null,
+                  video: '/lorem/home/inside/eco-living/labyrinth.mp4',
+                },
+                title: 'Labyrinth<br />Music studio and retreat',
               },
             ],
           },
@@ -135,17 +138,10 @@ const handler = async (
                 key: 0,
                 media: {
                   image: null,
-                  video: '/lorem/home/inside/video_1.mp4',
+                  video:
+                    '/lorem/home/inside/collaborations/plastic-workshops.mp4',
                 },
-                title: 'Title<br/>Title',
-              },
-              {
-                key: 1,
-                media: {
-                  image: null,
-                  video: '/lorem/home/inside/video_2.mp4',
-                },
-                title: 'Yoga every Monday',
+                title: 'Plastic Workshops<br />Products from recycled plastic',
               },
             ],
           },
@@ -156,28 +152,10 @@ const handler = async (
               {
                 key: 0,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/1.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/natures-embrace/nature.mp4',
                 },
-                title: 'Title<br/>Title',
-              },
-              {
-                key: 1,
-                media: {
-                  image: {
-                    original: '/lorem/home/inside/2.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
-                },
-                title: '',
+                title: 'Magic Garden<br />Nature at the heart of Nuanu',
               },
             ],
           },
@@ -189,17 +167,26 @@ const handler = async (
                 key: 0,
                 media: {
                   image: null,
-                  video: '/lorem/home/inside/video_3.mp4',
+                  video: '/lorem/home/inside/gatherings/suara-festival.mp4',
                 },
-                title: 'Title',
+                title: 'Suara Festival<br />Art, music, culture Festival',
               },
               {
                 key: 1,
                 media: {
                   image: null,
-                  video: '/lorem/home/inside/video_4.mp4',
+                  video: '/lorem/home/inside/gatherings/luna-beach-club.mp4',
                 },
-                title: 'Some title',
+                title: 'The Luna<br />Bech Club of the new format',
+              },
+              {
+                key: 2,
+                media: {
+                  image: null,
+                  video: '/lorem/home/inside/gatherings/samana-festival.mp4',
+                },
+                title:
+                  'Samana Festival<br />Festival for children and the family',
               },
             ],
           },
@@ -210,23 +197,36 @@ const handler = async (
               {
                 key: 0,
                 media: {
-                  image: null,
-                  video: '/lorem/home/inside/video_5.mp4',
-                },
-                title: 'Title',
-              },
-              {
-                key: 1,
-                media: {
                   image: {
-                    original: '/lorem/home/inside/0.jpg',
+                    original:
+                      '/lorem/home/inside/art-expressions/light-house.png',
                     width: 0,
                     height: 0,
                     alt: '',
                   },
                   video: null,
                 },
-                title: 'Some title',
+                title:
+                  'The "Bhuma" Lighthouse<br />A symbol of hope and sustainability',
+              },
+              {
+                key: 1,
+                media: {
+                  image: null,
+                  video: '/lorem/home/inside/art-expressions/art-object.mp4',
+                },
+                title:
+                  'Nuanu’s Art Objects<br />Beautiful mix of art and technology',
+              },
+              {
+                key: 2,
+                media: {
+                  image: null,
+                  video:
+                    '/lorem/home/inside/art-expressions/art-village academy.mp4',
+                },
+                title:
+                  'Art Village<br />Art program fosters cultural diversity',
               },
             ],
           },
@@ -237,28 +237,10 @@ const handler = async (
               {
                 key: 0,
                 media: {
-                  image: {
-                    original: '/lorem/home/inside/1.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
+                  image: null,
+                  video: '/lorem/home/inside/wellness/yoga.mp4',
                 },
-                title: 'Title',
-              },
-              {
-                key: 1,
-                media: {
-                  image: {
-                    original: '/lorem/home/inside/2.jpg',
-                    width: 0,
-                    height: 0,
-                    alt: '',
-                  },
-                  video: null,
-                },
-                title: 'Some title',
+                title: 'Yoga practice<br />Daily activities in nature',
               },
             ],
           },
@@ -270,17 +252,18 @@ const handler = async (
                 key: 0,
                 media: {
                   image: null,
-                  video: '/lorem/home/inside/video_0.mp4',
+                  video: '/lorem/home/inside/learning/jungle-kids.mp4',
                 },
-                title: 'Title',
+                title: 'Jungle Kids<br />For children 4 to 7 years old',
               },
               {
                 key: 1,
                 media: {
                   image: null,
-                  video: '/lorem/home/inside/video_1.mp4',
+                  video: '/lorem/home/inside/learning/proed-school.mp4',
                 },
-                title: 'Some title',
+                title:
+                  'ProEd Global School<br />For children 7 to 12 years old',
               },
             ],
           },
