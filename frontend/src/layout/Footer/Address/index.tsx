@@ -16,7 +16,7 @@ export const FooterAddress: FC<IProps> = ({ className, style }) => {
       ref={ref}
       className={cn(className, styles.footer_address)}
       style={style}
-      href="https://maps.app.goo.gl/19gDe3voCUeG9Wvj7"
+      href="https://maps.app.goo.gl/dwpcB3qN7xTtp51P9"
       target="_blank"
       rel="noopener noreferrer"
     >
