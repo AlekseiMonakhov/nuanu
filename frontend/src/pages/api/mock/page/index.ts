@@ -19,13 +19,14 @@ const handler = async (
           {
             key: 0,
             media: {
-              image: {
-                original: '/lorem/home/stories/0.jpg',
-                width: 900,
-                height: 0,
-                alt: '',
-              },
-              video: null,
+              // image: {
+              //   original: '/lorem/home/stories/0.jpg',
+              //   width: 900,
+              //   height: 0,
+              //   alt: '',
+              // },
+              image: null,
+              video: '/lorem/home/stories/0.mp4',
             },
             theme: 'dark',
             label: 'City of the future',
