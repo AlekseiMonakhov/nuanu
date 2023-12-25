@@ -4,7 +4,7 @@ import { useStoreGlobal, useStoreLexicon } from '@/store/reducers/page';
 import { useStoreHeader } from '@/store/reducers/header';
 import cn from 'classnames';
 import store from '@/store/store';
-import { menuSlice } from '@/store/reducers/menu';
+import { menuSlice, useStoreMenu } from '@/store/reducers/menu';
 import { useEventListener } from '@anton.bobrov/react-hooks';
 import { FillButton } from '@/components/Button/Fill';
 import styles from './styles.module.scss';
@@ -18,6 +18,7 @@ export const Header: FC = () => {
   const { links } = useStoreGlobal();
   const lexicon = useStoreLexicon();
   const { theme } = useStoreHeader();
+  const { isOpened } = useStoreMenu();
 
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -34,7 +35,10 @@ export const Header: FC = () => {
   });
 
   return (
-    <header className={cn(styles.header, styles[theme])} id="header">
+    <header
+      className={cn(styles.header, styles[theme], isOpened && styles.active)}
+      id="header"
+    >
       <div ref={containerRef} className={styles.header_container}>
         <Link
           href={links.home}

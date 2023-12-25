@@ -14,8 +14,19 @@
     top: 0;
     left: 0;
     width: 100%;
-    border-top: 1px solid var(--color-line);
+    border-top: 1px solid  var(--color-line);
     opacity: 0.2;
+    
+    will-change: left, width;
+      
+    @include transition((left 0.375s, width 0.375s));
+  }
+
+  &.active {
+    &::before {
+      left: -5px;
+      width: calc(100% + 10px);
+    }
   }
 }
 

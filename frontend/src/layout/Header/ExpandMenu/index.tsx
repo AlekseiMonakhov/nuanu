@@ -34,7 +34,11 @@ export const HeaderExpandMenu: FC<IProps> = ({ className, style, id }) => {
   return (
     <div
       ref={ref}
-      className={cn(className, styles.header_menu_props)}
+      className={cn(
+        className,
+        styles.header_menu_props,
+        isOpened && styles.active,
+      )}
       style={style}
       id={id}
       aria-hidden={!isOpened}
