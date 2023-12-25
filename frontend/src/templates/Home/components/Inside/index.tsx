@@ -65,7 +65,7 @@ const Component: FC<IProps> = ({ items }) => {
       alt={lexicon.title}
       overlay={
         <div className={styles.navigation}>
-          {items.map(({ key, title }, index) => (
+          {items.map(({ key, title, stories }, index) => (
             <Button
               key={key}
               className={cn(
@@ -79,6 +79,7 @@ const Component: FC<IProps> = ({ items }) => {
                 activeKey === key ? setActiveKey('none') : setActiveKey(key)
               }
               text={title}
+              count={stories.length}
               targetPositionRef={storiesContainer}
             />
           ))}

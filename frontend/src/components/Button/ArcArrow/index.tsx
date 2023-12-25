@@ -7,24 +7,35 @@ import { TArcArrowButtonProps } from './types';
 const Component = forwardRef<
   HTMLButtonElement | HTMLAnchorElement,
   TArcArrowButtonProps
->(({ className, style, text, arrowPosition, isActive, ...props }, ref) => (
-  <ButtonAnchor
-    ref={ref}
-    className={cn(
-      styles.button,
-      className,
-      styles[`arrow_${arrowPosition}`],
-      isActive && styles.active,
-    )}
-    style={style}
-    title={text}
-    {...props}
-  >
-    <span className={styles.text}>{text}</span>
+>(
+  (
+    { className, style, text, count, arrowPosition, isActive, ...props },
+    ref,
+  ) => {
+    const classNames = cn(isActive && styles.active);
 
-    <span className={cn(styles.close, isActive && styles.active)} />
-  </ButtonAnchor>
-));
+    return (
+      <ButtonAnchor
+        ref={ref}
+        className={cn(
+          styles.button,
+          className,
+          styles[`arrow_${arrowPosition}`],
+          classNames,
+        )}
+        style={style}
+        title={text}
+        {...props}
+      >
+        <span className={cn(styles.count, classNames)} data-content={count} />
+
+        <span className={styles.text}>{text}</span>
+
+        <span className={cn(styles.close, classNames)} />
+      </ButtonAnchor>
+    );
+  },
+);
 
 Component.displayName = 'ArcArrowButton';
 

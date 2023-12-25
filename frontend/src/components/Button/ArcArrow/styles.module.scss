@@ -1,6 +1,8 @@
 @import '@/styles/base';
 
 .button {
+  --duration: 0.35s;
+
   @include reset-button;
   text-decoration: none;
 
@@ -50,7 +52,22 @@
     background-image: url('./img/arrow.svg');
     background-size: 100% 100%;
     
-    @include transition(opacity 0.35s);
+    @include transition(opacity var(--duration));
+  }
+
+  &.arrow_bl,
+  &.arrow_tl {
+    .count {
+      order: 2;
+      margin-left: px-to-rem(5);
+    }
+  }
+
+  &.arrow_br,
+  &.arrow_tr {
+    .count {
+      margin-right: px-to-rem(5);
+    }
   }
 
   &.arrow_bl {
@@ -91,8 +108,61 @@
   }
 }
 
+.count {
+  @include viewport-desktop {
+    --size: #{px-to-rem(36)};
+  }
+  @include viewport-tablet {
+    --size: #{px-to-rem(32)};
+  }
+  @include viewport-phone {
+    --size: #{px-to-rem(28)};
+  }
+
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+
+  @include transition((width var(--duration), margin var(--duration)));
+
+  &::after {
+    content: attr(data-content);
+    position: absolute;
+    top: calc(50% - var(--size) / 2);
+    left: calc(50% - var(--size) / 2);
+    width: var(--size);
+    height: var(--size);
+
+    border-radius: 50%;
+    background-color: var(--color-primary-base);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    @include viewport-tablet-min {
+      @include text-smaller;
+    }
+    @include viewport-phone {
+      @include text-small;
+    }
+
+    @include transition(transform var(--duration));
+  }
+
+  &.active {
+    width: 0;
+    margin: 0 !important;
+
+    &::after {
+      transform: scale(0);
+    }
+  }
+}
+
 .close {
-  @include transition((width 0.35s, margin-right 0.35s, opacity 0.35s));
+  @include transition((width var(--duration), margin-right var(--duration), opacity var(--duration)));
 
   width: 0;
   margin-right: 0;

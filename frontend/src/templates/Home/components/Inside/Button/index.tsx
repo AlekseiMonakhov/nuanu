@@ -13,6 +13,7 @@ export const Button: FC<IProps> = ({
   isActive,
   onClick,
   text,
+  count,
   targetPositionRef,
 }) => {
   const buttonContainerRef = useRef<HTMLDivElement>(null);
@@ -43,6 +44,7 @@ export const Button: FC<IProps> = ({
         tag="button"
         type="button"
         text={text}
+        count={count}
         arrowPosition={initialPosition?.arrow ?? 'bl'}
         onClick={onClick}
         isActive={isActive}

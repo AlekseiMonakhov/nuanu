@@ -6,5 +6,6 @@ export interface IProps extends IBaseComponent {
   isActive: boolean;
   onClick: () => void;
   text: string;
+  count: number;
   targetPositionRef: RefObject<HTMLElement>;
 }
