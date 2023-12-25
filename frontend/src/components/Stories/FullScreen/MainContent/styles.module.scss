@@ -26,7 +26,11 @@
 
   @include viewport-phone {
     @media (orientation: portrait) {
-      padding-bottom: 9%;
+      padding-bottom: 17%;
+
+      &.has_description {
+        padding-bottom: 2%;
+      }
     }
     
     @media (orientation: landscape) {
