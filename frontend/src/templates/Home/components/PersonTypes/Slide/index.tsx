@@ -12,28 +12,26 @@ export const Slide: FC<IProps> = ({
   image,
 }) => (
   <article className={cn(className, styles.slide)} style={style}>
-    {title && (
-      <h3
-        className={styles.title}
-        dangerouslySetInnerHTML={{ __html: title }}
-      />
-    )}
-
     {image && (
       <div className={styles.image}>
-        <MediaVideoOrImage
-          className={styles.image__wrapper}
-          image={image}
-          position="contain"
-        />
+        <MediaVideoOrImage image={image} position="contain" />
       </div>
     )}
 
-    {description && (
-      <p
-        className={styles.description}
-        dangerouslySetInnerHTML={{ __html: description }}
-      />
-    )}
+    <div className={styles.content}>
+      {title && (
+        <h3
+          className={styles.title}
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
+      )}
+
+      {description && (
+        <p
+          className={styles.description}
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
+      )}
+    </div>
   </article>
 );

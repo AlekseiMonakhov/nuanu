@@ -486,9 +486,9 @@ const handler = async (
             key: 0,
             title: 'Visionary',
             description:
-              'One who has ideas<br />or conceives projects<br />regarded as impractical',
+              'One who has ideas or conceives <br/>projects regarded as impractical',
             image: {
-              original: '/lorem/home/person_type/0.png',
+              original: '/lorem/home/person_type/1-visionary.png',
               width: 0,
               height: 0,
               alt: '',
@@ -498,9 +498,9 @@ const handler = async (
             key: 1,
             title: 'Leader',
             description:
-              'A person who provides<br/>structures and frameworks<br/>for the growth of people',
+              'One who has ideas or conceives <br/>projects regarded as impractical',
             image: {
-              original: '/lorem/home/person_type/1.png',
+              original: '/lorem/home/person_type/2-leader.png',
               width: 0,
               height: 0,
               alt: '',
@@ -510,9 +510,9 @@ const handler = async (
             key: 2,
             title: 'Creator',
             description:
-              'They make things happen and provide opportunities for others. Can convince themselves and others if anything',
+              'One who has ideas or conceives <br/>projects regarded as impractical',
             image: {
-              original: '/lorem/home/person_type/2.png',
+              original: '/lorem/home/person_type/3-creator.png',
               width: 0,
               height: 0,
               alt: '',
@@ -522,9 +522,9 @@ const handler = async (
             key: 3,
             title: 'Maker',
             description:
-              'They are driven by stability<br />and security and they choose<br />meaningful goals to pursue',
+              'One who has ideas or conceives <br/>projects regarded as impractical',
             image: {
-              original: '/lorem/home/person_type/3.png',
+              original: '/lorem/home/person_type/4-maker.png',
               width: 0,
               height: 0,
               alt: '',

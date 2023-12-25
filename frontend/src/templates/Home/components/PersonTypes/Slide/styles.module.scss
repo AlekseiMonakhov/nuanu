@@ -1,64 +1,43 @@
 @import '@/styles/base';
 
 .slide {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  position: relative;
 
   background-color: var(--color-primary-base);
   border-radius: 12px;
 
+  .image {
+    position: relative;
+    width: 100%;
+
+    @include viewport-tablet-min {
+      padding-top: 100%;
+    }
+    @include viewport-phone {
+      padding-top: 104%;
+    }
+  }
+}
+
+.content {
+  @include absolute-fullsize;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
   @include viewport-desktop {
     padding: px-to-rem(18) px-to-rem(30) px-to-rem(30);
-
-    .image {
-      width: px-to-rem(300);
-    }
   }
-
   @include viewport-tablet {
     padding: px-to-rem(24);
-
-    .image {
-      width: px-to-rem(240);
-    }
   }
-
   @include viewport-phone {
     padding: px-to-rem(20);
-
-    .image {
-      width: px-to-rem(180);
-    }
-  }
-  
-
-  .image {
-    max-width: 80%;
-  }
-
-  .title,
-  .description {
-    width: 100%;
-  }
-
-  .image {
-    @include viewport-tablet-min {
-      margin-top: px-to-rem(23) !important;
-    }
-    @include viewport-phone {
-      margin-top: px-to-rem(30) !important;
-    }
   }
 
   .description {
-    @include viewport-tablet-min {
-      margin-top: px-to-rem(32) !important;
-    }
-    @include viewport-phone {
-      margin-top: px-to-rem(30) !important;
-    }
+    align-self: flex-end;
   }
 }
 
@@ -87,22 +66,24 @@
 
 .description {
   margin: 0;
-
-  @include text-small;
   text-align: right;
+
+  @include viewport-tablet-min {
+    @include text-smaller;
+  }
+  @include viewport-phone {
+    @include text-small;
+  }
 }
 
 .image {
   position: relative;
   height: auto;
 
-  background-blend-mode: lighten, normal;
-  mix-blend-mode: multiply;
-
   &__wrapper {
     position: relative;
     height: auto;
-    padding-top: 102%;
+    padding-top: 100%;
   }
 
   img {
