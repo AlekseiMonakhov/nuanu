@@ -5,9 +5,9 @@ import { IHomePersonTypesProps } from './components/PersonTypes/types';
 import { IHomeInsideProps } from './components/Inside/types';
 
 export interface IHome {
-  stories?: IStoriesFullScreen;
-  inside?: IHomeInsideProps;
-  longRead?: IHomeLongReadProps;
-  paragraphs?: IHomeParagraphsProps;
-  personTypes?: IHomePersonTypesProps;
+  stories?: IStoriesFullScreen | null;
+  inside?: IHomeInsideProps | null;
+  longRead?: IHomeLongReadProps | null;
+  paragraphs?: IHomeParagraphsProps | null;
+  personTypes?: IHomePersonTypesProps | null;
 }

@@ -286,90 +286,92 @@ const handler = async (
         ],
       },
 
-      longRead: {
-        title: 'Changing the way we',
-        items: [
-          {
-            key: 0,
-            label: 'live',
-            media: [
-              {
-                key: 0,
-                image: {
-                  original: '/lorem/home/longread/0.jpg',
-                  width: 0,
-                  height: 0,
-                  alt: '',
-                },
-                video: null,
-              },
-              {
-                key: 1,
-                image: {
-                  original: '/lorem/home/longread/1.jpg',
-                  width: 0,
-                  height: 0,
-                  alt: '',
-                },
-                video: null,
-              },
-            ],
-          },
-          {
-            key: 1,
-            label: 'work',
-            media: [
-              {
-                key: 0,
-                image: {
-                  original: '/lorem/home/longread/2.jpg',
-                  width: 0,
-                  height: 0,
-                  alt: '',
-                },
-                video: null,
-              },
-              {
-                key: 1,
-                image: {
-                  original: '/lorem/home/longread/3.jpg',
-                  width: 0,
-                  height: 0,
-                  alt: '',
-                },
-                video: null,
-              },
-            ],
-          },
-          {
-            key: 2,
-            label: 'play',
-            media: [
-              {
-                key: 0,
-                image: {
-                  original: '/lorem/home/longread/4.jpg',
-                  width: 0,
-                  height: 0,
-                  alt: '',
-                },
-                video: null,
-              },
-              {
-                key: 1,
-                image: {
-                  original: '/lorem/home/longread/5.jpg',
-                  width: 0,
-                  height: 0,
-                  alt: '',
-                },
-                video: null,
-                // video: '/lorem/video.mp4',
-              },
-            ],
-          },
-        ],
-      },
+      longRead: null,
+
+      // longRead: {
+      //   title: 'Changing the way we',
+      //   items: [
+      //     {
+      //       key: 0,
+      //       label: 'live',
+      //       media: [
+      //         {
+      //           key: 0,
+      //           image: {
+      //             original: '/lorem/home/longread/0.jpg',
+      //             width: 0,
+      //             height: 0,
+      //             alt: '',
+      //           },
+      //           video: null,
+      //         },
+      //         {
+      //           key: 1,
+      //           image: {
+      //             original: '/lorem/home/longread/1.jpg',
+      //             width: 0,
+      //             height: 0,
+      //             alt: '',
+      //           },
+      //           video: null,
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       key: 1,
+      //       label: 'work',
+      //       media: [
+      //         {
+      //           key: 0,
+      //           image: {
+      //             original: '/lorem/home/longread/2.jpg',
+      //             width: 0,
+      //             height: 0,
+      //             alt: '',
+      //           },
+      //           video: null,
+      //         },
+      //         {
+      //           key: 1,
+      //           image: {
+      //             original: '/lorem/home/longread/3.jpg',
+      //             width: 0,
+      //             height: 0,
+      //             alt: '',
+      //           },
+      //           video: null,
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       key: 2,
+      //       label: 'play',
+      //       media: [
+      //         {
+      //           key: 0,
+      //           image: {
+      //             original: '/lorem/home/longread/4.jpg',
+      //             width: 0,
+      //             height: 0,
+      //             alt: '',
+      //           },
+      //           video: null,
+      //         },
+      //         {
+      //           key: 1,
+      //           image: {
+      //             original: '/lorem/home/longread/5.jpg',
+      //             width: 0,
+      //             height: 0,
+      //             alt: '',
+      //           },
+      //           video: null,
+      //           // video: '/lorem/video.mp4',
+      //         },
+      //       ],
+      //     },
+      //   ],
+      // },
 
       paragraphs: {
         items: [
