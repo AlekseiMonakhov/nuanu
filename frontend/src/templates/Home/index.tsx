@@ -5,7 +5,6 @@ import cn from 'classnames';
 import { IHome } from './types';
 import { useTemplate } from '../_hooks/useTemplate';
 import { HomeSectionSlider } from './components/SectionSlider';
-import { HomeFeatures } from './components/Features';
 import styles from './styles.module.scss';
 import { HomeInside } from './components/Inside';
 import { HomeLongRead } from './components/LongRead';
@@ -39,7 +38,7 @@ const Home: FC<IHome> = ({
 
           {inside && <HomeInside {...inside} />}
 
-          <HomeFeatures />
+          {/* <HomeFeatures /> */}
         </HomeSectionSlider>
       )}
 
