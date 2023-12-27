@@ -13,7 +13,6 @@ export interface IPageGlobal {
     keywords?: string;
     image?: string;
     searchable?: boolean;
-    cacheable?: boolean;
   };
   links: {
     home: string;

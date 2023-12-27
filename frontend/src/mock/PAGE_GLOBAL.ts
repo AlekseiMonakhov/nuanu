@@ -20,7 +20,6 @@ export const GET_PAGE_GLOBAL = ({
     keywords: '',
     image: '',
     searchable: true,
-    cacheable: true,
   },
 
   links: {

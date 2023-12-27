@@ -72,18 +72,6 @@ async function fetchProps(context: GetServerSidePropsContext) {
         global.meta.image = matches.shift();
       }
     }
-
-    // set cache
-    const isCacheable = global.meta.cacheable ?? true;
-
-    if (isCacheable) {
-      const maxAge = process.env.NEXT_PUBLIC_API_PAGE ? 3600 : 2592000;
-
-      context.res.setHeader(
-        'Cache-Control',
-        `public, max-age=${maxAge}, stale-while-revalidate=2592000`,
-      );
-    }
   }
 
   return props;
