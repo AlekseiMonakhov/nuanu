@@ -78,8 +78,7 @@ const Component: FC<IProps> = ({
               type="button"
               text={price === '0' ? lexicon.free : lexicon.tickets}
               price={price === '0' ? null : price}
-              hasOverlayHover={price !== '0'}
-              overlayHoverText={lexicon.buyTickets}
+              hoverText={price === '0' ? lexicon.register : lexicon.getTickets}
               isHovered={isHovered}
             />
           )}

@@ -1,13 +1,11 @@
 import cn from 'classnames';
-import { forwardRef, memo } from 'react';
+import { forwardRef, memo, useRef } from 'react';
 import { ButtonAnchor } from '@anton.bobrov/react-components';
 import { useForwardedRef } from '@anton.bobrov/react-hooks';
-import {
-  useBreakpointName,
-  useNonMobilePointerHover,
-} from '@anton.bobrov/react-vevet-hooks';
+import { useNonMobilePointerHover } from '@anton.bobrov/react-vevet-hooks';
 import styles from './styles.module.scss';
 import { TBuyButtonProps } from './types';
+import { useAnimation } from './utils/useAnimation';
 
 const Component = forwardRef<
   HTMLButtonElement | HTMLAnchorElement,
@@ -18,28 +16,30 @@ const Component = forwardRef<
       className,
       style,
       text,
+      hoverText,
       price,
-      hasOverlayHover: hasOverlayHoverProp = true,
-      overlayHoverText = 'buy',
       isHovered: isHoveredProp,
       ...props
     },
     forwardedRef,
   ) => {
     const ref = useForwardedRef(forwardedRef);
+    const contentRef = useRef<HTMLSpanElement>(null);
+    const mainContentRef = useRef<HTMLSpanElement>(null);
+    const hoverContentRef = useRef<HTMLSpanElement>(null);
 
     const isPointerHovered = useNonMobilePointerHover(ref);
 
     const isHovered = isPointerHovered || isHoveredProp;
 
-    const breakpointName = useBreakpointName();
+    useAnimation({
+      contentRef,
+      mainContentRef,
+      hoverContentRef,
+      isHovered,
+    });
 
-    const hasOverlayHover = hasOverlayHoverProp && breakpointName !== 'phone';
-
-    const classNames = cn(
-      isHovered && styles.is_hovered,
-      hasOverlayHover && isHovered && styles.is_overlay_hovered,
-    );
+    const classNames = cn(isHovered && styles.is_hovered);
 
     return (
       <ButtonAnchor
@@ -49,14 +49,24 @@ const Component = forwardRef<
         title={text}
         {...props}
       >
-        <span className={cn(classNames, styles.text)}>
-          {text}
+        <span ref={contentRef} className={styles.content}>
+          <span
+            ref={mainContentRef}
+            className={cn(classNames, styles.main_content)}
+          >
+            {text}
 
-          {price && <span className={styles.price}>{price}</span>}
-        </span>
+            {price && (
+              <span className={styles.main_content__price}>{price}</span>
+            )}
+          </span>
 
-        <span className={cn(classNames, styles.hover_text)}>
-          {overlayHoverText}
+          <span
+            ref={hoverContentRef}
+            className={cn(classNames, styles.hover_content)}
+          >
+            {hoverText}
+          </span>
         </span>
       </ButtonAnchor>
     );

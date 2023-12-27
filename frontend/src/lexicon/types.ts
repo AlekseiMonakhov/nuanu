@@ -55,7 +55,8 @@ export interface ILexicon {
 
   events: {
     tickets: string;
-    buyTickets: string;
+    getTickets: string;
+    register: string;
     free: string;
 
     addEvent: {
