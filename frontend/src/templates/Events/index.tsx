@@ -3,6 +3,7 @@ import { StoriesFullScreen } from '@/components/Stories/FullScreen';
 import { Footer } from '@/layout/Footer';
 import cn from 'classnames';
 import { useHeaderIntersectionTheme } from '@/utils/hooks/useHeaderIntersectionTheme';
+import { useStoreLexicon } from '@/store/reducers/page';
 import { useTemplate } from '../_hooks/useTemplate';
 import styles from './styles.module.scss';
 import { IEvents } from './types';
@@ -15,8 +16,9 @@ const Events: FC<IEvents> = ({ stories, items: itemsProp }) => {
   useTemplate();
 
   const storiesRef = useRef<HTMLElement>(null);
-
   useHeaderIntersectionTheme(storiesRef, 'dark', 'light');
+
+  const { events: lexicon } = useStoreLexicon();
 
   const filters = useFilters(itemsProp);
 
@@ -46,10 +48,14 @@ const Events: FC<IEvents> = ({ stories, items: itemsProp }) => {
         />
       </div>
 
-      <EventsGroupedItemsCollection
-        className={cn(styles.items, isFitlersOpened && styles.darken)}
-        items={items}
-      />
+      {items.length > 0 ? (
+        <EventsGroupedItemsCollection
+          className={cn(styles.items, isFitlersOpened && styles.darken)}
+          items={items}
+        />
+      ) : (
+        <p className={styles.none}>{lexicon.none}</p>
+      )}
 
       <Footer theme="dark" />
     </div>

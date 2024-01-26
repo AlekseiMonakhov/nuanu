@@ -58,10 +58,12 @@ export interface ILexicon {
     getTickets: string;
     register: string;
     free: string;
+    none: string;
 
     addEvent: {
       title: string;
     };
+
     filters: {
       type: string;
       tags: string;

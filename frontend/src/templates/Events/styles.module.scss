@@ -27,3 +27,10 @@
     opacity: 0.2;
   }
 }
+
+.none {
+  margin: 0;
+  padding: px-to-rem(30) var(--wrap);
+
+  @include text-heading-2;
+}
