@@ -83,7 +83,7 @@
     transform: translateX(-50%);
     height: 100%;
 
-    @include viewport-tablet-max {
+    @include viewport-phone {
       display: none;
     }
   }
