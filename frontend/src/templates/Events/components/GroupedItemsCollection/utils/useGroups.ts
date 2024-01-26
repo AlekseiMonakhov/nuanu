@@ -1,5 +1,4 @@
 import { useId, useMemo } from 'react';
-import { TimeZone } from '@/utils/datetime/settings';
 import { uniqueeArray, useEvent } from '@anton.bobrov/react-hooks';
 import { IEventsItem } from '../../Item/types';
 
@@ -21,7 +20,6 @@ export function useGroups(itemsProp: IEventsItem[]) {
         const monthYear = new Intl.DateTimeFormat('en-US', {
           month: 'long',
           year: 'numeric',
-          timeZone: TimeZone,
         }).format(new Date(item.startTime));
 
         return { ...item, monthYear };
