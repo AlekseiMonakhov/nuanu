@@ -12,7 +12,7 @@
     }
 
     @include viewport-phone {
-      @media (orientation: landscape) {
+      @media (orientation: landscape) and (min-aspect-ratio: 3 / 2) {
         display: none;
       }
     }
