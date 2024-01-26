@@ -1,6 +1,5 @@
 import { FC, memo, useState } from 'react';
 import cn from 'classnames';
-import { useStoreLexicon } from '@/store/reducers/page';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 import { useGroups } from './utils/useGroups';
@@ -8,11 +7,12 @@ import { EventsItemsCollection } from '../ItemsCollection';
 import { Head } from './Head';
 import { scrollToElementById } from './utils/scrollToElementById';
 
-const Component: FC<IProps> = ({ className, style, items: itemsProp }) => {
-  const {
-    events: { addEvent: lexicon },
-  } = useStoreLexicon();
-
+const Component: FC<IProps> = ({
+  className,
+  style,
+  items: itemsProp,
+  bannerAdd,
+}) => {
   const { groups, getPrevGroup, getNextGroup } = useGroups(itemsProp);
 
   const [isBannerHovered, setIsBannerHovered] = useState(false);
@@ -41,7 +41,8 @@ const Component: FC<IProps> = ({ className, style, items: itemsProp }) => {
           <EventsItemsCollection
             items={items}
             itemsClassName={darkenClassNames}
-            bannerTitle={lexicon.title.replace('{month}', month)}
+            bannerAdd={bannerAdd}
+            monthName={month}
             onBannerMouseEnter={() => setIsBannerHovered(true)}
             onBannerMouseLeave={() => setIsBannerHovered(false)}
           />

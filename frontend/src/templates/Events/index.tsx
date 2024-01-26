@@ -12,7 +12,7 @@ import { EventsFilters } from './components/Filters';
 import { useFilters } from './utils/useFilters';
 import { useFilteredItems } from './utils/useFilteredItems';
 
-const Events: FC<IEvents> = ({ stories, items: itemsProp }) => {
+const Events: FC<IEvents> = ({ stories, items: itemsProp, bannerAdd }) => {
   useTemplate();
 
   const storiesRef = useRef<HTMLElement>(null);
@@ -52,6 +52,7 @@ const Events: FC<IEvents> = ({ stories, items: itemsProp }) => {
         <EventsGroupedItemsCollection
           className={cn(styles.items, isFitlersOpened && styles.darken)}
           items={items}
+          bannerAdd={bannerAdd}
         />
       ) : (
         <p className={styles.none}>{lexicon.none}</p>

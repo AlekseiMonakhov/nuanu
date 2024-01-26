@@ -93,6 +93,17 @@ const handler = async (
       },
 
       items: MOCK_EVENTS,
+
+      bannerAdd: {
+        title: 'Host your own event at <br />Nuanu in {month}',
+        href: 'https://google.com/',
+        image: {
+          original: '/lorem/events/add_event.jpg',
+          width: 1284,
+          height: 1056,
+          alt: 'add event',
+        },
+      },
     },
   });
 };

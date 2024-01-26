@@ -64,10 +64,6 @@ const lexicon: DeepRequired<ILexicon> = {
     free: 'Free',
     none: 'No events for this criteria',
 
-    addEvent: {
-      title: 'Host your own event at <br />Nuanu in {month}',
-    },
-
     filters: {
       type: 'Event type',
       tags: 'Filters',

@@ -60,10 +60,6 @@ export interface ILexicon {
     free: string;
     none: string;
 
-    addEvent: {
-      title: string;
-    };
-
     filters: {
       type: string;
       tags: string;

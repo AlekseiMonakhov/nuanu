@@ -6,8 +6,9 @@ import { EventsBannerAdd } from '../BannerAdd';
 
 const Component: FC<IProps> = ({
   items,
+  monthName,
+  bannerAdd,
   itemsClassName,
-  bannerTitle,
   onBannerMouseEnter,
   onBannerMouseLeave,
 }) => (
@@ -20,10 +21,11 @@ const Component: FC<IProps> = ({
       />
     ))}
 
-    {bannerTitle && (
+    {bannerAdd && (
       <EventsBannerAdd
+        {...bannerAdd}
         className={styles.banner}
-        title={bannerTitle}
+        patterns={[{ name: '{month}', value: monthName }]}
         onMouseEnter={onBannerMouseEnter}
         onMouseLeave={onBannerMouseLeave}
       />
