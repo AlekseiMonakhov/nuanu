@@ -17,6 +17,19 @@ const nextConfig = {
   },
   images: {
     minimumCacheTTL: 3600 * 24 * 365,
+    dangerouslyAllowSVG: true,
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '8000',
+        pathname: '/media/**',
+      },
+      {
+        hostname: 'nuanu-backend.sborkademo.com',
+        pathname: '/media/**',
+      },
+    ],
     deviceSizes: [640, 750, 1024, 1440, 1920, 2560],
     imageSizes: [640, 750, 1024, 1440, 1920, 2560],
   },
