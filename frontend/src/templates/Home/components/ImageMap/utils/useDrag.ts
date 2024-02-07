@@ -2,7 +2,7 @@ import { useEvent } from '@anton.bobrov/react-hooks';
 import { RefObject, useEffect, useRef } from 'react';
 import { useAnimationFrame } from '@anton.bobrov/react-vevet-hooks';
 import { DraggerMove, lerp, vevet } from '@anton.bobrov/vevet-init';
-import { useDatGUISettings } from '@anton.bobrov/react-dat-gui';
+import { useDatGuiSettings } from '@anton.bobrov/react-dat-gui';
 import { useMapDimensions } from './useMapDimensions';
 
 interface IWithLerp {
@@ -36,11 +36,15 @@ export function useDrag({
   const xRef = useRef<IWithLerp>({ current: 0, target: 0 });
   const yRef = useRef<IWithLerp>({ current: 0, target: 0 });
 
-  const { settings } = useDatGUISettings({
+  const { current: settings } = useDatGuiSettings({
     name: `${name} dragger`,
-    settings: {
-      ease: { value: 0.2, type: 'number', min: 0, max: 1, step: 0.001 },
-      friction: { value: 1, type: 'number', min: 0, max: 1, step: 0.001 },
+    data: {
+      ease: 0.2,
+      friction: 1,
+    },
+    parameters: {
+      ease: { type: 'number', min: 0, max: 1, step: 0.001 },
+      friction: { type: 'number', min: 0, max: 1, step: 0.001 },
     },
   });
 
@@ -58,8 +62,8 @@ export function useDrag({
     const x = xRef.current;
     const y = yRef.current;
 
-    const { friction } = settings;
-    const ease = vevet.isMobile ? 1 : settings.ease;
+    const { friction, ease: baseEase } = settings;
+    const ease = vevet.isMobile ? 1 : baseEase;
 
     if (Math.abs(x.target) > Math.abs(dimensions.xLine / 2)) {
       x.target = lerp(
