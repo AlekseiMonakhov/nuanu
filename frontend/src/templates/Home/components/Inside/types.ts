@@ -7,6 +7,8 @@ interface IItem {
   stories: IStoriesFrameItem[];
 }
 
+export type TActiveKey = TKey | 'none';
+
 export interface IHomeInsideProps {
   items: IItem[];
 }

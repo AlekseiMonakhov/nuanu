@@ -1,7 +1,7 @@
 import { FC, memo, useId, useRef, useState } from 'react';
 import { useStoreLexicon } from '@/store/reducers/page';
 import { StoriesFrame } from '@/components/Stories/Frame';
-import { FadeContent, TKey } from '@anton.bobrov/react-components';
+import { FadeContent } from '@anton.bobrov/react-components';
 import cn from 'classnames';
 import {
   isBrowser,
@@ -10,7 +10,7 @@ import {
 } from '@anton.bobrov/react-hooks';
 import { childOf, parentByClassName } from 'vevet-dom';
 import { useBreakpointName } from '@anton.bobrov/react-vevet-hooks';
-import { IProps } from './types';
+import { IProps, TActiveKey } from './types';
 import { HomeImageMap } from '../ImageMap';
 import styles from './styles.module.scss';
 import { Button } from './Button';
@@ -22,7 +22,9 @@ const Component: FC<IProps> = ({ items }) => {
     home: { inside: lexicon },
   } = useStoreLexicon();
 
-  const [activeKey, setActiveKey] = useState<TKey | 'none'>('none');
+  const firstItemKey = items[0].key;
+
+  const [activeKey, setActiveKey] = useState<TActiveKey>(firstItemKey); // 'none'
   const isNoneSelected = useDebouncedProp(activeKey === 'none', 16);
 
   const storiesContainer = useRef<HTMLDivElement>(null);
