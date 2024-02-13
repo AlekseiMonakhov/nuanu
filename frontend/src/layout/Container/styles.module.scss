@@ -2,7 +2,16 @@
 
 .layout_container {
   min-height: calc(100 * var(--vh) - var(--footer-height));
-  padding-bottom: px-to-rem(40);
+
+  @include viewport-desktop {
+    padding-bottom: px-to-rem(50);
+  }
+  @include viewport-tablet {
+    padding-bottom: px-to-rem(44);
+  }
+  @include viewport-phone {
+    padding-bottom: px-to-rem(40);
+  }
 
   &.top_spacing {
     padding-top: calc(var(--header-height) + var(--header-top) * 2 + #{px-to-rem(30)});
