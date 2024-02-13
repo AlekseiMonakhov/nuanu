@@ -23,6 +23,11 @@ export interface ILexicon {
     bookTour: string;
   };
 
+  menuSup: {
+    new: string;
+    comingSoon: string;
+  };
+
   footer: {
     generalEnquires: string;
     newBusiness: string;

@@ -38,6 +38,7 @@ export const GET_PAGE_GLOBAL = ({
       href: '/',
       isActive: templateName === 'Home',
       isHighlighted: false,
+      state: null,
     },
     {
       key: 2,
@@ -45,6 +46,7 @@ export const GET_PAGE_GLOBAL = ({
       href: '/events',
       isActive: templateName === 'Events/Index',
       isHighlighted: true,
+      state: null,
     },
     {
       key: 3,
@@ -52,6 +54,7 @@ export const GET_PAGE_GLOBAL = ({
       href: '/accommodation',
       isActive: false,
       isHighlighted: false,
+      state: 'new',
     },
     {
       key: 4,
@@ -59,6 +62,7 @@ export const GET_PAGE_GLOBAL = ({
       href: '/art',
       isActive: false,
       isHighlighted: false,
+      state: 'comingSoon',
     },
     {
       key: 5,
@@ -66,6 +70,7 @@ export const GET_PAGE_GLOBAL = ({
       href: '/experience',
       isActive: false,
       isHighlighted: false,
+      state: 'comingSoon',
     },
   ],
 

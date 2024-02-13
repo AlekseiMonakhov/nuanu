@@ -8,5 +8,6 @@ export const HeaderInlineMenu: FC<IProps> = ({ className, style }) => (
   <HeaderMenuLinks
     className={cn(className, styles.header_inline_menu)}
     style={style}
+    hasTooltips
   />
 );

@@ -26,6 +26,11 @@ const lexicon: DeepRequired<ILexicon> = {
     bookTour: 'Book a tour',
   },
 
+  menuSup: {
+    new: 'New',
+    comingSoon: 'Coming soon',
+  },
+
   footer: {
     generalEnquires: 'General enquires',
     newBusiness: 'New business',

@@ -44,7 +44,7 @@ export const HeaderExpandMenu: FC<IProps> = ({ className, style, id }) => {
       aria-hidden={!isOpened}
     >
       <div ref={containerRef} className={styles.container}>
-        <HeaderMenuLinks className={styles.links} />
+        <HeaderMenuLinks className={styles.links} hasTooltips={false} />
 
         <div className={styles.action}>
           <ArrowButton
