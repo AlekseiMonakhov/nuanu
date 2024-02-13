@@ -377,7 +377,7 @@ const handler = async (
               kind: 'link',
               text: 'View accommodation options',
               sup: null,
-              href: '/accomodation',
+              href: '/accommodation',
               target: null,
             },
             factoids: [

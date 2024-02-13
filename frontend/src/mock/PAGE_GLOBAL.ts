@@ -49,7 +49,7 @@ export const GET_PAGE_GLOBAL = ({
     {
       key: 3,
       name: 'Accommodation',
-      href: '/accomodation',
+      href: '/accommodation',
       isActive: false,
       isHighlighted: false,
     },

@@ -1,0 +1,18 @@
+@import '@/styles/base';
+
+.template {
+  :global(.image-marquee-item) {
+    @include viewport-tablet-min {
+      width: 27.604vw;
+
+      &:nth-child(3) {
+        width: 18.2291vw;
+      }
+
+      &:nth-child(4),
+      &:nth-child(5) {
+        width: 15.0462vw;
+      }
+    }
+  }
+}
