@@ -15,8 +15,8 @@ import { HeaderExpandMenuButton } from './ExpandMenuButton';
 import { HeaderExpandMenu } from './ExpandMenu';
 
 export const Header: FC = () => {
-  const { links } = useStoreGlobal();
-  const lexicon = useStoreLexicon();
+  const { links, cta } = useStoreGlobal();
+  const { siteName } = useStoreLexicon();
   const { theme } = useStoreHeader();
   const { isOpened } = useStoreMenu();
 
@@ -43,31 +43,29 @@ export const Header: FC = () => {
         <Link
           href={links.home}
           className={styles.logo_desktop}
-          title={lexicon.siteName}
+          title={siteName}
         >
           <LogoDesktop />
         </Link>
 
-        <Link
-          href={links.home}
-          className={styles.logo_phone}
-          title={lexicon.siteName}
-        >
+        <Link href={links.home} className={styles.logo_phone} title={siteName}>
           <LogoPhone />
         </Link>
 
         <HeaderInlineMenu className={styles.inline_menu} />
 
         <div className={styles.action}>
-          <FillButton
-            tag="a"
-            href="https://google.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            text={lexicon.menu.bookTour}
-            theme="blue"
-            size={50}
-          />
+          {cta && (
+            <FillButton
+              tag="a"
+              href={cta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              text={cta.name}
+              theme="blue"
+              size={50}
+            />
+          )}
         </div>
 
         <HeaderExpandMenuButton

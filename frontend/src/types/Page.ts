@@ -3,6 +3,11 @@ import { ILexicon } from '@/lexicon/types';
 import { DeepRequired } from 'ts-essentials';
 import { ILink, ILinkMenu, ILinksLanguage } from './Link';
 
+export type TPageCTA = {
+  href: string;
+  name: string;
+};
+
 /** Global page props */
 export interface IPageGlobal {
   lang: string;
@@ -22,6 +27,7 @@ export interface IPageGlobal {
   menu: ILinkMenu[];
   breadcrumbs: TBreadcrumbs;
   social: ILink[];
+  cta: TPageCTA | null;
 }
 
 /** Page props for API */

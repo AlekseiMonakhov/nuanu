@@ -1,7 +1,7 @@
 import { FC, useRef } from 'react';
 import cn from 'classnames';
 import { clampScope } from '@anton.bobrov/vevet-init';
-import { useStoreLexicon } from '@/store/reducers/page';
+import { useStoreGlobal } from '@/store/reducers/page';
 import { ArrowButton } from '@/components/Button/Arrow';
 import { useMenuStates } from './useMenuStates';
 import { IProps } from './types';
@@ -12,7 +12,7 @@ export const HeaderExpandMenu: FC<IProps> = ({ className, style, id }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const { menu: lexicon } = useStoreLexicon();
+  const { cta } = useStoreGlobal();
 
   const { isOpened } = useMenuStates({
     duration: 375,
@@ -46,18 +46,20 @@ export const HeaderExpandMenu: FC<IProps> = ({ className, style, id }) => {
       <div ref={containerRef} className={styles.container}>
         <HeaderMenuLinks className={styles.links} hasTooltips={false} />
 
-        <div className={styles.action}>
-          <ArrowButton
-            className={styles.action__button}
-            tag="a"
-            href="https://google.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            text={lexicon.bookTour}
-            theme="blue"
-            size={60}
-          />
-        </div>
+        {cta && (
+          <div className={styles.action}>
+            <ArrowButton
+              className={styles.action__button}
+              tag="a"
+              href={cta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              text={cta.name}
+              theme="blue"
+              size={60}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

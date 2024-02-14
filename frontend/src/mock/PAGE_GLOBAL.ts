@@ -98,4 +98,11 @@ export const GET_PAGE_GLOBAL = ({
       href: 'https://www.linkedin.com/company/nuanu/',
     },
   ],
+
+  cta: {
+    href: 'https://google.com/',
+    name: 'Book a tour',
+  },
+
+  // cta: null,
 });

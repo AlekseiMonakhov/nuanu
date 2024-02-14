@@ -23,7 +23,6 @@ const lexicon: DeepRequired<ILexicon> = {
     site: 'Nuanu',
     social: 'Social',
     privacyPolicy: 'Privacy Policy',
-    bookTour: 'Book a tour',
   },
 
   menuSup: {
