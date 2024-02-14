@@ -53,6 +53,10 @@
     justify-content: space-between;
     min-height: calc(100 * var(--vh) + 4px);
     padding: px-to-rem(92) var(--wrap) px-to-rem(24);
+
+    .back_button {
+      margin-bottom: px-to-rem(60);
+    }
   }
 }
 

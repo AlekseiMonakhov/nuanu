@@ -66,6 +66,7 @@ export interface ILexicon {
     date: string;
     time: string;
     location: string;
+    events: string;
 
     filters: {
       type: string;

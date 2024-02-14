@@ -70,6 +70,7 @@ const lexicon: DeepRequired<ILexicon> = {
     date: 'Date',
     time: 'Time',
     location: 'Location',
+    events: 'Events',
 
     filters: {
       type: 'Event type',

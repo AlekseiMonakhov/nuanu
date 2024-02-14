@@ -7,6 +7,7 @@ import { getTimeRange } from '@/utils/dates/getTimeRange';
 import { useHeaderIntersectionTheme } from '@/utils/hooks/useHeaderIntersectionTheme';
 import { IProps } from './types';
 import styles from './styles.module.scss';
+import { BackButton } from './BackButton';
 
 const Component: FC<IProps> = ({
   className,
@@ -34,7 +35,7 @@ const Component: FC<IProps> = ({
       </div>
 
       <div className={styles.container}>
-        <div className={styles.back_button}>back</div>
+        <BackButton className={styles.back_button} />
 
         <div className={styles.content}>
           {title && (
