@@ -1,0 +1,45 @@
+@import '@/styles/base';
+
+.social_share {
+  @include reset-ul;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  > * + * {
+    margin-left: px-to-rem(20);
+  }
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: var(--color-primary-base);
+
+  @include viewport-desktop {
+    width: px-to-rem(50);
+    height: px-to-rem(50);
+  }
+
+  @include viewport-tablet {
+    width: px-to-rem(40);
+    height: px-to-rem(40);
+  }
+
+  @include viewport-phone {
+    width: px-to-rem(30);
+    height: px-to-rem(30);
+  }
+
+  svg {
+    display: block;
+    width: px-to-rem(24);
+    height: auto;
+  }
+}

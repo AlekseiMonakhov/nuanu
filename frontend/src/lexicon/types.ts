@@ -67,10 +67,19 @@ export interface ILexicon {
     time: string;
     location: string;
     events: string;
+    address: string;
+    minAge: string;
+    organizer: string;
+    share: string;
 
     filters: {
       type: string;
       tags: string;
     };
+  };
+
+  share: {
+    share: string;
+    shareVia: string;
   };
 }

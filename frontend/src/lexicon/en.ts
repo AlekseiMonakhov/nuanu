@@ -71,11 +71,20 @@ const lexicon: DeepRequired<ILexicon> = {
     time: 'Time',
     location: 'Location',
     events: 'Events',
+    address: 'Address',
+    minAge: 'min age',
+    organizer: 'contact organizer',
+    share: 'share event',
 
     filters: {
       type: 'Event type',
       tags: 'Filters',
     },
+  },
+
+  share: {
+    share: 'Share in social networks',
+    shareVia: 'Share via',
   },
 };
 
