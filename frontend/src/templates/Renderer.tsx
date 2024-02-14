@@ -8,7 +8,7 @@ import { layoutSlice } from '@/store/reducers/layout';
 import { IHome } from './Home/types';
 import { ILoremComponents } from './_LoremComponents/types';
 import { INotFound } from './NotFound/types';
-import { IEvents } from './Events/types';
+import { IEvents } from './Events/Index/types';
 import { IAccommodation } from './Accommodation/types';
 import { IArt } from './Art/types';
 import { IExperience } from './Experience/types';
@@ -30,7 +30,7 @@ const Home = dynamic(() => import('./Home'), {
   ssr: true,
 });
 
-const EventsIndex = dynamic(() => import('./Events'), {
+const EventsIndex = dynamic(() => import('./Events/Index'), {
   ssr: true,
 });
 

@@ -1,5 +1,5 @@
 import { IBaseComponent, TKey } from '@anton.bobrov/react-components';
-import { IEventSharedProps } from '../../global';
+import { IEventSharedProps } from '../../../global';
 
 export interface IEventsItem extends IEventSharedProps {
   key: TKey;

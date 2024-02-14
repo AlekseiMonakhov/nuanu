@@ -1,8 +1,8 @@
 import { DeepRequired } from 'ts-essentials';
-import { IEventsItem } from '@/templates/Events/components/Item/types';
 import { times } from '@anton.bobrov/vevet-init';
 import { getRandomInt } from '@anton.bobrov/react-hooks';
 import { randomInt } from 'crypto';
+import { IEventsItem } from '@/templates/Events/Index/components/Item/types';
 
 const titles = [
   'David Choe: How to be the Master of your Universe',

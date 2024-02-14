@@ -4,7 +4,7 @@ import { Footer } from '@/layout/Footer';
 import cn from 'classnames';
 import { useHeaderIntersectionTheme } from '@/utils/hooks/useHeaderIntersectionTheme';
 import { useStoreLexicon } from '@/store/reducers/page';
-import { useTemplate } from '../_hooks/useTemplate';
+import { useTemplate } from '../../_hooks/useTemplate';
 import styles from './styles.module.scss';
 import { IEvents } from './types';
 import { EventsGroupedItemsCollection } from './components/GroupedItemsCollection';
