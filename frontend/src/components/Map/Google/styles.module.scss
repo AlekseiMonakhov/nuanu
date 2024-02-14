@@ -1,0 +1,19 @@
+@import '@/styles/base';
+
+.google_map {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+
+  background-color: #ccc;
+
+  @include viewport-desktop {
+    padding-top: 76.8939%;
+  }
+  @include viewport-tablet {
+    padding-top: 72.74447%;
+  }
+  @include viewport-phone {
+    padding-top: 68.595%;
+  }
+}
