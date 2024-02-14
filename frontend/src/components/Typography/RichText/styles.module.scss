@@ -57,7 +57,12 @@
 
   &.has_spacings {
     p {
-      margin: px-to-rem(20) 0;
+      @include viewport-tablet-min {
+        margin: px-to-rem(30) 0;
+      }
+      @include viewport-phone {
+        margin: px-to-rem(28) 0;
+      }
     }
 
     img {
