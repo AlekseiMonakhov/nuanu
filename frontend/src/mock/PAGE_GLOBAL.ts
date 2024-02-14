@@ -24,6 +24,7 @@ export const GET_PAGE_GLOBAL = ({
 
   links: {
     home: '/',
+    events: '/events',
     privacyPolicy: '/privacy-policy',
   },
 

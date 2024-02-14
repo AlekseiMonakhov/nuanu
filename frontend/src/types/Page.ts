@@ -21,6 +21,7 @@ export interface IPageGlobal {
   };
   links: {
     home: string;
+    events: string;
     privacyPolicy: string;
   };
   languages: ILinksLanguage[];
