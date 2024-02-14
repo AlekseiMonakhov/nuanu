@@ -3,6 +3,7 @@ import { times } from '@anton.bobrov/vevet-init';
 import { getRandomInt } from '@anton.bobrov/react-hooks';
 import { randomInt } from 'crypto';
 import { IEventsItem } from '@/templates/Events/Index/components/Item/types';
+import { getIsoDateWithoutTimezone } from '@/utils/dates/getIsoDateWithoutTimezone';
 
 const titles = [
   'David Choe: How to be the Master of your Universe',
@@ -25,15 +26,17 @@ export const MOCK_EVENTS: DeepRequired<DeepRequired<IEventsItem>[]> = times(
 
     return {
       key: index,
-      href: 'https://google.com/',
+      href: `/events/${index}`,
       image: {
         original: `/lorem/events/items/${index % 6}.jpg`,
         width: 0,
         height: 0,
         alt: 'image alt',
       },
-      startTime: new Date(startDate + timeOffset).toISOString(),
-      endTime: new Date(startDate + timeOffset + 1000 * 3600 * 2).toISOString(),
+      startTime: getIsoDateWithoutTimezone(new Date(startDate + timeOffset)),
+      endTime: getIsoDateWithoutTimezone(
+        new Date(startDate + timeOffset + 1000 * 3600 * 2),
+      ),
       type: types[index % types.length],
       tags: [...tags]
         .sort(() => Math.random() - 0.5)

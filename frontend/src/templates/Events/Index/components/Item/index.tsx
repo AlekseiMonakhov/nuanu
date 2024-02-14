@@ -6,9 +6,11 @@ import { isString } from '@anton.bobrov/react-hooks';
 import { BuyButton } from '@/components/Button/Buy';
 import { useStoreLexicon } from '@/store/reducers/page';
 import { useNonMobilePointerHover } from '@anton.bobrov/react-vevet-hooks';
+import { getMonth } from '@/utils/dates/getMonth';
+import { getDayNumber } from '@/utils/dates/getDayNumber';
+import { getTimeRange } from '@/utils/dates/getTimeRange';
 import { IProps } from './types';
 import styles from './styles.module.scss';
-import { useDates } from './useDates';
 
 const Component: FC<IProps> = ({
   className,
@@ -24,7 +26,9 @@ const Component: FC<IProps> = ({
 }) => {
   const ref = useRef<HTMLAnchorElement>(null);
 
-  const { dayNumber, month, time } = useDates(startTime, endTime);
+  const month = getMonth(startTime);
+  const dayNumber = getDayNumber(startTime);
+  const time = getTimeRange(startTime, endTime);
 
   const { events: lexicon } = useStoreLexicon();
 
@@ -36,8 +40,6 @@ const Component: FC<IProps> = ({
       className={cn(className, styles.events_item)}
       style={style}
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
     >
       <div className={styles.image}>
         {image && <DynamicImage {...image} />}
