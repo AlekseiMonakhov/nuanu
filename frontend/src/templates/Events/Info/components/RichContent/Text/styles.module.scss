@@ -1,0 +1,17 @@
+@import '@/styles/base';
+
+.text {
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(30);
+  }
+  @include viewport-tablet {
+    font-size: px-to-rem(24);
+  }
+  @include viewport-phone {
+    font-size: px-to-rem(20);
+  }
+}

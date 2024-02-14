@@ -45,7 +45,7 @@ export const GET_PAGE_GLOBAL = ({
       key: 2,
       name: 'Events',
       href: '/events',
-      isActive: templateName === 'Events/Index',
+      isActive: ['Events/Index', 'Events/Info'].includes(templateName),
       isHighlighted: true,
       state: null,
     },

@@ -4,6 +4,7 @@ import { useTemplate } from '../../_hooks/useTemplate';
 import styles from './styles.module.scss';
 import { IEventsInfo } from './types';
 import { EventsInfoScreen } from './components/Screen';
+import { EventsInfoRichContent } from './components/RichContent';
 
 const EventsInfo: FC<IEventsInfo> = ({
   image,
@@ -11,6 +12,7 @@ const EventsInfo: FC<IEventsInfo> = ({
   startTime,
   endTime,
   location,
+  richContent,
 }) => {
   useTemplate();
 
@@ -23,6 +25,14 @@ const EventsInfo: FC<IEventsInfo> = ({
         endTime={endTime}
         location={location}
       />
+
+      <div className={styles.layout}>
+        <main className={styles.layout__main}>
+          <EventsInfoRichContent items={richContent} />
+        </main>
+
+        <aside className={styles.layout__aside}>aside</aside>
+      </div>
 
       <Footer />
     </div>
