@@ -9,7 +9,7 @@ export type TEventLocation = {
 
 export type TEventOrganizer = {
   name: string;
-  href: string;
+  href?: string;
 };
 
 export interface IEventSharedProps {
