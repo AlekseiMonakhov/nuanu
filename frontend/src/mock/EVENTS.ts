@@ -45,8 +45,8 @@ export const MOCK_EVENTS: DeepRequired<DeepRequired<IEventsItem>[]> = times(
       location: {
         name: 'Nuanu, Labyrinth',
         address: 'Bolívar 624, B1066AAN San Telmo, Buenos Aires, Argentina',
-        lat: 7.8222416,
-        lng: 98.3417114,
+        lat: 1.260681,
+        lng: 103.832085,
       },
       price: index % 3 === 0 ? '0' : `${getRandomInt(250, 250)}k`,
       minAge: '18+',

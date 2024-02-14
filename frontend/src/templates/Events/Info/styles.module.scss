@@ -20,7 +20,7 @@
 
   &__main {
     @include viewport-desktop {
-      width: 51.7939%;
+      width: 51.7939vw;
     }
     @include viewport-tablet {
       width: 60%;
@@ -28,21 +28,41 @@
   }
 
   &__aside {
+    display: grid;
+    grid-template-columns: 1fr;
+
     @include viewport-tablet-min {
       position: sticky;
       top: calc(var(--header-height) + var(--header-top) * 2);
     }
 
     @include viewport-desktop {
-      width: 30.5555%;
+      width: 30.5555vw;
+      gap: px-to-rem(60);
     }
 
     @include viewport-tablet {
       width: 35%;
+      gap: px-to-rem(50);
     }
 
     @include viewport-phone {
       margin-top: px-to-rem(73);
+      gap: px-to-rem(40);
+    }
+
+    .cta {
+      margin-bottom: px-to-rem(16);
+      
+      @include viewport-phone {
+        display: none;
+      }
     }
   }
+}
+
+.cta {
+  width: 100%;
+  height: px-to-rem(180);
+  background-color: #ccc;
 }
