@@ -1,0 +1,36 @@
+@import '@/styles/base';
+
+.page {
+  background-color: var(--color-primary-dark-base);
+  color: var(--color-total-white);
+}
+
+.screen {
+  padding: var(--grid-gap);
+
+  > * +  * {
+    margin-top: var(--grid-gap);
+  }
+
+  .stories {
+    position: relative;
+    width: 100%;
+    height: calc(100 * var(--vh) - var(--grid-gap) * 2);
+    border-radius: 10px;
+  }
+}
+
+.items {
+  @include transition(opacity 0.35s);
+
+  &.darken {
+    opacity: 0.2;
+  }
+}
+
+.none {
+  margin: 0;
+  padding: px-to-rem(30) var(--wrap);
+
+  @include text-heading-2;
+}

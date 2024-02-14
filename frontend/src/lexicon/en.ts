@@ -67,6 +67,9 @@ const lexicon: DeepRequired<ILexicon> = {
     register: 'Register',
     free: 'Free',
     none: 'No events for this criteria',
+    date: 'Date',
+    time: 'Time',
+    location: 'Location',
 
     filters: {
       type: 'Event type',

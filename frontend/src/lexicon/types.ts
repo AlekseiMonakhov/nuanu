@@ -63,6 +63,9 @@ export interface ILexicon {
     register: string;
     free: string;
     none: string;
+    date: string;
+    time: string;
+    location: string;
 
     filters: {
       type: string;

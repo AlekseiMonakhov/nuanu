@@ -1,0 +1,135 @@
+@import '@/styles/base';
+
+.events_info_screen {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  @include absolute-fullsize;
+
+  &::after {
+    content: '';
+    @include absolute-fullsize;
+    fill: rgba(33, 33, 33, 0.8);
+    backdrop-filter: blur(7.5px);
+  }
+}
+
+.container {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .content {
+    width: 100%;
+  }
+
+  @include viewport-desktop {
+    justify-content: flex-end;
+    min-height: 28.93518vw;
+    padding: calc(var(--header-height) + var(--header-top) * 2) var(--wrap) px-to-rem(50);
+
+    .back_button {
+      display: none;
+    }
+  }
+
+  @include viewport-tablet {
+    justify-content: flex-end;
+    min-height: 35vw;
+    padding: calc(var(--header-height) + var(--header-top) * 2) var(--wrap) px-to-rem(36);
+
+    .back_button {
+      display: none;
+    }
+  }
+
+  @include viewport-phone {
+    justify-content: space-between;
+    min-height: calc(100 * var(--vh) + 4px);
+    padding: px-to-rem(92) var(--wrap) px-to-rem(24);
+  }
+}
+
+.content {
+  .info {
+    @include viewport-desktop {
+      margin-top: px-to-rem(82);
+    }
+    @include viewport-tablet {
+      margin-top: px-to-rem(76);
+    }
+    @include viewport-phone {
+      margin-top: px-to-rem(72);
+    }
+  }
+
+  .cta {
+    width: 100%;
+    height: px-to-rem(132);
+    margin-top: px-to-rem(60);
+    background-color: #ccc;
+
+    @include viewport-tablet-min {
+      display: none;
+    }
+  }
+}
+
+.title {
+  margin: 0;
+
+  @include text-heading-2;
+}
+
+.info {
+  p {
+    margin: 0;
+
+    &:nth-child(1) {
+      @include text-small-caps;
+    }
+
+    &:nth-child(2) {
+      @include text-body;
+    }
+  }
+  
+  @include viewport-tablet-min {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    p {
+      &:nth-child(2) {
+        margin-top: px-to-rem(4);
+      }
+    }
+  
+    > * {
+      + * {
+        margin-left: px-to-rem(20);
+      }
+      
+      &:nth-child(1) {
+        width: px-to-rem(347);
+      }
+      
+      &:nth-child(2) {
+        width: px-to-rem(343);
+      }
+    }
+  }
+  
+  @include viewport-phone {
+    > * {
+      + * {
+        margin-top: px-to-rem(28);
+      }
+    }
+  }
+}

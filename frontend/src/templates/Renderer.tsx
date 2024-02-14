@@ -12,10 +12,12 @@ import { IEvents } from './Events/Index/types';
 import { IAccommodation } from './Accommodation/types';
 import { IArt } from './Art/types';
 import { IExperience } from './Experience/types';
+import { IEventsInfo } from './Events/Info/types';
 
 export type TPageTemplateRegistryAPI =
   | IPageAPI<'Home', IHome, true>
   | IPageAPI<'Events/Index', IEvents, true>
+  | IPageAPI<'Events/Info', IEventsInfo, true>
   | IPageAPI<'Accommodation', IAccommodation, true>
   | IPageAPI<'Art', IArt, true>
   | IPageAPI<'Experience', IExperience, true>
@@ -31,6 +33,10 @@ const Home = dynamic(() => import('./Home'), {
 });
 
 const EventsIndex = dynamic(() => import('./Events/Index'), {
+  ssr: true,
+});
+
+const EventsInfo = dynamic(() => import('./Events/Info'), {
   ssr: true,
 });
 
@@ -80,6 +86,9 @@ export const TemplateRenderer: FC<PropsWithChildren> = () => {
 
     case 'Events/Index':
       return <EventsIndex key={key} {...apiProps.template} />;
+
+    case 'Events/Info':
+      return <EventsInfo key={key} {...apiProps.template} />;
 
     case 'Accommodation':
       return <Accommodation key={key} {...apiProps.template} />;
