@@ -39,8 +39,18 @@ export const MOCK_EVENTS: DeepRequired<DeepRequired<IEventsItem>[]> = times(
         .sort(() => Math.random() - 0.5)
         .slice(0, randomInt(0, tags.length)),
       title: titles[index % titles.length],
-      place: 'Nuanu, Labyrinth',
+      location: {
+        name: 'Nuanu, Labyrinth',
+        address: 'Bolívar 624, B1066AAN San Telmo, Buenos Aires, Argentina',
+        lat: 7.8222416,
+        lng: 98.3417114,
+      },
       price: index % 3 === 0 ? '0' : `${getRandomInt(250, 250)}k`,
+      minAge: '18+',
+      organizer: {
+        name: 'David Choe Support',
+        href: 'https://google.com/',
+      },
     };
   },
   40,

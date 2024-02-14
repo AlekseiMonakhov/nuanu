@@ -19,7 +19,7 @@ const Component: FC<IProps> = ({
   endTime,
   type,
   title,
-  place,
+  location,
   price,
 }) => {
   const ref = useRef<HTMLAnchorElement>(null);
@@ -69,7 +69,7 @@ const Component: FC<IProps> = ({
               </>
             )}
 
-            <span>{place}</span>
+            {location && <span>{location.name}</span>}
           </div>
 
           {isString(price) && (
