@@ -1,9 +1,10 @@
-import { FC, memo } from 'react';
+import { FC, memo, useRef } from 'react';
 import cn from 'classnames';
 import { DynamicImage } from '@/components/Media/DynamicImage';
 import { useStoreLexicon } from '@/store/reducers/page';
 import { getShortDate } from '@/utils/dates/getShortDate';
 import { getTimeRange } from '@/utils/dates/getTimeRange';
+import { useHeaderIntersectionTheme } from '@/utils/hooks/useHeaderIntersectionTheme';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 
@@ -16,10 +17,18 @@ const Component: FC<IProps> = ({
   endTime,
   location,
 }) => {
+  const ref = useRef<HTMLDivElement>(null);
+
   const { events: lexicon } = useStoreLexicon();
 
+  useHeaderIntersectionTheme(ref, 'dark', 'light');
+
   return (
-    <div className={cn(className, styles.events_info_screen)} style={style}>
+    <section
+      ref={ref}
+      className={cn(className, styles.events_info_screen)}
+      style={style}
+    >
       <div className={styles.image}>
         <DynamicImage {...image} />
       </div>
@@ -57,7 +66,7 @@ const Component: FC<IProps> = ({
           <div className={styles.cta} />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
