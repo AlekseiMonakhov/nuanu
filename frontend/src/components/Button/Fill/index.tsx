@@ -7,7 +7,7 @@ import { TFillButtonProps } from './types';
 const Component = forwardRef<
   HTMLButtonElement | HTMLAnchorElement,
   TFillButtonProps
->(({ className, style, text, theme, size, ...props }, ref) => (
+>(({ className, style, text, theme, size, sup, ...props }, ref) => (
   <ButtonAnchor
     ref={ref}
     className={cn(
@@ -21,6 +21,8 @@ const Component = forwardRef<
     {...props}
   >
     <span className={styles.text}>{text}</span>
+
+    {sup && <span className={styles.sup}>{sup}</span>}
   </ButtonAnchor>
 ));
 

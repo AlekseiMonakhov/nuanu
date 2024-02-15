@@ -4,7 +4,6 @@
   @include reset-button;
   text-decoration: none;
 
-  position: relative;
   overflow: hidden;
   transform: translateZ(0);
   
@@ -16,14 +15,31 @@
   border-radius: px-to-rem(100);
   padding: 0 px-to-rem(30);
 
-  @include viewport-desktop {
-    @include text-smaller;
+  &.size_60,
+  &.size_50 {
+    @include viewport-desktop {
+      @include text-smaller;
+    }
+    @include viewport-tablet {
+      @include text-smaller;
+    }
+    @include viewport-phone {
+      @include text-small;
+    }
   }
-  @include viewport-tablet {
-    @include text-smaller;
-  }
-  @include viewport-phone {
-    @include text-small;
+
+  &.size_80 {
+    @include text-body;
+
+    @include viewport-desktop {
+      height: px-to-rem(80);
+    }
+    @include viewport-tablet {
+      height: px-to-rem(70);
+    }
+    @include viewport-phone {
+      height: px-to-rem(60);
+    }
   }
 
   &.size_60 {
@@ -88,7 +104,19 @@
     opacity: 0.5;
   }
 
-  .text {
-    position: relative;
+  .sup {
+    @include viewport-desktop {
+      margin-left: px-to-rem(15);
+    }
+    @include viewport-tablet {
+      margin-left: px-to-rem(12);
+    }
+    @include viewport-phone {
+      margin-left: px-to-rem(10);
+    }
   }
+}
+
+.sup {
+  opacity: 0.7;
 }
