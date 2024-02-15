@@ -2,6 +2,8 @@ import { FC } from 'react';
 import cn from 'classnames';
 import { useStoreGlobal, useStoreLexicon } from '@/store/reducers/page';
 import Link from 'next/link';
+import { historySlice } from '@/store/reducers/history';
+import store from '@/store/store';
 import { IProps } from './types';
 import styles from './styles.module.scss';
 
@@ -14,6 +16,9 @@ export const BackButton: FC<IProps> = ({ className, style }) => {
       href={links.events}
       className={cn(className, styles.back_button)}
       style={style}
+      onClick={() => {
+        store.dispatch(historySlice.actions.setHasHistory(true));
+      }}
     >
       <svg
         width="40"

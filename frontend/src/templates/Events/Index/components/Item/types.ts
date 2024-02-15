@@ -5,4 +5,6 @@ export interface IEventsItem extends IEventSharedProps {
   key: TKey;
 }
 
-export interface IProps extends IEventsItem, IBaseComponent {}
+export interface IProps extends IEventsItem, IBaseComponent {
+  onClick?: () => void;
+}

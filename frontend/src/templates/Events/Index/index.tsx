@@ -1,9 +1,12 @@
-import { FC, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import { StoriesFullScreen } from '@/components/Stories/FullScreen';
 import { Footer } from '@/layout/Footer';
 import cn from 'classnames';
 import { useHeaderIntersectionTheme } from '@/utils/hooks/useHeaderIntersectionTheme';
-import { useStoreLexicon } from '@/store/reducers/page';
+import { useStoreLexicon, useStoreUrl } from '@/store/reducers/page';
+import store from '@/store/store';
+import { historySlice, useStoreHistory } from '@/store/reducers/history';
+import { useEvent } from '@anton.bobrov/react-hooks';
 import { useTemplate } from '../../_hooks/useTemplate';
 import styles from './styles.module.scss';
 import { IEvents } from './types';
@@ -19,16 +22,34 @@ const Events: FC<IEvents> = ({ stories, items: itemsProp, bannerAdd }) => {
   useHeaderIntersectionTheme(storiesRef, 'dark', 'light');
 
   const { events: lexicon } = useStoreLexicon();
+  const { href: url } = useStoreUrl();
+  const { hasHistory, data: historyData } = useStoreHistory();
 
   const filters = useFilters(itemsProp);
 
   const [isFitlersOpened, setIsFitlersOpened] = useState(false);
-
   const [activeFilters, setActiveFilters] = useState<Record<string, string>>(
-    {},
+    hasHistory ? historyData?.object || {} : {},
   );
 
   const items = useFilteredItems(itemsProp, activeFilters);
+
+  const saveHistory = useEvent(() => {
+    store.dispatch(
+      historySlice.actions.update({
+        url,
+        scrollTop: window.pageYOffset,
+        object: activeFilters,
+      }),
+    );
+  });
+
+  useEffect(() => {
+    if (hasHistory && historyData?.url === url) {
+      window.scrollTo(0, historyData?.scrollTop || 0);
+      store.dispatch(historySlice.actions.reset());
+    }
+  }, [hasHistory, historyData?.scrollTop, historyData?.url, url]);
 
   return (
     <div className={styles.page}>
@@ -42,9 +63,13 @@ const Events: FC<IEvents> = ({ stories, items: itemsProp, bannerAdd }) => {
         <EventsFilters
           className={styles.filters}
           filters={filters}
+          defaultValues={activeFilters}
           onFiltersOpen={() => setTimeout(() => setIsFitlersOpened(true), 0)}
           onFiltersClose={() => setIsFitlersOpened(false)}
-          onChange={setActiveFilters}
+          onChange={(ddd) => {
+            console.log(ddd);
+            setActiveFilters(ddd);
+          }}
         />
       </div>
 
@@ -53,6 +78,7 @@ const Events: FC<IEvents> = ({ stories, items: itemsProp, bannerAdd }) => {
           className={cn(styles.items, isFitlersOpened && styles.darken)}
           items={items}
           bannerAdd={bannerAdd}
+          onItemClick={() => saveHistory()}
         />
       ) : (
         <p className={styles.none}>{lexicon.none}</p>

@@ -8,4 +8,5 @@ export interface IProps {
   itemsClassName?: string;
   onBannerMouseEnter?: () => void;
   onBannerMouseLeave?: () => void;
+  onItemClick?: () => void;
 }

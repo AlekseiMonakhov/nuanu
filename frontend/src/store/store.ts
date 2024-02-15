@@ -4,6 +4,7 @@ import { pageSlice } from './reducers/page';
 import { loadingSlice } from './reducers/loading';
 import { layoutSlice } from './reducers/layout';
 import { menuSlice } from './reducers/menu';
+import { historySlice } from './reducers/history';
 import { loadingMiddleware } from './middleware/loading';
 
 const rootReducer = combineReducers({
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   loading: loadingSlice.reducer,
   layout: layoutSlice.reducer,
   menu: menuSlice.reducer,
+  history: historySlice.reducer,
 });
 
 const store = configureStore({

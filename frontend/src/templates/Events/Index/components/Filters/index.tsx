@@ -11,11 +11,12 @@ export const EventsFilters: FC<IProps> = ({
   className,
   style,
   filters,
+  defaultValues,
   onFiltersOpen,
   onFiltersClose,
   onChange: onChangeProp,
 }) => {
-  const [values, setValues] = useState<Record<string, string>>({});
+  const [values, setValues] = useState(defaultValues);
 
   const onChange = useEvent(onChangeProp);
 

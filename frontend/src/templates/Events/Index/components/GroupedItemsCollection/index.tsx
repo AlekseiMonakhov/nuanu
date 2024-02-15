@@ -11,6 +11,7 @@ const Component: FC<IProps> = ({
   className,
   style,
   items: itemsProp,
+  onItemClick,
   bannerAdd,
 }) => {
   const { groups, getPrevGroup, getNextGroup } = useGroups(itemsProp);
@@ -45,6 +46,7 @@ const Component: FC<IProps> = ({
             monthName={month}
             onBannerMouseEnter={() => setIsBannerHovered(true)}
             onBannerMouseLeave={() => setIsBannerHovered(false)}
+            onItemClick={onItemClick}
           />
         </div>
       ))}

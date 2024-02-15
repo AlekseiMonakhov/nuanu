@@ -11,6 +11,7 @@ const Component: FC<IProps> = ({
   itemsClassName,
   onBannerMouseEnter,
   onBannerMouseLeave,
+  onItemClick,
 }) => (
   <div className={styles.events_items_collection}>
     {items.map(({ key, ...item }) => (
@@ -18,6 +19,7 @@ const Component: FC<IProps> = ({
         key={key}
         {...item}
         className={`${itemsClassName}   ${key}`}
+        onClick={onItemClick}
       />
     ))}
 

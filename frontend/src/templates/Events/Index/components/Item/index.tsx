@@ -15,6 +15,7 @@ import styles from './styles.module.scss';
 const Component: FC<IProps> = ({
   className,
   style,
+  onClick,
   href,
   image,
   startTime,
@@ -40,6 +41,7 @@ const Component: FC<IProps> = ({
       className={cn(className, styles.events_item)}
       style={style}
       href={href}
+      onClick={onClick}
     >
       <div className={styles.image}>
         {image && <DynamicImage {...image} />}
