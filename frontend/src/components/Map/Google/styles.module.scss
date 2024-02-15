@@ -15,4 +15,10 @@
   @include viewport-phone {
     padding-top: 68.595%;
   }
+
+  :global(.gm-style) { 
+    iframe + div { 
+      border: 0 !important;
+    }
+  }
 }
