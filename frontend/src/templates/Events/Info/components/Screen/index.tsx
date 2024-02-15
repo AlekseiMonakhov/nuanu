@@ -17,6 +17,7 @@ const Component: FC<IProps> = ({
   startTime,
   endTime,
   location,
+  children,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -64,7 +65,7 @@ const Component: FC<IProps> = ({
             )}
           </div>
 
-          <div className={styles.cta} />
+          <div className={styles.cta}>{children}</div>
         </div>
       </div>
     </section>

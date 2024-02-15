@@ -9,6 +9,7 @@ import { EventsInfoScreen } from './components/Screen';
 import { EventsInfoRichContent } from './components/RichContent';
 import { AsideWrapper } from './components/AsideWrapper';
 import { SocialShare } from '../../../components/SocialShare';
+import { EventsInfoButtons } from './components/Buttons';
 
 const EventsInfo: FC<IEventsInfo> = ({
   image,
@@ -19,6 +20,8 @@ const EventsInfo: FC<IEventsInfo> = ({
   richContent,
   minAge,
   organizer,
+  price,
+  buyHref,
 }) => {
   useTemplate();
 
@@ -32,7 +35,14 @@ const EventsInfo: FC<IEventsInfo> = ({
         startTime={startTime}
         endTime={endTime}
         location={location}
-      />
+      >
+        <EventsInfoButtons
+          className={styles.cta}
+          price={price}
+          buyHref={buyHref}
+          buyButtonTheme="light"
+        />
+      </EventsInfoScreen>
 
       <div className={styles.layout}>
         <main className={styles.layout__main}>
@@ -40,7 +50,12 @@ const EventsInfo: FC<IEventsInfo> = ({
         </main>
 
         <aside className={styles.layout__aside}>
-          <div className={styles.cta} />
+          <EventsInfoButtons
+            className={styles.cta}
+            price={price}
+            buyHref={buyHref}
+            buyButtonTheme="dark"
+          />
 
           {location && (
             <AsideWrapper

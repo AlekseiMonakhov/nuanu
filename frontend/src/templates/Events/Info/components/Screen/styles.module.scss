@@ -75,9 +75,7 @@
 
   .cta {
     width: 100%;
-    height: px-to-rem(132);
     margin-top: px-to-rem(60);
-    background-color: #ccc;
 
     @include viewport-tablet-min {
       display: none;
