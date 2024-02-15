@@ -6,16 +6,16 @@ import cn from 'classnames';
 import store from '@/store/store';
 import { menuSlice, useStoreMenu } from '@/store/reducers/menu';
 import { useEventListener } from '@anton.bobrov/react-hooks';
-import { FillButton } from '@/components/Button/Fill';
 import styles from './styles.module.scss';
 import { HeaderInlineMenu } from './InlineMenu';
 import { LogoDesktop } from '../Logo/Desktop';
 import { LogoPhone } from '../Logo/Phone';
 import { HeaderExpandMenuButton } from './ExpandMenuButton';
 import { HeaderExpandMenu } from './ExpandMenu';
+import { LayoutCta } from '../Cta';
 
 export const Header: FC = () => {
-  const { links, cta } = useStoreGlobal();
+  const { links } = useStoreGlobal();
   const { siteName } = useStoreLexicon();
   const { theme } = useStoreHeader();
   const { isOpened } = useStoreMenu();
@@ -55,17 +55,7 @@ export const Header: FC = () => {
         <HeaderInlineMenu className={styles.inline_menu} />
 
         <div className={styles.action}>
-          {cta && (
-            <FillButton
-              tag="a"
-              href={cta.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              text={cta.name}
-              theme="blue"
-              size={50}
-            />
-          )}
+          <LayoutCta />
         </div>
 
         <HeaderExpandMenuButton
