@@ -38,9 +38,14 @@ const EventsInfo: FC<IEventsInfo> = ({
       >
         <EventsInfoButtons
           className={styles.cta}
+          title={title}
+          startTime={startTime}
+          endTime={endTime}
+          location={location}
           price={price}
           buyHref={buyHref}
           buyButtonTheme="light"
+          calendarButtonTheme="light_outline"
         />
       </EventsInfoScreen>
 
@@ -52,9 +57,14 @@ const EventsInfo: FC<IEventsInfo> = ({
         <aside className={styles.layout__aside}>
           <EventsInfoButtons
             className={styles.cta}
+            title={title}
+            startTime={startTime}
+            endTime={endTime}
+            location={location}
             price={price}
             buyHref={buyHref}
             buyButtonTheme="dark"
+            calendarButtonTheme="light"
           />
 
           {location && (

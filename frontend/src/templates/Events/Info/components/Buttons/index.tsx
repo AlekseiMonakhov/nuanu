@@ -1,16 +1,19 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import cn from 'classnames';
 import { useStoreLexicon } from '@/store/reducers/page';
 import { FillButton } from '@/components/Button/Fill';
 import { IProps } from './types';
 import styles from './styles.module.scss';
+import { GoogleCalendarButton } from './GoogleCalendar';
 
-export const EventsInfoButtons: FC<IProps> = ({
+const Component: FC<IProps> = ({
   className,
   style,
   price,
-  buyButtonTheme,
   buyHref,
+  buyButtonTheme,
+  calendarButtonTheme,
+  ...props
 }) => {
   const { events: lexicon } = useStoreLexicon();
 
@@ -27,6 +30,12 @@ export const EventsInfoButtons: FC<IProps> = ({
           sup={price === '0' ? undefined : price}
         />
       )}
+
+      <GoogleCalendarButton {...props} theme={calendarButtonTheme} />
     </div>
   );
 };
+
+Component.displayName = 'EventsInfoButtons';
+
+export const EventsInfoButtons = memo(Component);

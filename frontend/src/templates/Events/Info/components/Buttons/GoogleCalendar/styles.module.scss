@@ -1,0 +1,48 @@
+@import '@/styles/base';
+
+.events_info_buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include viewport-desktop {
+    gap: px-to-rem(20);
+  }
+  @include viewport-tablet {
+    gap: px-to-rem(16);
+  }
+  @include viewport-phone {
+    gap: px-to-rem(12);
+  }
+}
+
+.google_calendar_children {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    background-image: url('./img/icon.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include viewport-desktop {
+      width: px-to-rem(40);
+      height: px-to-rem(40);
+      margin: 0 0 0 5px;
+    }
+    
+    @include viewport-tablet {
+      width: px-to-rem(30);
+      height: px-to-rem(30);
+      margin: 0 3px;
+    }
+
+    @include viewport-phone {
+      width: px-to-rem(20);
+      height: px-to-rem(20);
+      margin: 0 3px 0 6px;
+    }
+  }
+}
