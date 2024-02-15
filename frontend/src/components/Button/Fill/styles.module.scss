@@ -109,6 +109,15 @@
     }
   }
 
+  &.theme_white {
+    background-color: var(--color-total-white);
+    color: var(--color-primary-dark-base);
+    
+    @include non-mobile-hover {
+      background-color: var(--color-background-light);
+    }
+  }
+
   &:disabled {
     cursor: default;
     opacity: 0.5;
