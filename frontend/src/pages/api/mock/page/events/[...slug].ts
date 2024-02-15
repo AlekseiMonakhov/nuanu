@@ -8,7 +8,10 @@ const handler = async (
   req: NextApiRequest,
   res: NextApiResponse<TPageTemplateRegistryAPI>,
 ) => {
-  const { slug } = req.query;
+  const slug = Array.isArray(req.query.slug)
+    ? req.query.slug[0]
+    : req.query.slug;
+
   const id = isString(slug) ? Number(slug) : 0;
 
   const PAGE_GLOBAL = GET_PAGE_GLOBAL({ req, templateName: 'Events/Info' });
