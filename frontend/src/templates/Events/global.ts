@@ -25,4 +25,5 @@ export interface IEventSharedProps {
   price?: string | null;
   minAge?: string | null;
   organizer?: TEventOrganizer | null;
+  buyHref?: string | null;
 }

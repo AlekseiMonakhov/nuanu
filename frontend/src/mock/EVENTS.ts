@@ -54,6 +54,7 @@ export const MOCK_EVENTS: DeepRequired<DeepRequired<IEventsItem>[]> = times(
         name: 'David Choe Support',
         href: 'https://google.com/',
       },
+      buyHref: 'https://yahoo.com/',
     };
   },
   40,
