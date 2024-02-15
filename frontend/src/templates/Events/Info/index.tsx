@@ -48,7 +48,7 @@ const EventsInfo: FC<IEventsInfo> = ({
               value={location.address}
               href={`https://maps.google.com/?q=${location.lat},${location.lng}`}
             >
-              <GoogleMap {...location} />
+              <GoogleMap {...location} label={location.name} />
             </AsideWrapper>
           )}
 

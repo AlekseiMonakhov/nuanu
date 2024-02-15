@@ -4,8 +4,7 @@
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-
-  background-color: #ccc;
+  user-select: none;
 
   @include viewport-desktop {
     padding-top: 76.8939%;

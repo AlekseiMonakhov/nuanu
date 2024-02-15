@@ -1,14 +1,16 @@
 import { RefObject, useEffect, useState } from 'react';
 import { vevet } from '@anton.bobrov/vevet-init';
 import { Loader, loadGoogleMaps, google as TGoogle } from './loadGoogleMaps';
+import styles from './styles.module.scss';
 
 interface IProps {
   ref: RefObject<HTMLElement>;
   lng: number;
   lat: number;
+  label: string;
 }
 
-export function useGoogleMaps({ ref, lng, lat }: IProps) {
+export function useGoogleMaps({ ref, lng, lat, label }: IProps) {
   const [loader, setLoader] = useState<Loader | null>(null);
   const [google, setGoogle] = useState<TGoogle | null>(null);
 
@@ -61,8 +63,14 @@ export function useGoogleMaps({ ref, lng, lat }: IProps) {
     new google.maps.Marker({
       position: { lat, lng },
       map,
+      label: {
+        className: styles.label,
+        text: label,
+        color: '#ea4335',
+        fontSize: `${14}px`,
+      },
     });
 
     return () => {};
-  }, [google, lat, lng, ref]);
+  }, [google, lat, lng, label, ref]);
 }
