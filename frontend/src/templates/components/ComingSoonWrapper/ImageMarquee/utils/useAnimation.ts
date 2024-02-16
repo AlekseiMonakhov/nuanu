@@ -53,7 +53,13 @@ export function useAnimation({ ref, groupWidth }: IProps) {
 
     const handler = new DraggerMove({ container: ref.current });
 
-    handler.addCallback('move', ({ step }) => {
+    handler.addCallback('start', ({ event }) => event.stopPropagation());
+
+    handler.addCallback('move', ({ event, step }) => {
+      if (Math.abs(step.x) > 3) {
+        event.preventDefault();
+      }
+
       targetX.current += step.x * 1.5;
 
       play();
