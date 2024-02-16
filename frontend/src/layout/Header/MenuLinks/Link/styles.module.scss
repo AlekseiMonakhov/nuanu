@@ -12,15 +12,15 @@
   text-decoration: none;
 
   .tooltip {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    
     --tooltip-bg-color: var(--color-bg);
     --tooltip-text-color: var(--color-text);
-
-    @include viewport-desktop {
-      --tooltip-top: #{px-to-rem(23)};
-    }
-    @include viewport-tablet-max {
-      --tooltip-top: #{px-to-rem(24)};
-    }
+    --tooltip-top: 0.01px;
   }
 
   .sup {

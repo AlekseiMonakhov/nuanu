@@ -17,4 +17,8 @@
       margin-left: px-to-rem(25);
     }
   }
+
+  a {
+    height: var(--header-height);
+  }
 }
