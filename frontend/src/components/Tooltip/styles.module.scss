@@ -11,6 +11,7 @@
     position: absolute;
     top: calc(100% + var(--tooltip-top) + #{px-to-rem(12)});
     left: 50%;
+    pointer-events: none;
 
     opacity: 0;
     transform: translate(-50%, 0.5rem);
@@ -19,6 +20,7 @@
 
   &:hover {
     .tooltip {
+      pointer-events: all;
       opacity: 1;
       transform: translate(-50%, 0);
     }
@@ -62,5 +64,4 @@
     border-color: transparent transparent var(--tooltip-bg-color);
     transform: rotate(0deg);
   }
-
 }
