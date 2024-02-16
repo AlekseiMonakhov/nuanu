@@ -56,6 +56,10 @@
 
     .back_button {
       margin-bottom: px-to-rem(60);
+
+      @media (max-height: 740px) {
+        margin-bottom: px-to-rem(44);
+      }
     }
   }
 }
@@ -65,17 +69,27 @@
     @include viewport-desktop {
       margin-top: px-to-rem(82);
     }
+
     @include viewport-tablet {
       margin-top: px-to-rem(76);
     }
+
     @include viewport-phone {
       margin-top: px-to-rem(72);
+
+      @media (max-height: 740px) {
+        margin-top: px-to-rem(50);
+      }
     }
   }
 
   .cta {
     width: 100%;
     margin-top: px-to-rem(60);
+
+    @media (max-height: 740px) {
+      margin-top: px-to-rem(40);
+    }
 
     @include viewport-tablet-min {
       display: none;
@@ -133,6 +147,10 @@
     > * {
       + * {
         margin-top: px-to-rem(28);
+
+        @media (max-height: 740px) {
+          margin-top: px-to-rem(20);
+        }
       }
     }
   }
