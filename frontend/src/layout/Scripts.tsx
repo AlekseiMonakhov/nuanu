@@ -64,7 +64,7 @@ export const LayoutScripts: FC = () => {
         id="js_viewport_css_vars"
         dangerouslySetInnerHTML={{
           __html:
-            'var update=function(){var e=document.documentElement.clientWidth,t=document.documentElement.clientHeight;document.documentElement.style.setProperty("--vw",e/100+"px"),document.documentElement.style.setProperty("--vh",t/100+"px"),document.documentElement.style.setProperty("--vr",Math.sqrt(e**2+t**2)/2/100+"px")};window.addEventListener("resize",update),update();',
+            'var update=function(){if (window.vevetApp) { return; } var e=document.documentElement.clientWidth,t=document.documentElement.clientHeight;document.documentElement.style.setProperty("--vw",e/100+"px"),document.documentElement.style.setProperty("--vh",t/100+"px"),document.documentElement.style.setProperty("--vr",Math.sqrt(e**2+t**2)/2/100+"px")};window.addEventListener("resize",update),update();',
         }}
       />
 
@@ -75,15 +75,15 @@ export const LayoutScripts: FC = () => {
           __html: `
             function updateFontSize() {
               var k = 1;
-              var width = window.innerWidth;
+              var width = document.documentElement.getBoundingClientRect().width;
               var height = window.innerHeight;
 
-              if (width >= 1199) {
+              if (width > 1199) {
                 if (width < 1600) {
                   k = width / 1600;
                 }
               }
-              else if (width >= 900) {
+              else if (width > 899) {
                 k = width / 1200;
               }
               else {
