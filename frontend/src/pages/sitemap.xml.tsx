@@ -8,13 +8,14 @@ export default Sitemap;
 
 interface IURL {
   loc: string;
-  lastmod: string;
+  lastmod?: string;
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { res, req } = context;
 
   let resources = '';
+  let array: IURL[] = [];
 
   if (process.env.NEXT_PUBLIC_API) {
     const apiUrl = new URL(
@@ -23,20 +24,22 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     apiUrl.searchParams.set('requireSiteMap', 'true');
 
     const results = await nodeFetch(apiUrl.href);
-    const json = (await results.json()) as IURL[];
+    array = (await results.json()) as IURL[];
+  } else {
+    array = [{ loc: '/' }];
+  }
 
-    if (Array.isArray(json)) {
-      resources += json
-        .map(
-          (item) => `
-        <url>
-          <loc>${getHost(req, item.loc)}</loc>
-          <lastmod>${item.lastmod}</lastmod>
-        </url>
-      `,
-        )
-        .join('');
-    }
+  if (Array.isArray(array)) {
+    resources += array
+      .map(
+        (item) => `
+          <url>
+            <loc>${getHost(req, item.loc)}</loc>
+            ${item.lastmod ? `<lastmod>${item.lastmod}</lastmod>` : ''}
+          </url>
+        `,
+      )
+      .join('');
   }
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
