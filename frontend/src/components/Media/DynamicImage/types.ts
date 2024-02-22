@@ -16,6 +16,7 @@ type TBaseImageProps = Omit<
   | 'alt'
   | 'src'
   | 'srcSet'
+  | 'sizes'
   | 'placeholder'
 >;
 
@@ -25,5 +26,5 @@ export type TProps = TDynamicImageProps &
     position?: false | 'cover' | 'contain' | 'fullabs';
     priority?: boolean;
     /** @default '100vw' */
-    sizes?: 'none' | '100vw';
+    sizes?: ('none' | '100vw') | (string & {});
   };
