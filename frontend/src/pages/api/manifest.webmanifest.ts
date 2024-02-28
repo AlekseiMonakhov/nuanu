@@ -1,4 +1,4 @@
-import { getHost } from '@/utils/server/getHost';
+import { getBaseURL } from '@/utils/server/getBaseUrl';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
@@ -10,7 +10,7 @@ export default async function handler(
   res.json({
     name: 'Nuanu Inc.',
     short_name: 'Nuanu Inc.',
-    start_url: getHost(req),
+    start_url: getBaseURL(),
     display: 'fullscreen',
     background_color: '#000000',
     theme_color: '#000000',

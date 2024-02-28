@@ -1,22 +1,19 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { GET_PAGE_GLOBAL } from '@/mock/PAGE_GLOBAL';
 import { TPageTemplateRegistryAPI } from '@/templates/Renderer';
+import { MOCK_GET_PAGE_GLOBAL } from '../GET_PAGE_GLOBAL';
 
-const handler = async (
-  req: NextApiRequest,
-  res: NextApiResponse<TPageTemplateRegistryAPI>,
-) => {
-  const PAGE_GLOBAL = GET_PAGE_GLOBAL({
-    req,
+export function MOCK_PAGES_COMPONENTS(path: string): TPageTemplateRegistryAPI {
+  const PAGE_GLOBAL = MOCK_GET_PAGE_GLOBAL({
     templateName: '_LoremComponents',
+    path,
   });
 
-  res.json({
+  return {
     global: {
       ...PAGE_GLOBAL,
       meta: {
         ...PAGE_GLOBAL.meta,
         pagetitle: 'Components',
+        swr: 3600 * 24 * 365,
       },
       breadcrumbs: [
         ...PAGE_GLOBAL.breadcrumbs,
@@ -27,6 +24,5 @@ const handler = async (
     templateName: '_LoremComponents',
 
     template: {},
-  });
-};
-export default handler;
+  };
+}

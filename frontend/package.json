@@ -26,7 +26,6 @@
     "email-validator": "^2.0.4",
     "google-maps": "^4.3.3",
     "next": "14.0.1",
-    "node-fetch": "^3.3.2",
     "normalize.css": "^8.0.1",
     "rc-api-registry": "^0.0.5",
     "react": "^18",

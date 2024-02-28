@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Heading } from '@/components/Typography/Heading';
-import { LayoutContainer } from '@/layout/Container';
 import { LayoutWrap } from '@/layout/Wrap';
+import { LayoutContainer } from '@/layout/Container';
 import { useTemplate } from './_hooks/useTemplate';
 
 const Empty: FC = () => {

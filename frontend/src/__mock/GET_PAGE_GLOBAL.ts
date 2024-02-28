@@ -1,14 +1,13 @@
-import { TPageTemplateRegistryAPI } from '@/templates/Renderer';
-import { IPageGlobal } from '@/types/Page';
-import { NextApiRequest } from 'next';
 import { DeepRequired } from 'ts-essentials';
+import { IPageGlobal } from '@/types/Page';
+import { TPageTemplateRegistryAPI } from '@/templates/Renderer';
 
 interface IProps {
-  req: NextApiRequest;
   templateName: TPageTemplateRegistryAPI['templateName'];
+  path: string;
 }
 
-export const GET_PAGE_GLOBAL = ({
+export const MOCK_GET_PAGE_GLOBAL = ({
   templateName,
 }: IProps): DeepRequired<IPageGlobal> => ({
   lang: 'en',
@@ -20,6 +19,7 @@ export const GET_PAGE_GLOBAL = ({
     keywords: '',
     image: '',
     searchable: true,
+    swr: true,
   },
 
   links: {

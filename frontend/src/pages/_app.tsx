@@ -5,12 +5,12 @@ import type { AppProps } from 'next/app';
 import { useEffect, useRef } from 'react';
 import { Provider } from 'react-redux';
 import { isBrowser, useEvent } from '@anton.bobrov/react-hooks';
-import { IAppPage } from '@/types/Page';
 import store from '@/store/store';
 import { LayoutHead } from '@/layout/Head';
 import { Layout } from '@/layout/Layout';
 import { TemplateRenderer } from '@/templates/Renderer';
 import { pageSlice } from '@/store/reducers/page';
+import { TAppPage } from '@/types/Page';
 
 const suisseIntlFont = localFont({
   variable: '--font-suisse-intl',
@@ -22,87 +22,51 @@ const suisseIntlFont = localFont({
   ],
 });
 
-type TStaticProps = {
-  statusCode: number;
-};
-
-type TAppProps = IAppPage | TStaticProps;
-
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const withStaticProps = pageProps as TAppProps;
+  const props = pageProps as TAppPage;
 
   const isStoreUpdatedRef = useRef(false);
   const canRerenderPropsRef = useRef(false);
 
   const updateStore = useEvent(() => {
-    if ('page' in withStaticProps && withStaticProps.page) {
-      store.dispatch(pageSlice.actions.set(withStaticProps.page.props));
+    if (props.page) {
+      store.dispatch(pageSlice.actions.set(props.page));
       isStoreUpdatedRef.current = true;
     }
   });
 
   if (isBrowser && !isStoreUpdatedRef.current) {
-    if (!('statusCode' in withStaticProps)) {
-      updateStore();
-    }
+    updateStore();
   }
 
   useEffect(() => {
     if (canRerenderPropsRef.current) {
-      if (!('statusCode' in withStaticProps)) {
-        updateStore();
-      }
+      updateStore();
     }
 
     canRerenderPropsRef.current = true;
-  }, [updateStore, withStaticProps]);
+  }, [updateStore, props]);
 
-  if ('statusCode' in withStaticProps) {
-    return <h1>{withStaticProps.statusCode}</h1>;
-  }
-
-  if (withStaticProps.page) {
-    return (
-      <Provider store={store}>
-        <LayoutHead />
-
-        <style jsx global>{`
-          html {
-            font-family: ${suisseIntlFont.style.fontFamily};
-          }
-        `}</style>
-
-        <Layout>
-          <TemplateRenderer>
-            <Component />
-          </TemplateRenderer>
-        </Layout>
-      </Provider>
-    );
+  if ('statusCode' in props || Object.keys(props).length === 0) {
+    return <Component />;
   }
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Ooops</h1>
+    <Provider store={store}>
+      <LayoutHead />
 
-      <br />
+      <style jsx global>{`
+        html {
+          font-family: ${suisseIntlFont.style.fontFamily};
+        }
+      `}</style>
 
-      {withStaticProps.error && (
-        <>
-          {withStaticProps.error.name && (
-            <div>{withStaticProps.error.name}</div>
-          )}
-
-          <br />
-
-          {withStaticProps.error.body ? (
-            <pre>{withStaticProps.error.body}</pre>
-          ) : (
-            ''
-          )}
-        </>
-      )}
-    </div>
+      <Layout>
+        <TemplateRenderer>
+          <Component />
+        </TemplateRenderer>
+      </Layout>
+    </Provider>
   );
 };
 

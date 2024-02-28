@@ -22,7 +22,7 @@ const Events: FC<IEvents> = ({ stories, items: itemsProp, bannerAdd }) => {
   useHeaderIntersectionTheme(storiesRef, 'dark', 'light');
 
   const { events: lexicon } = useStoreLexicon();
-  const { href: url } = useStoreUrl();
+  const { canonical: url } = useStoreUrl();
   const { hasHistory, data: historyData } = useStoreHistory();
 
   const filters = useFilters(itemsProp);
@@ -66,10 +66,7 @@ const Events: FC<IEvents> = ({ stories, items: itemsProp, bannerAdd }) => {
           defaultValues={activeFilters}
           onFiltersOpen={() => setTimeout(() => setIsFitlersOpened(true), 0)}
           onFiltersClose={() => setIsFitlersOpened(false)}
-          onChange={(ddd) => {
-            console.log(ddd);
-            setActiveFilters(ddd);
-          }}
+          onChange={(ddd) => setActiveFilters(ddd)}
         />
       </div>
 

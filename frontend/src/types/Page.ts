@@ -1,6 +1,6 @@
 import { TBreadcrumbs } from '@/layout/Breadcrumbs/types';
-import { ILexicon } from '@/lexicon/types';
 import { DeepRequired } from 'ts-essentials';
+import { ILexicon } from '@/lexicon/types';
 import { ILink, ILinkMenu, ILinksLanguage } from './Link';
 
 export type TPageCTA = {
@@ -18,6 +18,7 @@ export interface IPageGlobal {
     keywords?: string;
     image?: string;
     searchable?: boolean;
+    swr?: number | boolean;
   };
   links: {
     home: string;
@@ -53,13 +54,15 @@ export interface IPage<N extends string, T extends Record<string, any>>
   };
 }
 
-/** Page APP Props */
-export interface IAppPage {
-  page?: {
-    props: IPage<any, any>;
+export type TPage = IPageAPI<any, any> & {
+  lexicon: ILexicon;
+  url: {
+    base: string;
+    canonical: string;
   };
-  error?: {
-    name?: string;
-    body?: string;
-  };
-}
+};
+
+/** Page Props */
+export type TAppPage = {
+  page?: TPage;
+};

@@ -64,7 +64,7 @@ export const LayoutHead = () => {
         {description && (
           <meta property="og:description" content={description} />
         )}
-        <meta property="og:url" content={url.href} />
+        <meta property="og:url" content={url.canonical} />
         {image && (
           <meta property="og:image" content={new URL(image, url.base).href} />
         )}

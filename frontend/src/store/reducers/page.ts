@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { useSelector } from 'react-redux';
-import { IPage } from '@/types/Page';
+import { TPage } from '@/types/Page';
 import { TAppState } from '../store';
 
-type TState = IPage<any, any>;
+type TState = TPage;
 
 const initialState: TState = {} as TState;
 
