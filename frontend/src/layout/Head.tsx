@@ -5,7 +5,9 @@ import {
   useStoreUrl,
 } from '@/store/reducers/page';
 import { isBoolean } from '@anton.bobrov/react-hooks';
-import { LayoutScripts } from './Scripts';
+import { LayoutScriptsFixes } from './Scripts/Fixes';
+import { LayoutScriptsCustom } from './Scripts/Custom';
+import { LayoutScriptsMicrodata } from './Scripts/Microdata';
 
 export const LayoutHead = () => {
   const { meta, languages, lang } = useStoreGlobal();
@@ -97,7 +99,9 @@ export const LayoutHead = () => {
         <link rel="manifest" href="/api/manifest.webmanifest" />
       </NextHead>
 
-      <LayoutScripts />
+      <LayoutScriptsFixes />
+      <LayoutScriptsCustom />
+      <LayoutScriptsMicrodata />
     </>
   );
 };
