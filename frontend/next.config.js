@@ -30,8 +30,8 @@ const nextConfig = {
         pathname: '/media/**',
       },
     ],
-    deviceSizes: [640, 750, 1024, 1440, 1920, 2560],
-    imageSizes: [640, 750, 1024, 1440, 1920, 2560],
+    deviceSizes: [480, 560, 640, 750, 1024, 1440, 1920, 2560],
+    imageSizes: [480, 560, 640, 750, 1024, 1440, 1920, 2560],
   },
   headers() {
     return [

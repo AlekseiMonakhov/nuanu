@@ -19,7 +19,7 @@
       "@/components/*": ["./src/components/*"],
       "@/layout/*": ["./src/layout/*"],
       "@/lexicon/*": ["./src/lexicon/*"],
-      "@/mock/*": ["./src/mock/*"],
+      "@/mock/*": ["./src/__mock/*"],
       "@/store/*": ["./src/store/*"],
       "@/styles/*": ["./src/styles/*"],
       "@/templates/*": ["./src/templates/*"],

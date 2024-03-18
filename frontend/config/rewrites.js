@@ -1,8 +1,8 @@
-const rewriteStorage = process.env.NEXT_PUBLIC_STORAGE
+const rewriteStorage = process.env.STORAGE
   ? [
       {
-        source: new URL(process.env.NEXT_PUBLIC_STORAGE).pathname,
-        destination: process.env.NEXT_PUBLIC_STORAGE,
+        source: new URL(process.env.STORAGE).pathname,
+        destination: process.env.STORAGE,
       },
     ]
   : [];
@@ -12,10 +12,10 @@ module.exports = [
     source: '/api/mock/page/:path*',
     destination: '/api/mock/page/:path*',
   },
-  process.env.NEXT_PUBLIC_API
+  process.env.API_URL
     ? {
         source: '/api/:path*',
-        destination: `${process.env.NEXT_PUBLIC_API}:path*`,
+        destination: `${process.env.API_URL}:path*`,
       }
     : {
         source: '/api/:path*',

@@ -1,23 +1,27 @@
-import { getSSP } from '@/utils/server/ssp/getSSP';
-import { GetServerSideProps } from 'next';
+import { getSwrRevalidate } from '@/utils/server/getSwrRevalidate';
+import { getPageProps } from '@/utils/server/pageProps/getPageProps';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
 const Router = () => null;
+
 export default Router;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const data = await getSSP(context);
+export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
+  const path = Array.isArray(params?.slug) ? `/${params?.slug.join('/')}` : '/';
 
-  if ('redirect' in data) {
-    return { redirect: data.redirect };
-  }
+  const data = await getPageProps({ path, locale });
 
-  if (data.page || data.error) {
-    return {
-      props: data,
-    };
+  if (data.page.templateName === 'NotFound') {
+    return { notFound: true };
   }
 
   return {
-    notFound: true,
+    props: data,
+    revalidate: getSwrRevalidate(data.page.global.meta.swr),
   };
 };
+
+export const getStaticPaths = (async () => ({
+  paths: [],
+  fallback: 'blocking',
+})) satisfies GetStaticPaths;

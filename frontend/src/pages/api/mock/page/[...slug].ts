@@ -1,25 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { GET_PAGE_GLOBAL } from '@/mock/PAGE_GLOBAL';
-import { TPageTemplateRegistryAPI } from '@/templates/Renderer';
+import { MOCK_GET_PAGE } from '@/mock/GET_PAGE';
 
-const handler = async (
-  req: NextApiRequest,
-  res: NextApiResponse<TPageTemplateRegistryAPI>,
-) => {
-  const PAGE_GLOBAL = GET_PAGE_GLOBAL({ req, templateName: 'NotFound' });
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  const path = Array.isArray(req.query.slug) ? req.query.slug.join('/') : '/';
 
-  res.status(404).json({
-    global: {
-      ...PAGE_GLOBAL,
-      meta: {
-        ...PAGE_GLOBAL.meta,
-        pagetitle: 'Page Not Found',
-      },
-    },
-
-    templateName: 'NotFound',
-
-    template: {},
-  });
+  res.json(MOCK_GET_PAGE(path));
 };
+
 export default handler;

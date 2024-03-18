@@ -7,7 +7,7 @@ const Router = () => null;
 export default Router;
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const data = await getPageProps({ path: '/', locale });
+  const data = await getPageProps({ path: '/not-found', locale });
 
   return {
     props: data,

@@ -1,22 +1,16 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { GET_PAGE_GLOBAL } from '@/mock/PAGE_GLOBAL';
 import { TPageTemplateRegistryAPI } from '@/templates/Renderer';
-import { MOCK_EVENTS } from '@/mock/EVENTS';
-import { isString } from '@anton.bobrov/react-hooks';
+import { MOCK_GET_PAGE_GLOBAL } from '../../GET_PAGE_GLOBAL';
+import { MOCK_EVENTS } from './EVENTS';
 
-const handler = async (
-  req: NextApiRequest,
-  res: NextApiResponse<TPageTemplateRegistryAPI>,
-) => {
-  const slug = Array.isArray(req.query.slug)
-    ? req.query.slug[0]
-    : req.query.slug;
+export function MOCK_PAGES_EVENTS_SLUG(path: string): TPageTemplateRegistryAPI {
+  const PAGE_GLOBAL = MOCK_GET_PAGE_GLOBAL({
+    templateName: 'Accommodation',
+    path,
+  });
 
-  const id = isString(slug) ? Number(slug) : 0;
+  const id = parseInt(path.replace('/events/', ''), 10);
 
-  const PAGE_GLOBAL = GET_PAGE_GLOBAL({ req, templateName: 'Events/Info' });
-
-  res.json({
+  return {
     global: PAGE_GLOBAL,
 
     templateName: 'Events/Info',
@@ -60,7 +54,5 @@ const handler = async (
         { key: 3, kind: 'soundcloud', id: '237853574' },
       ],
     },
-  });
-};
-
-export default handler;
+  };
+}
