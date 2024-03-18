@@ -1,0 +1,51 @@
+Title: Nuanu
+
+----
+
+Socials:
+
+- 
+  name: Instagram
+  url: https://www.instagram.com/nuanu_city/
+- 
+  name: YouTube
+  url: >
+    https://www.youtube.com/channel/UCJlbN85VyTM13qupIP_9hdw
+- 
+  name: Facebook
+  url: https://www.facebook.com/nuanu.city
+- 
+  name: LinkedIn
+  url: https://www.linkedin.com/company/nuanu/
+
+----
+
+Policy: /privacy-policy
+
+----
+
+Cta:
+
+name: Book a tour
+url: https://google.com/
+href: null
+
+----
+
+Searchable: true
+
+----
+
+Meta-title: Nuanu
+
+----
+
+Meta-description: 
+
+----
+
+Meta-keywords: 
+
+----
+
+Og-image: 

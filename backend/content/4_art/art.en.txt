@@ -1,0 +1,29 @@
+Title: Art
+
+----
+
+State: comingSoon
+
+----
+
+Searchable: true
+
+----
+
+Meta-title: 
+
+----
+
+Meta-description: 
+
+----
+
+Meta-keywords: 
+
+----
+
+Og-image: 
+
+----
+
+Uuid: EiwbUnnjxrtoJfoM

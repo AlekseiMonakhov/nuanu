@@ -1,0 +1,39 @@
+Title: Suara festival 2024 Open Call
+
+----
+
+Theme: dark
+
+----
+
+Title-size: medium
+
+----
+
+Description: 
+
+----
+
+Label: Suara festival 2024 Open Call
+
+----
+
+Button:
+
+text: Watch
+sup: ""
+type: video_modal
+href: /
+target: 'false'
+video_type: youtube
+duration: 2:02
+modal_file: [ ]
+modal_yt: BFS9n4B_2xA
+
+----
+
+Img: - file://FuVzFGc8AlBcaW2l
+
+----
+
+Uuid: EMMj8jK2mSJZs3cX

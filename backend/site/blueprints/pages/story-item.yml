@@ -1,0 +1,62 @@
+title: Story item
+icon: page
+
+image:
+  back: white
+  cover: true
+  query: page.img.toFile
+
+status:
+  draft: Draft
+  listed: Published
+
+create:
+  redirect: false
+
+columns:
+  - width: 1/2
+    sections:
+      content:
+        width: 1/2
+        type: fields
+        fields:
+          theme:
+            type: radio
+            default: dark
+            columns: 2
+            options:
+              dark: Dark
+              light: Light
+          title_size:
+            label: Title size
+            type: radio
+            default: medium
+            columns: 2
+            options:
+              medium: Medium
+              large: Large
+          description:
+            type: textarea
+            buttons: false
+          label:
+            type: text
+            help: Text above the progress bar
+  - width: 1/2
+    sections:
+      media:
+        width: 1/2
+        type: fields
+        fields:
+          button:
+            extends: fields/button
+          img:
+            label: Background image
+            type: files
+            layout: cards
+            accept: image/*, video/*
+            multiple: false
+            size: huge
+            translate: false
+            image:
+              ratio: 1.5/1
+              cover: true

@@ -1,0 +1,57 @@
+title: Block item
+icon: page
+
+image:
+  back: white
+  cover: true
+  query: page.img.toFile
+
+options:
+  changeSlug: false
+
+status:
+  draft: Draft
+  listed: Published
+
+create:
+  redirect: false
+
+columns:
+  - width: 1/3
+    sections:
+      content:
+        width: 1/2
+        type: fields
+        fields:
+          description:
+            type: textarea
+            buttons: false
+          button: fields/button
+  - width: 2/3
+    sections:
+      factoids:
+        width: 1/2
+        type: fields
+        fields:
+          img:
+            width: 1/3
+            title: Image
+            type: files
+            layout: cards
+            accept: image/*
+            multiple: false
+            size: huge
+            translate: false
+            image:
+              ratio: 1.5/1
+              cover: true
+          factoids:
+            width: 2/3
+            type: structure
+            max: 4
+            fields:
+              title:
+                type: text
+              description:
+                type: textarea
+                buttons: false
