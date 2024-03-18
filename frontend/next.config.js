@@ -29,6 +29,10 @@ const nextConfig = {
         hostname: 'nuanu-backend.sborkademo.com',
         pathname: '/media/**',
       },
+      {
+        hostname: 'new-data.nuanu.com',
+        pathname: '/media/**',
+      },
     ],
     deviceSizes: [480, 560, 640, 750, 1024, 1440, 1920, 2560],
     imageSizes: [480, 560, 640, 750, 1024, 1440, 1920, 2560],
