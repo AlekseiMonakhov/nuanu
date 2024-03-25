@@ -1,0 +1,63 @@
+/* header.css */
+
+header .logo {
+  padding-left: 20px; /* Значение можно настроить по вашему усмотрению */
+}
+
+header nav {
+  display: flex;
+  justify-content: center; /* Элементы меню центрируются по горизонтали */
+  align-items: center; /* Элементы меню центрируются по вертикали */
+  position: absolute; /* Меню будет позиционироваться абсолютно относительно header */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 25px;
+  background: rgba(83, 83, 83, 0.2); /* Прозрачный фон меню */
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  white-space: nowrap; /* Элементы меню будут в одну строку */
+  gap: 25px; /* Расстояние между элементами меню */
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Для выравнивания списка в одну строку */
+  align-items: center; /* Выравнивание элементов списка по центру по вертикали */
+  gap: 25px; /* Расстояние между элементами меню, переопределяет margin-left для li */
+}
+
+header nav ul li {
+  margin: 0; /* Убрано margin-left, так как gap уже задан */
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white; /* Цвет текста меню */
+  padding: 5px 0px; /* Вертикальный padding для ссылок */
+  position: relative; /* Для абсолютного позиционирования индикатора события */
+  transition: opacity 0.3s; /* Эффект плавного изменения прозрачности */
+  opacity: 1;
+}
+
+header nav ul li a:hover {
+  opacity: 0.5; /* Прозрачность ссылок при наведении */
+}
+
+header nav ul li a .event-indicator {
+  display: none; /* Скрываем индикатор по умолчанию, покажем только когда нужно */
+}
+
+header nav ul li.active a .event-indicator {
+  display: block; /* Показываем индикатор для активного элемента */
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background-color: #0096f7; /* Цвет индикатора */
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+  transform: translate(100%, 100%);
+}

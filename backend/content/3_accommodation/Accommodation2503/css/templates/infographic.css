@@ -1,0 +1,84 @@
+/* infographic.css */
+
+.info-section {
+  position: relative; /* Относительное позиционирование для секции */
+  text-align: center; /* Центрируем содержимое */
+  padding: 50px 0; /* Вертикальный отступ, убраны боковые отступы */
+}
+
+.info-section img {
+  width: 100%; /* Изображение на всю ширину секции */
+  height: auto; /* Автоматическая высота для поддержания пропорций */
+  position: relative; /* Позиционирование относительно секции */
+  z-index: 1; /* Z-index ниже, чем у инфографических карточек */
+}
+
+.infographic {
+  position: absolute; /* Абсолютное позиционирование для карточек */
+  top: 50%; /* Центрируем относительно верхней части секции */
+  transform: translateY(-50%); /* Центрируем относительно собственной высоты */
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 250px; /* Ширина карточки */
+  z-index: 2; /* Z-index выше, чем у фонового изображения */
+}
+
+.infographic h2 {
+  color: #333;
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.infographic .amount {
+  color: #333;
+  font-size: 48px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.infographic p {
+  color: #666;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Позиционирование каждой инфографической карточки */
+.infographic:nth-of-type(1) {
+  left: 10%; /* Позиция первой карточки */
+}
+
+.infographic:nth-of-type(2) {
+  left: 35%; /* Позиция второй карточки */
+}
+
+.infographic:nth-of-type(3) {
+  right: 35%; /* Позиция третьей карточки */
+}
+
+.infographic:nth-of-type(4) {
+  right: 10%; /* Позиция четвертой карточки */
+}
+
+/* Адаптивность для различных размеров экрана */
+@media (max-width: 1200px) {
+  .infographic {
+    position: static; /* Статическое позиционирование на малых экранах */
+    transform: none; /* Убираем трансформацию */
+    margin-bottom: 20px; /* Отступ между карточками */
+  }
+
+  .info-section img {
+    display: none; /* Скрываем фоновое изображение на малых экранах */
+  }
+}
+
+@media (max-width: 768px) {
+  .infographic {
+    width: 100%; /* Карточки на всю ширину экрана */
+  }
+}

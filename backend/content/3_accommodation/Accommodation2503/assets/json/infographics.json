@@ -1,0 +1,22 @@
+[
+  {
+    "type": "annual ROI",
+    "amount": "15%",
+    "description": "for an apartment"
+  },
+  {
+    "type": "annual ROI",
+    "amount": "8%",
+    "description": "for a family villa"
+  },
+  {
+    "type": "growth in value",
+    "amount": "50%",
+    "description": "in just over 5 years"
+  },
+  {
+    "type": "bedroom count",
+    "amount": "2–4",
+    "description": "bedroom houses, apartments, suits"
+  }
+]

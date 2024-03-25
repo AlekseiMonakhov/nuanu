@@ -1,0 +1,50 @@
+/* main.css */
+
+@import url("fonts.css");
+@import url("responsive.css");
+@import url("/css/templates/footer.css");
+@import url("/css/templates/header.css");
+@import url("/css/templates/burger.css");
+@import url("/css/templates/home.css");
+@import url("/css/templates/gallery.css");
+@import url("/css/templates/realEstate.css");
+@import url("/css/templates/infographic.css");
+@import url("/css/templates/reviews.css");
+@import url("/css/templates/form.css");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "SuisseIntl", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%; /* Или max-width, если нужно ограничить ширину */
+  margin: 0 auto; /* Центрирование контейнера, без внешних отступов по бокам */
+  padding: 0; /* Убрать, если был установлен */
+  /* Остальные стили */
+}
+
+section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.photo-gallery,
+.image-slider,
+.info-section,
+.real-estate-listing,
+.three-images,
+.contact-form {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
