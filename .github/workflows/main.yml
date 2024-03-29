@@ -38,5 +38,5 @@ jobs:
                 git pull origin main
                 sleep 10
             fi
-            systemctl restart nginx
+            sodo systemctl restart nginx
             
