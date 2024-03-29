@@ -21,15 +21,22 @@ jobs:
         key: ${{ secrets.DEV_SSH_KEY }}
         script: |
             sudo -i
+            whoami
+            sleep 5
             cd /var/www/html/new-nuanu
+            sleep 5
             if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then   
                 echo "New Update Found - Processing git command push and pull" 
                 git add .
+                sleep 5
                 git commit -m [UPDATE]From server
+                sleep 5
                 git pull origin main
+                sleep 10
             else 
                 echo "No Update Found"
                 git pull origin main
+                sleep 10
             fi
             systemctl restart nginx
             
