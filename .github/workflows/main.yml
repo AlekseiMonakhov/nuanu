@@ -1,0 +1,35 @@
+name: Deploy New Estate Nuanu - Kirby CMS
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.DEV_HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.DEV_SSH_KEY }}
+        script: |
+            sudo -i
+            cd /var/www/html/new-nuanu
+            if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then   
+                echo "New Update Found - Processing git command push and pull" 
+                git add .
+                git commit -m [UPDATE]From server
+                git pull origin main
+            else 
+                echo "No Update Found"
+                git pull origin main
+            fi
+            systemctl restart nginx
+            
