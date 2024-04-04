@@ -1,0 +1,29 @@
+Title: Accommodation
+
+----
+
+State: new
+
+----
+
+Searchable: true
+
+----
+
+Meta-title: 
+
+----
+
+Meta-description: 
+
+----
+
+Meta-keywords: 
+
+----
+
+Og-image: 
+
+----
+
+Uuid: HtvWyz66TnkHo9eF

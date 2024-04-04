@@ -1,0 +1,51 @@
+@import '@/styles/base';
+
+.footer_subscribe {
+  .title {
+    @include viewport-desktop {
+      margin-bottom: px-to-rem(30);
+    }
+    @include viewport-tablet {
+      margin-bottom: px-to-rem(24);
+    }
+    @include viewport-phone {
+      margin-bottom: px-to-rem(20);
+    }
+  }
+}
+
+.title {
+  margin: 0;
+  
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(65);
+  }
+  @include viewport-tablet {
+    font-size: px-to-rem(52);
+  }
+  @include viewport-phone {
+    font-size: px-to-rem(40);
+  }
+}
+
+.text {
+  outline: none;
+
+  @include text-small;
+
+  p {
+    @include viewport-desktop {
+      margin: px-to-rem(15) 0 0 0;
+    }
+    @include viewport-tablet {
+      margin: px-to-rem(12) 0 0 0;
+    }
+    @include viewport-phone {
+      margin: px-to-rem(10) 0 0 0;
+    }
+  }
+}

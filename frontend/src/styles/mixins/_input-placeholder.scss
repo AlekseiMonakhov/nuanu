@@ -1,0 +1,23 @@
+@mixin input-placeholder-color ($color) {
+  :input-placeholder {
+    color: $color;
+  }
+
+  :placeholder {
+    color: $color;
+    opacity: 1;
+  }
+
+  ::placeholder {
+    color: $color;
+    opacity: 1;
+  }
+
+  :input-placeholder {
+    color: $color;
+  }
+
+  ::placeholder {
+    color: $color;
+  }
+}

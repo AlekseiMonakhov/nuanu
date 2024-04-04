@@ -1,0 +1,23 @@
+:root {
+  @include viewport-tablet-min {
+    --header-top: calc(var(--vh) * 3.581);
+    --header-height: #{px-to-rem(50)};
+  }
+  
+  @include viewport-phone {
+    --header-top: #{px-to-rem(15)};
+    --header-height: #{px-to-rem(56)};
+  }
+
+  @include viewport-desktop {
+    --grid-gap: 4px;
+  }
+
+  @include viewport-tablet {
+    --grid-gap: 3px;
+  }
+
+  @include viewport-phone {
+    --grid-gap: 2px;
+  }
+}

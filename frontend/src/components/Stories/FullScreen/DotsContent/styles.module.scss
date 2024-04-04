@@ -1,0 +1,54 @@
+@import '@/styles/base';
+
+.dots_content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  opacity: 0;
+  @include transition(opacity 0.5s);
+
+  &.hovered,
+  &.active {
+    opacity: 1;
+  }
+
+  &:not(.active) {
+    pointer-events: none;
+  }
+}
+
+.label {
+  margin: 0;
+
+  @include text-small-caps;
+}
+
+.v_desktop_tablet {
+  @include viewport-phone {
+    display: none !important;
+  }
+}
+
+.v_phone {
+  @include viewport-tablet-min {
+    display: none !important;
+  }
+}
+
+.action {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  @include viewport-desktop {
+    padding-top: px-to-rem(22);    
+  }
+  @include viewport-tablet {
+    padding-top: px-to-rem(15);    
+  }
+  @include viewport-phone {
+    padding-top: px-to-rem(4);    
+  }
+}

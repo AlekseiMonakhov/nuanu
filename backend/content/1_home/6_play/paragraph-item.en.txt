@@ -1,0 +1,38 @@
+Title: Play
+
+----
+
+Description: At nuanu, events are the playgrounds of creativity and connection. Experience the magic of play as we nurture vibrant gatherings and events that inspire and engage
+
+----
+
+Button:
+
+text: View upcoming events
+sup: ""
+type: link
+href: /events
+target: 'false'
+video_type: file
+duration: ""
+modal_file: [ ]
+modal_yt: ""
+
+----
+
+Img: - file://SXzBOnM9577PRD3b
+
+----
+
+Factoids:
+
+- 
+  title: "114"
+  description: events carried out
+- 
+  title: "35"
+  description: different activities daily
+
+----
+
+Uuid: 7RFoAMpORaaH0dvP

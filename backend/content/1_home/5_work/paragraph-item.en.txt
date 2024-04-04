@@ -1,0 +1,45 @@
+Title: Work
+
+----
+
+Description: Your ideas are a valuable part of our journey. Step into our co-creating space, where innovation thrives and new ideas are nurtured. Share your vision and collaborate with us to shape something extraordinary
+
+----
+
+Button:
+
+text: Collaborate with us
+sup: ""
+type: link
+href: /
+target: 'false'
+video_type: file
+duration: ""
+modal_file: [ ]
+modal_yt: ""
+
+----
+
+Img: - file://AkUT5qHmB7zOxF2u
+
+----
+
+Factoids:
+
+- 
+  title: "36"
+  description: collaborative projects
+- 
+  title: "18"
+  description: |
+    global companies
+    partner with us
+- 
+  title: "209"
+  description: |
+    members
+    in Nuanu team
+
+----
+
+Uuid: IqlQLL1V6TAyWTvW

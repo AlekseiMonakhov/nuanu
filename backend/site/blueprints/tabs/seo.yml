@@ -1,0 +1,84 @@
+label: SEO
+sections:
+  meta:
+    type: fields
+    fields:
+      head:
+        type: info
+        theme: positive
+        label:
+          en: Info
+        text:
+          en: |
+            Values for metatags and [__Open Graph__](https://yandex.ru/support/webmaster/open-graph/intro-open-graph.html?lang=ru) markup.
+            These values can be overridden for each page in the **SEO** tab.
+      meta_head:
+        label:
+          en: Meta data
+        type: headline
+        numbered: false
+      searchable:
+        width: 1/2
+        label:
+          en: Searchable
+        type: toggle
+        default: true
+        options:
+          text:
+            - "no"
+            - "yes"
+        help:
+          en: |
+            Blocking indexing
+      meta_title:
+        width: 1/2
+        label:
+          en: Title
+        type: text
+        placeholder: <title>
+        help:
+          en: |
+            Recommended: **70** characters
+      meta_description:
+        width: 1/2
+        label:
+          en: Description
+        type: textarea
+        size: small
+        buttons: false
+        placeholder: <meta name="description">
+        help:
+          en: |
+            Recommended: **156** characters
+      meta_keywords:
+        width: 1/2
+        label:
+          en: Keywords
+        type: textarea
+        size: small
+        buttons: false
+        placeholder: <meta name="keywords">
+        help:
+          en: |
+            Between 50 and 160 characters
+      line:
+        type: line
+      og_head:
+        label: Open Graph
+        type: headline
+        numbered: false
+        help:
+          en: |
+            A preview that is generated when a link to a website is published on social networks and instant messengers.
+            [Markup Guide] (https://yandex.ru/support/webmaster/open-graph/intro-open-graph.html?lang=ru) from Yandex.
+      og_image:
+        label: Open Graph Image
+        type: files
+        layout: cards
+        multiple: false
+        size: huge
+        help:
+          en: Image size __1200×630px__
+        image:
+          ratio: 2/1
+          cover: true

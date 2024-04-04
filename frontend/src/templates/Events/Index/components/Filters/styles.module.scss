@@ -1,0 +1,7 @@
+@import '@/styles/base';
+
+.events_filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--grid-gap);
+}

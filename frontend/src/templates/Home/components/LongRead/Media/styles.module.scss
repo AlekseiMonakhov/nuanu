@@ -1,0 +1,51 @@
+@import '@/styles/base';
+
+.media {
+  @include absolute-fullsize;
+  overflow: hidden;
+}
+
+.item {
+  position: absolute;
+  overflow: hidden;
+  
+  @include transition(transform var(--duration));
+
+  @include viewport-tablet-min {
+    --y-ratio: calc(var(--height) / 1117);
+    --x-ratio: calc(100vw / 1728);
+  
+    top: calc(var(--desktop-top) * var(--y-ratio));
+    left: calc(var(--desktop-left) * var(--x-ratio));
+    width: calc(var(--desktop-width) * var(--x-ratio));
+    height: calc(var(--desktop-height) * var(--y-ratio));
+    transform: scale(var(--desktop-scale-x), var(--desktop-scale-y)) 
+      translate3d(calc(var(--desktop-x) * var(--x-ratio)), calc(var(--desktop-y) * var(--y-ratio)), 0);
+  }
+
+  @include viewport-phone {
+    --y-ratio: calc(var(--height) / 660);
+    --x-ratio: calc(100vw / 393);
+  
+    top: calc(var(--phone-top) * var(--y-ratio));
+    left: calc(var(--phone-left) * var(--x-ratio));
+    width: calc(var(--phone-width) * var(--x-ratio));
+    height: calc(var(--phone-height) * var(--y-ratio));
+    transform: scale(var(--phone-scale-x), var(--phone-scale-y)) 
+      translate3d(calc(var(--phone-x) * var(--x-ratio)), calc(var(--phone-y) * var(--y-ratio)), 0);
+  }
+
+  &.active {
+    z-index: 1;
+  }
+
+  @include viewport-desktop {
+    border-radius: 20px;
+  }
+  @include viewport-tablet {
+    border-radius: 14px;
+  }
+  @include viewport-phone {
+    border-radius: 8px;
+  }
+}

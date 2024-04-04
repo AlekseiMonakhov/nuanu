@@ -1,0 +1,76 @@
+@import '@/styles/base';
+
+.coming_soon_wrapper {
+  @include viewport-desktop {
+    padding-top: px-to-rem(187);
+  }
+  @include viewport-tablet {
+    padding-top: px-to-rem(156);
+  }
+  @include viewport-phone {
+    padding-top: px-to-rem(126);
+  }
+}
+
+.image_marquee {
+  @include viewport-desktop {
+    margin: px-to-rem(110) 0;
+  }
+  @include viewport-tablet {
+    margin: px-to-rem(80) 0;
+  }
+  @include viewport-phone {
+    margin: px-to-rem(50) 0;
+  }
+}
+
+.text_marquee {
+  margin: -0.1em 0;
+
+  :global(.v-marquee__element) {
+    padding: 0.1em px-to-rem(22) 0.1em 0;
+  }
+
+  @include viewport-tablet-min {
+    @include text-display;
+  }
+  @include viewport-phone {
+    @include text-heading-1;
+  }
+}
+
+.scroll_down {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    height: auto;
+  }
+
+  @include viewport-desktop {
+    padding-top: px-to-rem(79);
+
+    svg {
+      width: px-to-rem(75);
+    }
+  }
+
+  @include viewport-tablet {
+    padding-top: px-to-rem(64);
+
+    svg {
+      width: px-to-rem(56);
+    }
+  }
+
+
+  @include viewport-phone {
+    padding-top: px-to-rem(50);
+
+    svg {
+      width: px-to-rem(37);
+    }
+  }
+}

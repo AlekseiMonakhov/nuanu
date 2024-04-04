@@ -1,0 +1,68 @@
+Title: How to be a DJ and what they actually do
+
+----
+
+Blocks: [{"content":{"image":["file://M3rEHUNCNHsYxFZy"]},"id":"578ddfb8-654d-4d83-acd4-8c823d459d88","isHidden":false,"type":"poster"},{"content":{"text":"<p>Echoes of Earth travels upwards to Goa in 2024 as the festival continues to explore stories from the Western Ghats. Spanning a 100 acres, with 40+ international &amp; local artists performing on 4 uniquely designed stages over 3 days with the intent to celebrate one Earth, our journey into Goa aims to educate, create awareness around conservation and promote responsible celebration.</p><p>Our theme for this year ‘Ensemble of the Wild’, focuses on the interconnectedness of the Western Ghats, touching on Goa’s rich eco-systems and unearthing the stories behind its biodiversity.</p><p>In the past 6 years Echoes of Earth has hosted over 300+ International &amp; Indian Artists. This has translated into multiple genres of music, engaging our community of ardent listeners over two days of the festival, with musicians like Yussef Dayes, Klangphonics, Acid Pauli, Square Pusher, Shigeto Ensemble, and many more who have made appearances in the past.</p><p>Book your tickets now and join us on the greener side!</p><p>The festival also hosts various cultural &amp; curated experiences that are nothing short of a portal for exploration, experimentation &amp; knowledge transfer for our community. Some of the highlights of the festival include - A solar-powered stage, larger-than-life art installations, 4 uniquely designed stages, education-led kids workshops, and an exclusive brunch with artists performing at Echoes on day two, a carefully curated flea market with organic, natural, artisanal and handmade products, and much more.</p>"},"id":"bd8860c4-42ee-4a03-b3fa-2ccaa9dc0646","isHidden":false,"type":"text"},{"content":{"contentid":"8GTwoTRvdtQ"},"id":"1f821f83-57c1-4977-8aed-9b5b5466fd00","isHidden":false,"type":"youtube"},{"content":{"contentid":"237853574"},"id":"f9d40a98-ef53-47dc-8a37-e1ebf0793d78","isHidden":false,"type":"soundcloud"}]
+
+----
+
+Img: - file://d5mp9xzT8Vy0JeBW
+
+----
+
+Start-time: 2024-01-10 00:00:00
+
+----
+
+End-time: 2024-01-10 13:30:00
+
+----
+
+Type: Meetup
+
+----
+
+Tags: Festivals, For kids, Exclusive
+
+----
+
+Location:
+
+name: Nuanu, Labyrinth
+address: >
+  Bolívar 624, B1066AAN San Telmo, Buenos
+  Aires, Argentina
+lat: "7.8222416"
+lng: "98.3417114"
+
+----
+
+Min-age: 18+
+
+----
+
+Organizer:
+
+name: David Choe Support
+url: https://google.com/
+Blocks: [{"content":{"image":["file://M3rEHUNCNHsYxFZy"]},"id":"578ddfb8-654d-4d83-acd4-8c823d459d88","isHidden":false,"type":"poster"},{"content":{"text":"<p>Echoes of Earth travels upwards to Goa in 2024 as the festival continues to explore stories from the Western Ghats. Spanning a 100 acres, with 40+ international &amp; local artists performing on 4 uniquely designed stages over 3 days with the intent to celebrate one Earth, our journey into Goa aims to educate, create awareness around conservation and promote responsible celebration.</p><p>Our theme for this year ‘Ensemble of the Wild’, focuses on the interconnectedness of the Western Ghats, touching on Goa’s rich eco-systems and unearthing the stories behind its biodiversity.</p><p>In the past 6 years Echoes of Earth has hosted over 300+ International &amp; Indian Artists. This has translated into multiple genres of music, engaging our community of ardent listeners over two days of the festival, with musicians like Yussef Dayes, Klangphonics, Acid Pauli, Square Pusher, Shigeto Ensemble, and many more who have made appearances in the past.</p><p>Book your tickets now and join us on the greener side!</p><p>The festival also hosts various cultural &amp; curated experiences that are nothing short of a portal for exploration, experimentation &amp; knowledge transfer for our community. Some of the highlights of the festival include - A solar-powered stage, larger-than-life art installations, 4 uniquely designed stages, education-led kids workshops, and an exclusive brunch with artists performing at Echoes on day two, a carefully curated flea market with organic, natural, artisanal and handmade products, and much more.</p>"},"id":"bd8860c4-42ee-4a03-b3fa-2ccaa9dc0646","isHidden":false,"type":"text"},{"content":{"contentid":"8GTwoTRvdtQ"},"id":"1f821f83-57c1-4977-8aed-9b5b5466fd00","isHidden":false,"type":"youtube"},{"content":{"contentid":"237853574"},"id":"f9d40a98-ef53-47dc-8a37-e1ebf0793d78","isHidden":false,"type":"soundcloud"}]
+
+----
+
+Price: 250k
+
+----
+
+Uuid: EdmyOkv61OhmyTON
+
+----
+
+Theme: dark
+
+----
+
+Description:
+
+----
+
+Button:

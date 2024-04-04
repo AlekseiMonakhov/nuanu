@@ -1,0 +1,61 @@
+@import '@/styles/base';
+
+.footer_subscribe_submit {
+  @include reset-button;
+  @include absolute-fullsize;
+
+  @include transition(opacity 0.25s);
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &:not(.is_success):disabled {
+    opacity: 0.5;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    @include absolute-fullsize;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  &::after {
+    opacity: 0;
+  }
+
+  @include viewport-tablet-min {
+    &::before {
+      background-image: url('./icons/desktop_submit.svg');
+    }
+    
+    &::after {
+      background-image: url('./icons/desktop_success.svg');
+    }
+  }
+
+  @include viewport-phone {
+    &::before {
+      background-image: url('./icons/phone_submit.svg');
+    }
+    
+    &::after {
+      background-image: url('./icons/phone_success.svg');
+    }
+  }
+
+  &.is_success {
+    &::before {
+      opacity: 0;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@import '@/styles/base';
+
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  
+  color: currentColor;
+  text-decoration: none;
+
+  .tooltip {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    
+    --tooltip-bg-color: var(--color-bg);
+    --tooltip-text-color: var(--color-text);
+    --tooltip-top: 0.01px;
+  }
+
+  .sup {
+    @include viewport-tablet-min {
+      display: none;
+    }
+  }
+}
+
+.text {
+  position: relative;
+  display: block;
+
+  @include transition(opacity 0.35s);
+  
+  &.has_active_styles {
+    opacity: 0.5;
+    
+    &.active {
+      opacity: 1;
+    }
+
+    @at-root .link:hover & {
+      opacity: 1;
+    }
+  }
+  
+  &.no_active_styles {
+    opacity: 1;
+
+    @at-root .link:hover & {
+      opacity: 0.5;
+    }
+  }
+  
+  &.highlighted {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 100%;
+      display: block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--color-light-blue);
+
+      @include viewport-tablet-min {
+        margin-top: 0.27уь;
+      }
+
+      @include viewport-phone {
+        margin-top: 1px;
+        margin-left: 2px;
+      }
+    }
+  }
+}
+
+.sup {
+  opacity: 0.3;
+
+  &.new {
+    opacity: 1;
+    color: var(--color-light-blue);
+  }
+}

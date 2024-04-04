@@ -1,0 +1,45 @@
+@import '@/styles/base';
+
+.aside_wrapper {
+  .value {
+    margin-top: px-to-rem(4);
+  } 
+
+  .children {
+    margin-top: px-to-rem(21);
+  }
+}
+
+.title {
+  margin: 0;
+  @include text-small-caps;
+}
+
+.value {
+  margin: 0;
+  font-style: normal;
+  font-weight: 400;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(25);
+    line-height: 120%;
+  }
+  @include viewport-tablet {
+    font-size: px-to-rem(22);
+    line-height: 125%;
+  }
+
+  @include viewport-phone {
+    font-size: px-to-rem(20);
+    line-height: 130%;
+  }
+
+  a {
+    color: currentColor;
+    text-decoration: underline;
+
+    @include non-mobile-hover {
+      text-decoration: none;
+    }
+  }
+}

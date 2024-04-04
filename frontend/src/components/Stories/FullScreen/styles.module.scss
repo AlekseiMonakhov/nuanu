@@ -1,0 +1,41 @@
+@import '@/styles/base';
+
+.stories_fullscreen {
+  .dots_content {
+    @include viewport-tablet-min {
+      left: calc((var(--dot-width) + var(--gap)) * var(--index));
+      width: var(--dot-width);
+    }
+
+    @include viewport-desktop {
+      bottom: px-to-rem(12);
+    }
+
+    @include viewport-phone {
+      @media (orientation: landscape) and (min-aspect-ratio: 3 / 2) {
+        display: none;
+      }
+    }
+  }
+
+  .dots_navigation {
+    --height: 39px;
+
+    @include viewport-desktop {
+      --gap: 20px;
+    }
+
+    @include viewport-tablet {
+      --gap: 16px;
+    }
+
+    @include viewport-tablet-min {
+      --bottom: calc(4.47 * var(--vh) - 18px);
+      --left: calc(var(--wrap) - var(--grid-gap));
+    }
+
+    @include viewport-phone {
+      --left: #{px-to-rem(15)};
+    }
+  }
+}

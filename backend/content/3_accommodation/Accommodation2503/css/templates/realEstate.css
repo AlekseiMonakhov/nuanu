@@ -1,0 +1,96 @@
+/* realEstate.css */
+
+#real-estate {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.property {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 20px);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.property-title,
+.property-type {
+  text-align: center;
+  padding: 10px 16px;
+  background: none; /* Убираем фон для заголовка и типа */
+}
+
+.property-image {
+  position: relative;
+}
+
+.property img {
+  width: 100%;
+  display: block;
+}
+
+.property-tag {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+}
+
+.property .villas {
+  left: 10px;
+}
+
+.property .apartments {
+  left: calc(10px + 100px); /* 100px это ширина тега villas, плюс 10px отступ */
+}
+
+.property-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px;
+  font-size: 0.9em;
+  background-color: #f8f8f8;
+}
+
+.property-detail {
+  flex-basis: 50%;
+}
+
+.property-detail div {
+  margin-bottom: 5px;
+}
+
+.detail-label {
+  font-weight: bold;
+}
+
+.detail-value {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .property {
+    width: 100%;
+  }
+
+  .property-tag {
+    position: static;
+    display: block;
+    margin: 10px 0;
+  }
+
+  .property-details {
+    flex-direction: column;
+  }
+}

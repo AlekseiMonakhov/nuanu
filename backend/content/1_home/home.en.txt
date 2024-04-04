@@ -1,0 +1,211 @@
+Title: City
+
+----
+
+State: none
+
+----
+
+Inside:
+
+- 
+  title: Eco-living
+  stories:
+    - 
+      img:
+        - file://7G3Yb7NjJZMHxUTD
+      title: |
+        Willow Hotel
+        4-star oceanfront hotel
+    - 
+      img: [ ]
+      title: |
+        Tree House
+        Eco-living deep in nature
+    - 
+      img:
+        - file://oiDXAF9E0FzHLMFA
+      title: |
+        Labyrinth
+        Music studio and retreat
+- 
+  title: Collaborations
+  stories:
+    - 
+      img:
+        - file://aGHf31zKvdwW5v4k
+      title: |
+        Plastic Workshops
+        Products from recycled plastic
+- 
+  title: "Nature's Embrace"
+  stories:
+    - 
+      img:
+        - file://pmdN5UAbJZAHiBDh
+      title: |
+        Magic Garden
+        Nature at the heart of Nuanu
+- 
+  title: Gatherings
+  stories:
+    - 
+      img:
+        - file://xUVzBmOQRSjJPEu0
+      title: |
+        Suara Festival
+        Art, music, culture Festival
+    - 
+      img:
+        - file://1UPMllKM2Z4QJBdP
+      title: |
+        The Luna
+        Bech Club of the new format
+    - 
+      img:
+        - file://5XomvIUFrYNEFccE
+      title: |
+        Samana Festival
+        Festival for children and the family
+- 
+  title: Art Expressions
+  stories:
+    - 
+      img:
+        - file://gjwR35kR4Ra4Ct9Z
+      title: |
+        The "Bhuma" Lighthouse
+        A symbol of hope and sustainability
+    - 
+      img:
+        - file://ynV5vw359tp5i7nk
+      title: |
+        Nuanu’s Art Objects
+        Beautiful mix of art and technology
+    - 
+      img:
+        - file://nBog5RloDeRKtcnW
+      title: |
+        Art Village
+        Art program fosters cultural diversity
+- 
+  title: Wellness
+  stories:
+    - 
+      img:
+        - file://AjxAsXwCVIovhe9I
+      title: |
+        Yoga practice
+        Daily activities in nature
+- 
+  title: Learning
+  stories:
+    - 
+      img:
+        - file://m1J8RkLY1t1Rb94k
+      title: |
+        Jungle Kids
+        For children 4 to 7 years old
+    - 
+      img:
+        - file://nDmyyL7xkBFNb5Pl
+      title: |
+        ProEd Global School
+        For children 7 to 12 years old
+
+----
+
+Long-read-toggle: true
+
+----
+
+Long-read-title: Changing the way we
+
+----
+
+Long-read:
+
+- 
+  label: live
+  imgs:
+    - file://ud8e1m1fLEAKWdzu
+    - file://gVw334BzeWBJdtni
+- 
+  label: work
+  imgs:
+    - file://ZhXSREAUEnxoxTj5
+    - file://Awu7kGMxi0M4W0bZ
+- 
+  label: play
+  imgs:
+    - file://Ztfdb9u5wXNWfnBk
+    - file://jBu0wIk94AIK7vmr
+
+----
+
+Person-types-title: A home for visionaries, leaders, creators, and makers
+
+----
+
+Person-types:
+
+- 
+  title: Visionary
+  description: |
+    One who has ideas or conceives
+    projects regarded as impractical
+  img:
+    - file://nieP1hl4pIB8foHW
+- 
+  title: Leader
+  description: |
+    One who has ideas or conceives
+    projects regarded as impractical
+  img:
+    - file://wB8OkbDiZkItQymr
+- 
+  title: Creator
+  description: |
+    One who has ideas or conceives
+    projects regarded as impractical
+  img:
+    - file://Gd8bI288ARige61C
+- 
+  title: Maker
+  description: |
+    One who has ideas or conceives
+    projects regarded as impractical
+  img:
+    - file://uNG0Lxl9eAI09HkC
+
+----
+
+Searchable: true
+
+----
+
+Meta-title: Home
+
+----
+
+Meta-description: Changing the way we live, work & play
+
+----
+
+Meta-keywords: Nuanu
+
+----
+
+Og-image: 
+
+----
+
+Text: Hello World
+
+----
+
+Number: 123
+
+----
+
+Uuid: Uzmi07lLpClC4ITK

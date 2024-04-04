@@ -1,0 +1,70 @@
+title: Events
+
+icon: page
+
+status:
+  listed: Published
+
+tabs:
+  content:
+    sections:
+      state:
+        type: fields
+        fields:
+          state:
+            label: Menu tooltip
+            type: radio
+            columns: 3
+            default: none
+            options:
+              none: -
+              new: New
+              comingSoon: Coming soon
+      stories:
+        label: Main slides
+        type: pages
+        layout: cards
+        template:
+          - story-item
+        max: 3
+      banner:
+        label: Banner
+        type: fields
+        fields:
+          banner_add_title:
+            width: 1/3
+            label: Banner title
+            type: textarea
+            buttons: false
+            required: true
+            help: '{month} will be replaced with the current month'
+          banner_add_href:
+            width: 1/3
+            label: Banner link
+            type: link
+            required: true
+            translate: false
+            options:
+              - url
+              - custom
+          banner_add_img:
+            width: 1/3
+            label: Banner image
+            type: files
+            layout: cards
+            accept: image/*
+            multiple: false
+            translate: false
+            required: true
+            image:
+              ratio: 6/5
+              cover: true
+
+      events:
+        label: Events
+        type: pages
+        layout: cards
+        info: "{{ page.start_time.toDate('d M Y') }}"
+        template:
+          - event-item
+  seo: tabs/seo

@@ -1,0 +1,35 @@
+title: Site
+
+tabs:
+  main:
+    sections:
+      pages:
+        type: pages
+      links:
+        type: fields
+        fields:
+          socials:
+            width: 2/4
+            type: structure
+            fields:
+              name:
+                type: text
+              url:
+                type: url
+          cta:
+            width: 1/4
+            label: Header cta link
+            type: object
+            fields:
+              name:
+                type: text
+              url:
+                type: text
+          policy:
+            width: 1/4
+            label: Footer privacy policy link
+            type: link
+            options:
+              - url
+              - custom
+  seo: tabs/seo

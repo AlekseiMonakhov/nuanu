@@ -1,0 +1,105 @@
+@import '@/styles/base';
+
+.main_content {
+  @include absolute-fullsize;
+
+  opacity: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding-left: var(--wrap);
+  padding-right: var(--wrap);
+
+  @include viewport-tablet-min {
+    padding-bottom: 7.1%;
+
+    &.has_description {
+      padding-bottom: 0;
+      padding-top: 1%;
+    }
+  }
+
+  @include viewport-phone {
+    @media (orientation: portrait) {
+      padding-bottom: 17%;
+
+      &.has_description {
+        padding-bottom: 2%;
+      }
+    }
+    
+    @media (orientation: landscape) {
+      padding-top: 5%;
+    }
+  }
+
+  &.default_active {
+    opacity: 1;
+  }
+
+  &:not(.active) {
+    pointer-events: none;
+  }
+
+  .title {
+    max-width: 11em;
+  }
+
+  .description {
+    max-width: 35.88em;
+
+    @include viewport-desktop {
+      margin-top: px-to-rem(40);
+    }
+    @include viewport-tablet {
+      margin-top: px-to-rem(24);
+    }
+    @include viewport-phone {
+      margin-top: px-to-rem(8);
+    }
+  }
+}
+
+.title {
+  margin: 0;
+
+  &.size_large {
+    @include viewport-tablet-min {
+      @include text-heading-1;
+    }
+    
+    @include viewport-phone {
+      @include text-display;
+    }
+  }
+  
+  &.size_medium {
+    @include text-heading-1;
+  }
+}
+
+.description {
+  margin: 0;
+
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+
+  @include viewport-desktop {
+    font-size: px-to-rem(40);
+    letter-spacing: -1px;
+  }
+
+  @include viewport-tablet {
+    font-size: px-to-rem(30);
+  }
+  
+  @include viewport-phone {
+    font-size: px-to-rem(20);
+  }
+}

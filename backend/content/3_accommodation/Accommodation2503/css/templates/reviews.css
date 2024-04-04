@@ -1,0 +1,104 @@
+/* reviews.css */
+
+.as-seen-in-container {
+  max-width: 1146px; /* Максимальная ширина, соответствующая скриншоту */
+  margin: 20px auto; /* Центрирование и верхний отступ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  background-color: #f7f7f7; /* Фоновый цвет, если он есть на скриншоте */
+}
+
+.as-seen-in-title {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.reviews-section {
+  display: flex;
+  flex-direction: column; /* Ориентация столбцов для основного контейнера */
+  align-items: center;
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+
+.review-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Расстояние между карточками */
+  flex-direction: row; /* Карточки будут в горизонтальном ряду */
+  flex-wrap: wrap; /* При необходимости переносим элементы */
+}
+.review-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Выравниваем содержимое по левому краю */
+  justify-content: space-between;
+  text-align: left;
+  width: 250px; /* Фиксированная ширина карточки */
+  height: 250px; /* Фиксированная высота карточки для создания квадратной формы */
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 20px; /* Дополнительный отступ снизу */
+  overflow: hidden; /* Обрезаем содержимое, выходящее за пределы карточки */
+}
+
+.review-card .source {
+  font-weight: bold;
+}
+
+.review-card .text {
+  font-size: 0.9em;
+  margin: 10px 0; /* Отступы сверху и снизу для текста отзыва */
+}
+
+.review-card .date {
+  font-size: 0.8em;
+  color: #a9a9a9;
+}
+
+.review-card .read-more {
+  display: inline-flex; /* Используем inline-flex для выравнивания текста и иконки */
+  align-items: center;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: bold;
+  gap: 5px;
+}
+
+.review-card img {
+  width: 15px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .reviews-section {
+    flex-direction: column;
+  }
+
+  .review-cards-container {
+    width: 100%;
+  }
+
+  .review-card {
+    width: 100%; /* На мобильных устройствах карточки будут на всю ширину */
+    height: auto; /* Высота карточки будет автоматической */
+    margin-bottom: 10px; /* Меньший отступ снизу на мобильных */
+  }
+
+  .as-seen-in-container {
+    max-width: none; /* Убираем ограничение по ширине */
+  }
+}

@@ -1,0 +1,15 @@
+@import '@/styles/base';
+
+.footer_address {
+  display: block;
+  overflow: hidden;
+
+  > * + * {
+    @include viewport-desktop {
+      margin-top: px-to-rem(6); 
+    }
+    @include viewport-tablet {
+      margin-top: px-to-rem(3); 
+    }
+  }
+}

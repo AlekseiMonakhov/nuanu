@@ -1,0 +1,47 @@
+Title: Live
+
+----
+
+Description: Discover your home experience the essence of comfort and quality at Nuanu. From tranquil retreats to high-quality havens, we provide the perfect space for your stay
+
+----
+
+Button:
+
+text: View accommodation options
+sup: ""
+type: link
+href: /accomodation
+target: 'false'
+video_type: file
+duration: ""
+modal_file: [ ]
+modal_yt: ""
+
+----
+
+Img: - file://Dv5sPexUSd4jn0oz
+
+----
+
+Factoids:
+
+- 
+  title: "7"
+  description: |
+    types of accommodation
+    in eco-living
+- 
+  title: "3"
+  description: |
+    educational programs
+    for children and adults
+- 
+  title: "24"
+  description: |
+    hour services
+    are available
+
+----
+
+Uuid: uvbElB0IeKyf6GDp

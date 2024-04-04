@@ -1,0 +1,36 @@
+@import '@/styles/base';
+
+.stories_base {
+  @include absolute-fullsize;
+  overflow: hidden;
+
+  user-select: none;
+
+  background-color: var(--color-total-black);
+  color: var(--color-total-white);
+
+  @include shimmer-before;
+}
+
+.media {
+  @include absolute-fullsize;
+
+  &.has_overlay {
+    &::after {
+      content: '';
+      display: block;
+      @include absolute-fullsize;
+      background-color: var(--color-total-black);
+      opacity: 0.2;
+    }
+  }
+}
+
+.children {
+  @include absolute-fullsize;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

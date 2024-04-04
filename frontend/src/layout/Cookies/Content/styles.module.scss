@@ -1,0 +1,58 @@
+@import '@/styles/base';
+
+.content {
+  border-radius: 12px;
+
+  background-color: var(--color-total-white);
+  color: var(--color-primary-dark-base);
+
+  @include viewport-tablet-min {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .button {
+      margin-left: px-to-rem(30);
+      flex-shrink: 0;
+    }
+  }
+
+  @include viewport-desktop {
+    padding: px-to-rem(30) px-to-rem(40);
+  }
+
+  @include viewport-tablet {
+    padding: px-to-rem(24) px-to-rem(30);
+  }
+
+  @include viewport-phone {
+    padding: px-to-rem(20) px-to-rem(15) px-to-rem(15);
+
+    .button {
+      margin-top: px-to-rem(20);
+      width: 100%;
+    }
+  }
+}
+
+.description {
+  margin: 0;
+
+  @include viewport-tablet-min {
+    @include text-smaller;
+  }
+  
+  @include viewport-phone {
+    @include text-small;
+  }
+
+  a {
+    color: currentColor;
+    text-decoration: underline;
+
+    @include non-mobile-hover {
+      text-decoration: none;
+    }
+  }
+}

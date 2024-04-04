@@ -1,0 +1,54 @@
+[
+  {
+    "title": "OXO - Ecoverse",
+    "type": "Eco-friendly tropical residences",
+    "villas": 13,
+    "apartments": 15,
+    "startingPrice": 170000,
+    "totalArea": 2512,
+    "roomSizes": [52, 24],
+    "roi": "up to 31.3%",
+    "occupancy": "5-6 years",
+    "delivery": "2024 year",
+    "image": "/assets/images/4_real-estate/1_OXO.png"
+  },
+  {
+    "title": "Phi camp",
+    "type": "Eco resort & retreat centre",
+    "villas": 13,
+    "apartments": 15,
+    "startingPrice": 170000,
+    "totalArea": 2512,
+    "roomSizes": [52, 24],
+    "roi": "up to 31.3%",
+    "occupancy": "5-6 years",
+    "delivery": "2024 year",
+    "image": "/assets/images/4_real-estate/2_Phi_camp.png"
+  },
+  {
+    "title": "Willow",
+    "type": "Hotel & spa",
+    "villas": 13,
+    "apartments": 15,
+    "startingPrice": 170000,
+    "totalArea": 2512,
+    "roomSizes": [52, 24],
+    "roi": "up to 31.3%",
+    "occupancy": "5-6 years",
+    "delivery": "2024 year",
+    "image": "/assets/images/4_real-estate/3_Willow.png"
+  },
+  {
+    "title": "Oxo 2",
+    "type": "Family townhouses",
+    "villas": 13,
+    "apartments": 15,
+    "startingPrice": 170000,
+    "totalArea": 2512,
+    "roomSizes": [52, 24],
+    "roi": "up to 31.3%",
+    "occupancy": "5-6 years",
+    "delivery": "2024 year",
+    "image": "/assets/images/4_real-estate/4_Oxo_2.png"
+  }
+]

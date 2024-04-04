@@ -1,0 +1,92 @@
+/* gallery.css */
+
+.caption {
+  background: white; /* полупрозрачный фон */
+  padding: 20px; /* отступы вокруг текста */
+  border-radius: 10px; /* скругленные углы */
+  position: absolute; /* абсолютное позиционирование */
+  bottom: 20px; /* отступ снизу */
+  right: 20px; /* отступ справа */
+  text-align: left; /* выравнивание текста по левому краю */
+  max-width: 300px; /* максимальная ширина, может быть изменена в зависимости от размера картинки */
+  z-index: 3; /* z-index должен быть выше, чем у изображения, чтобы плашка была поверх картинки */
+}
+
+.caption-title {
+  font-weight: bold; /* жирное начертание для заголовка */
+  font-size: 1.25em; /* размер шрифта для заголовка */
+  margin-bottom: 10px; /* отступ между заголовком и описанием */
+  color: #000; /* цвет текста заголовка */
+}
+
+.caption-description {
+  font-weight: normal; /* нормальное начертание для описания */
+  font-size: 1em; /* размер шрифта для описания */
+  color: #333; /* цвет текста описания */
+}
+
+/* Обновляем .photo-item, чтобы он позволял позиционировать figcaption относительно него */
+.photo-item {
+  position: relative; /* Должно быть установлено, чтобы позиционирование figcaption было относительно этого контейнера */
+  /* другие стили для .photo-item */
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* Создаем 12 колонок */
+  width: 100%;
+  margin: auto; /* Центрирование галереи */
+}
+
+/* Первая картинка - на весь экран */
+.photo-gallery .photo-item:first-child {
+  grid-column: span 12;
+}
+
+/* Следующие две картинки - по половине экрана */
+.photo-gallery .photo-item:nth-child(2),
+.photo-gallery .photo-item:nth-child(3) {
+  grid-column: span 6;
+}
+
+/* Четвертая картинка - снова на весь экран */
+.photo-gallery .photo-item:nth-child(4) {
+  grid-column: span 12;
+}
+
+/* Пятая и шестая картинки - каждая по половине экрана */
+.photo-gallery .photo-item:nth-child(5),
+.photo-gallery .photo-item:nth-child(6) {
+  grid-column: span 6;
+}
+
+/* Общие стили для изображений */
+.photo-item img {
+  width: 100%;
+  height: auto;
+  display: block; /* Убедимся, что картинки не имеют встроенных отступов */
+  border-radius: 20px; /* Скругление углов картинок */
+}
+
+/* Адаптивный дизайн для мобильных устройств */
+@media (max-width: 768px) {
+  .photo-gallery {
+    display: block; /* Изменяем отображение на блочное */
+  }
+
+  .photo-gallery .photo-item {
+    margin-bottom: 20px; /* Добавляем отступ между элементами */
+  }
+
+  .caption {
+    position: static; /* Убираем абсолютное позиционирование */
+    bottom: auto; /* Сбрасываем отступ снизу */
+    right: auto; /* Сбрасываем отступ справа */
+    max-width: 100%; /* Позволяем подписям занимать всю доступную ширину */
+    border-radius: 0; /* Убираем скругление углов */
+    margin-top: 10px; /* Добавляем отступ сверху */
+    background: rgba(255, 255, 255, 0.8); /* Делаем фон немного прозрачным */
+    text-align: left; /* Выравниваем текст по центру */
+    padding: 20px; /* Добавляем отступы вокруг текста */
+  }
+}

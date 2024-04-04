@@ -1,0 +1,76 @@
+/* form.css */
+
+.contact-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background-color: #f7f7f7; /* цвет фона секции */
+}
+
+.form-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px; /* скругленные углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* тень вокруг формы */
+  width: 50%;
+}
+
+.form-image {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* скругленные углы для картинки */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* расстояние между полями формы */
+}
+
+form input[type="text"],
+form input[type="tel"],
+form button {
+  padding: 15px;
+  border-radius: 5px; /* скругленные углы для полей ввода и кнопки */
+  border: 1px solid #ddd; /* граница полей ввода */
+  font-size: 16px; /* размер шрифта текста внутри полей ввода и кнопки */
+}
+
+form button {
+  background-color: #000; /* цвет фона кнопки */
+  color: #fff; /* цвет текста кнопки */
+  border: none; /* убрать границу у кнопки */
+  cursor: pointer; /* курсор в виде руки при наведении на кнопку */
+}
+
+.additional-contact {
+  margin-top: 20px; /* отступ сверху для дополнительной контактной информации */
+  font-size: 14px; /* размер шрифта дополнительной контактной информации */
+}
+
+.additional-contact a {
+  color: #1a1a1a; /* цвет ссылок */
+  text-decoration: none; /* убрать подчёркивание у ссылок */
+}
+
+@media (max-width: 768px) {
+  .contact-form {
+    flex-direction: column;
+  }
+
+  .form-content,
+  .form-image {
+    width: 100%;
+  }
+
+  .form-image {
+    margin-top: 20px; /* отступ сверху для картинки, когда она ниже формы */
+  }
+}

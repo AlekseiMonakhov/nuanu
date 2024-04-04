@@ -1,0 +1,141 @@
+@import '@/styles/base';
+
+.fill_button {
+  @include reset-button;
+  text-decoration: none;
+
+  overflow: hidden;
+  transform: translateZ(0);
+  
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: px-to-rem(100);
+  padding: 0 px-to-rem(30);
+
+  &.size_60,
+  &.size_50 {
+    @include viewport-desktop {
+      @include text-smaller;
+    }
+    @include viewport-tablet {
+      @include text-smaller;
+    }
+    @include viewport-phone {
+      @include text-small;
+    }
+  }
+
+  &.size_80 {
+    @include text-body;
+
+    @include viewport-desktop {
+      height: px-to-rem(80);
+    }
+    @include viewport-tablet {
+      height: px-to-rem(70);
+    }
+    @include viewport-phone {
+      height: px-to-rem(60);
+    }
+  }
+
+  &.size_60 {
+    @include viewport-desktop {
+      height: px-to-rem(60);
+    }
+    @include viewport-tablet {
+      height: px-to-rem(56);
+    }
+    @include viewport-phone {
+      height: px-to-rem(50);
+    }
+  }
+
+  &.size_50 {
+    height: px-to-rem(50);
+  }
+
+  @include transition((background-color 0.35s, color 0.35s));
+
+  &.theme_light {
+    background-color: var(--color-primary-base);
+    color: var(--color-primary-dark-base);
+    
+    @include non-mobile-hover {
+      background-color: var(--color-background-light);
+    }
+  }
+    
+  &.theme_dark {
+    background-color: var(--color-primary-dark-base);
+    color: var(--color-total-white);
+    
+    @include non-mobile-hover {
+      background-color: var(--color-background-black);
+    }
+  }
+    
+  &.theme_blue {
+    background-color: var(--color-light-blue);
+    color: var(--color-total-white);
+
+    &::before {
+      content: '';
+      display: block;
+      @include absolute-fullsize;
+      background-color: rgba(var(--color-total-white--rgb), 0.3);
+
+      opacity: 0;
+      @include transition((opacity 0.35s));
+    }
+    
+    @include non-mobile-hover {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.theme_light_outline {
+    border: 1px solid var(--color-primary-base);
+    color: var(--color-primary-base);
+    
+    @include non-mobile-hover {
+      background-color: var(--color-primary-base);
+      color: var(--color-primary-dark-base);
+    }
+  }
+
+  &.theme_white {
+    background-color: var(--color-total-white);
+    color: var(--color-primary-dark-base);
+    
+    @include non-mobile-hover {
+      background-color: var(--color-background-light);
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  .sup {
+    @include viewport-desktop {
+      margin-left: px-to-rem(15);
+    }
+    @include viewport-tablet {
+      margin-left: px-to-rem(12);
+    }
+    @include viewport-phone {
+      margin-left: px-to-rem(10);
+    }
+  }
+}
+
+.sup {
+  opacity: 0.7;
+}

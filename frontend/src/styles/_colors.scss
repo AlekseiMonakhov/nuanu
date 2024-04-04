@@ -1,0 +1,36 @@
+$colors: (
+  'total-black': #000,
+  'total-white': #fff,
+  'primary-base': #f2f2f2,
+  'primary-dark-base': #212121,
+  'squara-red': #ea3747,
+  'green-coin': #0c462f,
+  'digital-blue': #1956f1,
+  'highlight': #ead623,
+  'green-success': #4eaf77,
+  'line': #d9d9d9,
+  'background-dark': #21212166,
+  'background-menu-dark': #53535333,
+  'background-menu-light': #c5c1c159,
+  'background-light': #f2f2f280,
+  'background-black': #0009,
+  'parking-size': #4a57cd,
+  'a9a9a9': #a9a9a9,
+  'light-blue': #0096f7
+);
+
+@function hex-to-rgb ($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+  
+:root {
+  @each $key, $value in $colors {
+    --color-#{$key}: #{$value};
+    --color-#{$key}--rgb: #{hex-to-rgb($value)};
+  }
+}
+
+html {
+  background-color: var(--color-total-white);
+  color: var(--color-primary-dark-base);
+}

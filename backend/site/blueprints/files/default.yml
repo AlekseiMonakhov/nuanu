@@ -1,0 +1,9 @@
+title: File
+
+sections:
+  meta:
+    type: fields
+    fields:
+      alt:
+        label: Alternative Text
+        type: text

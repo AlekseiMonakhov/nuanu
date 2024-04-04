@@ -1,0 +1,113 @@
+@import '@/styles/base';
+
+.button {
+  @include reset-button;
+  text-decoration: none;
+
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: px-to-rem(100);
+  
+  @include text-body;
+
+  &.size_120 {
+    @include viewport-desktop {
+      height: px-to-rem(110);
+      padding: 0 px-to-rem(40) 0 px-to-rem(60);
+      
+      @include non-mobile-hover {
+        padding: 0 px-to-rem(30) 0 px-to-rem(45);
+      }
+    }
+    
+    @include viewport-tablet {
+      height: px-to-rem(90);
+      padding: 0 px-to-rem(32) 0 px-to-rem(46);
+      
+      @include non-mobile-hover {
+        padding: 0 px-to-rem(25) 0 px-to-rem(32);
+      }
+    }
+    
+    @include viewport-phone {
+      height: px-to-rem(70);
+      padding: 0 px-to-rem(25) 0 px-to-rem(32);
+      
+      @include non-mobile-hover {
+        padding: 0 px-to-rem(20) 0 px-to-rem(25);
+      }
+    }
+  }
+
+  &.size_60 {
+    height: px-to-rem(60);
+    padding: 0 px-to-rem(30) 0;
+  }
+
+  @include transition((background-color 0.35s, color 0.35s, padding 0.35s));
+
+  &.theme_light {
+    background-color: var(--color-primary-base);
+    color: var(--color-primary-dark-base);
+    
+    @include non-mobile-hover {
+      background-color: var(--color-primary-dark-base);
+      color: var(--color-primary-base);
+    }
+  }
+    
+  &.theme_dark {
+    background-color: var(--color-primary-dark-base);
+    color: var(--color-primary-base);
+    
+    @include non-mobile-hover {
+      background-color: var(--color-primary-base);
+      color: var(--color-primary-dark-base);
+    }
+  }
+    
+  &.theme_blue {
+    background-color: var(--color-light-blue);
+    color: var(--color-total-white);
+  }
+
+  &.success {
+    background-color: var(--color-green-success) !important;
+    color: var(--color-total-white);
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .desktop_arrow {
+    width: px-to-rem(40);
+    height: auto;
+    
+    @include viewport-phone {
+      display: none;
+    }
+  }
+
+  .phone_arrow {
+    width: px-to-rem(20);
+    height: auto;
+    
+    @include viewport-tablet-min {
+      display: none;
+    }
+  }
+}

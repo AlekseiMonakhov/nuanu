@@ -1,0 +1,25 @@
+@import '@/styles/base';
+
+.video_modal {
+  .overlay {
+    background-color: var(--color-total-black);
+  }
+  
+  .wrapper {
+    margin: 60px auto;
+  }
+
+  :global(.rkc-base-video-modal__container) {
+    overflow: hidden;
+    border-radius: 12px;
+    transform: translateZ(0);
+  }
+}
+
+.close_button {
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}

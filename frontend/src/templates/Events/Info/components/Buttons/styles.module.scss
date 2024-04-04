@@ -1,0 +1,16 @@
+@import '@/styles/base';
+
+.events_info_buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include viewport-desktop {
+    gap: px-to-rem(20);
+  }
+  @include viewport-tablet {
+    gap: px-to-rem(16);
+  }
+  @include viewport-phone {
+    gap: px-to-rem(12);
+  }
+}

@@ -1,0 +1,140 @@
+@import '@/styles/base';
+
+.header {
+  --theme-duration: 0.5s;
+
+  position: fixed;
+  z-index: 9;
+  top: var(--header-top);
+  left: var(--wrap);
+  width: calc(100% - var(--wrap) * 2);
+  min-height: var(--header-height);
+  border-radius: 12px;
+
+  @include transition(color var(--theme-duration));
+
+  color: var(--color-text);
+
+  @include viewport-phone {
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      
+      background: var(--color-bg);
+      backdrop-filter: blur(15px);
+
+      will-change: left, width;
+      
+      @include transition((left 0.375s, width 0.375s));
+    }
+
+    &.active {
+      &::before {
+        left: -5px;
+        width: calc(100% + 10px);
+      }
+    }
+  }
+
+  &.dark {
+    --color-bg: var(--color-background-menu-dark);
+    --color-text: var(--color-total-white);
+  }
+
+  &.light {
+    --color-bg: var(--color-background-menu-light);
+    --color-text: var(--color-primary-dark-base);
+  }
+
+  .header_container {
+    height: var(--header-height);
+  }
+
+  .expand_menu {
+    @include viewport-tablet-min {
+      display: none !important;
+    }
+  }
+}
+
+.header_container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  
+  border-radius: var(--radius) var(--radius) calc(var(--radius) * var(--radius-progress)) calc(var(--radius) * var(--radius-progress));
+
+  @include viewport-phone {
+    padding: 0 px-to-rem(24);
+  }
+
+  .inline_menu {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+
+    @include viewport-phone {
+      display: none;
+    }
+  }
+
+  .logo_desktop {
+    width: px-to-rem(165);
+
+    @include viewport-phone {
+      display: none;
+    }
+  }
+
+  .logo_phone {
+    width: px-to-rem(96);
+
+    @include viewport-tablet-min {
+      display: none;
+    }
+  }
+
+  .logo_desktop,
+  .logo_phone {
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }    
+  }
+
+  .action {
+    @include viewport-phone {
+      display: none;
+    }
+  }
+
+  .expan_menu_button {
+    @include viewport-tablet-min {
+      display: none;
+    }
+  }
+}
+
+.inline_menu {
+  border-radius: 12px;
+  background-color: var(--color-bg);
+  backdrop-filter: blur(15px);
+  
+  @include transition(background-color var(--theme-duration));
+}
+
+.logo_desktop,
+.logo_phone {
+  color: currentColor;
+}

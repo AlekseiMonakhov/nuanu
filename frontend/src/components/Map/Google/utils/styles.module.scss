@@ -1,0 +1,9 @@
+@import '@/styles/base';
+
+.label {
+  position: absolute;
+  top: calc(50% + 2px);
+  left: calc(100% + 20px);
+  transform: translate(0, -50%);
+  text-shadow: 0 0 1px #cb2e2a;
+}

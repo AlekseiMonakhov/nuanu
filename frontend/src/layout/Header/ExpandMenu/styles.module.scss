@@ -1,0 +1,60 @@
+@import '@/styles/base';
+
+.header_menu_props {
+  position: relative;
+
+  display: none;
+  height: 0;
+  overflow: visible;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid  var(--color-line);
+    opacity: 0.2;
+    
+    will-change: left, width;
+      
+    @include transition((left 0.375s, width 0.375s));
+  }
+
+  &.active {
+    &::before {
+      left: -5px;
+      width: calc(100% + 10px);
+    }
+  }
+}
+
+.container {
+  position: relative;
+  
+  overflow: auto;
+  @include hide-scroll-bars;
+
+  max-height: calc((100 * var(--vh) - var(--header-top) * 2 - var(--header-height)));
+}
+
+.links {
+  @include reset-ul;
+  padding: px-to-rem(12) px-to-rem(24) px-to-rem(26);
+
+  @include text-body;
+
+  > li {
+    padding: px-to-rem(9) 0;
+  }
+}
+
+.action {
+  padding: px-to-rem(19) px-to-rem(24);
+  border-top: 1px solid rgba(var(--color-line--rgb), 0.2);
+
+  &__button {
+    width: 100%;
+  }
+}

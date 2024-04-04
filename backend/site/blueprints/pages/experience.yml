@@ -1,0 +1,30 @@
+title: Experience
+
+icon: page
+
+status:
+  listed: Published
+
+tabs:
+  content:
+    sections:
+      state:
+        type: fields
+        fields:
+          state:
+            label: Menu tooltip
+            type: radio
+            columns: 3
+            default: none
+            options:
+              none: -
+              new: New
+              comingSoon: Coming soon
+      stories:
+        label: Main slides
+        type: pages
+        layout: cards
+        template:
+          - story-item
+        max: 3
+  seo: tabs/seo

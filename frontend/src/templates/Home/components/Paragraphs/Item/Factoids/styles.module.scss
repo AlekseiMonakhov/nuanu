@@ -1,0 +1,116 @@
+@import '@/styles/base';
+
+.factoids {
+  &.type_0 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .item {
+      @include viewport-desktop {
+        border-radius: px-to-rem(160);
+      }
+      @include viewport-tablet {
+        border-radius: px-to-rem(120);
+      }
+      @include viewport-phone {
+        border-radius: px-to-rem(60);
+      }
+
+      &:nth-child(1) {
+        grid-row: 1 / 3;
+        border-radius: px-to-rem(60);
+      }
+    }
+  }
+  
+  &.type_1 {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    .item {
+      @include viewport-desktop {
+        border-radius: px-to-rem(100);
+      }
+      @include viewport-tablet {
+        border-radius: px-to-rem(90);
+      }
+      @include viewport-phone {
+        border-radius: px-to-rem(80);
+      }
+
+      &:nth-child(2) {
+        @include viewport-desktop {
+          border-radius: px-to-rem(40);
+        }
+        @include viewport-tablet {
+          border-radius: px-to-rem(38);
+        }
+        @include viewport-phone {
+          border-radius: px-to-rem(36);
+        }
+      }
+    }
+  }
+  
+  &.type_2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .item {
+      @include viewport-desktop {
+        border-radius: px-to-rem(160);
+      }
+      @include viewport-tablet {
+        border-radius: px-to-rem(120);
+      }
+      @include viewport-phone {
+        border-radius: px-to-rem(60);
+      }
+    }
+  }
+}
+
+.item {
+  margin: 0;
+  padding: 0 px-to-rem(15);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  overflow: hidden;
+  text-align: center;
+
+  background-color: var(--color-primary-base);
+
+  > * + * {
+    @include viewport-desktop {
+      margin-top: px-to-rem(10);
+    }
+    @include viewport-tablet {
+      margin-top: px-to-rem(8);
+    }
+    @include viewport-phone {
+      margin-top: px-to-rem(6);
+    }
+  }
+}
+
+.title {
+  @include viewport-desktop {
+    @include text-display;
+  }
+  @include viewport-tablet-max {
+    @include text-heading-1;
+  }
+}
+
+.description {
+  @include viewport-desktop {
+    @include text-body;
+  }
+  @include viewport-tablet-max {
+    @include text-small;
+  }
+}

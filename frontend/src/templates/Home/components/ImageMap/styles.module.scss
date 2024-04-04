@@ -1,0 +1,28 @@
+@import '@/styles/base';
+
+.image_map {
+  @include absolute-fullsize;
+}
+
+.draggable_container {
+  @include absolute-fullsize;
+  user-select: none;
+}
+
+.draggable_scene {
+  @include absolute-fullsize;
+
+  &.draggable {
+    cursor: all-scroll;
+  }
+
+  .overlay {
+    @include absolute-fullsize;
+  }
+}
+
+.drag_indicator {
+  &.hide {
+    display: none;
+  }
+}

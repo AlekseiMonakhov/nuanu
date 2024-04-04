@@ -1,0 +1,27 @@
+@import '@/styles/base';
+
+.header_expand_menu_button {
+  @include reset-button;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  width: px-to-rem(40);
+  height: px-to-rem(40);
+  margin: px-to-rem(-10);
+
+  transform: translateZ(0);
+  color: currentColor;
+
+  @include transition(transform 0.75s);
+
+  &.active {
+    transform: rotate(45deg) translateZ(0);
+  }
+
+  svg {
+    width: px-to-rem(20);
+  }
+}

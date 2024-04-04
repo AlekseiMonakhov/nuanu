@@ -1,0 +1,80 @@
+Title: Changing the way we live, work & play
+
+----
+
+Theme: dark
+
+----
+
+Title-size: medium
+
+----
+
+Description: 
+
+----
+
+Label: City of the future
+
+----
+
+Button:
+
+text: Watch
+sup: ""
+type: video_modal
+href: ""
+target: 'false'
+video_type: file
+duration: 2:09
+modal_file:
+  - file://VWUW5TSUf2dk4KYA
+modal_yt: ""
+
+----
+
+Img: - file://crpnuACVWURiaMp0
+
+----
+
+Item-title: Changing the way we live, work & play
+
+----
+
+Button-toggle: true
+
+----
+
+Button-text: Watch
+
+----
+
+Button-type: video_modal
+
+----
+
+Button-href: /
+
+----
+
+Button-target: false
+
+----
+
+Button-video-type: file
+
+----
+
+Button-modal-video: - file://VWUW5TSUf2dk4KYA
+
+----
+
+Button-yt: 
+
+----
+
+Button-yt-id: 12323
+
+----
+
+Uuid: Iz7cKasgW7WPIRa8

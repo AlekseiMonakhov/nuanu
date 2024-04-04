@@ -1,0 +1,70 @@
+type: object
+fields:
+  text:
+    width: 2/3
+    label: Button text
+    type: text
+  sup:
+    width: 1/3
+    label: Additional text
+    type: text
+  type:
+    label: Button type
+    type: radio
+    default: link
+    columns: 2
+    options:
+      link: Link
+      video_modal: Video modal
+  href:
+    width: 2/3
+    label: Url
+    type: link
+    options:
+      - url
+      - custom
+      - email
+      - tel
+    when:
+      type: link
+  target:
+    width: 1/3
+    label: Opens in a new tab
+    type: toggle
+    default: false
+    when:
+      type: link
+  video_type:
+    width: 1/2
+    label: Video in modal
+    type: radio
+    default: file
+    options:
+      file: File
+      youtube: Youtube
+    when:
+      type: video_modal
+  duration:
+    width: 1/2
+    label: Video duration
+    type: text
+    when:
+      type: video_modal
+  modal_file:
+    label: Video file for modal
+    type: files
+    layout: cards
+    accept: video/*
+    multiple: false
+    image:
+      ratio: 16/9
+      cover: true
+    when:
+      type: video_modal
+      video_type: file
+  modal_yt:
+    label: Youtube video ID for modal
+    type: text
+    when:
+      type: video_modal
+      video_type: youtube

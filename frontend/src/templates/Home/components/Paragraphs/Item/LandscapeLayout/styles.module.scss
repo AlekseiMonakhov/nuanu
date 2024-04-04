@@ -1,0 +1,74 @@
+@import '@/styles/base';
+
+.layout {
+  --content-height: min(#{px-to-rem(600)}, 82vh);
+  --pad: calc((100vh - var(--content-height)) / 2);
+
+  &.large {
+    --content-height: min(#{px-to-rem(800)}, 82vh);
+  }
+
+  display: grid;
+  grid-template-columns: 0.55fr 0.3869fr;
+  justify-content: space-between;
+
+  padding: 0 var(--wrap);
+
+  &.has_extra_top_padding {
+    &:first-child {
+      padding-top: var(--pad) !important;
+    }
+  }
+
+  &.reverse {
+    grid-template-columns: 0.3869fr 0.55fr;
+
+    .aside {
+      order: 1;
+    }
+  }
+}
+
+.aside {
+  &__factoids {
+    position: sticky;
+    top: var(--pad);
+    height: var(--content-height);
+    display: grid;
+  }
+
+  &__media {
+    margin-top: calc(var(--content-height) * -1);
+    height: var(--content-height);
+    padding-bottom: var(--content-height);
+    box-sizing: content-box;
+
+    .media {
+      height: var(--content-height);
+    }
+  }
+}
+
+.media {
+  position: relative;
+  transform: translateZ(0);
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.content {
+  position: sticky;
+  top: var(--pad);
+  min-height: var(--content-height);
+  height: max-content;
+  max-width: px-to-rem(630);
+
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: center;
+
+  .action {
+    width: 100%;
+  }
+}

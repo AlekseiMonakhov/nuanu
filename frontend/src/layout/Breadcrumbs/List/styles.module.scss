@@ -1,0 +1,35 @@
+@import '@/styles/base';
+
+.breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: px-to-rem(16) 0;
+}
+
+.list {
+  @include reset-ul;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  .item + .item {
+    &::before {
+      content: '-';
+      display: block;
+      margin: 0 0.5em;
+    }
+  }
+
+}
+
+.item {
+  display: flex;
+}
+
+.link {
+  color: currentColor;
+  text-decoration: underline;
+}

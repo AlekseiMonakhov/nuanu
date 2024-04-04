@@ -1,0 +1,62 @@
+@import '@/styles/base';
+
+.layout {
+  @include viewport-tablet-min {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  @include viewport-desktop {
+    padding: px-to-rem(50) var(--wrap) px-to-rem(240);
+  }
+  @include viewport-tablet {
+    padding: px-to-rem(40) var(--wrap) px-to-rem(170);
+  }
+  @include viewport-phone {
+    padding: px-to-rem(30) var(--wrap) px-to-rem(100);
+  }
+
+  &__main {
+    @include viewport-desktop {
+      width: 51.7939vw;
+    }
+    @include viewport-tablet {
+      width: 60%;
+    }
+  }
+
+  &__aside {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include viewport-tablet-min {
+      position: sticky;
+      top: calc(var(--header-height) + var(--header-top) * 2);
+    }
+
+    @include viewport-desktop {
+      width: 30.5555vw;
+      gap: px-to-rem(60);
+    }
+
+    @include viewport-tablet {
+      width: 35%;
+      gap: px-to-rem(50);
+    }
+
+    @include viewport-phone {
+      margin-top: px-to-rem(73);
+      gap: px-to-rem(40);
+    }
+
+    .cta {
+      margin-bottom: px-to-rem(16);
+      
+      @include viewport-phone {
+        display: none;
+      }
+    }
+  }
+}

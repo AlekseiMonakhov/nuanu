@@ -1,0 +1,62 @@
+@import '@/styles/base';
+
+.footer {
+  overflow: hidden;
+  
+  &.theme_dark {
+    background-color: var(--color-primary-dark-base);
+    color: var(--color-total-white);
+  }
+
+  &.theme_light {
+    background-color: var(--color-total-white);
+    color: var(--color-primary-dark-base);
+  }
+
+  @include viewport-desktop {
+    padding: px-to-rem(71) calc(var(--wrap) * 3) px-to-rem(71) var(--wrap);
+
+    @include text-small;
+  }
+
+  @include viewport-tablet {
+    padding: px-to-rem(43) var(--wrap);
+    
+    @include text-small;
+  }
+
+  @include viewport-phone {
+    padding: px-to-rem(15) var(--wrap) px-to-rem(25);
+    
+    @include text-body;
+  }
+
+  a {
+    color: currentColor;
+    text-decoration: none;
+  }
+}
+
+.container {
+  @include viewport-tablet-min {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .contacts {
+      order: -1;
+      width: 51.375%;
+    }
+
+    .subscribe {
+      width: 37.5%;
+    }
+  }
+
+  @include viewport-phone {
+    .contacts {
+      margin-top: px-to-rem(85);
+    }
+  }
+}

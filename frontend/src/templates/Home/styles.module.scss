@@ -1,0 +1,25 @@
+@import '@/styles/base';
+
+.slider {
+  z-index: 3;
+}
+
+.page {
+  &.is_default_hidden {
+    opacity: 0;
+    // TODO: network performance fix
+    // padding-top: 0; // network performance fix
+  }
+}
+
+.person_types {
+  @include viewport-desktop {
+    margin-top: px-to-rem(200);
+  }
+  @include viewport-tablet {
+    margin-top: px-to-rem(150);
+  }
+  @include viewport-phone {
+    margin-top: px-to-rem(100);
+  }
+}

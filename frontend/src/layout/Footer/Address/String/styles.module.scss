@@ -1,0 +1,19 @@
+@import '@/styles/base';
+
+.string {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: flex-start;
+
+  .gap {
+    width: 0;
+    @include transition(width 0.35s);
+  }
+
+  &.is_hovered {
+    .gap {
+      width: var(--width);
+    }
+  }
+}

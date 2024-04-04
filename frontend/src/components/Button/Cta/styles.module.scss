@@ -1,0 +1,136 @@
+@import '@/styles/base';
+
+.button {
+  @include reset-button;
+  text-decoration: none;
+
+  position: relative;
+
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+  height: px-to-rem(50);
+  padding: 0 px-to-rem(20);
+
+  @include transition(background-color 0.35s);
+  backdrop-filter: blur(15px);
+  
+  @include text-small-caps;
+
+  @include viewport-desktop {
+    border-radius: 12px;
+  }
+  @include viewport-tablet {
+    border-radius: 11px;
+  }
+  @include viewport-phone {
+    border-radius: 10px;
+  }
+
+  &.theme_light {
+    background-color: var(--color-background-light);
+    color: var(--color-primary-dark-base);
+
+    @include non-mobile-hover {
+      background-color: var(--color-primary-base);
+    }
+  }
+
+  &.theme_dark {
+    background-color: var(--color-background-menu-dark);
+    color: var(--color-total-white);
+
+    @include non-mobile-hover {
+      background-color: var(--color-background-menu-light);
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  .icon_play {
+    @include viewport-desktop {
+      margin-right: 2px;
+      margin-left: px-to-rem(-12);
+    }
+
+    @include viewport-tablet {
+      margin-right: px-to-rem(4);
+      margin-left: px-to-rem(-6);
+    }
+
+    @include viewport-phone {
+      margin-right: px-to-rem(7);
+      margin-left: 0;
+    }
+  }
+
+  .sup {
+    @include viewport-desktop {
+      margin-left: px-to-rem(15);
+    }
+    @include viewport-tablet {
+      margin-left: px-to-rem(12);
+    }
+    @include viewport-phone {
+      margin-left: px-to-rem(10);
+    }
+  }
+}
+
+.sup {
+  @include viewport-desktop {
+    opacity: 0.5;
+  }
+  @include viewport-tablet {
+    opacity: 0.6;
+  }
+  @include viewport-phone {
+    opacity: 0.7;
+  }
+}
+
+.icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon_play {
+  width: auto;
+
+  @include viewport-desktop {
+    height: px-to-rem(40);
+  }
+  @include viewport-tablet {
+    height: px-to-rem(30);
+  }
+  @include viewport-phone {
+    height: px-to-rem(20);
+  }
+  
+  &.desktop {
+    @include viewport-phone {
+      display: none;
+    }
+  }
+  
+  &.phone {
+    @include viewport-tablet-min {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,137 @@
+title: Event item
+icon: page
+
+image:
+  back: white
+  cover: true
+  query: page.img.toFile
+
+status:
+  draft: Draft
+  listed: Published
+
+create:
+  redirect: false
+
+columns:
+  - width: 1/2
+    sections:
+      content:
+        width: 1/2
+        type: fields
+        fields:
+          img:
+            label: Image
+            type: files
+            layout: cards
+            accept: image/*
+            multiple: false
+            size: huge
+            translate: false
+            required: true
+            image:
+              ratio: 1.5/1
+              cover: true
+          start_time:
+            label: Start time
+            type: date
+            time: true
+            required: true
+            default: now
+            translate: false
+          end_time:
+            label: End time
+            type: date
+            time: true
+            default: now
+            translate: false
+          organizer:
+            type: object
+            fields:
+              name:
+                type: text
+              url:
+                type: text
+  - width: 1/2
+    sections:
+      content2:
+        width: 1/2
+        type: fields
+        fields:
+          type:
+            Label: Type
+            type: tags
+            max: 1
+            default: Lecture
+            required: true
+            options:
+              type: query
+              query: page.siblings.pluck("type", ",", true)
+          tags:
+            type: tags
+            required: true
+          buy_href:
+            label: Buy link
+            type: text
+          price:
+            type: text
+            required: true
+            default: "0"
+            help: 0 = Free
+          min_age:
+            label: Minimum age
+            type: text
+          location:
+            type: object
+            reqired: true
+            fields:
+              name:
+                type: text
+              address:
+                type: text
+              lat:
+                label: Latitude
+                type: text
+              lng:
+                label: Longitude
+                type: text
+
+
+  - width: 1
+    sections:
+      content3:
+        type: fields
+        fields:
+          blocks:
+            type: blocks
+            fieldsets:
+              poster:
+                name: Image
+                icon: image
+                fields:
+                  image:
+                    label: Image file
+                    required: true
+                    type: files
+                    layout: cards
+                    accept: image/*
+                    multiple: false
+                    size: huge
+                    translate: false
+              - text
+              youtube:
+                name: Youtube
+                icon: video
+                fields:
+                  contentid:
+                    required: true
+                    label: Youtube id
+                    type: text
+              soundcloud:
+                name: SoundCloud
+                icon: audio
+                fields:
+                  contentid:
+                    required: true
+                    label: SoundCloud id
+                    type: text

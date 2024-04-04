@@ -1,0 +1,24 @@
+@import '@/styles/base';
+
+.image {
+  @include transition(opacity 0.25s);
+  opacity: 0;
+  
+  &.position_fullabs,
+  &.position_cover,
+  &.position_contain {
+    @include absolute-fullsize;
+  }
+
+  &.position_cover {
+    object-fit: cover;
+  }
+
+  &.position_contain {
+    object-fit: contain;
+  }
+
+  &.loaded {
+    opacity: 1;
+  }
+}

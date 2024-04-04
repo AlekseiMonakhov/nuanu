@@ -1,0 +1,23 @@
+@import '@/styles/base';
+
+.home_paragraphs {
+  @include viewport-tablet-min {
+    &:not(.has_extra_top_padding) {
+      padding-top: px-to-rem(100);
+    }
+
+    .item + .item {
+      margin-top: px-to-rem(100);
+    }
+  }
+  
+  @include viewport-phone {
+    &.has_extra_top_padding {
+      padding-top: px-to-rem(100);
+    }
+
+    .item  + .item {
+      margin-top: px-to-rem(100);
+    }
+  }
+}

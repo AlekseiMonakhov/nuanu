@@ -1,0 +1,66 @@
+@import '@/styles/base';
+
+.head {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  background: var(--color-total-white);
+  color: var(--color-primary-dark-base);
+
+  @include viewport-desktop {
+    height: px-to-rem(120);
+    padding: 0 px-to-rem(40);
+    border-radius: 12px;
+  }
+
+  @include viewport-tablet {
+    height: px-to-rem(95);
+    padding: 0 px-to-rem(32);
+    border-radius: 10px;
+  }
+
+  @include viewport-phone {
+    height: px-to-rem(70);
+    padding: 0 px-to-rem(22);
+    border-radius: 8px;
+  }
+
+  .name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.name {
+  @include text-body;
+}
+
+.arrow {
+  @include reset-button;
+  display: block;
+
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+
+  @include viewport-tablet-min {
+    width: px-to-rem(40);
+    height: px-to-rem(40);
+    background-image: url('./img/desktop_arrow.svg');
+  }
+
+  @include viewport-phone {
+    width: px-to-rem(20);
+    height: px-to-rem(20);
+    background-image: url('./img/phone_arrow.svg');
+  }
+
+  &.prev {
+    transform: rotate(180deg);
+  }
+}

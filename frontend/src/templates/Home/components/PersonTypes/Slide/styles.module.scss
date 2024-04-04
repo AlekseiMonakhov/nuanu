@@ -1,0 +1,92 @@
+@import '@/styles/base';
+
+.slide {
+  position: relative;
+
+  background-color: var(--color-primary-base);
+  border-radius: 12px;
+
+  .image {
+    position: relative;
+    width: 100%;
+
+    @include viewport-tablet-min {
+      padding-top: 100%;
+    }
+    @include viewport-phone {
+      padding-top: 104%;
+    }
+  }
+}
+
+.content {
+  @include absolute-fullsize;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @include viewport-desktop {
+    padding: px-to-rem(18) px-to-rem(30) px-to-rem(30);
+  }
+  @include viewport-tablet {
+    padding: px-to-rem(24);
+  }
+  @include viewport-phone {
+    padding: px-to-rem(20);
+  }
+
+  .description {
+    align-self: flex-end;
+  }
+}
+
+.title {
+  margin: 0;
+  
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -1px;
+  
+  @include viewport-tablet-min {
+    font-size: px-to-rem(40);
+    line-height: 130%;
+  }
+  
+  @include viewport-tablet {
+    font-size: px-to-rem(36);
+    line-height: 125%;
+  }
+  
+  @include viewport-phone {
+    font-size: px-to-rem(30);
+    line-height: 120%;
+  }
+}
+
+.description {
+  margin: 0;
+  text-align: right;
+
+  @include viewport-tablet-min {
+    @include text-smaller;
+  }
+  @include viewport-phone {
+    @include text-small;
+  }
+}
+
+.image {
+  position: relative;
+  height: auto;
+
+  &__wrapper {
+    position: relative;
+    height: auto;
+    padding-top: 100%;
+  }
+
+  img {
+    display: block;
+  }
+}

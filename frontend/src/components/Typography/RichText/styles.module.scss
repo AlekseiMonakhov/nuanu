@@ -1,0 +1,95 @@
+@import '@/styles/base';
+
+.richtext {
+  a {
+    font-weight: 500;
+    text-decoration: underline;
+    color: inherit;
+
+    @include hover {
+      text-decoration: none;
+    }   
+  }
+
+  blockquote,
+  q,
+  cite {
+    position: relative;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    padding: 0 0 0 px-to-rem(20);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background-color: currentColor;
+    }
+  }
+
+  h1 {
+    @include text-heading-1;
+  }
+
+  h2 {
+    @include text-heading-2;
+  }
+
+  h3 {
+    @include text-heading-3;
+  }
+
+  h4 {
+    @include text-heading-4;
+  }
+
+  h5 {
+    @include text-heading-5;
+  }
+
+  h6 {
+    @include text-heading-6;
+  }
+
+  &.has_spacings {
+    p {
+      @include viewport-tablet-min {
+        margin: px-to-rem(30) 0;
+      }
+      @include viewport-phone {
+        margin: px-to-rem(28) 0;
+      }
+    }
+
+    img {
+      margin: px-to-rem(8) 0;
+    }
+
+    blockquote,
+    q,
+    cite {
+      margin: px-to-rem(40) 0;
+    }
+  
+    h1,
+    h2,
+    h3 {
+      margin: px-to-rem(40) 0;    
+    }
+
+    h4,
+    h5,
+    h6 {
+      margin: px-to-rem(20) 0;
+    }
+
+    ul,
+    ol {
+      margin: px-to-rem(30) 0;
+    }
+  }
+}

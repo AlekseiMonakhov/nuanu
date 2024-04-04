@@ -1,0 +1,58 @@
+@import '@/styles/base';
+
+.layout {
+  position: relative;
+  padding: 0 var(--gap);
+
+  --factoids-height: #{px-to-rem(415)};
+  --action-height: 0.001px;
+  --gap: 2px;
+
+  &.has_action {
+    --action-height: #{px-to-rem(70)};
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: var(--factoids-height);
+  }
+}
+
+.container {
+  position: sticky;
+  bottom: 0;
+}
+
+.content {
+  padding: px-to-rem(30) calc(var(--wrap) - var(--gap) * 2);
+}
+
+.factoids {
+  display: grid;
+  height: var(--factoids-height);
+}
+
+.action {
+  padding: var(--gap) 0;
+  height: calc(var(--action-height) + var(--gap) * 2);
+
+  a,
+  button {
+    width: 100%;
+    height: var(--action-height) !important;
+  }
+}
+
+.media {
+  position: absolute;
+  bottom: calc(var(--factoids-height) + var(--action-height) + var(--gap) * 2);
+  left: var(--gap);
+  width: calc(100% - 4px);
+  height: var(--factoids-height);
+  
+  overflow: hidden;
+  transform: translateZ(0);
+  border-radius: 12px;
+}

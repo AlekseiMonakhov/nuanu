@@ -1,0 +1,62 @@
+@mixin loading-indicator {
+  &::before {
+    content: '';
+    display: block;
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-highlight);
+
+    @include viewport-tablet-min {
+      height: 5px;
+    }
+    @include viewport-phone {
+      height: 4px;
+    }
+
+    transition: opacity 0.25s;
+    opacity: 0;
+
+    animation-name: loading-indicator;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+
+  @keyframes loading-indicator {
+    from {
+      transform: scale(0, 1);
+      transform-origin: top left;
+    }
+  
+    50% {
+      transform-origin: top left;
+      transform: scale(1, 1);
+    }
+  
+    50.01% {
+      transform-origin: top right;
+      transform: scale(1, 1);
+    }
+  
+    to {
+      transform: scale(0, 1);
+      transform-origin: top right;
+    }
+  }
+
+  /* stylelint-disable-next-line selector-no-qualifying-type */
+  &.is-loading {
+    cursor: progress !important;
+
+    * {
+      cursor: progress !important;
+    }
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}

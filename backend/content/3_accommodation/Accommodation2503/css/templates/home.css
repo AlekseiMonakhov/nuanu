@@ -1,0 +1,108 @@
+/* home.css */
+
+header {
+  padding: 20px 0;
+  position: fixed; /* если хедер должен быть фиксированным */
+  width: 100%;
+  top: 0;
+  z-index: 10; /* Убедитесь, что хедер имеет больший z-index */
+  /* Укажите высоту хедера, например, 60px */
+}
+
+.homeTitle {
+  font-weight: normal;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  line-height: 1.1;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 60px; /* Адаптируйте размер шрифта по вашему усмотрению */
+  color: white; /* Убедитесь, что цвет шрифта контрастирует с видео */
+  width: 100%; /* Обеспечивает, что текст может быть выровнен по центру во всю ширину экрана */
+  z-index: 10; /* Убедитесь, что h1 находится над видео */
+  pointer-events: none; /* Это позволяет кликам проходить через h1, если это необходимо */
+}
+
+h1 {
+  font-weight: normal;
+  position: relative;
+  left: 50%;
+  line-height: 1.1;
+  transform: translate(-50%, 50%);
+  text-align: center;
+  font-size: 60px; /* Адаптируйте размер шрифта по вашему усмотрению */
+  color: #181d1f; /* Убедитесь, что цвет шрифта контрастирует с видео */
+  width: 100%; /* Обеспечивает, что текст может быть выровнен по центру во всю ширину экрана */
+  z-index: 10; /* Убедитесь, что h1 находится над видео */
+  pointer-events: none; /* Это позволяет кликам проходить через h1, если это необходимо */
+}
+
+@media (max-width: 768px) {
+  .homeTitle {
+    font-size: 40px; /* Уменьшаем размер шрифта для мобильных устройств */
+
+    transform: translate(-50%, -100%); /* Пересчитываем смещение */
+  }
+
+  h1 {
+    font-size: 40px; /* Уменьшаем размер шрифта для мобильных устройств */
+
+    transform: translate(-50%, 0%); /* Пересчитываем смещение */
+  }
+}
+
+.fullscreen-video {
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100vh - 60px); /* Вычесть высоту хедера из 100vh */
+  z-index: 1;
+}
+
+.fullscreen-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.call-to-action {
+  position: absolute;
+  left: 50%;
+  bottom: 20px; /* Отступ снизу для кнопок */
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.button {
+  padding: 25px 40px; /* Padding from the auto layout settings */
+  font-size: 16px; /* Assuming a standard button text size */
+  color: white; /* Text color, assuming from the design contrast */
+  border-radius: 52px; /* Fully rounded corners based on the height */
+  border: none; /* No border visible */
+  cursor: pointer; /* To show an interactive cursor on hover */
+  display: inline-flex; /* To keep icon and text aligned */
+  align-items: center; /* To align the icon and text vertically */
+  justify-content: center; /* To center content horizontally */
+  gap: 16px; /* Space between the icon and the text */
+  text-decoration: none; /* Assuming it's a link acting as a button */
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s; /* Smooth transition for hover effects */
+}
+
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}
+.button-primary {
+  background-image: linear-gradient(90deg, 0%, 100%);
+}
+
+.button-primary:hover {
+  background-image: linear-gradient(90deg, 0%, 100%);
+}

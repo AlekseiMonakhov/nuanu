@@ -1,0 +1,89 @@
+/* burger.css */
+
+.burger-menu {
+  display: none; /* По умолчанию скрыт */
+  cursor: pointer;
+  position: absolute;
+  right: 20px; /* Отступ справа */
+  top: 20px; /* Отступ сверху */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px; /* Ширина бургера */
+  height: 24px; /* Высота бургера */
+  z-index: 100; /* Поверх всех элементов */
+}
+
+.burger-menu div {
+  background-color: white; /* Белые полосы бургера */
+  width: 100%; /* Ширина полос 100% от родительского элемента */
+  height: 3px; /* Высота полос */
+  transition: all 0.3s ease;
+}
+
+.burger-menu.active div:nth-child(1) {
+  transform: translateY(0px) rotate(45deg);
+}
+
+.burger-menu.active div:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px); /* Скрыть среднюю полосу */
+}
+
+.burger-menu.active div:nth-child(3) {
+  transform: translateY(-7px) translateX(0px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .burger-menu {
+    display: block;
+  }
+
+  /* overlay.css */
+  .overlay {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Фиксированное позиционирование */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ширина на всю видимую часть экрана */
+    height: 100vh; /* Высота на всю видимую часть экрана */
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    backdrop-filter: blur(5px);
+    z-index: 9; /* Значение z-index меньше, чем у меню и бургер-иконки */
+  }
+
+  /* Добавляем ваши стили для .burger-menu здесь, если они отличаются от предыдущих версий */
+
+  nav ul {
+    display: none; /* Скрытие горизонтального меню на мобильных */
+    flex-direction: column; /* Элементы в столбец */
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: none; /* Полупрозрачный фон */
+    align-items: left; /* Центрирование элементов меню */
+
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(450%); /* Меню за пределами экрана */
+    z-index: 99;
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav ul.show {
+    transform: translateX(-300%); /* Показать меню */
+  }
+
+  nav ul li {
+    padding: 10px; /* Отступ для каждого элемента меню */
+    width: 100%; /* Полная ширина */
+  }
+
+  nav ul li a {
+    color: white; /* Белый цвет текста ссылок */
+    display: block; /* Растягиваем ссылку на всю ширину */
+  }
+}

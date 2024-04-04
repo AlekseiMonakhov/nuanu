@@ -1,0 +1,18 @@
+@import '@/styles/base';
+
+.events_info_rich_content {
+  > * {
+    @include reset-first-child-margin;
+    @include reset-last-child-margin;
+    
+    @include viewport-desktop {
+      margin: px-to-rem(50) 0;
+    }
+    @include viewport-tablet {
+      margin: px-to-rem(40) 0;
+    }
+    @include viewport-phone {
+      margin: px-to-rem(30) 0;
+    }
+  }
+}
