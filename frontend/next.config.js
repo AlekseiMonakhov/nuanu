@@ -46,16 +46,23 @@ const nextConfig = {
     ];
   },
   rewrites: () => rewrites,
-  webpack: (config, { webpack, buildId }) => {
+  webpack: (config, { isServer }) => {
     if (process.env.NODE_ENV === 'production') {
       addClassnameObfuscation(config);
     }
 
-    config.plugins.push(
-      new webpack.DefinePlugin({
-        'process.env.CONFIG_BUILD_ID': JSON.stringify(buildId),
-      }),
-    );
+    // Добавляем обработку видеофайлов
+    config.module.rules.push({
+      test: /\.(mp4|webm|ogg|ogv)$/,
+      use: {
+        loader: 'file-loader',
+        options: {
+          publicPath: '/_next/static/media/',
+          outputPath: 'static/media/',
+          name: '[name].[hash].[ext]',
+        },
+      },
+    });
 
     return config;
   },

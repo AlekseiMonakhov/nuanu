@@ -55,18 +55,10 @@ export const MOCK_GET_PAGE_GLOBAL = ({
       href: '/accommodation',
       isActive: false,
       isHighlighted: false,
-      state: 'comingSoon',
-    },
-    {
-      key: 4,
-      name: 'Real Estate',
-      href: '/realestate',
-      isActive: templateName === 'RealEstate',
-      isHighlighted: false,
       state: 'new',
     },
     {
-      key: 5,
+      key: 4,
       name: 'Art',
       href: '/art',
       isActive: false,
@@ -74,7 +66,7 @@ export const MOCK_GET_PAGE_GLOBAL = ({
       state: 'comingSoon',
     },
     {
-      key: 6,
+      key: 5,
       name: 'Experience',
       href: '/experience',
       isActive: false,
