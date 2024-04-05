@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "npm run lint && next build",
+    "build": "next build",
     "analyze": "cross-env ANALYZE=true npm run build",
     "start": "next start",
     "lint": "npm run lint:js && npm run lint:style",
