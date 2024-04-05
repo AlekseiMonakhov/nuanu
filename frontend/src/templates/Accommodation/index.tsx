@@ -1,15 +1,16 @@
 import { FC } from 'react';
-import styles from './styles.module.scss';
 import { useTemplate } from '../_hooks/useTemplate';
+import { IAccommodation } from './types';
 import { ComingSoonWrapper } from '../components/ComingSoonWrapper';
+import styles from './styles.module.scss';
 
-const Accommodation: FC = () => {
+const Accommodation: FC<IAccommodation> = () => {
   useTemplate();
 
   return (
     <ComingSoonWrapper
       className={styles.template}
-      text="The 'RealEstate' page is coming soon."
+      text="The 'Accommodation' page is coming soon."
       items={[
         {
           key: 0,
