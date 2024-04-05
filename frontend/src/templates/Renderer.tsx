@@ -13,6 +13,7 @@ import { IAccommodation } from './Accommodation/types';
 import { IArt } from './Art/types';
 import { IExperience } from './Experience/types';
 import { IEventsInfo } from './Events/Info/types';
+import { IRealEstate } from './RealEstate/types';
 
 export type TPageTemplateRegistryAPI =
   | IPageAPI<'Home', IHome, true>
@@ -22,7 +23,8 @@ export type TPageTemplateRegistryAPI =
   | IPageAPI<'Art', IArt, true>
   | IPageAPI<'Experience', IExperience, true>
   | IPageAPI<'NotFound', INotFound, true>
-  | IPageAPI<'_LoremComponents', ILoremComponents, true>;
+  | IPageAPI<'_LoremComponents', ILoremComponents, true>
+  | IPageAPI<'RealEstate', IRealEstate, true>;
 
 const NotFound = dynamic(() => import('./NotFound'), {
   ssr: true,
@@ -41,6 +43,10 @@ const EventsInfo = dynamic(() => import('./Events/Info'), {
 });
 
 const Accommodation = dynamic(() => import('./Accommodation'), {
+  ssr: true,
+});
+
+const RealEstate = dynamic(() => import('./RealEstate'), {
   ssr: true,
 });
 
@@ -92,6 +98,9 @@ export const TemplateRenderer: FC<PropsWithChildren> = () => {
 
     case 'Accommodation':
       return <Accommodation key={key} {...apiProps.template} />;
+
+    case 'RealEstate':
+      return <RealEstate key={key} {...apiProps.template} />;
 
     case 'Art':
       return <Art key={key} {...apiProps.template} />;
