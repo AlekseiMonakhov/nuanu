@@ -1,43 +1,50 @@
 import { FC } from 'react';
-import { useTemplate } from '../_hooks/useTemplate';
-import { ComingSoonWrapper } from '../components/ComingSoonWrapper';
-import styles from './styles.module.scss';
 import { IRealEstate } from './types';
+import Image from 'next/image';
+import styles from './styles.module.scss';
+import backgroundVideo from './assets/videos/background.mp4'
+import orderCallIcon from './assets/svg/Order-a-call-icon.svg';
+import chatIcon from './assets/svg/Open-ßhat-icon.svg';
+import galleryImage1 from './assets/images/1_gallery/1-gallery-section.png';
+import galleryImage2 from './assets/images/1_gallery/2-gallery-section.png';
+import slideImage1 from './assets/images/2_slider/1_pic.png';
+import slideImage2 from './assets/images/2_slider/2_pic.png';
+import infoBackground from './assets/images/3_infographics/3_inf-sec.png';
+import formInteriorImage from './assets/images/6_form/1_form.png';
+import whatsappIcon from './assets/svg/whatsapp.svg';
+import forbesIcon from './assets/svg/forbesIcon.svg';
+import tradingEconomicsIcon from './assets/svg/tradIcom.svg';
+import bankIndonesiaIcon from './assets/svg/indonesia.svg'
+import { useTemplate } from '../_hooks/useTemplate';
 
 const RealEstate: FC<IRealEstate> = () => {
   useTemplate();
 
+  
   return (
-    <ComingSoonWrapper
-      className={styles.template}
-      text="The 'RealEstate' page is coming soon."
-      items={[
-        {
-          key: 0,
-          original: '/lorem/accommodation/0.jpg',
-          width: 716,
-          height: 450,
-        },
-        {
-          key: 1,
-          original: '/lorem/accommodation/1.jpg',
-          width: 716,
-          height: 450,
-        },
-        {
-          key: 2,
-          original: '/lorem/accommodation/2.jpg',
-          width: 473,
-          height: 450,
-        },
-        {
-          key: 3,
-          original: '/lorem/accommodation/3.jpg',
-          width: 716,
-          height: 450,
-        },
-      ]}
-    />
+    <main className={styles.main}>
+      {/* Секция 1 */}
+      <section id="home" className={styles.fullscreenVideo}>
+        <h1 className={styles.homeTitle}>Time to<br /> invest in<br /> Nuanu</h1>
+        <video src={backgroundVideo} loop autoPlay muted className={styles.videoBg} />
+        <div className={styles.callToAction}>
+          <a href="#formSection" className={styles.buttonPrimary}>
+            <Image src={orderCallIcon} alt="Order a call" width={24} height={24} className={styles.icon} />
+            Order a call
+          </a>
+          <button id="openChat" className={styles.buttonSecondary}>
+            <Image src={chatIcon} alt="Chat icon" width={24} height={24} className={styles.icon} />
+            Open chat
+          </button>
+        </div>
+      </section>
+      <div className={styles.captionBox}>
+        Nuanu is a place of the future on the map of Bali
+      </div>
+
+    </main>
+
+
   );
 };
 
