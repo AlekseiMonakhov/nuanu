@@ -1,0 +1,91 @@
+.main {
+  display: block; // flex был здесь неуместен, так как мы не выравниваем содержимое .main
+  width: auto;
+  height: 12807px; // Или можно установить фиксированную высоту, если она вам известна
+  position: relative;
+}
+
+.fullscreenVideo {
+  width: 100%; // Пусть видео занимает всю ширину контейнера .main
+  height: 100vh; // Пусть видео занимает всю высоту видимой области
+  position: relative;
+  overflow: hidden;
+
+  video.videoBg {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.homeTitle {
+  position: absolute;
+  width: 529px;
+  height: 276px;
+  left: 50%;
+  top: 347px; // Поскольку .main теперь не использует flex, это значение нужно скорректировать
+  transform: translate(-50%, -50%); // Центрируем относительно указанных top и left
+  color: rgb(255, 255, 255);
+  font-family: 'Suisse Intl', sans-serif;
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 110%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.callToAction {
+  position: absolute;
+  left: 50%; // Центрировать кнопки по горизонтали
+  bottom: 4%; // Отступ снизу с небольшим запасом для учета разных размеров экранов
+  transform: translateX(-50%); // Смещение кнопок влево на половину их ширины
+  display: flex;
+  gap: 20px; // Расстояние между кнопками
+  z-index: 2;
+}
+
+.buttonPrimary,
+.buttonSecondary {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none; // Убрать подчеркивание у ссылки
+  display: flex;
+  align-items: center;
+  gap: 10px; // Расстояние между иконкой и текстом
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.icon {
+  display: inline-block; // Чтобы иконки корректно встраивались в поток
+  vertical-align: middle; // Чтобы иконки были по центру относительно текста
+}
+
+.captionBox {
+  position: absolute;
+  width: 1119px; // Ширина блока согласно макету
+  height: 146px; // Высота блока согласно макету
+  left: 390px; // Левый отступ согласно макету
+  top: 1154px; // Верхний отступ согласно макету
+  color: rgb(24, 29, 31); // Цвет текста согласно макету
+  font-family: 'Suisse Intl', sans-serif; // Шрифт согласно макету
+  font-size: 80px; // Размер шрифта согласно макету
+  font-weight: 400; // Насыщенность шрифта согласно макету
+  line-height: 110%; // Межстрочный интервал согласно макету
+  letter-spacing: -1px; // Межбуквенное расстояние согласно макету
+  text-align: center; // Выравнивание текста по центру
+  display: flex; // Используем flexbox для выравнивания содержимого
+  align-items: center; // Центрируем содержимое по вертикали
+  justify-content: center; // Центрируем содержимое по горизонтали
+  z-index: 2; // Значение z-index, чтобы убедиться, что текст отображается над другими элементами
+}
