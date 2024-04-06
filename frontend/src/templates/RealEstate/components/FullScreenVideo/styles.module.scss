@@ -3,49 +3,53 @@
     height: 100vh; 
     position: absolute;
     overflow: hidden;
-  
+    
+    
     video.videoBg {
+      position: absolute;  
       object-fit: cover;
       width: 100%;
       height: 100%;
     }
   }
-
+  
   .homeTitle {
     position: absolute;
-    width: 529px;
-    height: 276px;
+    width: calc(100% - 40px); 
+    max-width: 529px; 
+    height: 276px; 
     left: 50%;
-    top: 347px; 
+    top: 50%; 
     transform: translate(-50%, -50%);
-    color: rgb(255, 255, 255);
+    color: #fff;
     font-family: 'Suisse Intl', sans-serif;
-    font-size: 80px;
+    font-size: 40px; 
     font-weight: 400;
     line-height: 110%;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     z-index: 2;
   }
-
+  
   .callToAction {
     position: absolute;
     left: 50%; 
     bottom: 4%; 
     transform: translateX(-50%); 
     display: flex;
-    gap: 20px; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px; 
     z-index: 2;
   }
   
   .buttonPrimary,
   .buttonSecondary {
     background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    padding: 0.5rem 1rem;
+    border-radius: 50px; 
+    padding: 10px 20px; 
     border: none;
     color: #fff;
     cursor: pointer;
@@ -53,13 +57,60 @@
     display: flex;
     align-items: center;
     gap: 10px; 
-  
+    
     &:hover {
       background-color: rgba(0, 0, 0, 0.3);
     }
+    
+    .icon {
+      display: inline-block; 
+      vertical-align: middle; 
+    }
   }
   
-  .icon {
-    display: inline-block; 
-    vertical-align: middle; 
+  @media (min-width: 992px) {
+    .fullscreenVideo {
+        width: 100%; 
+        height: 100vh; 
+        position: absolute;
+        overflow: hidden;
+    }
+  
+    .homeTitle {
+      position: absolute;
+      width: 529px;
+      height: 276px;
+      left: 50%;
+      top: 347px; 
+      transform: translate(-50%, -50%);
+      font-size: 80px;
+      z-index: 2;
+    }
+  
+    .callToAction {
+      position: absolute;
+      left: 50%; 
+      bottom: 4%; 
+      transform: translateX(-50%); 
+      display: flex;
+      flex-direction: row; 
+      gap: 20px; 
+      z-index: 2;
+    }
+  
+    .buttonPrimary,
+    .buttonSecondary {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      padding: 0.5rem 1rem;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      text-decoration: none; 
+      display: flex;
+      align-items: center;
+      gap: 10px; 
+    
+    }
   }
+  

@@ -8,37 +8,37 @@ import { IFullScreenVideo } from "./types";
 
 const FullScreenVideo: FC<IFullScreenVideo> = () => {
 
-    return (
-        <section id="home" className={styles.fullscreenVideo}>
-        <h1 className={styles.homeTitle}>
-          Time to
-          <br /> invest in
-          <br /> Nuanu</h1>
-        <video src={backgroundVideo}
-          loop
-          autoPlay
-          muted
-          className={styles.videoBg} />
-        <div className={styles.callToAction}>
-          <a href="#formSection" className={styles.buttonPrimary}>
-            <Image src={orderCallIcon}
-              alt="Order a call"
-              width={24}
-              height={24}
-              className={styles.icon} />
-            Order a call
-          </a>
-          <button id="openChat" className={styles.buttonSecondary}>
-            <Image src={chatIcon}
-              alt="Chat icon"
-              width={24}
-              height={24}
-              className={styles.icon} />
-            Open chat
-          </button>
-        </div>
-      </section>
-    );
+  return (
+    <div id="home" className={styles.fullscreenVideo}>
+      <h1 className={styles.homeTitle}>
+        Time to
+        <br /> invest in
+        <br /> Nuanu</h1>
+      <video src={backgroundVideo}
+        loop
+        autoPlay
+        muted
+        className={styles.videoBg} />
+      <div className={styles.callToAction}>
+        <a href="#formSection" className={styles.buttonPrimary}>
+          <Image src={orderCallIcon}
+            alt="Order a call"
+            width={24}
+            height={24}
+            className={styles.icon} />
+          Order a call
+        </a>
+        <button id="openChat" className={styles.buttonSecondary}>
+          <Image src={chatIcon}
+            alt="Chat icon"
+            width={24}
+            height={24}
+            className={styles.icon} />
+          Open chat
+        </button>
+      </div>
+    </div>
+  );
 };
 
 export default FullScreenVideo;

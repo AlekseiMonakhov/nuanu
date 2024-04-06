@@ -1,10 +1,23 @@
-.main {
-  display: flex; 
-  width: 100%;
-  height: 12807px;
-  position: absolute;
-  flex-direction: column;
-  justify-content: flex-start;
+@import '@/styles/base';
+
+.page {
+  color: var(--color-total-white);
+  overflow-x: hidden;
+}
+
+.items {
+  @include transition(opacity 0.35s);
+
+  &.darken {
+    opacity: 0.2;
+  }
+}
+
+.none {
+  margin: 0;
+  padding: px-to-rem(30) var(--wrap);
+
+  @include text-heading-2;
 }
 
 
