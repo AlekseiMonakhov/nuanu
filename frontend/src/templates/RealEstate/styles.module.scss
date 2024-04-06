@@ -1,77 +1,12 @@
 .main {
-  display: flex; // flex был здесь неуместен, так как мы не выравниваем содержимое .main
-  width: auto;
-  height: 12807px; // Или можно установить фиксированную высоту, если она вам известна
+  display: flex; 
+  width: 100%;
+  height: 12807px;
   position: absolute;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-.fullscreenVideo {
-  width: 100%; // Пусть видео занимает всю ширину контейнера .main
-  height: 100vh; // Пусть видео занимает всю высоту видимой области
-  position: relative;
-  overflow: hidden;
-
-  video.videoBg {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.homeTitle {
-  position: absolute;
-  width: 529px;
-  height: 276px;
-  left: 50%;
-  top: 347px; // Поскольку .main теперь не использует flex, это значение нужно скорректировать
-  transform: translate(-50%, -50%); // Центрируем относительно указанных top и left
-  color: rgb(255, 255, 255);
-  font-family: 'Suisse Intl', sans-serif;
-  font-size: 80px;
-  font-weight: 400;
-  line-height: 110%;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  z-index: 2;
-}
-
-.callToAction {
-  position: absolute;
-  left: 50%; // Центрировать кнопки по горизонтали
-  bottom: 4%; // Отступ снизу с небольшим запасом для учета разных размеров экранов
-  transform: translateX(-50%); // Смещение кнопок влево на половину их ширины
-  display: flex;
-  gap: 20px; // Расстояние между кнопками
-  z-index: 2;
-}
-
-.buttonPrimary,
-.buttonSecondary {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  padding: 0.5rem 1rem;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  text-decoration: none; // Убрать подчеркивание у ссылки
-  display: flex;
-  align-items: center;
-  gap: 10px; // Расстояние между иконкой и текстом
-
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-}
-
-.icon {
-  display: inline-block; // Чтобы иконки корректно встраивались в поток
-  vertical-align: middle; // Чтобы иконки были по центру относительно текста
-}
 
 .captionBox {
   position: absolute;

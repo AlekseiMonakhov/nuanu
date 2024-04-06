@@ -2,9 +2,6 @@ import { FC } from 'react';
 import Image from 'next/image';
 import { IRealEstate } from './types';
 import styles from './styles.module.scss';
-import backgroundVideo from './assets/videos/background.mp4';
-import orderCallIcon from './assets/svg/Order-a-call-icon.svg';
-import chatIcon from './assets/svg/Open-ßhat-icon.svg';
 import galleryImage1 from './assets/images/1_gallery/1-gallery-section.png';
 import galleryImage2 from './assets/images/1_gallery/2-gallery-section.png';
 import galleryImage3 from './assets/images/1_gallery/3-gallery-section.png';
@@ -20,42 +17,15 @@ import galleryImage6 from './assets/images/1_gallery/6-gallery-section.png';
 // import tradingEconomicsIcon from './assets/svg/tradIcom.svg';
 // import bankIndonesiaIcon from './assets/svg/indonesia.svg';
 import { useTemplate } from '../_hooks/useTemplate';
+import FullScreenVideo from './components/FullScreenVideo/FullScreenVideo';
 
 const RealEstate: FC<IRealEstate> = () => {
   useTemplate();
 
   return (
     <main className={styles.main}>
-      {/* Секция 1 */}
-      <section id="home" className={styles.fullscreenVideo}>
-        <h1 className={styles.homeTitle}>
-          Time to
-          <br /> invest in
-          <br /> Nuanu</h1>
-        <video src={backgroundVideo}
-          loop
-          autoPlay
-          muted
-          className={styles.videoBg} />
-        <div className={styles.callToAction}>
-          <a href="#formSection" className={styles.buttonPrimary}>
-            <Image src={orderCallIcon}
-              alt="Order a call"
-              width={24}
-              height={24}
-              className={styles.icon} />
-            Order a call
-          </a>
-          <button id="openChat" className={styles.buttonSecondary}>
-            <Image src={chatIcon}
-              alt="Chat icon"
-              width={24}
-              height={24}
-              className={styles.icon} />
-            Open chat
-          </button>
-        </div>
-      </section>
+      <FullScreenVideo />
+     
       <div className={styles.captionBox}>
         Nuanu is a place of the future on the map of Bali
       </div>
