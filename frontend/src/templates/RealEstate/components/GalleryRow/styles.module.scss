@@ -1,0 +1,12 @@
+.galleryItemRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px; 
+    width: calc(100% - 8px);
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        width: calc(100% - 8px);
+        justify-content: space-between;
+    }
+}

@@ -11,12 +11,15 @@ import GalleryRow from "../GalleryRow/GalleryRow";
 
 const Gallery: FC = () => (
   <div className={styles.gallery}>
+  <div className={styles.captionBoxContainer}>
     <div className={styles.captionBox}>Nuanu is a place of the future on the map of Bali</div>
+  </div>
     <GalleryItem
       src={galleryImage1}
       alt="Gallery image 1"
       title="Nuanu is Bali's major infrastructure projects highlight"
       subtitle="That will attract 5,000 tourists a day"
+      isNotRounded
     />
     <GalleryRow>
       <GalleryItem
@@ -24,12 +27,14 @@ const Gallery: FC = () => (
         alt="Gallery image 2"
         title="Networking with visionaries and entrepreneurs"
         subtitle="Bali's major infrastructure projects highlight, for the price of an apartment"
+        isHalfWidth
       />
       <GalleryItem
         src={galleryImage3}
         alt="Gallery image 3"
         title="Full access to life and creativity of Nuanu City"
         subtitle="Bali's major infrastructure projects highlight, for the price of an apartment"
+        isHalfWidth
       />
     </GalleryRow>
     <GalleryItem
@@ -44,12 +49,14 @@ const Gallery: FC = () => (
         alt="Gallery image 5"
         title="Networking with visionaries and entrepreneurs"
         subtitle="Bali's major infrastructure projects highlight, for the price of an apartment"
+        isHalfWidth
       />
       <GalleryItem
         src={galleryImage6}
         alt="Gallery image 6"
         title="Full access to life and creativity of Nuanu City"
         subtitle="Bali's major infrastructure projects highlight, for the price of an apartment"
+        isHalfWidth
       />
     </GalleryRow>
   </div>

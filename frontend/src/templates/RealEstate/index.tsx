@@ -20,9 +20,9 @@ const RealEstate: FC<IRealEstate> = () => {
 
   return (
     <div className={styles.page}>
-        {/* <FullScreenVideo /> */}
+        <FullScreenVideo />
         <Gallery />
-        {/* <Footer theme='light'/>  */}
+        <Footer theme='light'/> 
       </div >
   );
 };
