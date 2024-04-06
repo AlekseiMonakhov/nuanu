@@ -50,20 +50,15 @@ const nextConfig = {
     if (process.env.NODE_ENV === 'production') {
       addClassnameObfuscation(config);
     }
-
-    // Добавляем обработку видеофайлов
+  
     config.module.rules.push({
       test: /\.(mp4|webm|ogg|ogv)$/,
-      use: {
-        loader: 'file-loader',
-        options: {
-          publicPath: '/_next/static/media/',
-          outputPath: 'static/media/',
-          name: '[name].[hash].[ext]',
-        },
+      type: 'asset/resource', 
+      generator: {
+        filename: 'static/media/[name].[hash][ext]', 
       },
     });
-
+  
     return config;
   },
 };
