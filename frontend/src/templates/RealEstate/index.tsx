@@ -7,6 +7,10 @@ import orderCallIcon from './assets/svg/Order-a-call-icon.svg';
 import chatIcon from './assets/svg/Open-ßhat-icon.svg';
 import galleryImage1 from './assets/images/1_gallery/1-gallery-section.png';
 import galleryImage2 from './assets/images/1_gallery/2-gallery-section.png';
+import galleryImage3 from './assets/images/1_gallery/3-gallery-section.png';
+import galleryImage4 from './assets/images/1_gallery/4-gallery-section.png';
+import galleryImage5 from './assets/images/1_gallery/5-gallery-section.png';
+import galleryImage6 from './assets/images/1_gallery/6-gallery-section.png';
 // import slideImage1 from './assets/images/2_slider/1_pic.png';
 // import slideImage2 from './assets/images/2_slider/2_pic.png';
 // import infoBackground from './assets/images/3_infographics/3_inf-sec.png';
@@ -67,9 +71,54 @@ const RealEstate: FC<IRealEstate> = () => {
             </p>
           </div>
         </div>
-        {/* Дополнительные элементы галереи */}
       </section>
 
+      <section id="gallery2" className={styles.itemContainer}>
+        <div className={styles.galleryItemSmall}>
+          <Image src={galleryImage2} alt="Gallery image 2" layout="fill" objectFit="cover" />
+          <div className={styles.infoCard}>
+            <h2 className={styles.infoCardTitle}>Networking with visionaries and entrepreneurs</h2>
+            <p className={styles.infoCardSubtitle}>Bali's major infrastructure projects highlight, for the price of an apartment</p>
+          </div>
+        </div>
+        <div className={styles.galleryItemSmall}>
+          <Image src={galleryImage3} alt="Gallery image 3" layout="fill" objectFit="cover" />
+          <div className={styles.infoCard}>
+            <h2 className={styles.infoCardTitle}>Full access to life and creativity of Nuanu City</h2>
+            <p className={styles.infoCardSubtitle}>Bali's major infrastructure projects highlight, for the price of an apartment</p>
+          </div>
+        </div>
+      </section>
+      <section id="gallery3" className={styles.gallerySection1}>
+        <div className={styles.galleryItem}>
+          <Image src={galleryImage4} alt="Gallery image 4" layout="fill" objectFit="cover" />
+          <div className={styles.infoCard}>
+            <h2 className={styles.infoCardTitle}>
+              Nuanu is Bali's major infrastructure projects highlight
+            </h2>
+            <p className={styles.infoCardSubtitle}>
+              That will attract 5,000 tourists a day
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery4" className={styles.itemContainer1}>
+        <div className={styles.galleryItemSmall}>
+          <Image src={galleryImage5} alt="Gallery image 5" layout="fill" objectFit="cover" />
+          <div className={styles.infoCard}>
+            <h2 className={styles.infoCardTitle}>Networking with visionaries and entrepreneurs</h2>
+            <p className={styles.infoCardSubtitle}>Bali's major infrastructure projects highlight, for the price of an apartment</p>
+          </div>
+        </div>
+        <div className={styles.galleryItemSmall}>
+          <Image src={galleryImage6} alt="Gallery image 6" layout="fill" objectFit="cover" />
+          <div className={styles.infoCard}>
+            <h2 className={styles.infoCardTitle}>Full access to life and creativity of Nuanu City</h2>
+            <p className={styles.infoCardSubtitle}>Bali's major infrastructure projects highlight, for the price of an apartment</p>
+          </div>
+        </div>
+      </section>
     </main >
   );
 };

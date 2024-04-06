@@ -1,8 +1,10 @@
 .main {
-  display: block; // flex был здесь неуместен, так как мы не выравниваем содержимое .main
+  display: flex; // flex был здесь неуместен, так как мы не выравниваем содержимое .main
   width: auto;
   height: 12807px; // Или можно установить фиксированную высоту, если она вам известна
-  position: relative;
+  position: absolute;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .fullscreenVideo {
@@ -97,7 +99,18 @@
   width: 1910px;
   height: 900px;
   top: 1400px; // Отступ сверху согласно макету
-  z-index: 2; // Убедитесь, что z-index выше, чем у предыдущих секций
+  z-index: 6; // Убедитесь, что z-index выше, чем у предыдущих секций
+}
+
+.gallerySection1 {
+  position: absolute;
+  left: 4px; // Отступ слева согласно макету
+  width: 1910px;
+  height: 900px;
+  top: 3060px; // Отступ сверху согласно макету
+  z-index: 6; // Убедитесь, что z-index выше, чем у предыдущих секций
+  border-radius: 30px;
+  overflow: hidden;
 }
 
 .galleryItem {
@@ -106,6 +119,35 @@
   height: 100%;
 }
 
+.galleryItemSmall {
+  position: relative;
+  width: 50%;
+  height: 750px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.itemContainer {
+  position: relative;
+  width: 1910px;
+  z-index: 2;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  top: 1410px;
+  left: 4px;
+}
+
+.itemContainer1 {
+  position: relative;
+  width: 1910px;
+  z-index: 2;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  top: 2170px;
+  left: 4px;
+}
 
 .infoCard {
   position: absolute;
