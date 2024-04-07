@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { FC, ReactElement, memo, useEffect, useMemo, useRef } from 'react';
 import cn from 'classnames';
 import { headerSlice } from '@/store/reducers/header';

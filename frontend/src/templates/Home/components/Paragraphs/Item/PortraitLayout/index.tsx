@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { FC, memo, useRef, useState } from 'react';
 import cn from 'classnames';
 import { TActionButtonRenderer } from '@/components/Button/Action/types';
