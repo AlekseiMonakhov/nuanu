@@ -4,7 +4,7 @@
     gap: 4px; 
     width: calc(100% - 8px);
 
-    @media (min-width: 768px) {
+    @media (min-width: 992px) {
         flex-direction: row;
         width: calc(100% - 8px);
         justify-content: space-between;

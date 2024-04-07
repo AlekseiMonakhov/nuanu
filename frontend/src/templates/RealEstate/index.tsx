@@ -12,18 +12,20 @@ import styles from './styles.module.scss';
 // import bankIndonesiaIcon from './assets/svg/indonesia.svg';
 import { useTemplate } from '../_hooks/useTemplate';
 import FullScreenVideo from './components/FullScreenVideo/FullScreenVideo';
-import Gallery from './components/Gallery/Gallery';
+import Gallery from './components/Gallery/Gallery'
 import { Footer } from '@/layout/Footer';
+import CallBackRequestForm from './components/CallbackRequestForm/CallbackRequestForm';
 
 const RealEstate: FC<IRealEstate> = () => {
   useTemplate();
 
   return (
     <div className={styles.page}>
-        <FullScreenVideo />
-        <Gallery />
-        <Footer theme='light'/> 
-      </div >
+      <FullScreenVideo />
+      <Gallery />
+      <CallBackRequestForm />
+      <Footer theme='light' />
+    </div >
   );
 };
 

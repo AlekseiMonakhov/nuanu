@@ -6,8 +6,8 @@ import galleryImage3 from "../../assets/images/1_gallery/3-gallery-section.png";
 import galleryImage4 from "../../assets/images/1_gallery/4-gallery-section.png";
 import galleryImage5 from "../../assets/images/1_gallery/5-gallery-section.png";
 import galleryImage6 from "../../assets/images/1_gallery/6-gallery-section.png";
-import GalleryItem from "../GalleryItem/GalleryItem";
-import GalleryRow from "../GalleryRow/GalleryRow";
+import GalleryItem from "./GalleryItem/GalleryItem";
+import GalleryRow from "./GalleryRow/GalleryRow";
 
 const Gallery: FC = () => (
   <div className={styles.gallery}>
