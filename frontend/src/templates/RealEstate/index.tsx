@@ -15,6 +15,7 @@ import FullScreenVideo from './components/FullScreenVideo/FullScreenVideo';
 import Gallery from './components/Gallery/Gallery'
 import { Footer } from '@/layout/Footer';
 import CallBackRequestForm from './components/CallbackRequestForm/CallbackRequestForm';
+import Review from './components/Review/Review';
 
 const RealEstate: FC<IRealEstate> = () => {
   useTemplate();
@@ -22,7 +23,8 @@ const RealEstate: FC<IRealEstate> = () => {
   return (
     <div className={styles.page}>
       <FullScreenVideo />
-      <Gallery />
+      <Gallery /> 
+      <Review />
       <CallBackRequestForm />
       <Footer theme='light' />
     </div >
