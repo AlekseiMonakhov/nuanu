@@ -23,8 +23,6 @@ const CallBackRequestForm = () => {
 
   return (
     <div className={styles.page}>
-      <h2 className={styles.mainTitle}>Let your personal concierge make a special offer for you</h2>
-      <p className={styles.subtitle}>Fill out your contacts, and we will connect with you to answer all questions</p>
       <div className={styles.callBackRequestFormContainer}>
         <div className={styles.formContainer}>
           {!isSubmitted ? (

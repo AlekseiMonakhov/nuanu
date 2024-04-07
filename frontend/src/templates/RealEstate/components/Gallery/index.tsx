@@ -6,14 +6,11 @@ import galleryImage3 from "../../assets/images/1_gallery/3-gallery-section.png";
 import galleryImage4 from "../../assets/images/1_gallery/4-gallery-section.png";
 import galleryImage5 from "../../assets/images/1_gallery/5-gallery-section.png";
 import galleryImage6 from "../../assets/images/1_gallery/6-gallery-section.png";
-import GalleryItem from "./GalleryItem/GalleryItem";
-import GalleryRow from "./GalleryRow/GalleryRow";
+import GalleryItem from "./GalleryItem";
+import GalleryRow from "./GalleryRow";
 
 const Gallery: FC = () => (
   <div className={styles.gallery}>
-  <div className={styles.captionBoxContainer}>
-    <div className={styles.captionBox}>Nuanu is a place of the future on the map of Bali</div>
-  </div>
     <GalleryItem
       src={galleryImage1}
       alt="Gallery image 1"

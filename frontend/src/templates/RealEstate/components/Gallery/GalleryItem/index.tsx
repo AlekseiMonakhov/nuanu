@@ -2,7 +2,7 @@ import { FC } from 'react';
 import Image from 'next/image';
 import styles from './styles.module.scss';
 import { GalleryItemProps } from './types';
-import InfoCard from '../InfoCard/InfoCard';
+import InfoCard from '../InfoCard';
 import classNames from 'classnames';
 
 const GalleryItem: FC<GalleryItemProps> = ({ src, title, subtitle, alt, isHalfWidth, isNotRounded }) => {

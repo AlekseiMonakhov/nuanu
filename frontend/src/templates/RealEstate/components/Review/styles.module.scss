@@ -1,51 +1,50 @@
 .reviewSection {
-    align-items: center; 
-    margin-bottom: 20px; 
-  }
-  
-  .logoContainer {
+    align-items: center;
+}
+
+.logoContainer {
     width: 363px;
     height: 54px;
-    margin-bottom: 45px;
-    margin-top: 20px;
     margin: 20px auto 45px auto;
-  
+
     @media (min-width: 992px) {
-      width: 605px;
-      height: 65px;
-      margin-bottom: 125px;
-      margin-top: 50px;
-      margin: 50px auto 125px auto;
+        width: 605px;
+        height: 65px;
+        margin-bottom: 125px;
+        margin: 0 auto 125px auto;
     }
-  }
-  
-  .reviewContainer {
+
+    @media (max-width: 991px) {
+        margin-top: 0;
+    }
+}
+
+.reviewContainer {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 16px;
     padding: 16px;
     scrollbar-width: none;
-  
+
     &::-webkit-scrollbar {
-      display: none;
+        display: none;
     }
-    
+
     @media (min-width: 992px) {
-      overflow-x: hidden;
-      justify-content: space-around;
+        overflow-x: hidden;
+        justify-content: space-around;
     }
-  }
-  
-  .reviewCard {
+}
+
+.reviewCard {
     flex: 0 0 auto;
     scroll-snap-align: start;
     width: 320px;
     height: 276px;
-  
+
     @media (min-width: 992px) {
-      width: 520px;
-      height: 450px;
+        width: 520px;
+        height: 450px;
     }
-  }
-  
+}
