@@ -37,21 +37,21 @@ const Gallery: FC = () => (
     <GalleryItem
       src={galleryImage4}
       alt="Gallery image 4"
-      title="Nuanu is Bali's major infrastructure projects highlight"
-      subtitle="That will attract 5,000 tourists a day"
+      title="Installment plans and share buying for every budget"
+      subtitle="Bali's major infrastructure projects highlight, for the price of an apartment"
     />
     <GalleryRow>
       <GalleryItem
         src={galleryImage5}
         alt="Gallery image 5"
-        title="Networking with visionaries and entrepreneurs"
+        title="Legal assistance: from contracts to residency"
         subtitle="Bali's major infrastructure projects highlight, for the price of an apartment"
         isHalfWidth
       />
       <GalleryItem
         src={galleryImage6}
         alt="Gallery image 6"
-        title="Full access to life and creativity of Nuanu City"
+        title="Concierge service 24/7 for your peace of mind"
         subtitle="Bali's major infrastructure projects highlight, for the price of an apartment"
         isHalfWidth
       />
