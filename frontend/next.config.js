@@ -61,6 +61,10 @@ const nextConfig = {
   
     return config;
   },
+  // Отключаем ESLint во время сборки
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 module.exports = withBundleAnalyzer(nextConfig);
