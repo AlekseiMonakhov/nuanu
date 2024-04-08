@@ -1,0 +1,28 @@
+.reviewContainer {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  padding: 16px;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+    min-width: 1372px;
+  }
+
+  @media (min-width: 992px) {
+  }
+}
+
+.card {
+  scroll-snap-align: start;
+}
+
+.slideWrapper {
+  flex: 0 0 330px; 
+
+  @media (min-width: 992px) {
+    flex: 0 0 1372px; 
+  }
+}

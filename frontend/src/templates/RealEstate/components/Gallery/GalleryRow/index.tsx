@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import styles from "./styles.module.scss";
 import { GalleryRowProps } from "./types";
 
