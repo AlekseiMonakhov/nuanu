@@ -5,5 +5,5 @@
   align-items: center;
   width: 100%;
   gap: 4px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 1) 10px, rgba(0, 0, 0, 1) calc(100% - 80px), rgba(0, 0, 0, 0) calc(100% - 30px));
 }
-

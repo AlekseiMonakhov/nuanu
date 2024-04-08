@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: calc(100% - 4px);
 }
 
 .mainTitle {
@@ -12,9 +13,11 @@
   line-height: 110%;
   letter-spacing: -1px;
   text-align: center;
-  width: 359px;
+  max-width: 359px;
   height: 103px;
   margin-top: 150px;
+  margin-left: 10px;
+  margin-right: 10px;
 
   @media (min-width: 992px) {
     font-size: 80px;
@@ -22,6 +25,8 @@
     max-width: 1262px;
     height: 146px;
     margin-top: 300px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 

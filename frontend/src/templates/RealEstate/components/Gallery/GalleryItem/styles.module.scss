@@ -1,14 +1,15 @@
 .galleryItem {
     position: relative;
     overflow: hidden;
-    width: 100%;
+    width: calc(100% - 6px);
     height: 537px;
     border-radius: 20px;
 
     .infoCardContainer {
         position: absolute;
         bottom: 4px;
-        width: 100%;
+        left: 4px;
+        width: calc(100% - 8px);
         display: flex;
         justify-content: center;
     }
@@ -34,7 +35,10 @@
 }
 
 .notRounded {
+    border-radius: 0;
+    width: 100%;
+
     @media (min-width: 992px) {
-        border-radius: 0; 
+        border-radius: 0;
     }
 }
