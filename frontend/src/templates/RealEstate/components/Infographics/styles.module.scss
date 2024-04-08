@@ -17,7 +17,7 @@
     flex-direction: row;
     margin-top: 150px;
   }
-  
+
   .cardsContainer {
     display: flex;
     flex-wrap: wrap;
@@ -32,7 +32,7 @@
       justify-content: center;
       flex-wrap: wrap;
       max-width: 800px;
-      max-height: calc((320px * 2) + 10px); 
+      max-height: calc((320px * 2) + 10px);
       overflow: hidden;
       align-items: center;
       margin-top: 100px;
@@ -60,12 +60,12 @@
     justify-content: center;
     flex-wrap: wrap;
     max-width: 40%;
-    max-height: calc((320px * 2) + 10px); 
+    max-height: calc((320px * 2) + 10px);
     margin-top: 150px;
     margin-left: 174px;
     margin-right: 70px;
   }
-  
+
   h1 {
     font-size: 35px;
     font-weight: 400;
