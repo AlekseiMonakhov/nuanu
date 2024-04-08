@@ -1,68 +1,56 @@
-import { FC } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import styles from './styles.module.scss';
+import React, { FC } from 'react';
+import styles from './styles.module.scss'; 
+import sliderImage1 from '../../assets/images/4_real-estate/3_Willow.png';
+import sliderImage2 from '../../assets/images/2_slider/2_pic.png';
+import sliderImage3 from '../../assets/images/4_real-estate/2_Phi_camp.png';
+import sliderImage4 from '../../assets/images/4_real-estate/4_Oxo_2.png';
 import Card from './Card';
 import { CardProps } from './Card/types';
-import sliderImage1 from '../../assets/images/2_slider/1_pic.png';
-import sliderImage2 from '../../assets/images/2_slider/2_pic.png';
-import sliderImage3 from '../../assets/images/2_slider/3_pic.png';
-import sliderImage4 from '../../assets/images/2_slider/4_pic.png'
 
 const slides: CardProps[] = [
   {
-    src: sliderImage1,
-    alt: 'sliderImage1',
+    src: sliderImage2,
+    alt: 'OXO Ecoverse',
     title: 'OXO Ecoverse',
-    city: 'Nuanu sity',
+    city: 'Nuanu City',
     area: '120 m² / 210 m²',
-    details:'12 villas • 15 apartments'
+    details: '12 villas • 15 apartments'
   },
   {
-    src: sliderImage2,
-    alt: 'sliderImage2',
-    title: 'OXO Ecoverse',
-    city: 'Nuanu sity',
-    area: '120 m² / 210 m²',
-    details:'12 villas • 15 apartments'
+    src: sliderImage1,
+    alt: 'Willow Hotel & spa',
+    title: 'Willow Hotel',
+    city: 'Hotel & spa',
+    area: '150 m² / 250 m²',
+    details: '10 villas • 20 apartments'
   },
   {
     src: sliderImage3,
-    alt: 'sliderImage3',
-    title: 'OXO Ecoverse',
-    city: 'Nuanu sity',
-    area: '120 m² / 210 m²',
-    details:'12 villas • 15 apartments'
+    alt: 'Phi camp',
+    title: 'Phi camp',
+    city: 'Eco resort & retreat centre',
+    area: '130 m² / 220 m²',
+    details: '15 villas • 25 apartments'
   },
   {
     src: sliderImage4,
-    alt: 'sliderImage4',
-    title: 'OXO Ecoverse',
-    city: 'Nuanu sity',
-    area: '120 m² / 210 m²',
-    details:'12 villas • 15 apartments'
+    alt: 'Oxo 2 Family townhouses',
+    title: 'Oxo 2 Family townhouses',
+    city: 'Nuanu City',
+    area: '140 m² / 230 m²',
+    details: '14 villas • 16 apartments'
   },
 ];
 
 const Slider: FC = () => {
   return (
-    <Swiper
-      spaceBetween={50}
-      slidesPerView={1}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      className={styles.swiper} 
-    >
+    <div className={styles.reviewContainer}>
       {slides.map((slide, index) => (
-        <SwiperSlide key={index} className={styles.swiperSlide}> 
+        <div key={index} className={styles.slideWrapper}>
           <Card {...slide} />
-        </SwiperSlide>
+        </div>
       ))}
-    </Swiper>
+    </div>
   );
 };
 
