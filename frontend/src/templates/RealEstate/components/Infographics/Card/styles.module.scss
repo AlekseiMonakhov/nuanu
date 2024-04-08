@@ -1,0 +1,76 @@
+// Импорт шрифтов
+@import url('https://fonts.googleapis.com/css2?family=PP+Mori&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Suisse+Intl:wght@400&display=swap');
+
+$font-family-mori: 'PP Mori', sans-serif;
+$font-family-suisse: 'Suisse Intl', sans-serif;
+
+.card {
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+  background: rgb(255, 255, 255);
+  position: relative;
+  width: 188.5px;
+  height: 244px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 36px 24px;
+  margin: 4px;
+  border-radius: 12px;
+  font-family: $font-family-mori;
+
+  @media (min-width: 992px) {
+    width: 346px;
+    height: 320px;
+    padding: 36px 24px;
+    border-radius: 30px;
+  }
+
+  @media (max-width: 401px) {
+    width: 165px;
+    height: 244px;
+    padding: 36px 24px;
+    border-radius: 12px;
+  }
+}
+
+.cardValue {
+  height: 36px;
+  color: rgb(33, 33, 33);
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: 0px;
+  text-align: left;
+  font-family: $font-family-mori;
+
+  @media (min-width: 992px) {
+    height: 56px;
+    font-size: 80px;
+  }
+}
+
+.cardLabel {
+  width: 140.5px;
+  height: 53px;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 10px 0px;
+  color: rgb(33, 33, 33);
+  font-size: 15px;
+  line-height: 140%;
+  letter-spacing: 0px;
+  text-align: left;
+  font-family: $font-family-suisse;
+
+  @media (min-width: 992px) {
+    width: 266px;
+    height: 53px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    font-size: 25px;
+  }
+}

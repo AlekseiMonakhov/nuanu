@@ -4,7 +4,6 @@ import { IRealEstate } from './types';
 import styles from './styles.module.scss';
 // import slideImage1 from './assets/images/2_slider/1_pic.png';
 // import slideImage2 from './assets/images/2_slider/2_pic.png';
-// import infoBackground from './assets/images/3_infographics/3_inf-sec.png';
 import { useTemplate } from '../_hooks/useTemplate';
 import FullScreenVideo from './components/FullScreenVideo';
 import Gallery from './components/Gallery'
@@ -12,6 +11,8 @@ import { Footer } from '@/layout/Footer';
 import CallBackRequestForm from './components/CallbackRequestForm';
 import Review from './components/Review';
 import Title from './components/Title';
+import Infographics from './components/Infographics';
+import Card from './components/Infographics/Card';
 
 const RealEstate: FC<IRealEstate> = () => {
   useTemplate();
@@ -23,6 +24,7 @@ const RealEstate: FC<IRealEstate> = () => {
         mainTitle="Nuanu is a place of the future on the map of Bali"
       />
       <Gallery />
+      <Infographics />
       <Title
         mainTitle="Bali: world’s #1 destination"
       />
