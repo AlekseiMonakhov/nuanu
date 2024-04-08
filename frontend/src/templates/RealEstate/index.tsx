@@ -23,8 +23,14 @@ const RealEstate: FC<IRealEstate> = () => {
       <Title
         mainTitle="Nuanu is a place of the future on the map of Bali"
       />
-      <Gallery />
+      <Gallery /> 
+      <Title
+        mainTitle="A stylish hi-tech home for the price of an apartment"
+      />
       <Infographics />
+      <Title
+        mainTitle="Our developers’ properties. Invest in it. Live in it. Rent it out."
+      />
       <Title
         mainTitle="Bali: world’s #1 destination"
       />
