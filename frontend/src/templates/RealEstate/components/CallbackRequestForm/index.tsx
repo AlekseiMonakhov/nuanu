@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import styles from './styles.module.scss';
 
-const CallBackRequestForm = () => {
+const CallBackRequestForm: FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -22,7 +22,7 @@ const CallBackRequestForm = () => {
   };
 
   return (
-    <div className={styles.page}>
+    <div id="callBackRequestForm" className={styles.page}>
       <div className={styles.callBackRequestFormContainer}>
         <div className={styles.formContainer}>
           {!isSubmitted ? (
