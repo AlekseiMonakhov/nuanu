@@ -16,7 +16,7 @@ const FullScreenVideo: FC<IFullScreenVideo> = () => {
         loop
         autoPlay
         muted
-        playsinline
+        playsInline
         className={styles.videoBg} />
     </div>
   );
