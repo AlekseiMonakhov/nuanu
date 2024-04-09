@@ -11,6 +11,7 @@ import Title from './components/Title';
 import Infographics from './components/Infographics';
 import Swiper from './components/Swiper';
 import Properties from './components/Properties';
+import CallToActionGroup from './components/CallToActionGroup';
 
 
 const RealEstate: FC<IRealEstate> = () => {
@@ -19,6 +20,7 @@ const RealEstate: FC<IRealEstate> = () => {
   return (
     <div className={styles.page}>
       <FullScreenVideo />
+      <CallToActionGroup />
       <Title
         mainTitle="Nuanu is a place of the future on the map of Bali"
       />
