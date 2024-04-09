@@ -10,6 +10,7 @@ import Review from './components/Review';
 import Title from './components/Title';
 import Infographics from './components/Infographics';
 import Swiper from './components/Swiper';
+import Properties from './components/Properties';
 
 
 const RealEstate: FC<IRealEstate> = () => {
@@ -30,6 +31,7 @@ const RealEstate: FC<IRealEstate> = () => {
       <Title
         mainTitle="Our developers’ properties. Invest in it. Live in it. Rent it out."
       />
+      <Properties />
       <Title
         mainTitle="Bali: world’s #1 destination"
       />

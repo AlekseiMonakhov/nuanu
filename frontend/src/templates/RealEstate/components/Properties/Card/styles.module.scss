@@ -1,0 +1,123 @@
+$dark-gray: #333;
+$light-gray: #f2f2f2;
+$detail-gray: #666;
+$underline-color: #e0e0e0;
+$white: #fff;
+
+.card {
+  font-family: 'Suisse Intl';
+  background-color: $light-gray;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 16px;
+  left: 10px;
+  right: 10px;
+  width: calc(100% - 20px);
+  justify-self: center;
+}
+
+.header {
+  padding: 8px 16px;
+  background-color: $white;
+  font-weight: 400;
+  font-size: 30px;
+  text-align: left;
+  color: $dark-gray;
+  width: 100%;
+}
+
+.imageWrapper {
+  position: relative;
+  height: 300px;
+}
+
+.badges {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.badge {
+  background-color: $detail-gray;
+  border-radius: 15px;
+  padding: 0.3rem 0.6rem;
+  font-size: 15px;
+  font-weight: 700;
+  color: $light-gray;
+}
+
+.content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.infoColumn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+}
+
+
+.infoRow:not(:last-child) {
+  border-bottom: 1px solid $underline-color;
+}
+
+.label {
+  font-size: 15px;
+  color: $detail-gray;
+}
+
+.value {
+  font-size: 15px;
+  font-weight: 400;
+  color: black;
+}
+
+@media (min-width: 992px) {
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+    width: calc(50% - 20px);
+  }
+
+  .header {
+    text-align: left;
+    display: flex;
+  }
+
+  .imageWrapper {
+    width: 100%;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex: 1;
+    padding: 2rem;
+  }
+
+  .infoColumn {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+  }
+}
