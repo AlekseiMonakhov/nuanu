@@ -11,5 +11,5 @@ export interface CardProps {
   roi: string;
   occupancy: string;
   delivery: string;
-  image: string;
+  image: StaticImageData;
 }

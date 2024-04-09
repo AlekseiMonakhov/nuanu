@@ -1,28 +1,30 @@
-.reviewContainer {
+.properties {
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 16px;
-  padding: 16px;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-    min-width: 1372px;
-  }
-
+  flex-wrap: wrap;
+  gap: 16px; 
+  justify-content: flex-start; 
+  margin-top: 50px;
+  
   @media (min-width: 992px) {
+    justify-content: flex-start; 
+    margin-top: 150px;
   }
 }
-
-.card {
-  scroll-snap-align: start;
+.requestButton {
+  width: 400px;
+  height: 100px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50px;
+  padding: 20px 40px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin: 20px auto;
+  display: block;
+  transition: background-color 0.3s;
 }
 
-.slideWrapper {
-  flex: 0 0 330px; 
-
-  @media (min-width: 992px) {
-    flex: 0 0 1372px; 
-  }
+.requestButton:hover {
+  background-color: #333;
 }
