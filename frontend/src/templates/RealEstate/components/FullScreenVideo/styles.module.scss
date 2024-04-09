@@ -20,7 +20,7 @@
 
 .homeTitle {
     position: absolute;
-    width: calc(100% - 40px);
+    width: calc(100% - 50px);
     max-width: 529px;
     height: 276px;
     left: 50%;
@@ -38,6 +38,7 @@
     z-index: 2;
 
     @media (min-width: 992px) {
+      width: calc(100% - 600px);
       font-size: 80px;
       top: 40%;
   }

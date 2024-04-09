@@ -9,15 +9,14 @@ const FullScreenVideo: FC<IFullScreenVideo> = () => {
   return (
     <div id="home" className={styles.fullscreenVideo}>
       <h1 className={styles.homeTitle}>
-        Time to
-        <br /> invest in
-        <br /> Nuanu</h1>
-      <video src={backgroundVideo}
-        loop
-        autoPlay
-        muted
-        playsInline
-        className={styles.videoBg} />
+        Time to invest in Nuanu
+        </h1>
+        <video src={backgroundVideo}
+          loop
+          autoPlay
+          muted
+          playsInline
+          className={styles.videoBg} />
     </div>
   );
 };
