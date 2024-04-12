@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import styles from './styles.module.scss';
-import watsappIcon from '../../assets/svg/whatsapp.svg'
+import Image from 'next/image';
+import watsappIcon from '../../assets/svg/whatsapp.svg';
 
 const CallBackRequestForm: FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -60,12 +61,12 @@ const CallBackRequestForm: FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={watsappIcon} alt="WhatsApp" style={{ verticalAlign: 'middle', marginRight: '8px' }} /> WhatsApp
+                  <Image src={watsappIcon} alt={'watsappIcon'} /> WhatsApp
                 </a>
                 <br /> or call us at
                 {' '}
                 <a
-                className={styles.whatsAppLink}
+                  className={styles.whatsAppLink}
                   href="tel:+628888888883"
                 >
                   +62 888 888-8883
@@ -89,12 +90,12 @@ const CallBackRequestForm: FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={watsappIcon} alt="WhatsApp" style={{ verticalAlign: 'middle', marginRight: '8px' }} /> WhatsApp
+                  <Image src={watsappIcon} alt={'watsappIcon'} /> WhatsApp
                 </a>
                 <br /> or call us at
                 {' '}
                 <a
-                className={styles.whatsAppLink}
+                  className={styles.whatsAppLink}
                   href="tel:+628888888883"
                 >
                   +62 888 888-8883
