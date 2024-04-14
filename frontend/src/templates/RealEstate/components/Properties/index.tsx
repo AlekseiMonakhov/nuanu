@@ -65,12 +65,17 @@ const mockProperties = [
 
 
 const Properties: FC = () => {
+
+  const scrollToForm = () => {
+    document.getElementById("callBackRequestForm")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className={styles.properties}>
       {mockProperties.map((property, index) => (
         <Card key={index} {...property} />
       ))}
-      <button className={styles.requestButton}>Request entire catalog</button>
+      <button onClick={scrollToForm} className={styles.requestButton}>Request entire catalog</button>
     </div>
   );
 };
