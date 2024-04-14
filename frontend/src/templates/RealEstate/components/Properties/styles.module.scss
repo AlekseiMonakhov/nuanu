@@ -6,8 +6,17 @@
   margin-top: 50px;
   
   @media (min-width: 992px) {
-    justify-content: flex-start; 
+    justify-content: center; 
     margin-top: 150px;
+  }
+
+  @media (min-width: 1990px) {
+    width: auto;
+    gap: 74px;
+  }
+  @media (min-width: 2090px) {
+    width: auto;
+    gap: 100px;
   }
 }
 .requestButton {
