@@ -1,5 +1,6 @@
 import { MOCK_PAGES_ACCOMMODATION } from './pages/accommodation';
 import { MOCK_PAGES_ART } from './pages/art';
+import { MOCK_PAGES_REAL_ESTATE } from './pages/realEstate';
 import { MOCK_PAGES_COMPONENTS } from './pages/components';
 import { MOCK_PAGES_EVENTS } from './pages/events';
 import { MOCK_PAGES_EXPERIENCE } from './pages/experience';
@@ -26,6 +27,10 @@ export function MOCK_GET_PAGE(pathProp: string) {
     return MOCK_PAGES_ACCOMMODATION(path);
   }
 
+  if (path === '/realestate') {
+    return MOCK_PAGES_REAL_ESTATE(path);
+  }
+  
   if (path === '/art') {
     return MOCK_PAGES_ART(path);
   }
@@ -40,3 +45,5 @@ export function MOCK_GET_PAGE(pathProp: string) {
 
   return MOCK_PAGES_NOT_FOUND(path);
 }
+
+
