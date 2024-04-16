@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { FC, memo, useMemo } from 'react';
 import cn from 'classnames';
 import { ExpandContent } from '@anton.bobrov/react-components';

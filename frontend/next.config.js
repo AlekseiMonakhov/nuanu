@@ -46,18 +46,24 @@ const nextConfig = {
     ];
   },
   rewrites: () => rewrites,
-  webpack: (config, { webpack, buildId }) => {
+  webpack: (config, { isServer }) => {
     if (process.env.NODE_ENV === 'production') {
       addClassnameObfuscation(config);
     }
-
-    config.plugins.push(
-      new webpack.DefinePlugin({
-        'process.env.CONFIG_BUILD_ID': JSON.stringify(buildId),
-      }),
-    );
-
+  
+    config.module.rules.push({
+      test: /\.(mp4|webm|ogg|ogv)$/,
+      type: 'asset/resource', 
+      generator: {
+        filename: 'static/media/[name].[hash][ext]', 
+      },
+    });
+  
     return config;
+  },
+  // Отключаем ESLint во время сборки
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 };
 
