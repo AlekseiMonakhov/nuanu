@@ -24,6 +24,7 @@ jobs:
             whoami
             sleep 5
             cd /var/www/html/new-nuanu
+            git config --global --add safe.directory /var/www/html/new-nuanu
             sleep 5
             if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then   
                 echo "New Update Found - Processing git command push and pull" 
