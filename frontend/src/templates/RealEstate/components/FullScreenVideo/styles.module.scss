@@ -3,24 +3,32 @@
   height: 100vh;
   overflow: hidden;
   margin-bottom: 4px;
+  position: relative; /* Добавлено для позиционирования оверлея */
 
-
-  video.videoBg {
+  .videoBg {
     object-fit: cover;
     width: 100%;
     height: 100%;
   }
 
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Черный фон с 20% прозрачностью */
+    z-index: 1; /* Задаем z-index, чтобы оверлей был между видео и содержимым */
+  }
+
   @media (min-width: 992px) {
-    .fullscreenVideo {
-      height: 100vh;
-    }
+    height: 100vh;
   }
 }
 
 .homeTitle {
     position: absolute;
-    width: calc(100% - 40px);
+    width: calc(100% - 50px);
     max-width: 529px;
     height: 276px;
     left: 50%;
@@ -35,10 +43,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 2;
+    z-index: 2; /* Убедитесь, что текст остается видимым поверх оверлея */
 
     @media (min-width: 992px) {
+      width: calc(100% - 600px);
       font-size: 80px;
       top: 40%;
-  }
+    }
 }

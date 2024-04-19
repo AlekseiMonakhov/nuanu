@@ -1,9 +1,7 @@
-// Импорт шрифтов
 @import url('https://fonts.googleapis.com/css2?family=PP+Mori&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Suisse+Intl:wght@400&display=swap');
 
-$font-family-mori: 'PP Mori', sans-serif;
-$font-family-suisse: 'Suisse Intl', sans-serif;
+$font-family-mori: 'PP Mori';
+$font-family-suisse: 'Suisse Intl';
 
 .card {
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
@@ -18,7 +16,6 @@ $font-family-suisse: 'Suisse Intl', sans-serif;
   padding: 36px 24px;
   margin: 4px;
   border-radius: 12px;
-  font-family: $font-family-mori;
 
   @media (min-width: 992px) {
     width: 346px;

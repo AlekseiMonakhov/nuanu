@@ -31,3 +31,8 @@ declare module '*.svg' {
 
   export default SVG;
 }
+
+interface Window {
+  dataLayer: any[];
+  gtag: (...args: any[]) => void;
+}

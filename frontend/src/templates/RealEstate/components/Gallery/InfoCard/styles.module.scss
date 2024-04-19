@@ -1,50 +1,73 @@
 .infoCard {
   color: rgb(33, 33, 33);
-  font-family: 'Suisse Intl', sans-serif;
   letter-spacing: 0;
   background-color: rgb(242, 242, 242);
   border-radius: 30px;
   box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.12);
-  padding: 20px;
-  font-size: 14px;
-  line-height: 130%;
   height: 159px;
-  width: calc(100% - 8px);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  width: 381px;
+  gap: auto;
+
 
   @media (min-width: 992px) {
-    width: calc(100% - 90px);
-    max-width: 500px;
-    height: 222px;
-    padding: 20px;
+    margin-left: 50px;
+    height: 229px;
+    width: 500px;
     box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.12);
     background-color: rgb(242, 242, 242);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+
 
     .infoCardTitle {
+      margin-left: 40px;
+      margin-right: 100px;
+      font-family: 'Suisse Intl';
       font-size: 30px;
-      line-height: 1.1;
+      font-weight: 400;
+      line-height: 39px;
+      max-height: 50%;
     }
 
     .infoCardSubtitle {
+      margin-top: 20px;
+      max-height: 50%;
+      display: block;
+      position: relative;
+      height: 14px;
+      margin-left: 40px;
+      margin-right: 15px;
+      font-family: 'Suisse Intl';
       text-align: left;
-      font-size: 18px;
-      line-height: 1.2;
+      font-size: 20px;
+      line-height: 25px;
+      font-weight: 400;
+      opacity: 70%;
+
     }
   }
 }
 
 .infoCardTitle {
+  margin-left: 30px;
+  margin-right: 15px;
+  font-family: 'Suisse Intl', sans-serif;
+  font-size: 20px;
   font-weight: 400;
-  text-align: left;
+  line-height: 26px;
+  max-height: 50%;
 }
 
 .infoCardSubtitle {
-  font-weight: 400;
+  margin-top: 20px;
+  max-height: 50%;
+  display: block;
+  position: relative;
+  height: 14px;
+  margin-left: 30px;
+  margin-right: 15px;
+  font-family: 'Suisse Intl', sans-serif;
   text-align: left;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  opacity: 70%;
 }

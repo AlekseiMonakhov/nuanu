@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import styles from './styles.module.scss'; 
 import sliderImage1 from '../../assets/images/4_real-estate/3_Willow.png';
 import sliderImage2 from '../../assets/images/2_slider/2_pic.png';
@@ -42,16 +42,22 @@ const slides: CardProps[] = [
   },
 ];
 
-const Slider: FC = () => {
+const Swiper: FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
   return (
-    <div className={styles.reviewContainer}>
-      {slides.map((slide, index) => (
-        <div key={index} className={styles.slideWrapper}>
+    <div className={styles.reviewContainer} onClick={nextSlide}>
+       {slides.map((slide, index) => (
+        <div key={index} className={styles.slideWrapper} style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
           <Card {...slide} />
         </div>
-      ))}
-    </div>
+       ))}
+      </div>
   );
 };
 
-export default Slider;
+export default Swiper;

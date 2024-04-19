@@ -10,7 +10,7 @@ const CallToActionGroup: FC = () => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    if (offset > 50) { 
+    if (offset > 50) {
       setScrolled(true);
     } else {
       setScrolled(false);

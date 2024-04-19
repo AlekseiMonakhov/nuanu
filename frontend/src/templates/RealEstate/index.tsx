@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { IRealEstate } from './types';
 import styles from './styles.module.scss';
 import { useTemplate } from '../_hooks/useTemplate';
@@ -14,8 +14,35 @@ import Properties from './components/Properties';
 import CallToActionGroup from './components/CallToActionGroup';
 
 
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag: (...args: any[]) => void;
+  }
+}
+
+
 const RealEstate: FC<IRealEstate> = () => {
   useTemplate();
+
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-SCNYEJ1YH9';
+    document.head.appendChild(script);
+
+    script.onload = () => {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){ window.dataLayer.push(arguments); }
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-SCNYEJ1YH9');
+    };
+
+    return () => {
+      document.head.removeChild(script);
+    }
+  }, []);
 
   return (
     <div className={styles.page}>

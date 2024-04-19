@@ -12,7 +12,7 @@ const Card: FC<CardProps> = ({ src, alt, title, city, area, details }) => {
       </div>
       <div className={styles.info}>
         <div className={styles.mainInfo} >
-          <h2 className={styles.title}>{title}</h2>
+          <p className={styles.title}>{title}</p>
           <p className={styles.city}>{city}</p>
           <p className={styles.area}>{area}</p>
         </div>
