@@ -49,8 +49,8 @@ jobs:
         key: ${{ secrets.DEV_SSH_KEY }}
         script: |
             sudo su
-            cd new-nuanu/
-            git config --global --add safe.directory new-nuanu/
+            cd new-estate-nuanu/
+            git config --global --add safe.directory new-estate-nuanu/
             if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then   
                 echo "New Update Found - Processing git command push and pull" 
                 sudo git add .
@@ -61,7 +61,7 @@ jobs:
                 sleep 10
                 sudo npm run build
                 sleep 20
-                SEARCHABLE=${{ secrets.SEARCHABLE }} API_PAGE_URL=${{ secrets.API_PAGE_URL }} NEXT_PUBLIC_URL=${{ secrets.NEXT_PUBLIC_URL }} pm2 restart new-nuanu --update-env
+                SEARCHABLE=${{ secrets.SEARCHABLE }} API_PAGE_URL=${{ secrets.API_PAGE_URL }} NEXT_PUBLIC_URL=${{ secrets.NEXT_PUBLIC_URL }} pm2 restart new-estate-nuanu --update-env
                 sudo systemctl restart nginx
             else 
                 echo "No Update Found"
