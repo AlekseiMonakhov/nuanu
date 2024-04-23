@@ -1,4 +1,4 @@
-name: Deploy New Estate Nuanu - Kirby CMS
+name: Deploy New Estate Nuanu
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: executing remote ssh commands using password
+    - name: Deploying Front end changes
       uses: appleboy/ssh-action@v1.0.0
       with:
         host: ${{ secrets.DEV_HOST }}
@@ -40,4 +40,32 @@ jobs:
                 sleep 10
             fi
             sudo systemctl restart nginx
+
+    - name: Deploying Front end changes
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.DEV_HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.DEV_SSH_KEY }}
+        script: |
+            sudo su
+            cd new-nuanu/
+            git config --global --add safe.directory new-nuanu/
+            if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then   
+                echo "New Update Found - Processing git command push and pull" 
+                sudo git add .
+                sleep 5
+                sudo git commit -m "Commit for new changes"
+                sleep 5
+                sudo git pull origin main
+                sleep 10
+                sudo npm run build
+                sleep 20
+                SEARCHABLE=${{ secrets.SEARCHABLE }} API_PAGE_URL=${{ secrets.API_PAGE_URL }} NEXT_PUBLIC_URL=${{ secrets.NEXT_PUBLIC_URL }} pm2 restart new-nuanu --update-env
+                sudo systemctl restart nginx
+            else 
+                echo "No Update Found"
+                git pull origin main
+                sleep 10
+            fi
             
