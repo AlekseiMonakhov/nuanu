@@ -50,7 +50,7 @@ jobs:
         key: ${{ secrets.DEV_SSH_KEY }}
         script: |
             sudo su
-            cd new-estate-nuanu/
+            cd new-estate-nuanu/frontenc
             ls -alh
             git config --global --add safe.directory new-estate-nuanu/
             if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then   
