@@ -30,7 +30,7 @@ const nextConfig = {
         pathname: '/media/**',
       },
       {
-        hostname: 'new-data.nuanu.com',
+        hostname: 'new-estate-data.nuanu.com',
         pathname: '/media/**',
       },
     ],
