@@ -13,30 +13,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Deploying Front end changes
+    - name: Deploying Backend changes
       uses: appleboy/ssh-action@v1.0.0
       with:
         host: ${{ secrets.DEV_HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.DEV_SSH_KEY }}
         script: |
-            sudo -i
+            sudo su
             whoami
             sleep 5
             cd /var/www/html/new-nuanu
+            ls -alh
             git config --global --add safe.directory /var/www/html/new-nuanu
             sleep 5
             if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then   
                 echo "New Update Found - Processing git command push and pull" 
-                git add .
+                sudo git add .
                 sleep 5
-                git commit -m [UPDATE]From server
+                sudo git commit -m [UPDATE]From server
                 sleep 5
-                git pull origin main
+                sudo git pull origin main
                 sleep 10
             else 
                 echo "No Update Found"
-                git pull origin main
+                sudo git pull origin main
                 sleep 10
             fi
             sudo systemctl restart nginx
