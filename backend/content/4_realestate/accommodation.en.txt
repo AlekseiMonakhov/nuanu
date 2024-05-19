@@ -1,0 +1,29 @@
+Title: RealEstate
+
+----
+
+State: new
+
+----
+
+Searchable: true
+
+----
+
+Meta-title: 
+
+----
+
+Meta-description: 
+
+----
+
+Meta-keywords: 
+
+----
+
+Og-image: 
+
+----
+
+Uuid: bgawTXcbaXrkJ5y6
