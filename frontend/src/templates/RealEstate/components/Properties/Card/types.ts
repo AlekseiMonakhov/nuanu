@@ -12,6 +12,6 @@ export interface IPropertyProps {
   image: string; 
 }
 
-export interface ICardProps {
+export interface IPropertiesProps {
   properties: IPropertyProps[];
 }
