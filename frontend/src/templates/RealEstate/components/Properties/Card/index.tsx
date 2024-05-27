@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
 import styles from './styles.module.scss';
-import { CardProps } from './types';
+import { IPropertyProps } from './types';
 
 
-const Card: FC<CardProps> = ({
+const Card: FC<IPropertyProps> = ({
   name,
   title,
   villas,
