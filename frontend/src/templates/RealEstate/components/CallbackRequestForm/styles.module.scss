@@ -1,9 +1,8 @@
-$font-family: 'Suisse Intl', sans-serif;
+$font-family: 'Suisse Intl';
 $color-text: #4A4A4A;
 $color-primary: #000000;
 $color-success: #2e9147;
 $color-background: #F2F2F2;
-
 
 .page {
   display: flex;
@@ -25,7 +24,6 @@ $color-background: #F2F2F2;
   height: 417px;
   margin: 4px;
 
-
   @media (min-width: 992px) {
     width: calc(100% - 100px);
     height: 650px;
@@ -35,7 +33,6 @@ $color-background: #F2F2F2;
     flex-direction: row;
     position: relative;
     justify-content: space-between;
-
   }
 }
 
@@ -157,7 +154,6 @@ $color-background: #F2F2F2;
   hyphens: auto;
   margin-top: 30px;
 
-
   @media (min-width: 992px) {
     font-size: 25px;
     line-height: 1.5;
@@ -186,7 +182,6 @@ $color-background: #F2F2F2;
 
   @media (min-width: 992px) {
     display: block;
-    background-image: url('../../assets/images/6_form/1_form.png');
     background-size: cover;
     width: 50%;
     height: 650px;
@@ -200,7 +195,6 @@ $color-background: #F2F2F2;
 .whatsAppLink {
   color: $color-primary;
   text-decoration: underline;
-  
 
   &:hover {
     text-decoration: underline;

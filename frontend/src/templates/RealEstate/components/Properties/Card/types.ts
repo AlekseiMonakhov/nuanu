@@ -1,6 +1,4 @@
-import { StaticImageData } from "next/image";
-
-export interface CardProps {
+export interface IPropertyProps {
   name: string;
   title: string;
   villas: number;
@@ -11,5 +9,9 @@ export interface CardProps {
   roi: string;
   occupancy: string;
   delivery: string;
-  image: StaticImageData;
+  image: string; 
+}
+
+export interface IPropertiesProps {
+  properties: IPropertyProps[];
 }

@@ -41,7 +41,7 @@
   margin: 0;
 }
 
-.details {
+.villas, .apartments {
   color: black;
   font-size: 15px;
   font-weight: 400;
@@ -61,7 +61,6 @@
   .info {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
     align-items: center;
     padding: 16px;
     height: 99px;
@@ -70,11 +69,48 @@
   .mainInfo {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  .numberOfItems {
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
     width: 50%;
   }
 
-  .details {
+  .title {
+    font-family: 'Suisse Intl';
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0px;
+    text-align: left;
+    min-width: 30%;
+  }
+
+  .city {
+    font-family: 'Suisse Intl';
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  .area {
+    display: flex;
+    justify-content: center;
+    font-family: 'Suisse Intl';
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  .villas {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -86,17 +122,21 @@
     letter-spacing: 0px;
     text-align: left;
     margin-right: 20px;
-    align-items: center;
+    align-items: flex-end;
   }
 
-  .title,
-  .city,
-  .area {
+  .apartments {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 50%;
     font-family: 'Suisse Intl';
     font-size: 25px;
     font-weight: 400;
     line-height: 130%;
     letter-spacing: 0px;
     text-align: left;
+    margin-right: 20px;
+    align-items: flex-end;
   }
 }

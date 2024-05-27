@@ -1,0 +1,177 @@
+title: Real Estate
+fields:
+  main:
+    label: Main Title
+    type: structure
+    fields:
+      title:
+        label: Title
+        type: text
+  galleryTitle:
+    label: Gallery Title
+    type: structure
+    fields:
+      title:
+        label: Title
+        type: text
+  gallery:
+    label: Gallery
+    type: structure
+    fields:
+      src:
+        label: Image
+        type: files
+        multiple: false
+      title:
+        label: Title
+        type: text
+      subtitle:
+        label: Subtitle
+        type: text  
+  swiperTitle:
+    label: Swiper Title
+    type: structure
+    fields:
+      title:
+        label: Title
+        type: text
+  swiperItems:
+    label: Swiper Items
+    type: structure
+    fields:
+      src:
+        label: Image
+        type: files
+        multiple: false
+      title:
+        label: Title
+        type: text
+      city:
+        label: City
+        type: text
+      area:
+        label: Area
+        type: text
+      villas:
+        label: Villas
+        type: text
+      apartments:
+        label: Apartments
+        type: text
+  infographics:
+    label: Infographics
+    type: structure
+    fields:
+      src:
+        label: Image
+        type: files
+        multiple: false
+      title:
+        label: Title
+        type: text  
+      subtitle:
+        label: Subtitle
+        type: text
+  infographicsCard:
+        label: Infographics Card
+        type: structure
+        fields:
+          value:
+            label: Value
+            type: text
+          label:
+            label: Label
+            type: text      
+  propertiesTitle:
+    label: Properties Title
+    type: structure
+    fields:
+      title:
+        label: Title
+        type: text
+  properties:
+    label: Properties Gallery
+    type: structure
+    fields:
+      name:
+        label: Name
+        type: text
+      title:
+        label: Title
+        type: text
+      villas:
+        label: Villas
+        type: number
+      apartments:
+        label: Apartments
+        type: number
+      startingPrice:
+        label: Starting Price
+        type: number
+      totalArea:
+        label: Total Area
+        type: number
+      roomSizes:
+        label: Room Sizes
+        type: structure
+        fields:
+          size:
+            label: Size
+            type: number
+      roi:
+        label: ROI
+        type: text
+      occupancy:
+        label: Occupancy
+        type: text
+      delivery:
+        label: Delivery
+        type: text
+      image:
+        label: Image
+        type: files
+        multiple: false
+  reviewTitle:
+    label: Review Title
+    type: structure
+    fields:
+      title:
+        label: Title
+        type: text
+  review:
+    label: Review
+    type: structure
+    fields:
+      source:
+        label: Source
+        type: text
+      review:
+        label: Review
+        type: text 
+      date:
+        label: Date
+        type: text            
+  callbackFormTitle:
+    label: Callback Form Title
+    type: structure
+    fields:
+      title:
+        label: Title
+        type: text 
+      subtitle:
+        label: Subtitle
+        type: text   
+  callBackRequestForm:
+    label: CallBack Request Form
+    type: structure
+    fields:
+      whatsapp:
+        label: Whatsapp Number
+        type: text
+      phone:
+        label: Phone Number
+        type: text
+      src:
+        label: Image
+        type: files
+        multiple: false

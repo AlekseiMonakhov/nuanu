@@ -1,7 +1,6 @@
-import { StaticImageData } from "next/image";
 
-export interface GalleryItemProps {
-  src: StaticImageData;
+export interface IGalleryItemProps {
+  src: string;
   alt: string;
   title: string;
   subtitle: string;

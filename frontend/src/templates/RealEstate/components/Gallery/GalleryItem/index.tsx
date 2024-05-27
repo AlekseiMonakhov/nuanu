@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import Image from 'next/image';
 import styles from './styles.module.scss';
-import { GalleryItemProps } from './types';
+import { IGalleryItemProps } from './types';
 import InfoCard from '../InfoCard';
 import classNames from 'classnames';
 
-const GalleryItem: FC<GalleryItemProps> = ({ src, title, subtitle, alt, isHalfWidth, isNotRounded }) => {
+const GalleryItem: FC<IGalleryItemProps> = ({ src, title, subtitle, alt, isHalfWidth, isNotRounded }) => {
   const itemClasses = classNames(styles.galleryItem, {
     [styles.halfWidth]: isHalfWidth, 
     [styles.notRounded]: isNotRounded, 

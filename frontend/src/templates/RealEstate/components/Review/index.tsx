@@ -1,29 +1,35 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Image from 'next/image';
 import styles from './styles.module.scss';
-import reviewImage1 from '../../assets/images/5_cards/review1.svg';
-import reviewImage2 from '../../assets/images/5_cards/review2.svg';
-import reviewImage3 from '../../assets/images/5_cards/review3.svg';
 import reviewLogo from '../../assets/images/5_cards/reviewLogo.svg';
 
+interface Review {
+  source: string;
+  review: string;
+  date: string;
+}
 
-const Review = () => {
-    const reviews = [reviewImage1, reviewImage2, reviewImage3];
+interface ReviewProps {
+  reviews: Review[];
+}
 
-    return (
-        <div className={styles.reviewSection}>
-            <div className={styles.logoContainer}>
-                <Image src={reviewLogo} alt='Review Logo' layout="responsive" width={363} height={54} />
-            </div>
-            <div className={styles.reviewContainer}>
-                {reviews.map((image, index) => (
-                    <div key={index} className={styles.reviewCard}>
-                        <Image src={image} alt={`Review ${index + 1}`} layout="responsive" width={520} height={450} />
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+const Review: FC<ReviewProps> = ({ reviews }) => {
+  return (
+    <div className={styles.reviewSection}>
+      <div className={styles.logoContainer}>
+        <Image src={reviewLogo} alt='Review Logo' layout="responsive" width={363} height={54} />
+      </div>
+      <div className={styles.reviewContainer}>
+        {reviews.map((review, index) => (
+          <div key={index} className={styles.reviewCard}>
+            <p className={styles.reviewSource}>{review.source}</p>
+            <p className={styles.reviewText}>{review.review}</p>
+            <p className={styles.reviewDate}>{review.date}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Review;

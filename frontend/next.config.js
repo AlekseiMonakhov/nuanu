@@ -18,6 +18,7 @@ const nextConfig = {
   images: {
     minimumCacheTTL: 3600 * 24 * 365,
     dangerouslyAllowSVG: true,
+    domains: ['139.180.218.122', 'nuanu-backend.sborkademo.com', 'new-data.nuanu.com'], 
     remotePatterns: [
       {
         protocol: 'http',
@@ -32,7 +33,7 @@ const nextConfig = {
       {
         hostname: 'new-data.nuanu.com',
         pathname: '/media/**',
-      },
+      }
     ],
     deviceSizes: [480, 560, 640, 750, 1024, 1440, 1920, 2560],
     imageSizes: [480, 560, 640, 750, 1024, 1440, 1920, 2560],
@@ -61,7 +62,6 @@ const nextConfig = {
   
     return config;
   },
-  // Отключаем ESLint во время сборки
   eslint: {
     ignoreDuringBuilds: true,
   },

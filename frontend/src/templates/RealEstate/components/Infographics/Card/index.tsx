@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import styles from './styles.module.scss';
-import { CardProps } from './types';
+import { ICardPropsCardProps } from './types';
 
 
-const Card: FC<CardProps> = ({ value, label }) => {
+const Card: FC<ICardProps> = ({ value, label }) => {
   return (
     <div className={styles.card}>
       <span className={styles.cardValue}>{value}</span>

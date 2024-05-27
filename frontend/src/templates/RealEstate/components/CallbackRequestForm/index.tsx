@@ -2,8 +2,10 @@ import React, { FC, useState } from 'react';
 import styles from './styles.module.scss';
 import Image from 'next/image';
 import watsappIcon from '../../assets/svg/whatsapp.svg';
+import { ICallBackProps } from "./types"
 
-const CallBackRequestForm: FC = () => {
+const CallBackRequestForm: FC<ICallBackProps> = ({ data }) => {
+  const { phone, whatsapp, src } = data;
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -56,7 +58,7 @@ const CallBackRequestForm: FC = () => {
                 If you prefer, contact us via
                 {' '}
                 <a
-                  href="https://wa.me/+628888888883"
+                  href={whatsapp}
                   className={styles.whatsAppLink}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -67,9 +69,8 @@ const CallBackRequestForm: FC = () => {
                 {' '}
                 <a
                   className={styles.whatsAppLink}
-                  href="tel:+628888888883"
-                >
-                  +62 888 888-8883
+                  href={`tel:${phone}`}               >
+                  {phone}
                 </a>
               </p>
             </form>
@@ -85,7 +86,7 @@ const CallBackRequestForm: FC = () => {
                 If you prefer, contact us via
                 {' '}
                 <a
-                  href="https://wa.me/+628888888883"
+                  href={whatsapp}
                   className={styles.whatsAppLink}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -96,15 +97,14 @@ const CallBackRequestForm: FC = () => {
                 {' '}
                 <a
                   className={styles.whatsAppLink}
-                  href="tel:+628888888883"
-                >
-                  +62 888 888-8883
+                  href={`tel:${phone}`}               >
+                  {phone}
                 </a>
               </p>
             </div>
           )}
         </div>
-        <div className={styles.imageContainer} />
+        <div className={styles.imageContainer} style={{ backgroundImage: `url(${src})` }} />
       </div>
     </div>
   );

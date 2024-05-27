@@ -1,2 +1,4 @@
 
-export interface IFullScreenVideo {}
+export interface IFullScreenVideo {
+    mainTitle: string
+}

@@ -4,11 +4,11 @@ import styles from './styles.module.scss';
 import { CardProps } from './types';
 
 
-const Card: FC<CardProps> = ({ src, alt, title, city, area, details }) => {
+const Card: FC<CardProps> = ({ src, apartments, title, city, area, villas }) => {
   return (
     <div className={styles.card}>
       <div className={styles.imageWrapper}>
-        <Image src={src} alt={alt} layout="fill" objectFit="cover" />
+        <Image src={src} alt={title} layout="fill" objectFit="cover" />
       </div>
       <div className={styles.info}>
         <div className={styles.mainInfo} >
@@ -16,7 +16,9 @@ const Card: FC<CardProps> = ({ src, alt, title, city, area, details }) => {
           <p className={styles.city}>{city}</p>
           <p className={styles.area}>{area}</p>
         </div>
-        <p className={styles.details}>{details}</p>
+        <div className={styles.numberOfItems}>
+          <p className={styles.villas}>{villas} villas</p>
+          <p className={styles.apartments}>{apartments} apartments</p></div>
       </div>
     </div>
   );
