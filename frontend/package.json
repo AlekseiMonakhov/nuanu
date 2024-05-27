@@ -6,10 +6,10 @@
     "node": "18.x"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 next dev",
+    "build": "NODE_TLS_REJECT_UNAUTHORIZED=0 next build",
     "analyze": "cross-env ANALYZE=true npm run build",
-    "start": "next start",
+    "start": "NODE_TLS_REJECT_UNAUTHORIZED=0 next start",
     "lint": "npm run lint:js && npm run lint:style",
     "lint:js": "next lint && eslint . --ext .jsx,.js,.tsx,.ts",
     "lint:style": "npx stylelint \"**/*.scss\""
