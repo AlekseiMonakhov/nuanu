@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styles from './styles.module.scss';
-import { ICardPropsCardProps } from './types';
+import { ICardProps } from './types';
 
 
 const Card: FC<ICardProps> = ({ value, label }) => {
