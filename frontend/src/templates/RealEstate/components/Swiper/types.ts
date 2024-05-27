@@ -4,6 +4,7 @@ export interface IProperty {
     title: string;
     city: string;
     area: string;
-    details: string;
+    villas: string;
+    apartments: string;
   }
   
